@@ -24,26 +24,51 @@
   --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
+
   --color-main: var(--main);
+
+  --color-heading: var(--heading);
+
   --color-para: var(--para);
+  --color-para-1: var(--para-1);
+  --color-para-2: var(--para-2);
+
   --color-border: var(--border);
+
   --color-destructive: var(--destructive);
+
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
+
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
+
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
+
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
+
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --font-stolzl: "Stolzl", sans-serif;
+
+  /* define custom weight tokens here */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-book: 350;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
 
 :root {
@@ -56,7 +81,10 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --main: #9237E3;
+  --heading: #0F2239;
   --para: #414141;
+  --para-1: #333333;
+  --para-2: #4D5765;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -118,10 +146,66 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@font-face {
+  font-family: "Stolzl";
+  src: url("/fonts/stolzl/Stolzl-Thin.woff2") format("woff2"),
+    url("/fonts/stolzl/Stolzl-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Stolzl";
+  src: url("/fonts/stolzl/Stolzl-Light.woff2") format("woff2"),
+    url("/fonts/stolzl/Stolzl-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Stolzl";
+  src: url("/fonts/stolzl/Stolzl-Book.woff2") format("woff2"),
+    url("/fonts/stolzl/Stolzl-Book.woff") format("woff");
+  font-weight: 350;
+  /* or 400 if you prefer it as default */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Stolzl";
+  src: url("/fonts/stolzl/Stolzl-Regular.woff2") format("woff2"),
+    url("/fonts/stolzl/Stolzl-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Stolzl";
+  src: url("/fonts/stolzl/Stolzl-Medium.woff2") format("woff2"),
+    url("/fonts/stolzl/Stolzl-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Stolzl";
+  src: url("/fonts/stolzl/Stolzl-Bold.woff2") format("woff2"),
+    url("/fonts/stolzl/Stolzl-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50 box-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

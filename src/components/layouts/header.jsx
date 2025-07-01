@@ -17,9 +17,11 @@ export const Header = () => {
       <div className="flex py-3 justify-center items-center gap-3 border-b-[1.5px]">
         <div className="flex items-center gap-2">
           <Image src="./clock.svg" width={20} height={20} alt="clock" />
-          <p className="font-inter text-base">Limited Time Offer - Hurry Up!</p>
+          <p className="font-stolzl text-base">
+            Limited Time Offer - Hurry Up!
+          </p>
         </div>
-        <div className="flex items-center font-inter">
+        <div className="flex items-center font-stolzl">
           <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
             6
           </div>
@@ -48,7 +50,7 @@ export const Header = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent font-inter">
+                <NavigationMenuTrigger className="bg-transparent font-stolzl">
                   Jobs
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -58,7 +60,7 @@ export const Header = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent font-inter">
+                <NavigationMenuTrigger className="bg-transparent font-stolzl">
                   Courses{" "}
                   <div className="bg-[#E32420] px-2 py-0.5 uppercase rounded-md ml-2 text-sm text-white">
                     offer
