@@ -8,7 +8,7 @@ export const Feature = () => {
   return (
     <CarouselItem className="sm:basis-1/2 md:basis-1/2">
       <div className="">
-        <Card className="rounded-sm border-[#9237E366]">
+        <Card className="rounded-sm border-border-1">
           <CardContent className="">
             <div className="flex gap-4 items-center">
               <Image src="/feature-img.svg" width={93} height={82} alt="icon" />

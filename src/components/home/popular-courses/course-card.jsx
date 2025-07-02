@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const CourseCard = () => {
@@ -51,9 +52,12 @@ export const CourseCard = () => {
           <Button
             variant="ghost"
             className="text-main py-0 has-[>svg]:px-0 gap-1 mt-5"
+            asChild
           >
-            <span>Know More</span>
-            <ChevronRight className="size-5" />
+            <Link href="/course-details/123">
+              <span>Know More</span>
+              <ChevronRight className="size-5" />
+            </Link>
           </Button>
         </div>
       </CardContent>

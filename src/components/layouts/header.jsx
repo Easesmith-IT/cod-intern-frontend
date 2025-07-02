@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -42,7 +43,9 @@ export const Header = () => {
 
       <div className="flex gap-4 justify-between section-container py-2">
         <div className="flex gap-1 items-center">
-          <Image src="./logo.svg" width={224} height={65} alt="logo" />
+          <Link href="/">
+            <Image src="./logo.svg" width={224} height={65} alt="logo" />
+          </Link>
           <Separator orientation="vertical" />
           <Image src="./skill-india.svg" width={201} height={53} alt="logo" />
         </div>

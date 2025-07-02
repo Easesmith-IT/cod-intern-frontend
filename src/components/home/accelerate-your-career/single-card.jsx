@@ -11,7 +11,7 @@ export const SingleCard = () => {
   return (
     <CarouselItem className="sm:basis-1/2 md:basis-1/3 lg:basis-1/3">
       <div className="p-1">
-        <Card className="border-[#9237E366] rounded-md">
+        <Card className="border-border-1 rounded-md">
           <CardContent className="px-0">
             <div className="px-6">
               <div className="flex gap-4 justify-between items-center">
@@ -55,7 +55,7 @@ export const SingleCard = () => {
                 <Tech title="Excel" />
               </div>
             </div>
-            <Separator className="my-4 bg-[#9237E366]" />
+            <Separator className="my-4 bg-border-1" />
             <div className="px-6">
               <div className="flex gap-4">
                 <div className="border-2 bg-[#9237E305] text-main uppercase border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 text-[10px] font-stolzl font-normal">
