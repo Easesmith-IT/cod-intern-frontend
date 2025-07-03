@@ -1,11 +1,37 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Mail } from "lucide-react";
 import Link from "next/link";
 import { Info } from "./info";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+import Autoplay from "embla-carousel-autoplay";
 
 export const HeroSection = () => {
+  const [api, setApi] = useState();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
   return (
     <>
       <section
@@ -102,13 +128,62 @@ export const HeroSection = () => {
           alt="hero-bg"
         />
       </section>
-      <Image
-        className="w-full"
-        width={562}
-        height={430}
-        src="/Banner.webp"
-        alt="hero-banner"
-      />
+
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+        opts={{ loop: true }}
+        setApi={setApi}
+        className="w-full relative"
+      >
+        <div className="w-[252px] absolute bottom-3 left-32 z-10 h-1.5 bg-[#D7C0F8] grid rounded-md grid-cols-3">
+          <div
+            onClick={() => api.scrollTo(0)}
+            className={cn("rounded-md", current === 1 && "bg-[#2C1D43]")}
+          ></div>
+          <div
+            onClick={() => api.scrollTo(1)}
+            className={cn("rounded-md", current === 2 && "bg-[#2C1D43]")}
+          ></div>
+          <div
+            onClick={() => api.scrollTo(2)}
+            className={cn("rounded-md", current === 3 && "bg-[#2C1D43]")}
+          ></div>
+        </div>
+
+        <CarouselContent className="mt-10">
+          <CarouselItem className="">
+            <Image
+              className="w-full h-full"
+              width={562}
+              height={430}
+              src="/Banner.webp"
+              alt="hero-banner"
+            />
+          </CarouselItem>
+          <CarouselItem className="">
+            <Image
+              className="w-full"
+              width={562}
+              height={430}
+              src="/Banner.webp"
+              alt="hero-banner"
+            />
+          </CarouselItem>
+          <CarouselItem className="">
+            <Image
+              className="w-full"
+              width={562}
+              height={430}
+              src="/Banner.webp"
+              alt="hero-banner"
+            />
+          </CarouselItem>
+        </CarouselContent>
+      </Carousel>
     </>
   );
 };

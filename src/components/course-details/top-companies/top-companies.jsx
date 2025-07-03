@@ -1,11 +1,25 @@
-import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import React from 'react'
-import { Company } from './company';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import React from "react";
+import { Company } from "./company";
+import Autoplay from "embla-carousel-autoplay";
 
 export const TopCompanies = () => {
   return (
     <section>
-      <Carousel  className="w-full">
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 1000,
+          }),
+        ]}
+        opts={{loop:true}}
+        className="w-full"
+      >
         <div className="flex section-container justify-between items-center gap-5">
           <h2 className="text-[26px] font-medium">
             Top Companies Hiring on CodeIntern
@@ -27,4 +41,4 @@ export const TopCompanies = () => {
       </Carousel>
     </section>
   );
-}
+};

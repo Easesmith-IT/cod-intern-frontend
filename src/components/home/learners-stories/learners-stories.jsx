@@ -1,19 +1,28 @@
 "use client";
 
 import {
-    Carousel,
-    CarouselContent,
-    CarouselNext,
-    CarouselPrevious,
+  Carousel,
+  CarouselContent,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { Story } from "./story";
+import Autoplay from "embla-carousel-autoplay";
 
 export const LearnersStories = () => {
   return (
     <section className="section-container py-28">
-      <Carousel className="w-full">
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 1000,
+          }),
+        ]}
+        opts={{ loop: true }}
+        className="w-full"
+      >
         <div className="flex justify-between items-center gap-5">
           <h2 className="text-[46px] font-medium">
             <span className="text-main">Learners who choose</span> growth.
