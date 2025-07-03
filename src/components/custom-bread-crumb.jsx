@@ -19,12 +19,6 @@ export const CustomBreadCrumb = () => {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink className="text-black font-medium" href="/components">
-            Components
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
           <BreadcrumbPage className="text-main font-medium">
             Breadcrumb
           </BreadcrumbPage>

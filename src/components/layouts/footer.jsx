@@ -114,7 +114,7 @@ export const Footer = () => {
               height={3}
               alt="horizontal-line"
             />
-            <ul className="mt-5 font-stolzl font-book text-sm flex flex-col gap-1">
+            <ul className="mt-5 font-stolzl list-disc ml-4 font-book text-sm flex flex-col gap-1">
               <li>Life Coach</li>
               <li>Life Coach</li>
               <li>Life Coach</li>
@@ -134,7 +134,7 @@ export const Footer = () => {
               height={3}
               alt="horizontal-line"
             />
-            <ul className="mt-5 font-stolzl font-book text-sm flex flex-col gap-1">
+            <ul className="mt-5 font-stolzl list-disc ml-4 font-book text-sm flex flex-col gap-1">
               <li>Life Coach</li>
               <li>Life Coach</li>
               <li>Life Coach</li>
@@ -154,7 +154,7 @@ export const Footer = () => {
               height={3}
               alt="horizontal-line"
             />
-            <ul className="mt-5 font-stolzl font-book text-sm flex flex-col gap-1">
+            <ul className="mt-5 font-stolzl list-disc ml-4 font-book text-sm flex flex-col gap-1">
               <li>Life Coach</li>
               <li>Life Coach</li>
               <li>Life Coach</li>

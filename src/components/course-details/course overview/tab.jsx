@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { act } from "react";
 
-export const Tab = ({ onClick, active, className, title, src, alt }) => {
+export const Tab = ({ onClick, active, className, title, src, src1, alt }) => {
   return (
     <Button
       onClick={onClick}
@@ -13,7 +13,7 @@ export const Tab = ({ onClick, active, className, title, src, alt }) => {
         "flex gap-2 items-center rounded px-5 h-14 rounded-r-none"
       )}
     >
-      <Image src={src} width={17} height={17} alt={alt} />
+      <Image src={active ? src : src1} width={17} height={17} alt={alt} />
       <span
         className={cn(
           "font-stolzl font-medium",

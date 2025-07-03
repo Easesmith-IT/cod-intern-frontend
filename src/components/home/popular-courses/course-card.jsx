@@ -21,6 +21,7 @@ export const CourseCard = () => {
             <div className="flex items-center gap-0.5">
               {Array.from({ length: 5 }).map((_, index) => (
                 <Image
+                  key={index}
                   src="/star.svg"
                   className="w-4 h-4"
                   width={16}

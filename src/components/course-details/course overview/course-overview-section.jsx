@@ -16,6 +16,7 @@ export const CourseOverviewSection = () => {
           alt="Homework"
           onClick={() => setSelectedTab("course-overview")}
           src="/Homework.svg"
+          src1="/homework-dark.svg"
           title="Course Overview"
         />
         <Tab
@@ -23,6 +24,7 @@ export const CourseOverviewSection = () => {
           alt="Syllabus"
           onClick={() => setSelectedTab("syllabus")}
           src="/syllabus.svg"
+          src1="/syllabus-dark.svg"
           title="Syllabus"
         />
         <Tab
@@ -30,6 +32,7 @@ export const CourseOverviewSection = () => {
           alt="Key Highlights"
           onClick={() => setSelectedTab("key-highlights")}
           src="/star-1.svg"
+          src1="/star-1-dark.svg"
           title="Key Highlights"
         />
         <Tab
@@ -37,6 +40,7 @@ export const CourseOverviewSection = () => {
           alt="Certifications"
           onClick={() => setSelectedTab("certifications")}
           src="/certification.svg"
+          src1="/certification-dark.svg"
           title="Certifications"
         />
       </div>
@@ -52,7 +56,8 @@ export const CourseOverviewSection = () => {
         aliquam arcu nam ligula. Velit nec ultrices pharetra bibendum pharetra.
         Quam adipiscing mauris ultrices at. Enim ullamcorper nibh potenti
         egestas cras ut convallis erat. Lorem ipsum dolor sit amet consectetur.
-        Proin duis orci <button className="font-medium text-main">Read More</button>
+        Proin duis orci{" "}
+        <button className="font-medium text-main">Read More</button>
       </p>
     </div>
   );

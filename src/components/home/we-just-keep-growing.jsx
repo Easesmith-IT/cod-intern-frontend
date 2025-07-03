@@ -21,7 +21,7 @@ export const WeJustKeepGrowing = () => {
         there’s more choice than ever.
       </p>
 
-      <Image src="/we-just-keep-growing.jpg" className='mt-12' width={1200} height={440} alt="we just keep growing" />
+      <Image src="/we-just-keep-growing.jpg" className='mt-12' width={1000} height={340} alt="we just keep growing" />
     </div>
   );
 }

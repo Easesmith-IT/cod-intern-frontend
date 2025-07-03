@@ -2,15 +2,18 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import { CourseOverviewSection } from "./course-overview-section";
+import { WhatCourseIncludes } from "./what-course-includes";
+import { CourseCard } from "./course-card";
 
 export const CourseOverview = () => {
   return (
-    <section className="section-container grid grid-cols-[1fr_481px] gap-8 py-28">
-      <div>
+    <section className="section-container grid grid-cols-[1fr_400px] gap-20 py-28">
+      <div className="w-full">
         <CourseOverviewSection />
+        <WhatCourseIncludes />
       </div>
       <div>
-        <div className="shadow-2xl p-3"></div>
+        <CourseCard />
       </div>
     </section>
   );
