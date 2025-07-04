@@ -132,7 +132,7 @@ export const HeroSection = () => {
       <Carousel
         plugins={[
           Autoplay({
-            delay: 2000,
+            delay: 4000,
           }),
         ]}
         opts={{ loop: true }}
@@ -154,8 +154,8 @@ export const HeroSection = () => {
           ></div>
         </div>
 
-        <CarouselContent className="mt-10">
-          <CarouselItem className="">
+        <CarouselContent>
+          <CarouselItem>
             <Image
               className="w-full h-full"
               width={562}
