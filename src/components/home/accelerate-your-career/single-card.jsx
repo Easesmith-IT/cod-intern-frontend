@@ -7,13 +7,13 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Tech } from "./tech";
 
-export const SingleCard = () => {
+export const SingleCard = ({ index,title,desc,timing }) => {
   return (
     <CarouselItem className="sm:basis-1/2 md:basis-1/3 lg:basis-1/3">
       <div className="p-1">
-        <Card className="border-border-1 rounded-md">
+        <Card className="border-border-1 rounded-md pt-0">
           <CardContent className="px-0">
-            <div className="px-6">
+            {/* <div className="px-6">
               <div className="flex gap-4 justify-between items-center">
                 <div>
                   <p className="text-para-1 font-book font-stolzl text-xs">
@@ -54,9 +54,16 @@ export const SingleCard = () => {
                 <Tech title="Tensorflow" />
                 <Tech title="Excel" />
               </div>
-            </div>
-            <Separator className="my-4 bg-border-1" />
-            <div className="px-6">
+            </div> */}
+            <Image
+              src={`/course/${index + 1}.png`}
+              width={360}
+              height={400}
+              className="w-full rounded-tl-[6px] rounded-tr-[6px]"
+              alt="course"
+            />
+            {/* <Separator className="my-4 bg-border-1" /> */}
+            <div className="px-6 mt-4">
               <div className="flex gap-4">
                 <div className="border-2 bg-[#9237E305] text-main uppercase border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 text-[10px] font-stolzl font-normal">
                   Unlimited Interviews
@@ -66,11 +73,10 @@ export const SingleCard = () => {
                 </div>
               </div>
               <h3 className="text-lg font-stolzl font-medium mt-2">
-                Data Science & Analytics with AI
+                {title}
               </h3>
-              <p className="text-para text-sm font-stolzl font-book mt-4">
-                Analyze data and build AI models using Python, SQL, and machine
-                learning techniques.
+              <p className="text-para text-xs font-stolzl font-book mt-4">
+                {desc}
               </p>
 
               <div className="mt-5 flex gap-2 items-center">
@@ -81,7 +87,7 @@ export const SingleCard = () => {
                   alt="map-pin"
                 />
                 <p className="font-stolzl font-book text-para text-sm">
-                  8-10 Months Classroom & Online Training
+                  {timing}
                 </p>
               </div>
               <div className="mt-2 flex gap-2 items-center">
@@ -115,6 +121,12 @@ export const SingleCard = () => {
             </Button>
           </CardFooter>
         </Card>
+        {/* <Image
+          src={`/course/${index + 1}.png`}
+          width={358}
+          height={800}
+          alt="course"
+        /> */}
       </div>
     </CarouselItem>
   );

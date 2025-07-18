@@ -10,6 +10,7 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { Story } from "./story";
 import Autoplay from "embla-carousel-autoplay";
+import stories from "@/data/stories.json";
 
 export const LearnersStories = () => {
   return (
@@ -18,6 +19,8 @@ export const LearnersStories = () => {
         plugins={[
           Autoplay({
             delay: 1000,
+            stopOnMouseEnter: true,
+            stopOnInteraction:false
           }),
         ]}
         opts={{ loop: true }}
@@ -25,8 +28,8 @@ export const LearnersStories = () => {
       >
         <div className="flex justify-between items-center gap-5">
           <h2 className="text-[46px] font-medium">
-            <span className="text-main">Learners who choose</span> growth.
-            stories that inspire
+            <span className="text-main">Learners Who Fuel Progress</span>{" "}
+            Stories That Ignite
             <Image
               src="/ellipse-group.svg"
               className="inline-block ml-2"
@@ -51,8 +54,15 @@ export const LearnersStories = () => {
         </div>
 
         <CarouselContent className="mt-10">
-          {Array.from({ length: 7 }).map((_, index) => (
-            <Story key={index} />
+          {stories.map((story, index) => (
+            <Story
+              key={index}
+              desc={story.desc}
+              img={story.img}
+              name={story.name}
+              position={story.position}
+              rating={story.rating}
+            />
           ))}
         </CarouselContent>
       </Carousel>

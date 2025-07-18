@@ -13,8 +13,8 @@ export const PopularCourses = () => {
   return (
     <section className="section-container">
       <div className="flex justify-center text-center section-container max-w-[900px]">
-        <h2 className="text-[46px] font-medium leading-14">
-          <span className="text-main">Our popular</span> courses
+        <h2 className="text-[46px] font-medium leading-14 capitalize">
+          <span className="text-main">Our flagship</span> course offerings
           <Image
             src="/ellipse-group.svg"
             className="inline-block ml-2"
@@ -26,9 +26,12 @@ export const PopularCourses = () => {
       </div>
 
       <p className="max-w-5xl mx-auto text-center font-stolzl font-book text-para mt-4">
-        Lorem ipsum dolor sit amet consectetur. Scelerisque suspendisse in nisl
-        urna pharetra faucibus pharetra felis. Nam lorem massa purus eget aenean
-        massa suspendisse.
+        Provides a range of AI-powered courses created especially to prepare
+        students for the demands of the tech-driven workforce. These programs
+        use intelligent systems to offer individualized learning paths,
+        guaranteeing that participants acquire state-of-the-art,
+        industry-relevant AI skills and get ready for positions in a workplace
+        that is becoming more automated and data-driven.
       </p>
 
       <Carousel
@@ -48,10 +51,22 @@ export const PopularCourses = () => {
       </Carousel>
 
       <div className="grid grid-cols-4 gap-5 mt-10">
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
+        <CourseCard
+          src="/course/Data Analysis using Python.png"
+          name="Data Analysis using Python"
+        />
+        <CourseCard
+          src="/course/Data Visualization using Power BI.png"
+          name="Data Visualization using Power BI"
+        />
+        <CourseCard
+          src="/course/Data Visualization using Tableau.png"
+          name="Data Visualization using Tableau"
+        />
+        <CourseCard
+          src="/course/Machine Learning and Artificial Intelligence with Python.png"
+          name="Machine Learning and Artificial Intelligence with Python"
+        />
       </div>
 
       <div className="flex justify-center mt-8">

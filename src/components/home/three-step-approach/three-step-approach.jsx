@@ -7,8 +7,8 @@ export const ThreeStepApproach = () => {
     <section className="py-28 section-container">
       <div className="flex justify-center text-center section-container max-w-[900px]">
         <h2 className="text-[46px] font-medium leading-14">
-          <span className="text-main">Our 3-Step Approach</span> towards
-          Providing Recruitment Opportunities
+          <span className="text-main">Our 3-Step </span> AI-Enhanced Recruitment
+          Approach
           <Image
             src="/ellipse-group.svg"
             className="inline-block ml-2"
@@ -20,30 +20,30 @@ export const ThreeStepApproach = () => {
       </div>
       <div className="grid grid-cols-3 gap-5 mt-10">
         <Step
-          title="Profile Building"
+          title="AI-Powered Profile Optimization"
           className="text-main"
           arr={[
-            "Resume Creation",
-            "LinkedIn Profile Optimization",
-            "Profile creation on other platforms",
+            "AI-Enhanced Resume Crafting",
+            "Intelligent LinkedIn Optimization",
+            "Automated Multi-Platform Presence",
           ]}
         />
         <Step
-          title="Mock Interviews"
+          title="Elite Interview Preparation"
           className="text-black"
           arr={[
-            "Understanding your weak points",
-            "Have Problem solving & System design interviews",
-            "On-demand company-specific interviews",
+            "Identified Growth Areas",
+            "Specialized Technical Drills",
+            "Customized Company Simulations",
           ]}
         />
         <Step
-          title="Right Opportunities"
+          title="Strategic Opportunity Alignment"
           className="text-main"
           arr={[
-            "Understanding your weak points",
-            "Have Problem solving & System design interviews",
-            "On-demand company-specific interviews",
+            "Precise Competency Assessment",
+            "Advanced Technical Proficiency Drills",
+            "Tailored Enterprise Simulations",
           ]}
         />
       </div>

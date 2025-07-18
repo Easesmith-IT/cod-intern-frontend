@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Faq } from "./faq";
+import faqs from "@/data/faqs.json";
 
 export const FAQs = () => {
   return (
@@ -27,15 +28,43 @@ export const FAQs = () => {
       <div>
         <Accordion type="single" collapsible>
           <div className="space-y-5">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <Faq
-                key={index}
-                index={index}
-                que=" What is an Innovation Training?"
-                ans=" Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been dummy text the industry's standard dummy."
-              />
+            {faqs.map((faq, index) => (
+              <Faq key={index} index={index} que={faq.que} ans={faq.ans} />
             ))}
+            <AccordionItem
+              className="max-w-[900px] shadow-[0px_0px_10px_0px_#00000016] rounded-xl"
+              value={`item-${faqs.length}`}
+            >
+              <AccordionTrigger className="font-stolzl font-medium px-4">
+                What kind of community or networking opportunities does
+                CodIntern offer for students?
+              </AccordionTrigger>
+              <AccordionContent className="px-4 border-t pt-4 font-stolzl">
+                CodIntern fosters community and networking through:
+                <ul className="mt-1 flex flex-col gap-2 list-disc ml-4">
+                  <li className="font-book">
+                    <b>Live Mentor-Led Sessions:</b> These sessions inherently
+                    create a direct interaction channel between students and
+                    experienced professionals, allowing for real-time engagement
+                    and potential networking with both mentors and fellow
+                    students.
+                  </li>
+                  <li className="font-book">
+                    <b>Collaborative Project Work (Implied):</b> While not
+                    explicitly stated as "group projects," working on
+                    "real-world projects" often involves collaboration, which
+                    can lead to peer-to-peer networking.
+                  </li>
+                  <li className="font-book">
+                    <b>AI Career Matchmaking:</b> This feature, by connecting
+                    students with "internships, projects, and job roles," acts
+                    as a direct bridge to industry professionals and companies,
+                    facilitating crucial networking opportunities for career
+                    advancement.
+                  </li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
           </div>
         </Accordion>
       </div>

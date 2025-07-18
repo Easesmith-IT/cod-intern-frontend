@@ -9,11 +9,11 @@ import { Feature } from "./feature";
 
 export const WhyCodInterns = () => {
   return (
-    <section className="section-container py-28 flex gap-32">
-      <div className="max-w-[520px]">
-        <h2 className="text-[46px] capitalize w-full font-medium leading-14">
-          <span className="text-main">Why Learners</span> across domains choose
-          codIntern courses
+    <section className="section-container py-28 flex gap-16 overflow-x-hidden">
+      <div className="">
+        <h2 className="text-[46px] capitalize w-[525px] font-medium leading-14">
+          <span className="text-main">What Attracts</span> Diverse Learners to
+          CodIntern's Programs?
           <Image
             src="/ellipse-group.svg"
             className="inline-block ml-2"
@@ -23,11 +23,14 @@ export const WhyCodInterns = () => {
           />
         </h2>
 
-        <p className="mt-5 font-stolzl w-full font-book text-para">
-          Lorem ipsum dolor sit amet consectetur. Proin duis orci aliquam arcu
-          nam ligula. Velit nec ultrices pharetra bibendum pharetra. Quam
-          adipiscing mauris ultrices at. Enim ullamcorper nibh potenti egestas
-          cras.
+        <p className="mt-5 font-stolzl font-book text-para w-[520px]">
+          Success is not just a goal at CodIntern; it is the unavoidable result
+          of our learner-centric, AI-powered ecosystem. We offer the unmatched
+          training, state-of-the-art support, and precise guidance required to
+          turn your untapped potential into extraordinary performance and a
+          career you're genuinely proud of, from clever skill mapping and
+          adaptive learning paths to individualized career matching and
+          professional mentoring.
         </p>
       </div>
       <Carousel

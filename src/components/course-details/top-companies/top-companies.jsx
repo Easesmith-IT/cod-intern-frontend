@@ -15,9 +15,11 @@ export const TopCompanies = () => {
         plugins={[
           Autoplay({
             delay: 1000,
+            stopOnMouseEnter: true,
+            stopOnInteraction: false,
           }),
         ]}
-        opts={{loop:true}}
+        opts={{ loop: true }}
         className="w-full"
       >
         <div className="flex section-container justify-between items-center gap-5">

@@ -1,0 +1,18 @@
+[
+    {
+        "que":"What types of courses do you offer, and what are the prerequisites?",
+        "ans":"CodIntern provides a complete set of state-of-the-art online courses on high-demand tech skills. Some of the courses are Python Full Stack, Java Full Stack, Cloud Computing, Data Analysis with Python, Data Visualization with Power BI and Tableau, Machine Learning and Artificial Intelligence with Python, Fundamentals of Generative AI with Machine Learning, Robotics & IoT, and MATLAB & PCB Designing. Our first requirement is your willingness to develop; we use an AI-based diagnostic test to determine your existing skill level, learning methodology, and professional aspirations, designing a personalized plan for your progression."
+    },
+    {
+        "que":"What is the duration of your courses, and what are the learning formats (online, in-person, blended)?",
+        "ans":"Our courses are fully online, with flexibility offered through our AI-driven Learning Management System (LMS) and live mentor-supported classes. Specific lengths depend on program, but our online format enables adaptive learning paths so you move ahead optimally. We use structured video lectures, interactive live classes, and real-world projects."
+    },
+    {
+        "que":"What kind of career support or placement assistance do you provide after course completion?",
+        "ans":"CodIntern offers strong AI-driven career guidance. This comprises an AI-driven resume and portfolio builder for creating killer documents, AI-facilitated feedback on your GitHub projects, LinkedIn profile, and mock interviews. Our AI engine matches you with internships, projects, and job roles that suit your skill level and interests, from startups to technology MNCs, after certification. Our team, assisted by AI, guides you through the application, preparation, and success phases."
+    },
+    {
+        "que":"Who are the instructors, and what is their industry experience?",
+        "ans":"Our courses are led by experienced mentors who conduct live sessions, providing deep insights and practical guidance. While specific individual backgrounds aren't detailed, the emphasis on \"real-world projects\" and \"industry-aligned courses\" indicates that our instructors are seasoned professionals with relevant industry experience, dedicated to delivering practical, applicable knowledge."
+    }
+]

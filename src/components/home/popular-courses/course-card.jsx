@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export const CourseCard = () => {
+export const CourseCard = ({name,src}) => {
   return (
     <Card className="rounded-sm py-0">
       <CardContent className="px-0">
         <Image
-          src="/course-img.jpg"
+          src={src|| "/course-img.jpg"}
           className="w-full"
           width={300}
           height={200}
@@ -33,14 +33,14 @@ export const CourseCard = () => {
             <p className="text-para-2 font-book font-stolzl text-xs">(4.5)</p>
           </div>
           <h3 className="font-stolzl text-heading font-medium text-xl mt-2 line-clamp-2">
-            Education Software and PHP and JS System Script
+            {name}
           </h3>
 
           <div className="flex items-center gap-5 mt-4">
             <div className="flex gap-1.5 items-center">
               <Image src="/file.svg" width={10} height={10} alt="file" />
               <p className="text-para-2 font-normal font-stolzl text-xs">
-                8 Weeksa
+                8 Weeks
               </p>
             </div>
             <div className="flex gap-1.5 items-center">

@@ -9,7 +9,7 @@ export const SharpenYourSkill = () => {
       <div className="">
         <div className="flex max-w-[590px]">
           <h2 className="text-[46px] font-medium leading-14">
-            <span className="text-main">Sharpen Your Skills</span> with Our
+            <span className="text-main">Master In-Demand Skills</span> with Our
             Online Courses
             <Image
               src="/ellipse-group.svg"
@@ -21,14 +21,14 @@ export const SharpenYourSkill = () => {
           </h2>
         </div>
         <p className="font-stolzl font-book text-para max-w-[590px] text-base mt-5">
-          Lorem ipsum dolor sit amet consectetur. Proin duis orci aliquam arcu
-          nam ligula. Velit nec ultrices pharetra bibendum pharetra. Quam
-          adipiscing mauris ultrices at. Enim ullamcorper nibh potenti egestas
-          cras ut convallis erat. Lorem ipsum dolor sit amet consectetur. Proin
-          duis orci aliquam arcu nam ligula. Velit nec ultrices pharetra
-          bibendum pharetra. Quam adipiscing mauris ultrices at. Enim
-          ullamcorper nibh potenti egestas cras ut convallis erat. Lorem ipsum
-          dolor sit amet consectetur. Proin duis orci
+          Take advantage of our state-of-the-art online courses, which are
+          intended to give you the highly sought-after skills you need to
+          succeed in the fast-paced workplace of today. Our programs combine
+          real-world, hands-on learning with AI-driven insights to make sure you
+          not only understand theoretical ideas but also become an expert in
+          their practical application. From fundamental concepts to more complex
+          specializations, we enable you to gain employable skills and quicken
+          your professional path.
         </p>
         <Button
           size="lg"
