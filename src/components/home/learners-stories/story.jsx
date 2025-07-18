@@ -31,15 +31,17 @@ export const Story = ({ img, rating, name, position, desc }) => {
               </div>
             </div>
 
-            <p className="mt-5 font-stolzl font-book text-para">
-              {isExpanded ? desc : desc.slice(0, 200)}
-              <span
+            <div className="mt-5 font-stolzl font-book text-para text-sm">
+              <p>
+              {isExpanded ? desc : <span className="line-clamp-6">{desc}</span>}
+              </p>
+              <p
                 onClick={() => setIsExpanded((prev) => !prev)}
-                className="font-medium cursor-pointer text-main inline-block ml-2"
+                className="font-medium cursor-pointer text-main text-right"
               >
                 Read {isExpanded ? "Less" : "More"}
-              </span>
-            </p>
+              </p>
+            </div>
 
             <div className="mt-5">
               <h4 className="font-stolzl font-medium">{name}</h4>
