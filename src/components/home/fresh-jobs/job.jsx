@@ -14,7 +14,7 @@ export const Job = () => {
             <div className="flex gap-4 justify-between items-center">
               <div>
                 <div className="border-2 border-[#9237E333] flex gap-2 items-center rounded px-2 py-1 text-xs font-stolzl font-normal">
-                  <Image src="/icon.svg" width={16} height={16} alt="icon" />
+                  <Image src="/Icon.svg" width={16} height={16} alt="icon" />
                   <p className="text-para">Actively hiring</p>
                 </div>
                 <h3 className="font-stolzl font-medium text-xl mt-4">
