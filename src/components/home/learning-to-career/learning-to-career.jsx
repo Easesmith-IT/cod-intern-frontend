@@ -34,7 +34,7 @@ export const LearningToCareer = () => {
         your career ahead with a smart, organized plan:
       </h3>
 
-      <div className="flex justify-center shrink-0 flex-wrap mt-6">
+      <div className="grid grid-cols-3 justify-center mt-6">
         <LearningStep
           index={1}
           title="Sign Up & Get Assessed (AI-Driven Skill Mapping)"
@@ -45,7 +45,7 @@ export const LearningToCareer = () => {
             exclusive learning pattern, and aligns with your career goals,
             making it an absolutely personalized beginning.
           </p>
-          <p>
+          <p className="mt-2">
             Result: You'll get a customized roadmap, individually crafted to
             lead your unique learning journey.
           </p>
@@ -63,10 +63,10 @@ export const LearningToCareer = () => {
               Chapter-wise progress tracking for monitoring your progress.
             </li>
           </ul>
-          <p>
+          {/* <p>
             Our AI constantly monitors your performance, dynamically adapting
             content to maximize your learning experience.
-          </p>
+          </p> */}
         </LearningStep>
         <LearningStep index={3} title="Learn Through Live Classes & Projects">
           Get immersed in live, mentor-guided sessions and work on actual

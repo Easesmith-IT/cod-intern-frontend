@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import { Counter } from "../counter";
 
 export const Header = () => {
   return (
@@ -22,23 +23,7 @@ export const Header = () => {
             Limited Time Offer - Hurry Up!
           </p>
         </div>
-        <div className="flex items-center font-stolzl">
-          <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
-            6
-          </div>
-          <p className="px-2">:</p>
-          <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
-            23
-          </div>
-          <p className="px-2">:</p>
-          <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
-            59
-          </div>
-          <p className="px-2">:</p>
-          <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
-            45
-          </div>
-        </div>
+        <Counter />
       </div>
 
       <div className="flex gap-4 justify-between section-container py-2">
@@ -46,8 +31,8 @@ export const Header = () => {
           <Link href="/">
             <Image src="./logo.svg" width={224} height={65} alt="logo" />
           </Link>
-          <Separator orientation="vertical" />
-          <Image src="./skill-india.svg" width={201} height={53} alt="logo" />
+          <Separator orientation="vertical" className="mr-2" />
+          <Image src="./skill-india.svg" width={100} height={33} alt="logo" />
         </div>
         <div className="flex items-center gap-4">
           <NavigationMenu>

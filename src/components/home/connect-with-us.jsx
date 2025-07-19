@@ -6,7 +6,7 @@ export const ConnectWithUs = () => {
   return (
     <section
       style={{ backgroundImage: "url(/connect-with-us-bg.jpg)" }}
-      className="h-[382px] my-28 overflow-hidden"
+      className="h-[382px] my-24 overflow-hidden"
     >
       <div className="section-container flex justify-between items-center">
         <div className="py-20">

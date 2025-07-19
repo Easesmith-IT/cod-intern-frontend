@@ -12,7 +12,7 @@ import faqs from "@/data/faqs.json";
 
 export const FAQs = () => {
   return (
-    <section className="section-container grid grid-cols-[auto_1fr_auto] gap-10 py-28">
+    <section className="section-container grid grid-cols-[auto_1fr_auto] gap-10 py-24">
       <div className="">
         <h2 className="text-[46px] font-medium max-w-[400px]">
           <span className="text-main">Frequently</span> <br /> Asked Questions

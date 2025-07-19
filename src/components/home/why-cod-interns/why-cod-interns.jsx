@@ -9,7 +9,7 @@ import { Feature } from "./feature";
 
 export const WhyCodInterns = () => {
   return (
-    <section className="section-container py-28 flex gap-16 overflow-x-hidden">
+    <section className="section-container py-24 flex gap-16 overflow-x-hidden">
       <div className="">
         <h2 className="text-[46px] capitalize w-[525px] font-medium leading-14">
           <span className="text-main">What Attracts</span> Diverse Learners to

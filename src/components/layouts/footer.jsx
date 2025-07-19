@@ -39,7 +39,7 @@ export const Footer = () => {
 
       <Separator className="bg-[#FFFFFF66]" />
 
-      <div className="section-container py-12 flex gap-20 items-center">
+      <div className="section-container py-12 flex gap-20 items-center justify-between">
         <div className="">
           <h3 className="font-stolzl font-medium text-2xl text-white">
             About Company
@@ -102,8 +102,8 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between gap-7 w-full text-white">
-          <div>
+        <div className="flex justify-between gap-7  text-white">
+          {/* <div className="opacity-0">
             <h3 className="font-stolzl font-medium text-2xl text-white">
               Quick Links
             </h3>
@@ -123,7 +123,7 @@ export const Footer = () => {
               <li>Life Coach</li>
             </ul>
           </div>
-          <div>
+          <div className="opacity-0">
             <h3 className="font-stolzl font-medium text-2xl text-white">
               Our Courses
             </h3>
@@ -143,7 +143,7 @@ export const Footer = () => {
               <li>Life Coach</li>
             </ul>
           </div>
-          <div>
+          <div className="opacity-0">
             <h3 className="font-stolzl font-medium text-2xl text-white">
               Resources
             </h3>
@@ -162,7 +162,7 @@ export const Footer = () => {
               <li>Life Coach</li>
               <li>Life Coach</li>
             </ul>
-          </div>
+          </div> */}
           <div>
             <h3 className="font-stolzl font-medium text-2xl text-white">
               Get in touch!

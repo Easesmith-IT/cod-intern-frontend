@@ -5,7 +5,7 @@ import { Benifit } from "./benifit";
 
 export const SharpenYourSkill = () => {
   return (
-    <section className="section-container py-28 flex justify-between gap-10">
+    <section className="section-container py-24 flex justify-between gap-10">
       <div className="">
         <div className="flex max-w-[590px]">
           <h2 className="text-[46px] font-medium leading-14">

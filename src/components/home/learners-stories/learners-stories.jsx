@@ -14,7 +14,7 @@ import stories from "@/data/stories.json";
 
 export const LearnersStories = () => {
   return (
-    <section className="section-container py-28">
+    <section className="section-container py-24">
       <Carousel
         plugins={[
           Autoplay({

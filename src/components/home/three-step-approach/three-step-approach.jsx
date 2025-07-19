@@ -4,7 +4,7 @@ import { Step } from "./step";
 
 export const ThreeStepApproach = () => {
   return (
-    <section className="py-28 section-container">
+    <section className="py-24 section-container">
       <div className="flex justify-center text-center section-container max-w-[900px]">
         <h2 className="text-[46px] font-medium leading-14">
           <span className="text-main">Our 3-Step </span> AI-Enhanced Recruitment
