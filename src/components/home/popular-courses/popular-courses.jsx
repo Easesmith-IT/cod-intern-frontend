@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -8,8 +10,12 @@ import {
 import Image from "next/image";
 import { CourseCard } from "./course-card";
 import { CourseCategory } from "./course-category";
+import { useState } from "react";
+import courseCategory from "@/data/courseCategory.json";
 
 export const PopularCourses = () => {
+  const [selectedCategory, setSelectedCategory] = useState("web_development");
+
   return (
     <section className="section-container">
       <div className="flex justify-center text-center section-container max-w-[900px]">
@@ -42,8 +48,15 @@ export const PopularCourses = () => {
         className="max-w-7xl mx-auto w-full px-12 mt-10"
       >
         <CarouselContent className="-ml-3">
-          {Array.from({ length: 7 }).map((_, index) => (
-            <CourseCategory key={index} index={index} />
+          {courseCategory.map((category, index) => (
+            <CourseCategory
+              key={index}
+              index={index}
+              name={category.name}
+              label={category.label}
+              setSelectedCategory={setSelectedCategory}
+              selectedCategory={selectedCategory}
+            />
           ))}
         </CarouselContent>
         <CarouselPrevious variant="default" className="left-0 z-20" />
