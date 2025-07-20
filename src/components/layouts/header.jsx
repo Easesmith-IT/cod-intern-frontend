@@ -12,6 +12,14 @@ import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { Counter } from "../counter";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const Header = () => {
   return (
@@ -72,12 +80,21 @@ export const Header = () => {
           >
             Register
           </Button>
-          <Button
-            size="icon"
-            className="rounded-sm size-10 [&_svg:not([class*='size-'])]:size-6"
-          >
-            <Menu />
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button
+                size="icon"
+                className="rounded-sm size-10 [&_svg:not([class*='size-'])]:size-6"
+              >
+                <Menu />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href="/about-us">About Us</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </header>

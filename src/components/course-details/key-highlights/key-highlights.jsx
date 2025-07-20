@@ -25,7 +25,7 @@ export const KeyHighlights = () => {
                 className="inline-block ml-2"
                 width={46}
                 height={16}
-                alt="step"
+                alt="Ellipse"
               />
             </h2>
             <p className="max-w-[491px] font-stolzl font-book text-para mt-4">

@@ -11,16 +11,17 @@ import Image from "next/image";
 import { Story } from "./story";
 import Autoplay from "embla-carousel-autoplay";
 import stories from "@/data/stories.json";
+import { cn } from "@/lib/utils";
 
-export const LearnersStories = () => {
+export const LearnersStories = ({className}) => {
   return (
-    <section className="section-container py-24">
+    <section className={cn("section-container py-24",className)}>
       <Carousel
         plugins={[
           Autoplay({
             delay: 1000,
             stopOnMouseEnter: true,
-            stopOnInteraction:false
+            stopOnInteraction: false,
           }),
         ]}
         opts={{ loop: true }}
@@ -35,7 +36,7 @@ export const LearnersStories = () => {
               className="inline-block ml-2"
               width={46}
               height={16}
-              alt="step"
+              alt="Ellipse"
             />
           </h2>
           <div className="flex gap-4">

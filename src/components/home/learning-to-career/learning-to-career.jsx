@@ -1,11 +1,10 @@
 import Image from "next/image";
-import React from "react";
 import { LearningStep } from "./learning-step";
-import learningSteps from "@/data/learningSteps.json";
+import { cn } from "@/lib/utils";
 
-export const LearningToCareer = () => {
+export const LearningToCareer = ({className}) => {
   return (
-    <div className="section-container">
+    <div className={cn("section-container",className)}>
       <h2 className="text-[46px] text-center capitalize w-full font-medium leading-14">
         <span className="text-main">Transform Learning</span> into a Proud
         Career
@@ -14,7 +13,7 @@ export const LearningToCareer = () => {
           className="inline-block ml-2"
           width={46}
           height={16}
-          alt="step"
+          alt="Ellipse"
         />
       </h2>
 

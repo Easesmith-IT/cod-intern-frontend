@@ -26,6 +26,7 @@
   --color-input: var(--input);
 
   --color-main: var(--main);
+  --color-custom: var(--custom);
 
   --color-heading: var(--heading);
 
@@ -88,6 +89,7 @@
   --para-1: #333333;
   --para-2: #4D5765;
   --para-3: #2C1D43;
+  --custom: #9237E31A;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -215,6 +217,6 @@
   }
 
   .section-container {
-    @apply max-w-[1300px] mx-auto px-5;
+    @apply max-w-[1350px] mx-auto px-5;
   }
 }

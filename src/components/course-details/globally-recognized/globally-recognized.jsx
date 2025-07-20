@@ -12,7 +12,7 @@ export const GloballyRecognized = () => {
           className="inline-block ml-2"
           width={46}
           height={16}
-          alt="step"
+          alt="Ellipse"
         />
       </h2>
 
