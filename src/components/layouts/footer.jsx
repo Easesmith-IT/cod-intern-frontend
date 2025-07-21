@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#2C1D43]">
+    <footer className="bg-para-3">
       <div className="section-container flex">
         <div className="py-10 mr-16 flex justify-center items-center">
           <Image

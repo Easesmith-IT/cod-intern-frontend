@@ -73,7 +73,7 @@ export const HeroSection = () => {
             </Link>
             <div className="w-[252px] absolute bottom-8 h-1.5 bg-[#D7C0F8] grid rounded-md grid-cols-3 mt-auto">
               <div></div>
-              <div className="bg-[#2C1D43]"></div>
+              <div className="bg-para-3"></div>
               <div></div>
             </div>
           </div>
@@ -142,15 +142,15 @@ export const HeroSection = () => {
         <div className="w-[252px] absolute bottom-3 left-32 z-10 h-1.5 bg-[#D7C0F8] grid rounded-md grid-cols-3">
           <div
             onClick={() => api.scrollTo(0)}
-            className={cn("rounded-md", current === 1 && "bg-[#2C1D43]")}
+            className={cn("rounded-md", current === 1 && "bg-para-3")}
           ></div>
           <div
             onClick={() => api.scrollTo(1)}
-            className={cn("rounded-md", current === 2 && "bg-[#2C1D43]")}
+            className={cn("rounded-md", current === 2 && "bg-para-3")}
           ></div>
           <div
             onClick={() => api.scrollTo(2)}
-            className={cn("rounded-md", current === 3 && "bg-[#2C1D43]")}
+            className={cn("rounded-md", current === 3 && "bg-para-3")}
           ></div>
         </div>
 

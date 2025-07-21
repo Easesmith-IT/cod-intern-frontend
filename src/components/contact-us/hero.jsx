@@ -11,7 +11,7 @@ export const HeroSection = () => {
         {" "}
         {/* h-[420px] flex flex-col justify-center */}
         <h1 className="font-medium font-stolzl text-5xl text-center text-para-3">
-          About <span className="text-main">Us</span>
+          Contact <span className="text-main">Us</span>
         </h1>
         <p className="text-center text-para max-w-[970px] mx-auto font-stolzl text-lg mt-2">
           Lorem ipsum dolor sit amet consectetur. Ligula lorem quam at hac elit

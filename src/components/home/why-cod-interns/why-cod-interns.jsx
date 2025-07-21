@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { Feature } from "./feature";
+import features from "@/data/features.json";
 
 export const WhyCodInterns = () => {
   return (
@@ -41,8 +42,13 @@ export const WhyCodInterns = () => {
         className="max-w-3xl"
       >
         <CarouselContent className="-ml-3">
-          {Array.from({ length: 7 }).map((_, index) => (
-            <Feature key={index} index={index} />
+          {features.map((feature, index) => (
+            <Feature
+              key={index}
+              index={index}
+              title={feature?.title}
+              desc={feature?.desc}
+            />
           ))}
         </CarouselContent>
         <div className="flex gap-8 items-center mt-10">

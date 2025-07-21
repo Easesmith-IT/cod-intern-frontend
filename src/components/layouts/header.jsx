@@ -80,8 +80,8 @@ export const Header = () => {
           >
             Register
           </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger>
+          <DropdownMenu modal={false}>
+            <DropdownMenuTrigger asChild>
               <Button
                 size="icon"
                 className="rounded-sm size-10 [&_svg:not([class*='size-'])]:size-6"
@@ -92,6 +92,9 @@ export const Header = () => {
             <DropdownMenuContent>
               <DropdownMenuItem>
                 <Link href="/about-us">About Us</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/contact-us">Contact Us</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

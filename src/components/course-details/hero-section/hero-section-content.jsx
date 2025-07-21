@@ -63,7 +63,7 @@ export const HeroSectionContent = () => {
       </div>
 
       <div className="flex gap-5 mt-4">
-        <div className="p-3 bg-gradient-to-r w-[299px] text-white from-main to-[#2C1D43] rounded-md">
+        <div className="p-3 bg-gradient-to-r w-[299px] text-white from-main to-para-3 rounded-md">
           <div className="flex gap-3 items-center justify-between">
             <p className="font-stolzl text-base font-book">BATCH STARTS ON</p>
             <div className="bg-[#FFFFFF1A] px-2 py-1.5 rounded-md font-stolzl text-xs">
