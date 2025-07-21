@@ -3,27 +3,43 @@
 import React, { useEffect, useRef } from "react";
 import { useTimer } from "react-timer-hook";
 
+const EXPIRY_KEY = "countdownExpiry";
+const durationInSeconds = 6 * 24 * 60 * 60; // 6 days
+
 export const Counter = () => {
   const intervalRef = useRef(null);
-  const durationInSeconds = 6 * 24 * 60 * 60;
 
- const getExpiryTime = () => {
-   const time = new Date();
-   time.setSeconds(time.getSeconds() + durationInSeconds); // 6 days in seconds
-   return time;
- };
+  const createNewExpiry = () => {
+    const time = new Date();
+    time.setSeconds(time.getSeconds() + durationInSeconds);
+    localStorage.setItem(EXPIRY_KEY, time.toISOString());
+    return time;
+  };
 
+  const getExpiryTime = () => {
+    const stored = localStorage.getItem(EXPIRY_KEY);
+    const expiry = stored ? new Date(stored) : createNewExpiry();
+
+    if (expiry.getTime() < new Date().getTime()) {
+      return createNewExpiry();
+    }
+
+    return expiry;
+  };
 
   const { seconds, minutes, hours, days, restart } = useTimer({
-    expiryTimestamp: getExpiryTime(),
+    expiryTimestamp: new Date(),
     autoStart: true,
   });
 
   useEffect(() => {
-    // Set interval to restart timer every 10s
+    const expiry = getExpiryTime();
+    restart(expiry);
+
     intervalRef.current = setInterval(() => {
-      restart(getExpiryTime());
-    }, durationInSeconds);
+      const newExpiry = createNewExpiry();
+      restart(newExpiry);
+    }, durationInSeconds * 1000);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
