@@ -14,7 +14,7 @@ export const CourseCategory = ({
         <Button
           // disabled={index !== 0}
           variant={selectedCategory === name ? "codIntern" : "outline"}
-          className="rounded"
+          className="rounded text-xs sm:text-sm"
           onClick={() => setSelectedCategory(name)}
         >
           {label}

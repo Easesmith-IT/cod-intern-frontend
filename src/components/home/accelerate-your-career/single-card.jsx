@@ -7,11 +7,11 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Tech } from "./tech";
 
-export const SingleCard = ({ index,title,desc,timing }) => {
+export const SingleCard = ({ index, title, desc, timing }) => {
   return (
-    <CarouselItem className="sm:basis-1/2 md:basis-1/3 lg:basis-1/3">
+    <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
       <div className="p-1">
-        <Card className="border-border-1 rounded-md pt-0">
+        <Card className="border-border-1 rounded-md pt-0 h-[650px] sm:h-full">
           <CardContent className="px-0">
             {/* <div className="px-6">
               <div className="flex gap-4 justify-between items-center">
@@ -64,17 +64,15 @@ export const SingleCard = ({ index,title,desc,timing }) => {
             />
             {/* <Separator className="my-4 bg-border-1" /> */}
             <div className="px-6 mt-4">
-              <div className="flex gap-4">
-                <div className="border-2 bg-[#9237E305] text-main uppercase border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 text-[10px] font-stolzl font-normal">
+              <div className="flex gap-2 items-start">
+                <div className="border-2 bg-[#9237E305] text-[8px] sm:text-[10px] text-main uppercase border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 font-stolzl font-normal">
                   Unlimited Interviews
                 </div>
-                <div className="border-2 bg-[#9237E305] text-main border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 text-[10px] font-stolzl font-normal">
+                <div className="border-2 bg-[#9237E305] text-[8px] sm:text-[10px] text-main border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 font-stolzl font-normal">
                   INTEGRATED INTERNSHIP
                 </div>
               </div>
-              <h3 className="text-lg font-stolzl font-medium mt-2">
-                {title}
-              </h3>
+              <h3 className="text-lg font-stolzl font-medium mt-2">{title}</h3>
               <p className="text-para text-xs font-stolzl font-book mt-4">
                 {desc}
               </p>
@@ -86,7 +84,7 @@ export const SingleCard = ({ index,title,desc,timing }) => {
                   height={14}
                   alt="map-pin"
                 />
-                <p className="font-stolzl font-book text-para text-sm">
+                <p className="font-stolzl font-book text-para text-xs sm:text-sm">
                   {timing}
                 </p>
               </div>
@@ -97,25 +95,25 @@ export const SingleCard = ({ index,title,desc,timing }) => {
                   height={14}
                   alt="map-pin"
                 />
-                <p className="font-stolzl font-book text-para text-sm">
+                <p className="font-stolzl font-book text-para text-xs sm:text-sm">
                   Weekday and Weekend Batches
                 </p>
               </div>
             </div>
           </CardContent>
 
-          <CardFooter className="flex items-center gap-3">
+          <CardFooter className="grid max-[1024px]:grid-cols-2 max-[1024px]:gap-5 max-[376px]:grid-cols-1 max-[376px]:gap-3 min-[1024px]:grid-cols-1 min-[1024px]:gap-5 xl:grid-cols-[60%_38%] xl:gap-[2%] sm:grid-cols-1">
             <Button
               size="lg"
               variant="outline"
-              className="rounded-sm px-5 h-12"
+              className="rounded-sm text-xs sm:text-sm break-all px-5 h-12"
             >
               Download Brochure
             </Button>
             <Button
               size="lg"
               variant="linearGradient"
-              className="rounded-sm px-5 h-12"
+              className="rounded-sm text-xs sm:text-sm px-5 h-12"
             >
               Know More
             </Button>

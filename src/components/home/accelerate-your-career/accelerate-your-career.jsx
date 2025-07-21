@@ -10,9 +10,9 @@ import { SingleCard } from "./single-card";
 
 export const AccelerateYourCareer = () => {
   return (
-    <section className="py-24 section-container">
-      <div className="flex justify-center text-center section-container max-w-[900px]">
-        <h2 className="text-[46px] font-medium leading-14 capitalize">
+    <section className="py-12 md:py-24 section-container md:px-20">
+      <div className="flex justify-center text-center section-container px-0 max-w-[900px]">
+        <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
           <span className="text-main">Fast-Track Your Career</span> with
           Industry-Aligned Courses
           <Image
@@ -64,8 +64,18 @@ export const AccelerateYourCareer = () => {
             timing="4-6 Months Campus & Online Training"
           />
         </CarouselContent>
-        <CarouselPrevious variant="default" />
-        <CarouselNext variant="default" />
+        <CarouselPrevious
+          className="hidden md:block [&_svg]:translate-x-1"
+          variant="default"
+        />
+        <CarouselNext
+          className="hidden md:block [&_svg]:translate-x-1"
+          variant="default"
+        />
+        <div className="md:hidden mt-10 max-w-[200px] mx-auto px-6 flex justify-between">
+          <CarouselPrevious className="static" variant="default" />
+          <CarouselNext className="static" variant="default" />
+        </div>
       </Carousel>
     </section>
   );

@@ -18,8 +18,8 @@ export const PopularCourses = () => {
 
   return (
     <section className="section-container">
-      <div className="flex justify-center text-center section-container max-w-[900px]">
-        <h2 className="text-[46px] font-medium leading-14 capitalize">
+      <div className="flex justify-center text-center section-container px-0 max-w-[900px]">
+        <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
           <span className="text-main">Our flagship</span> course offerings
           <Image
             src="/ellipse-group.svg"
@@ -31,7 +31,7 @@ export const PopularCourses = () => {
         </h2>
       </div>
 
-      <p className="max-w-5xl mx-auto text-center font-stolzl font-book text-para mt-4">
+      <p className="max-w-5xl mx-auto text-center text-xs lg:text-base font-stolzl font-book text-para mt-4">
         Provides a range of AI-powered courses created especially to prepare
         students for the demands of the tech-driven workforce. These programs
         use intelligent systems to offer individualized learning paths,
@@ -45,7 +45,7 @@ export const PopularCourses = () => {
           align: "start",
           dragFree: true,
         }}
-        className="max-w-7xl mx-auto w-full px-12 mt-10"
+        className="max-w-7xl mx-auto w-full px-12 py-3 mt-10"
       >
         <CarouselContent className="-ml-3">
           {courseCategory.map((category, index) => (
@@ -63,7 +63,7 @@ export const PopularCourses = () => {
         <CarouselNext variant="default" className="right-0 z-20" />
       </Carousel>
 
-      <div className="grid grid-cols-4 gap-5 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
         <CourseCard
           src="/course/Data Analysis using Python.png"
           name="Data Analysis using Python"

@@ -139,7 +139,7 @@ export const HeroSection = () => {
         setApi={setApi}
         className="w-full relative"
       >
-        <div className="w-[252px] absolute bottom-3 left-32 z-10 h-1.5 bg-[#D7C0F8] grid rounded-md grid-cols-3">
+        <div className="w-48 xl:w-[252px] hidden md:grid absolute bottom-3 left-1/12 z-10 h-1.5 bg-[#D7C0F8] rounded-md grid-cols-3">
           <div
             onClick={() => api.scrollTo(0)}
             className={cn("rounded-md", current === 1 && "bg-para-3")}
@@ -157,7 +157,7 @@ export const HeroSection = () => {
         <CarouselContent>
           <CarouselItem>
             <Image
-              className="w-full h-full"
+              // className="h-[70vh] md:size-full"
               width={562}
               height={430}
               src="/Banner.webp"
@@ -166,7 +166,7 @@ export const HeroSection = () => {
           </CarouselItem>
           <CarouselItem className="">
             <Image
-              className="w-full"
+              // className="h-[70vh] md:size-full"
               width={562}
               height={430}
               src="/Banner.webp"
@@ -175,7 +175,7 @@ export const HeroSection = () => {
           </CarouselItem>
           <CarouselItem className="">
             <Image
-              className="w-full"
+              // className="h-[70vh] md:size-full"
               width={562}
               height={430}
               src="/Banner.webp"

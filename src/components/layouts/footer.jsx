@@ -7,10 +7,11 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer className="bg-para-3">
-      <div className="section-container flex">
-        <div className="py-10 mr-16 flex justify-center items-center">
+      <div className="section-container flex flex-col md:flex-row">
+        <div className="pb-6 pt-10 sm:py-10 sm:mr-16 flex justify-center items-center">
           <Image
             src="/cod-intern-logo.svg"
+            className="w-48 sm:w-[274px]"
             width={274}
             height={80}
             alt="logo"
@@ -18,19 +19,19 @@ export const Footer = () => {
         </div>
         <Separator
           orientation="vertical"
-          className="bg-[#FFFFFF66] data-[orientation=vertical]:h-48"
+          className="bg-[#FFFFFF66] hidden md:data-[orientation=vertical]:h-60 xl:data-[orientation=vertical]:h-48"
         />
-        <div className="py-10 mx-28 flex items-center gap-10 justify-between">
-          <h4 className="font-stolzl max-w-[332px] font-medium text-2xl text-white">
+        <div className="py-8 sm:py-10 sm:mx-16 xl:mx-28 flex flex-col xl:flex-row xl:items-center gap-5 sm:gap-10 justify-between">
+          <h4 className="font-stolzl sm:max-w-[332px] font-medium text-lg sm:text-2xl text-white">
             Subscribe Our Newsletter For Latest Updates
           </h4>
 
-          <div className="flex gap-1 bg-white h-12 p-0.5 w-[520px] rounded">
+          <div className="flex gap-1 bg-white h-12 p-0.5 w-full lg:w-[400px] rounded">
             <input
               className="h-full w-full text-xs px-4 focus:border-none focus:outline-none"
               placeholder="Enter email address..."
             />
-            <Button className="h-full" variant="linearGradient">
+            <Button className="h-full px-2 sm:px-4" variant="linearGradient">
               Subscribe
             </Button>
           </div>
@@ -39,9 +40,9 @@ export const Footer = () => {
 
       <Separator className="bg-[#FFFFFF66]" />
 
-      <div className="section-container py-12 flex gap-20 items-center justify-between">
+      <div className="section-container py-12 flex flex-col sm:flex-row gap-10 sm:gap-20 sm:items-center sm:justify-between">
         <div className="">
-          <h3 className="font-stolzl font-medium text-2xl text-white">
+          <h3 className="font-stolzl font-medium text-lg sm:text-2xl text-white">
             About Company
           </h3>
           <Image
@@ -56,7 +57,7 @@ export const Footer = () => {
             communities negotiate life compelling alignments
           </p>
 
-          <h5 className="font-stolzl font-medium text-xl text-white mt-10">
+          <h5 className="font-stolzl font-medium text-base sm:text-xl text-white mt-10">
             FOLLOW US ON:
           </h5>
           <div className="flex gap-2 items-center mt-3">
@@ -103,68 +104,8 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex justify-between gap-7  text-white">
-          {/* <div className="opacity-0">
-            <h3 className="font-stolzl font-medium text-2xl text-white">
-              Quick Links
-            </h3>
-            <Image
-              src="/horizontal-line.svg"
-              className="mt-1"
-              width={66}
-              height={3}
-              alt="horizontal-line"
-            />
-            <ul className="mt-5 font-stolzl list-disc ml-4 font-book text-sm flex flex-col gap-1">
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-            </ul>
-          </div>
-          <div className="opacity-0">
-            <h3 className="font-stolzl font-medium text-2xl text-white">
-              Our Courses
-            </h3>
-            <Image
-              src="/horizontal-line.svg"
-              className="mt-1"
-              width={66}
-              height={3}
-              alt="horizontal-line"
-            />
-            <ul className="mt-5 font-stolzl list-disc ml-4 font-book text-sm flex flex-col gap-1">
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-            </ul>
-          </div>
-          <div className="opacity-0">
-            <h3 className="font-stolzl font-medium text-2xl text-white">
-              Resources
-            </h3>
-            <Image
-              src="/horizontal-line.svg"
-              className="mt-1"
-              width={66}
-              height={3}
-              alt="horizontal-line"
-            />
-            <ul className="mt-5 font-stolzl list-disc ml-4 font-book text-sm flex flex-col gap-1">
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-              <li>Life Coach</li>
-            </ul>
-          </div> */}
           <div>
-            <h3 className="font-stolzl font-medium text-2xl text-white">
+            <h3 className="font-stolzl font-medium text-lg sm:text-2xl text-white">
               Get in touch!
             </h3>
             <Image
@@ -195,8 +136,8 @@ export const Footer = () => {
       </div>
 
       <div className="bg-main py-5">
-        <div className="section-container flex justify-between items-center gap-5">
-          <div className="flex gap-4">
+        <div className="section-container flex flex-col sm:flex-row justify-between items-center gap-5">
+          <div className="flex flex-wrap justify-center gap-4">
             <p className="font-stolzl font-book text-sm text-white">
               Copyright © 2023
             </p>

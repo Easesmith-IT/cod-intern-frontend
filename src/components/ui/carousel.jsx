@@ -188,7 +188,7 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-8 rounded-full [&_svg:not([class*='size-'])]:size-6 disabled:bg-[#9237E375]",
+        "absolute size-8 rounded-full flex justify-center items-center [&_svg:not([class*='size-'])]:size-6 disabled:bg-[#9237E375]",
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",

@@ -49,20 +49,20 @@ export const Counter = () => {
   const format = (n) => String(n).padStart(2, "0");
 
   return (
-    <div className="flex items-center font-stolzl">
-      <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
+    <div className="flex items-center font-stolzl text-xs md:text-base">
+      <div className="flex justify-center border w-6 h-6 md:w-8 md:h-8 rounded items-center p-2">
         {format(days)}
       </div>
       <p className="px-2">:</p>
-      <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
+      <div className="flex justify-center border w-6 h-6 md:w-8 md:h-8 rounded items-center p-2">
         {format(hours)}
       </div>
       <p className="px-2">:</p>
-      <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
+      <div className="flex justify-center border w-6 h-6 md:w-8 md:h-8 rounded items-center p-2">
         {format(minutes)}
       </div>
       <p className="px-2">:</p>
-      <div className="flex justify-center border w-8 h-8 rounded items-center p-2">
+      <div className="flex justify-center border w-6 h-6 md:w-8 md:h-8 rounded items-center p-2">
         {format(seconds)}
       </div>
     </div>

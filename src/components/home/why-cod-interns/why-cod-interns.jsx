@@ -10,9 +10,9 @@ import features from "@/data/features.json";
 
 export const WhyCodInterns = () => {
   return (
-    <section className="section-container py-24 flex gap-16 overflow-x-hidden">
+    <section className="section-container py-12 sm:py-24 flex flex-col lg:flex-row gap-16 overflow-x-hidden">
       <div className="">
-        <h2 className="text-[46px] capitalize w-[525px] font-medium leading-14">
+        <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium lg:w-[525px]">
           <span className="text-main">What Attracts</span> Diverse Learners to
           CodIntern's Programs?
           <Image
@@ -24,7 +24,7 @@ export const WhyCodInterns = () => {
           />
         </h2>
 
-        <p className="mt-5 font-stolzl font-book text-para w-[520px]">
+        <p className="mt-5 font-stolzl font-book text-xs sm:text-base text-para lg:w-[520px]">
           Success is not just a goal at CodIntern; it is the unavoidable result
           of our learner-centric, AI-powered ecosystem. We offer the unmatched
           training, state-of-the-art support, and precise guidance required to
@@ -39,7 +39,7 @@ export const WhyCodInterns = () => {
           align: "start",
           dragFree: true,
         }}
-        className="max-w-3xl"
+        className="lg:max-w-3xl"
       >
         <CarouselContent className="-ml-3">
           {features.map((feature, index) => (
@@ -51,7 +51,7 @@ export const WhyCodInterns = () => {
             />
           ))}
         </CarouselContent>
-        <div className="flex gap-8 items-center mt-10">
+        <div className="flex gap-8 items-center justify-center md:justify-start mt-10">
           <CarouselPrevious variant="default" className="static" />
           <CarouselNext variant="default" className="static" />
         </div>

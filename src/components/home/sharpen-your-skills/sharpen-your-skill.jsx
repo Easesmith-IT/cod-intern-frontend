@@ -5,10 +5,10 @@ import { Benifit } from "./benifit";
 
 export const SharpenYourSkill = () => {
   return (
-    <section className="section-container py-24 flex justify-between gap-10">
+    <section className="section-container py-12 md:py-24 flex flex-col lg:flex-row items-center sm:justify-between gap-10">
       <div className="">
         <div className="flex max-w-[590px]">
-          <h2 className="text-[46px] font-medium leading-14">
+          <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
             <span className="text-main">Master In-Demand Skills</span> with Our
             Online Courses
             <Image
@@ -20,7 +20,7 @@ export const SharpenYourSkill = () => {
             />
           </h2>
         </div>
-        <p className="font-stolzl font-book text-para max-w-[590px] text-base mt-5">
+        <p className="font-stolzl font-book text-para max-w-[590px] text-xs sm:text-base mt-5">
           Take advantage of our state-of-the-art online courses, which are
           intended to give you the highly sought-after skills you need to
           succeed in the fast-paced workplace of today. Our programs combine
@@ -38,15 +38,18 @@ export const SharpenYourSkill = () => {
           Need More Information
         </Button>
       </div>
-      <div className="flex gap-5">
+      <div className="flex flex-col sm:flex-row gap-5">
         <Image
           src="/sharpen-your-skill-img.jpg"
           width={353}
           height={404}
           alt="sharpen-your-skill-img"
         />
-        <div className="w-[245px] space-y-4">
-          <h3 className="font-stolzl font-medium text-2xl">
+        <div className="sm:w-[245px] space-y-4">
+          <h3 className="font-stolzl font-medium sm:hidden text-lg sm:text-2xl">
+            Benefits of Online Training
+          </h3>
+          <h3 className="font-stolzl hidden sm:block font-medium text-xl sm:text-2xl">
             Benefits of <br /> Online Training
           </h3>
           <Benifit src="/Flexibility.svg" title="Flexibility in study" />

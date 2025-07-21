@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 
 export const LearningToCareer = ({className}) => {
   return (
-    <div className={cn("section-container",className)}>
-      <h2 className="text-[46px] text-center capitalize w-full font-medium leading-14">
+    <div className={cn("section-container", className)}>
+      <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center capitalize w-full">
         <span className="text-main">Transform Learning</span> into a Proud
         Career
         <Image
@@ -17,7 +17,7 @@ export const LearningToCareer = ({className}) => {
         />
       </h2>
 
-      <p className="max-w-5xl mx-auto text-center font-stolzl font-book text-para mt-4">
+      <p className="max-w-5xl mx-auto text-center font-stolzl text-xs sm:text-base font-book text-para mt-4">
         Our philosophy at CodIntern is straightforward: we give you the tools
         you need to transform your love of learning into a career you can be
         proud of. By offering state-of-the-art, AI-driven learning opportunities
@@ -28,23 +28,23 @@ export const LearningToCareer = ({className}) => {
         and goals.
       </p>
 
-      <h3 className="mt-10 max-w-5xl mx-auto capitalize font-stolzl text-2xl font-medium text-center">
+      <h3 className="mt-10 max-w-5xl mx-auto capitalize font-stolzl text-base sm:text-2xl font-medium text-center">
         Our 6-Step AI-Driven Learning Experience Here's what CodIntern drives
         your career ahead with a smart, organized plan:
       </h3>
 
-      <div className="grid grid-cols-3 justify-center mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center mt-6">
         <LearningStep
           index={1}
           title="Sign Up & Get Assessed (AI-Driven Skill Mapping)"
         >
-          <p>
+          <p className="text-xs sm:text-sm">
             Begin your journey with an AI-based diagnostic test. This advanced
             test accurately measures your existing skill set, detects your
             exclusive learning pattern, and aligns with your career goals,
             making it an absolutely personalized beginning.
           </p>
-          <p className="mt-2">
+          <p className="mt-2 text-xs sm:text-sm">
             Result: You'll get a customized roadmap, individually crafted to
             lead your unique learning journey.
           </p>

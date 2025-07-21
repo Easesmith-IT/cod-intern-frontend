@@ -6,8 +6,8 @@ export const LearningStep = ({ title, desc, index, result,children }) => {
       <div className="flex justify-center items-center mx-auto border-2 size-[68px] rounded-full font-stolzl font-medium text-xl border-main">
         {index}
       </div>
-      <h4 className="font-stolzl font-medium text-lg text-center">{title}</h4>
-      <div className="font-stolzl font-book text-sm text-para text-center">
+      <h4 className="font-stolzl font-medium sm:text-lg text-center">{title}</h4>
+      <div className="font-stolzl font-book text-xs sm:text-sm text-para text-center">
         {children}
       </div>
     </div>
