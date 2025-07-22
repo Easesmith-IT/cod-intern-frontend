@@ -25,7 +25,6 @@ export default function Home() {
       <Universities />
       <WhyCodInterns />
       <LearningToCareer />
-      {/* make responsive from this */}
       <ConnectWithUs />
       <WeJustKeepGrowing />
       <LearnersStories />

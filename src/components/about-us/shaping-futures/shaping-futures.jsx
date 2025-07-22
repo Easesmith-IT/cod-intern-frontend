@@ -4,7 +4,7 @@ import Info from "./info";
 
 export const ShapingFutures = () => {
   return (
-    <section className="section-container">
+    <section className="section-container pb-24">
       <h2 className="text-[46px] font-medium leading-14 capitalize">
         <span className="text-main">Shaping Futures</span> With Purpose
         <Image

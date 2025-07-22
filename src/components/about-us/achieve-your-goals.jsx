@@ -84,13 +84,13 @@ export const AchieveYourGoals = () => {
             alt="Ellipse"
           />
         </h2>
-        <p className="font-stolzl text-sm text-para mt-5 font-book">
+        {/* <p className="font-stolzl text-sm text-para mt-5 font-book">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet,
           consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
           labore Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea{" "}
-        </p>
+          laboris nisi ut aliquip ex ea
+        </p> */}
         <ul className="mt-5 space-y-5">
           <li className="flex gap-2 items-center">
             <Image

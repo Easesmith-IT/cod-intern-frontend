@@ -160,7 +160,7 @@ export const HeroSection = () => {
               className="size-full"
               width={562}
               height={430}
-              src="/Banner.webp"
+              src="/home/Banner1.png"
               alt="hero-banner"
             />
           </CarouselItem>
@@ -170,7 +170,7 @@ export const HeroSection = () => {
               className="size-full"
               width={562}
               height={430}
-              src="/Banner.webp"
+              src="/home/Banner2.png"
               alt="hero-banner"
             />
           </CarouselItem>
@@ -180,7 +180,7 @@ export const HeroSection = () => {
               className="size-full"
               width={562}
               height={430}
-              src="/Banner.webp"
+              src="/home/Banner3.png"
               alt="hero-banner"
             />
           </CarouselItem>

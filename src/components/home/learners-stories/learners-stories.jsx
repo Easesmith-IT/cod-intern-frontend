@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 
 export const LearnersStories = ({className}) => {
   return (
-    <section className={cn("section-container py-24",className)}>
+    <section className={cn("section-container py-24", className)}>
       <Carousel
         plugins={[
           Autoplay({
@@ -27,8 +27,8 @@ export const LearnersStories = ({className}) => {
         opts={{ loop: true }}
         className="w-full"
       >
-        <div className="flex justify-between items-center gap-5">
-          <h2 className="text-[46px] font-medium">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-5">
+          <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
             <span className="text-main">Learners Who Fuel Progress</span>{" "}
             Stories That Ignite
             <Image
@@ -39,7 +39,7 @@ export const LearnersStories = ({className}) => {
               alt="Ellipse"
             />
           </h2>
-          <div className="flex gap-4">
+          <div className="hidden md:flex gap-4">
             <CarouselPrevious
               //   className="static translate-0 disabled:bg-[#ababab75]"
               className="static translate-0 border w-[77px] rounded-md h-[33px] disabled:bg-[#ababab75]"
@@ -66,6 +66,19 @@ export const LearnersStories = ({className}) => {
             />
           ))}
         </CarouselContent>
+        <div className="md:hidden flex justify-center gap-4 mt-10">
+          <CarouselPrevious
+            //   className="static translate-0 disabled:bg-[#ababab75]"
+            className="static translate-0 border w-[77px] rounded-md h-[33px] disabled:bg-[#ababab75]"
+            variant="ghost"
+            icon={MoveLeft}
+          />
+          <CarouselNext
+            className="static translate-0 border w-[77px] rounded-md h-[33px] disabled:bg-[#ababab75]"
+            variant="ghost"
+            icon={MoveRight}
+          />
+        </div>
       </Carousel>
     </section>
   );

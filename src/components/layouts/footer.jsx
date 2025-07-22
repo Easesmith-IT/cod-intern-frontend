@@ -3,6 +3,7 @@ import React from "react";
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { Instagram } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -61,46 +62,62 @@ export const Footer = () => {
             FOLLOW US ON:
           </h5>
           <div className="flex gap-2 items-center mt-3">
-            <div className="flex justify-center items-center size-[45px] p-4 bg-[#FFFFFF14] rounded-full">
+            <a
+              target="_blank"
+              href="https://www.facebook.com/share/1CiCLbtkv3/?mibextid=wwXIfr"
+              className="flex justify-center items-center size-[45px] p-4 bg-[#FFFFFF14] rounded-full"
+            >
               <Image
                 src="/social-1.svg"
                 width={12}
                 height={12}
                 alt="social-1"
               />
-            </div>
-            <div className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full">
-              <Image
-                src="/social-2.svg"
-                width={14}
-                height={14}
-                alt="social-2"
-              />
-            </div>
-            <div className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full">
+            </a>
+
+            <a
+              target="_blank"
+              href="https://www.instagram.com/codintern_official?igsh=bnA2MDMyaGVpaHZk&utm_source=qr"
+              className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full"
+            >
+              <Instagram className="text-white size-5" />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/company/codintern/"
+              className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full"
+            >
               <Image
                 src="/social-3.svg"
                 width={14}
                 height={14}
                 alt="social-3"
               />
-            </div>
-            <div className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full">
+            </a>
+            <a
+              target="_blank"
+              href="#"
+              className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full"
+            >
               <Image
                 src="/social-4.svg"
                 width={14}
                 height={14}
                 alt="social-4"
               />
-            </div>
-            <div className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full">
+            </a>
+            <a
+            target="_blank"
+              href="#"
+              className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full"
+            >
               <Image
-                src="/social-5.svg"
+                src="/social-2.svg"
                 width={14}
                 height={14}
-                alt="social-5"
+                alt="social-2"
               />
-            </div>
+            </a>
           </div>
         </div>
         <div className="flex justify-between gap-7  text-white">

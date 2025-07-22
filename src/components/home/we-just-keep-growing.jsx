@@ -4,7 +4,7 @@ import React from 'react'
 export const WeJustKeepGrowing = () => {
   return (
     <div className="section-container flex flex-col items-center">
-      <h2 className="text-[46px] text-center capitalize w-full font-medium leading-14">
+      <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
         <span className="text-main">We Just</span> Keep Growing
         <Image
           src="/ellipse-group.svg"
@@ -15,7 +15,7 @@ export const WeJustKeepGrowing = () => {
         />
       </h2>
 
-      <p className="text-para text-center mt-4 font-stolzl font-book max-w-[814px] mx-auto">
+      <p className="text-para text-center mt-4 text-xs lg:text-base font-stolzl font-book max-w-[814px] mx-auto">
         Worried about COVID-19? Our Virtual Classroom training lets you learn
         from home, just as you would in a classroom, using and courses, so
         there’s more choice than ever.

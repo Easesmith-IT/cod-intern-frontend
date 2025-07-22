@@ -1,17 +1,13 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
-import { Separator } from "@/components/ui/separator";
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { Tech } from "./tech";
 
 export const SingleCard = ({ index, title, desc, timing }) => {
   return (
     <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
       <div className="p-1">
-        <Card className="border-border-1 rounded-md pt-0 h-[650px] sm:h-full">
+        <Card className="border-border-1 rounded-lg pt-0 h-[650px] lg:h-[550px]">
           <CardContent className="px-0">
             {/* <div className="px-6">
               <div className="flex gap-4 justify-between items-center">

@@ -36,7 +36,8 @@ export const LearningToCareer = ({className}) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center mt-6">
         <LearningStep
           index={1}
-          title="Sign Up & Get Assessed (AI-Driven Skill Mapping)"
+          title="Sign Up & Get Assessed"
+          title1="(AI-Driven Skill Mapping)"
         >
           <p className="text-xs sm:text-sm">
             Begin your journey with an AI-based diagnostic test. This advanced
@@ -51,7 +52,8 @@ export const LearningToCareer = ({className}) => {
         </LearningStep>
         <LearningStep
           index={2}
-          title="Access Your Learning Dashboard (Smart LMS)"
+          title="Access Your Learning Dashboard"
+          title1="(Smart LMS)"
         >
           Get access to our AI-driven Learning Management System. You'll have an
           easy-to-use dashboard with:
@@ -76,7 +78,8 @@ export const LearningToCareer = ({className}) => {
         </LearningStep>
         <LearningStep
           index={4}
-          title="Practice with Adaptive Quizzes (AI-Generated)"
+          title="Practice with Adaptive Quizzes"
+          title1="(AI-Generated)"
         >
           Challenge yourself with AI-created quizzes that respond in real-time
           based on your answers, scaling up or down in difficulty and subject
@@ -85,16 +88,17 @@ export const LearningToCareer = ({className}) => {
         </LearningStep>
         <LearningStep
           index={5}
-          title="Create Your Internship Portfolio (AI Resume Builder)"
+          title="Create Your Internship Portfolio"
+          title1="(AI Resume Builder)"
         >
           Tap into our AI-based resume and portfolio creator to write strong
           documents that grab attention. Get constructive feedback on your
           GitHub projects, LinkedIn page, and even simulated interviews, all
           based on AI-facilitated tools.
-          <p className="mt-4">
+          {/* <p className="mt-4">
             Outcome: You'll have a job-ready profile that strongly highlights
             your experiential skills.
-          </p>
+          </p> */}
         </LearningStep>
         <LearningStep
           index={6}
