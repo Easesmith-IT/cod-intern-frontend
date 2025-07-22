@@ -42,13 +42,15 @@ const Feedback = () => {
     },
   });
 
-  const { mutate: submitForm, isLoading: isSubmitFormLoading } = useApiMutation(
+  const { mutate: submitForm, isPending: isSubmitFormLoading } = useApiMutation(
     {
       url: "/feedBack/submit",
       method: POST,
       invalidateKey: ["feedBack-submit"],
     }
   );
+
+  console.log("isSubmitFormLoading :", isSubmitFormLoading);
 
   const onSubmit = (data) => {
     console.log("data :", data);
@@ -364,7 +366,7 @@ const Feedback = () => {
 
             <div className="flex justify-end mt-10">
               <Button
-                className="rounded w-60 ml-auto"
+                className="rounded w-full sm:w-60 ml-auto"
                 size="lg"
                 type="submit"
                 variant="linearGradient"
