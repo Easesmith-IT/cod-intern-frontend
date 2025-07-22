@@ -7,7 +7,7 @@ export const SingleCard = ({ index, title, desc, timing }) => {
   return (
     <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
       <div className="p-1">
-        <Card className="border-border-1 rounded-lg pt-0 h-[650px] lg:h-[550px]">
+        <Card className="border-border-1 rounded-lg pt-0 h-[600px] sm:h-[650px] lg:h-[550px]">
           <CardContent className="px-0">
             {/* <div className="px-6">
               <div className="flex gap-4 justify-between items-center">
