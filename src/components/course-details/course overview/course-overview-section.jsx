@@ -49,15 +49,13 @@ export const CourseOverviewSection = () => {
         Course Overview
       </h2>
       <p className="mt-3 font-stolzl font-book text-para">
-        Lorem ipsum dolor sit amet consectetur. Proin duis orci aliquam arcu nam
-        ligula. Velit nec ultrices pharetra bibendum pharetra. Quam adipiscing
-        mauris ultrices at. Enim ullamcorper nibh potenti egestas cras ut
-        convallis erat. Lorem ipsum dolor sit amet consectetur. Proin duis orci
-        aliquam arcu nam ligula. Velit nec ultrices pharetra bibendum pharetra.
-        Quam adipiscing mauris ultrices at. Enim ullamcorper nibh potenti
-        egestas cras ut convallis erat. Lorem ipsum dolor sit amet consectetur.
-        Proin duis orci{" "}
-        <button className="font-medium text-main">Read More</button>
+        Immerse yourself in the heart of our AI-powered programs. This overview
+        gives you a complete glance at what you'll study, the skills you'll
+        develop, and how our experiential learning approach gets you ready to
+        tackle real-world industry challenges. Learn the revolutionary
+        experience awaiting you with CodIntern's professionally crafted
+        curriculum and cutting-edge tools
+        {/* <button className="font-medium text-main">Read More</button> */}
       </p>
     </div>
   );

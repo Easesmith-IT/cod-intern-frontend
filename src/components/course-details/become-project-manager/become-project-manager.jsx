@@ -9,8 +9,8 @@ export const BecomeProjectManager = () => {
     <section className="pt-28 section-container">
       <div className="flex justify-center text-center section-container max-w-[830px]">
         <h2 className="text-[46px] font-medium leading-14 capitalize">
-          <span className="text-main">Process to become</span> a certified
-          Project Manager Course
+          <span className="text-main">Path to Becoming</span> a Certified
+          Project Manager
           <Image
             src="/ellipse-group.svg"
             className="inline-block ml-2"
@@ -23,15 +23,30 @@ export const BecomeProjectManager = () => {
       <div className="flex items-start gap-2 mt-10">
         <StepLeftImg />
 
-        <Step icon="/step.svg" title="Learn" desc="" index="1" />
+        <Step
+          icon="/step.svg"
+          title="Learn"
+          desc="Start learning with CodIntern's masterclass curriculum. Our interactive modules present core project management concepts, methodologies, and practices, establishing a solid theoretical framework."
+          index="1"
+        />
 
         <StepSeperator />
 
-        <Step icon="/step-1.svg" title="Study" desc="" index="2" />
+        <Step
+          icon="/step-1.svg"
+          title="Study"
+          desc="Enrich your knowledge through detailed study guides and interactive tools. Reinforce important concepts, analyze case studies, and solidify your knowledge with our systematic learning process."
+          index="2"
+        />
 
         <StepSeperator className="rotate-180" />
 
-        <Step icon="/step-2.svg" title="Practice" desc="" index="3" />
+        <Step
+          icon="/step-2.svg"
+          title="Practice"
+          desc="Practice your knowledge in hands-on simulations and actual project scenarios. Our practical classes and capstone projects offer rich experience, getting you ready for real project obstacles."
+          index="3"
+        />
 
         <StepSeperator />
 
@@ -39,7 +54,7 @@ export const BecomeProjectManager = () => {
           icon="/step-3.svg"
           title="Get Certified"
           className="text-main"
-          desc=""
+          desc="Complete the course successfully and get your globally accepted certification. With CodIntern's support, you'll obtain the credentials and self-belief to become a certified Project Manager."
           index="1"
         />
 

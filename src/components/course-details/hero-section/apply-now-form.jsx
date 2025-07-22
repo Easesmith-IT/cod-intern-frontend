@@ -133,9 +133,9 @@ export const ApplyNowForm = () => {
                         <SelectValue placeholder="Education" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="light">Light</SelectItem>
-                        <SelectItem value="dark">Dark</SelectItem>
-                        <SelectItem value="system">System</SelectItem>
+                        <SelectItem value="b-tech">B-Tech</SelectItem>
+                        <SelectItem value="b-ca">B-CA</SelectItem>
+                        <SelectItem value="b-cs">B-CS</SelectItem>
                       </SelectContent>
                     </Select>
                   </FormControl>
@@ -155,9 +155,9 @@ export const ApplyNowForm = () => {
                         <SelectValue placeholder="Graduation Year" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="light">Light</SelectItem>
-                        <SelectItem value="dark">Dark</SelectItem>
-                        <SelectItem value="system">System</SelectItem>
+                        <SelectItem value="2026">2026</SelectItem>
+                        <SelectItem value="2027">2027</SelectItem>
+                        <SelectItem value="2028">2028</SelectItem>
                       </SelectContent>
                     </Select>
                   </FormControl>

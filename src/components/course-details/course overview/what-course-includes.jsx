@@ -20,7 +20,7 @@ export const WhatCourseIncludes = () => {
   return (
     <div className="mt-28">
       <h2 className="text-[46px] font-medium">
-        <span className="text-main">What’s Include</span> in this course
+        <span className="text-main">What This Course</span> Offers course
         <Image
           src="/ellipse-group.svg"
           className="inline-block ml-2"

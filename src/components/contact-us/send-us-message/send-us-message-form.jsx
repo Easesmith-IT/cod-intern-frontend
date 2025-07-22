@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -13,18 +11,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { z } from "zod";
-import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { SendUsMessageSchema } from "@/schemas/SendUsMessageSchema";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
+import { SendUsMessageSchema } from "@/schemas/SendUsMessageSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import { useForm } from "react-hook-form";
 
 export const SendUsMessageForm = () => {
   const form = useForm({
@@ -66,7 +57,7 @@ export const SendUsMessageForm = () => {
                   <FormControl>
                     <Input
                       placeholder="Name*"
-                      className={`placeholder:text-[#00000066] bg-[#FDFBFF] border-[#9237E347] font-stolzl rounded py-5`}
+                      className={`placeholder:text-[#00000066] border-[#9237E347] font-stolzl rounded py-5`}
                       {...field}
                     />
                   </FormControl>

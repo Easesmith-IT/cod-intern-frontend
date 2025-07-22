@@ -6,7 +6,7 @@ export const GloballyRecognized = () => {
   return (
     <section className="section-container pb-28">
       <h2 className="text-[46px] font-medium leading-14 text-center">
-        <span className="text-main">Globally Recognized</span> Certifications
+        <span className="text-main">Globally Acclaimed</span> Credentials
         <Image
           src="/ellipse-group.svg"
           className="inline-block ml-2"
@@ -15,6 +15,16 @@ export const GloballyRecognized = () => {
           alt="Ellipse"
         />
       </h2>
+      {/* <p className="font-stolzl font-book text-para text-center text-base mt-5">
+        Our detailed Master Data Science & Analytics with AI Certification
+        Course is carefully crafted to give you a deep knowledge of analytics
+        and advanced AI, making you ready for the illustrious career of a Data
+        Scientist. Additionally, with our expert coaching, you'll be adequately
+        prepared to pass the Microsoft Certification Exam confidently, adding
+        another strong credential to your resume. Ask now to learn more about
+        our Data Science & Analytics with AI Certification Course and begin your
+        higher-level career
+      </p> */}
 
       <div className="flex gap-5 items-center justify-center mt-10">
         <Button variant="codIntern" className="rounded font-book">
@@ -31,16 +41,14 @@ export const GloballyRecognized = () => {
             Master Certification in Data Science & Analytics with AI
           </h3>
           <p className="font-stolzl font-book text-para max-w-[590px] text-base mt-5">
-            Our Master Data Science & Analytics with AI Certification Course
-            along with a broad knowledge of Analytics and AI prepares you for
-            the heavyweight title– Data Scientist. However, it does not end
-            here, along with the Master Data Science & Analytics with AI
-            Certification, you shall be given a 15-course module completion
-            certificate at every check-point clearance if you effectively meet
-            the Itvedant® Assessment Standards. And yes, did you know you can
-            easily clear the Microsoft Certification Exam with our guidance?
-            Inquire Now to know more about our Data Science & Analytics with AI
-            Certification Course.
+            Our detailed Master Data Science & Analytics with AI Certification
+            Course is carefully crafted to give you a deep knowledge of
+            analytics and advanced AI, making you ready for the illustrious
+            career of a Data Scientist. Additionally, with our expert coaching,
+            you'll be adequately prepared to pass the Microsoft Certification
+            Exam confidently, adding another strong credential to your resume.
+            Ask now to learn more about our Data Science & Analytics with AI
+            Certification Course and begin your higher-level career
           </p>
           <Button
             size="lg"

@@ -6,7 +6,7 @@ export const UpcomingBatch = () => {
   return (
     <section className="section-container py-28">
       <h2 className="text-[46px] font-medium leading-14 text-center">
-        <span className="text-main">Our Upcoming</span> Batch
+        <span className="text-main">Next Batch</span> Enrollment
         <Image
           src="/ellipse-group.svg"
           className="inline-block ml-2"
@@ -38,23 +38,23 @@ export const UpcomingBatch = () => {
         </div>
         <div className="">
           <h3 className="font-stolzl font-medium text-para-3 text-4xl max-w-[667px] leading-11">
-            Get Industry-Ready with Codintern
+            Launch Your Tech Career with CodIntern
           </h3>
           <ul className="mt-5 space-y-4 list-disc ml-5">
             <li className="font-stolzl text-sm text-para">
-              Enroll for 1 Course & Get Access to All Courses.
+              Comprehensive Course Access
             </li>
             <li className="font-stolzl text-sm text-para">
-              In-depth curriculum with only 20 Seats Per Batch.
+              Focused Learning Environment
             </li>
             <li className="font-stolzl text-sm text-para">
-              Integrated Internship & 2 Global Certifications
+              Practical Experience & Credentials
             </li>
             <li className="font-stolzl text-sm text-para">
-              Practice on HackerRank & LeetCode
+              Coding Challenge Practice
             </li>
             <li className="font-stolzl text-sm text-para">
-              Corporate Visits & dedicated 6-month On-Job Support.
+              Industry Exposure & Support
             </li>
           </ul>
 

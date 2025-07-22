@@ -34,7 +34,7 @@ export const HeroSection = () => {
 
   return (
     <>
-      <section
+      {/* <section
         className="relative h-[550px] hidden"
         style={{ backgroundImage: "url(/hero-bg.svg)" }}
       >
@@ -60,7 +60,6 @@ export const HeroSection = () => {
                 variant="linearGradient"
                 className="rounded-sm px-5 h-12"
               >
-                {/* <Image src="./email.svg" width={20} height={20} alt="email" /> */}
                 <Mail />
                 Continue With Email
               </Button>
@@ -127,7 +126,7 @@ export const HeroSection = () => {
           src="/hero-bg-1.svg"
           alt="hero-bg"
         />
-      </section>
+      </section> */}
 
       <Carousel
         plugins={[
@@ -158,6 +157,7 @@ export const HeroSection = () => {
           <CarouselItem>
             <Image
               // className="h-[70vh] md:size-full"
+              className="size-full"
               width={562}
               height={430}
               src="/Banner.webp"
@@ -167,6 +167,7 @@ export const HeroSection = () => {
           <CarouselItem className="">
             <Image
               // className="h-[70vh] md:size-full"
+              className="size-full"
               width={562}
               height={430}
               src="/Banner.webp"
@@ -176,6 +177,7 @@ export const HeroSection = () => {
           <CarouselItem className="">
             <Image
               // className="h-[70vh] md:size-full"
+              className="size-full"
               width={562}
               height={430}
               src="/Banner.webp"

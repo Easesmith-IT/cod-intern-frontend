@@ -11,13 +11,12 @@ export const HeroSection = () => {
         {" "}
         {/* h-[420px] flex flex-col justify-center */}
         <h1 className="font-medium font-stolzl text-5xl text-center text-para-3">
-          Contact <span className="text-main">Us</span>
+          Connect With <span className="text-main">Us</span>
         </h1>
         <p className="text-center text-para max-w-[970px] mx-auto font-stolzl text-lg mt-2">
-          Lorem ipsum dolor sit amet consectetur. Ligula lorem quam at hac elit
-          purus egestas malesuada. Rutrum adipiscing metus dictum tellus. Sit
-          fusce sit nullam vulputate odio at eu. Pellentesque faucibus dis
-          volutpat arcu aenean in aliquet et.{" "}
+          Need assistance or more details about our AI-accelerated programs?
+          Contact CodIntern. Our team is dedicated to helping you achieve your
+          learning and career goals.
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Step = ({ className, title, icon, index }) => {
+export const Step = ({ className, title, icon, index,desc }) => {
   return (
     <div className="p-1 w-[292px]">
       <div
@@ -14,8 +14,7 @@ export const Step = ({ className, title, icon, index }) => {
       </div>
       <h4 className="font-stolzl font-medium text-2xl text-center mt-5">{title}</h4>
       <p className="text-para text-sm font-stolzl text-center mt-2">
-        Lorem ipsum dolor sit amet consectetur. At eleifend in tortor
-        ullamcorper senectus
+        {desc}
       </p>
     </div>
   );

@@ -17,9 +17,24 @@ export const Mentors = () => {
       </h2>
 
       <div className="grid grid-cols-3 gap-5 mt-10">
-        <Mentor />
-        <Mentor />
-        <Mentor />
+        <Mentor
+          img="/our-mentors/Anjali.jpg"
+          name="Anjali Sharma"
+          position="Founder"
+          proficiency={["Talent Acquisition", "Recruitment", "HR"]}
+        />
+        <Mentor
+          img="/our-mentors/Gaurav.jpg"
+          name="Gaurav Dwivedi"
+          position="Co-Founder"
+          proficiency={["Cloud Computing", "Python", "Digital Marketing"]}
+        />
+        <Mentor
+          img="/our-mentors/user-placeholder.png"
+          name="Akanksha Chaturvedi"
+          position="Placement Head-Recruitment"
+          proficiency={["Placements", "Soft Skill Trainer"]}
+        />
       </div>
     </section>
   );

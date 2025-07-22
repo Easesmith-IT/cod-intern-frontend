@@ -116,20 +116,21 @@ export const Footer = () => {
               alt="horizontal-line"
             />
             <p className="mt-5 font-stolzl font-book text-sm max-w-[350px]">
-              Fusce varius, dolor tempor interdum tristiquei bibendum service
-              life.
+              Feel free to reach out to us for any Training Program, Technical
+              Workshop and On Campus Training.
             </p>
             <p className="mt-5 flex gap-3 items-start max-w-[280px] font-stolzl font-book text-sm">
               <Image src="/map-pin-1.svg" width={12} height={12} alt="pin" />
-              147/I, Green Road, Gulshan Avenue, Panthapath, Dhaka
+              2nd Floor, Raj Ghar, Kanti Factory Road, Mahatma Gandhi Nagar,
+              Kankarbagh, Patna, India 800020
             </p>
             <p className="mt-5 flex gap-3 items-center max-w-[280px] font-stolzl font-book text-sm">
               <Image src="/email.svg" width={16} height={12} alt="email" />
-              info@edura.com
+              info@codintern.com
             </p>
             <p className="mt-5 flex gap-3 items-start max-w-[280px] font-stolzl font-book text-sm">
               <Image src="/phone.svg" width={14} height={14} alt="pin" />
-              +256 214 203 215
+              +91 7311155738
             </p>
           </div>
         </div>
