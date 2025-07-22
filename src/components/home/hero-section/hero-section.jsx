@@ -157,7 +157,7 @@ export const HeroSection = () => {
           <CarouselItem>
             <Image
               // className="h-[70vh] md:size-full"
-              className="h-[50vh] md:size-full"
+              className="h-[30vh] md:size-full"
               width={562}
               height={430}
               src="/home/Banner1.png"
@@ -167,7 +167,7 @@ export const HeroSection = () => {
           <CarouselItem className="">
             <Image
               // className="h-[70vh] md:size-full"
-              className="h-[50vh] md:size-full"
+              className="h-[30vh] md:size-full"
               width={562}
               height={430}
               src="/home/Banner2.png"
@@ -177,7 +177,7 @@ export const HeroSection = () => {
           <CarouselItem className="">
             <Image
               // className="h-[70vh] md:size-full"
-              className="h-[50vh] md:size-full"
+              className="h-[30vh] md:size-full"
               width={562}
               height={430}
               src="/home/Banner3.png"
