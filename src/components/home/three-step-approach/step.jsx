@@ -5,7 +5,7 @@ import React from "react";
 export const Step = ({ title, className, arr }) => {
   return (
     <div className="border rounded p-7">
-      <h4 className={cn("font-stolzl font-medium md:text-lg lg:text-2xl", className)}>
+      <h4 className={cn("font-stolzl font-medium md:text-lg lg:text-xl", className)}>
         {title}
       </h4>
       <div className="flex flex-col gap-1 mt-5">
