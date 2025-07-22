@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layouts/header";
 import ReactQueryProvider from "@/components/providers/ReactQueryProvider";
 import { Toaster } from "@/components/ui/sonner";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,19 @@ export default function RootLayout({ children }) {
         <Footer />
 
         <Toaster richColors position="top-center" />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F9K8LH2M25"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F9K8LH2M25');
+          `}
+        </Script>
       </body>
     </html>
   );

@@ -30,7 +30,7 @@ export const Mentors = () => {
           proficiency={["Cloud Computing", "Python", "Digital Marketing"]}
         />
         <Mentor
-          img="/our-mentors/user-placeholder.png"
+          img="/our-mentors/Akansha.jpg"
           name="Akanksha Chaturvedi"
           position="Placement Head-Recruitment"
           proficiency={["Placements", "Soft Skill Trainer"]}

@@ -6,7 +6,7 @@ export const Mentor = ({ img,name, position,proficiency = [] }) => {
   return (
     <Card className="border-border-1 rounded-md">
       <CardContent>
-        <Image src={img} width={458} height={396} alt="mentor" />
+        <Image src={img} width={458} height={396} className="object-cover max-w-[458px] w-full max-h-[396px]" alt="mentor" />
 
         <div className="mt-5">
           <h3 className="font-stolzl font-medium text-2xl">{name}</h3>
