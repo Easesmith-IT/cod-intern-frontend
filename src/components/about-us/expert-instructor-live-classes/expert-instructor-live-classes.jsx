@@ -10,8 +10,8 @@ export const ExpertInstructorLiveClasses = () => {
     <section className="py-24 section-container flex gap-20 items-center">
       <div>
         <h2 className="text-[46px] font-medium leading-14 capitalize">
-          <span className="text-main">Expert Instructor</span> Live Classes
-          Here!
+          <span className="text-main">Live Skill-Building</span> Sessions by
+          <br /> Experts
           <Image
             src="/ellipse-group.svg"
             className="inline-block ml-2"
@@ -20,27 +20,48 @@ export const ExpertInstructorLiveClasses = () => {
             alt="Ellipse"
           />
         </h2>
-        <p className="font-stolzl text-sm text-para max-w-[869px] mt-2 font-book">
-          A Project Management course equips individuals with the knowledge and
-          skills to effectively plan, execute, and control projects, ensuring
-          they are completed on time, within budget, and the satisfaction of
-          stakeholders. It's a fundamental discipline for professionals across
-          various industries. A Project Management course equips individuals
-          with the knowledge and skills to effectively plan.
+        
+        <p className="font-stolzl text-sm text-para max-w-[869px] mt-4 font-book">
+          At CodIntern, we think that excellent mentors are the first step
+          toward great learning. Our knowledgeable instructors are more than
+          just instructors; they are tech executives, professionals in the
+          field, and seasoned educators with practical project management
+          experience from top businesses. Every live session benefits from their
+          extensive subject knowledge, real-world perspectives, and enthusiasm
+          for teaching.
         </p>
-        <Button
+        <p className="font-stolzl text-sm text-para max-w-[869px] mt-3 font-book">
+          Our live classes are incredibly engaging, interactive, and created to
+          mimic actual work environments. Every session, whether it's about
+          project management, coding, or career preparation, is practical,
+          results-oriented, and in line with industry standards. Students can
+          work with peers, ask questions in real time, and get tailored feedback
+          that helps them grasp concepts more quickly.
+        </p>
+        <p className="font-stolzl text-sm text-para max-w-[869px] mt-3 font-book">
+          Additionally, we offer round-the-clock assistance via our dedicated
+          help channels because we understand that learning never ends. Our
+          mentor network and support staff are always available by message, so
+          you never have to learn alone, whether you're having trouble with an
+          assignment, need technical help, or simply want career advice.
+        </p>
+        <p className="font-stolzl text-sm text-para max-w-[869px] mt-3 font-book">
+          At CodIntern, you're not just learning — you're growing with the
+          support of an entire ecosystem built for your success.
+        </p>
+        {/* <Button
           variant="ghost"
           className="font-semibold text-para-3 my-5 hover:bg-transparent has-[>svg]:px-0 group"
         >
           <span>Show More</span>
           <ChevronDown className="group-hover:translate-y-1 transition group-active:translate-y-0" />
-        </Button>
-        <Separator />
-        <div className="flex gap-10 mt-10">
+        </Button> */}
+        <Separator className="mt-5" />
+        <div className="flex gap-10 mt-8">
           <Info title="24/7 Support" />
+          {/* <Info title="24/7 Support" />
           <Info title="24/7 Support" />
-          <Info title="24/7 Support" />
-          <Info title="24/7 Support" />
+          <Info title="24/7 Support" /> */}
         </div>
       </div>
       <div>

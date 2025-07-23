@@ -1,6 +1,12 @@
 "use client";
 
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -9,26 +15,18 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
-import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { Counter } from "../counter";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
+import { Counter } from "../counter";
+import { Button } from "../ui/button";
 
 export const Header = () => {
   const router = useRouter();
 
   return (
-    <header className="shadow-md shadow-black/5 relative z-10">
+    <header className="shadow-md shadow-black/5 z-10 sticky top-0 bg-white">
       <div className="flex flex-col sm:flex-row py-3 justify-center items-center gap-3 border-b-[1.5px]">
         <div className="flex items-center gap-2">
           <Image src="./clock.svg" width={20} height={20} alt="clock" />
@@ -59,7 +57,45 @@ export const Header = () => {
             alt="logo"
           />
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1">
+          {/* <DropdownMenu modal={false}>
+            <DropdownMenuTrigger>
+              <Button variant="ghost">
+                <span>Jobs</span>
+                <ChevronDown />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              side="bottom"
+              align="start"
+              className="space-y-2 px-2 w-40"
+            >
+              <DropdownMenuItem className="font-medium hover:underline">
+                Comming Soon
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu> */}
+          {/* <DropdownMenu modal={false}>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost">
+                Courses{" "}
+                <div className="bg-[#E32420] px-2 py-0.5 uppercase rounded-md ml-2 text-sm text-white">
+                  offer
+                </div>
+                <ChevronDown />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              sideOffset={10}
+              side="bottom"
+              align="start"
+              className="space-y-2 px-2 w-40"
+            >
+              <DropdownMenuItem className="font-medium hover:underline">
+                Comming Soon
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu> */}
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -68,10 +104,14 @@ export const Header = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="md:w-40">
-                    <NavigationMenuLink>Link</NavigationMenuLink>
+                    <NavigationMenuLink>Comming Soon</NavigationMenuLink>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <NavigationMenu className="hidden lg:block">
+            <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent font-stolzl">
                   Courses{" "}
@@ -80,8 +120,8 @@ export const Header = () => {
                   </div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="md:w-40">
-                    <NavigationMenuLink>Link</NavigationMenuLink>
+                  <div className="md:w-44">
+                    <NavigationMenuLink>Comming Soon</NavigationMenuLink>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>

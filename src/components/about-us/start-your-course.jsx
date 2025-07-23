@@ -18,18 +18,18 @@ export const StartYourCourse = () => {
         <div className="flex gap-32">
           <div className="text-white space-y-4 flex flex-col items-center">
             <Image src="/about-us/reviews.svg" width={37} height={37} alt="Reviews" />
-            <h3 className="font-stolzl text-4xl font-medium">10k+</h3>
+            <h3 className="font-stolzl text-4xl font-medium">100+</h3>
             <p className='font-book font-stolzl'>Company Reviews</p>
           </div>
           <div className="text-white space-y-4 flex flex-col items-center">
             <Image src="/about-us/reviews.svg" width={37} height={37} alt="Reviews" />
-            <h3 className="font-stolzl text-4xl font-medium">24k+</h3>
-            <p className='font-book font-stolzl'>Company Reviews</p>
+            <h3 className="font-stolzl text-4xl font-medium">200+</h3>
+            <p className='font-book font-stolzl'>Students Placed</p>
           </div>
           <div className="text-white space-y-4 flex flex-col items-center">
             <Image src="/about-us/reviews.svg" width={37} height={37} alt="Reviews" />
-            <h3 className="font-stolzl text-4xl font-medium">90k+</h3>
-            <p className='font-book font-stolzl'>Company Reviews</p>
+            <h3 className="font-stolzl text-4xl font-medium">100+</h3>
+            <p className='font-book font-stolzl'>Job Openings</p>
           </div>
         </div>
       </div>

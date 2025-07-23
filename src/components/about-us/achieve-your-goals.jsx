@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
+import Link from "next/link";
 
 export const AchieveYourGoals = () => {
   return (
@@ -74,8 +75,8 @@ export const AchieveYourGoals = () => {
       </div>
       <div>
         <h2 className="text-[46px] font-medium leading-14 capitalize">
-          <span className="text-main">Achieve Your Goals </span> With Upgraded
-          CodIntern Courses
+          <span className="text-main">Reach Your Ambitions</span> with Enhanced
+          CodIntern Programs
           <Image
             src="/ellipse-group.svg"
             className="inline-block ml-2"
@@ -84,13 +85,13 @@ export const AchieveYourGoals = () => {
             alt="Ellipse"
           />
         </h2>
-        {/* <p className="font-stolzl text-sm text-para mt-5 font-book">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea
-        </p> */}
+        <p className="font-stolzl text-sm text-para mt-5 font-book">
+          We don't only educate at CodIntern — we evolve. Our enhanced courses
+          are tailored to narrow the gap between what they learn and what the
+          job market requires. Through practical projects, AI-driven learning
+          engines, and immersive mentorship, we empower learners to take bold
+          strides towards their ideal jobs What You Can Achieve:
+        </p>
         <ul className="mt-5 space-y-5">
           <li className="flex gap-2 items-center">
             <Image
@@ -100,7 +101,8 @@ export const AchieveYourGoals = () => {
               alt="List Item"
             />
             <span className="text-sm font-stolzl font-book text-para">
-              Upskill Your Organization
+              Master In-Demand Skills From programming to AI, web development to
+              aptitude — know what employers are really looking for.
             </span>
           </li>
           <li className="flex gap-2 items-center">
@@ -111,7 +113,8 @@ export const AchieveYourGoals = () => {
               alt="List Item"
             />
             <span className="text-sm font-stolzl font-book text-para">
-              Access more then 100K Online Courses
+              Crack Internships & Job Interviews Practice with resume
+              assistance, mock interviews, and placement-ready training.
             </span>
           </li>
           <li className="flex gap-2 items-center">
@@ -122,12 +125,37 @@ export const AchieveYourGoals = () => {
               alt="List Item"
             />
             <span className="text-sm font-stolzl font-book text-para">
-              Learn the latest skills
+              Build Real-World Projects Practice in the real world. Practice
+              problems, develop apps, and present your portfolio to recruiters.
+            </span>
+          </li>
+          <li className="flex gap-2 items-center">
+            <Image
+              src="/about-us/list-item.svg"
+              width={21}
+              height={17}
+              alt="List Item"
+            />
+            <span className="text-sm font-stolzl font-book text-para">
+              Learn Smarter with AI Get personalized learning with AI-created
+              quizzes, progress monitoring, and adaptive difficulty levels.
+            </span>
+          </li>
+          <li className="flex gap-2 items-center">
+            <Image
+              src="/about-us/list-item.svg"
+              width={21}
+              height={17}
+              alt="List Item"
+            />
+            <span className="text-sm font-stolzl font-book text-para">
+              Upskill Anytime, Anywhere With multilingual material, downloadable
+              content, and mobile-supported access — learning is within reach
             </span>
           </li>
         </ul>
-        <Button size="xl" className="mt-5" variant="linearGradient">
-          View Our Courses
+        <Button asChild size="xl" className="mt-5" variant="linearGradient">
+          <Link href="/course-details/123">View Our Courses</Link>
         </Button>
       </div>
     </div>

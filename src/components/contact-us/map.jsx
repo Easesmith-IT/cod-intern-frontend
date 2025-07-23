@@ -25,7 +25,7 @@ export const Map = () => {
         </div>
       )}
       <iframe
-        src="https://www.google.com/maps?q=28.6139,77.2090&z=14&output=embed"
+        src={`https://www.google.com/maps?q=2nd+Floor,+Raj+Ghar,+Kanti+Factory+Road,+Mahatma+Gandhi+Nagar,+Kankarbagh,+Patna,+India+800020&z=16&output=embed`}
         width="100%"
         height="100%"
         allowFullScreen

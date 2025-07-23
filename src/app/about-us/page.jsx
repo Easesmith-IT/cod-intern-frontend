@@ -15,7 +15,7 @@ const AboutUs = () => {
       <HeroSection />
       <AchieveYourGoals />
       <ShapingFutures />
-      {/* <EvolutionOFCodIntern /> */}
+      {/* <EvolutionOFCodIntern /> comment this */}
       <StartYourCourse />
       <ExpertInstructorLiveClasses />
       <Mentors />

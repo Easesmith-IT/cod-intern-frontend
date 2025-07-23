@@ -54,8 +54,9 @@ export const Footer = () => {
             alt="horizontal-line"
           />
           <p className="max-w-[380px] w-full mt-4 font-stolzl font-book text-sm text-white">
-            Continually optimize backward manufactured products whereas
-            communities negotiate life compelling alignments
+            CodIntern is a DPIIT-recognized EdTech and Skill India partner,
+            bridging education and employment through AI-driven, experiential
+            learning and career guidance.
           </p>
 
           <h5 className="font-stolzl font-medium text-base sm:text-xl text-white mt-10">
@@ -107,7 +108,7 @@ export const Footer = () => {
               />
             </a>
             <a
-            target="_blank"
+              target="_blank"
               href="#"
               className="flex justify-center items-center size-[45px] bg-[#FFFFFF14] rounded-full"
             >
