@@ -1,12 +1,12 @@
-import Image from "next/image";
-import React from "react";
-import { Mentor } from "./mentor";
+import Image from 'next/image'
+import React from 'react'
+import { Mentor } from './mentor';
 
 export const Mentors = () => {
   return (
     <section className="section-container">
       <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
-        <span className="text-main">Experts Fueling</span> Your Career Journey
+        <span className="text-main">Mentors behind</span> your career growth
         <Image
           src="/ellipse-group.svg"
           className="inline-block ml-2"
@@ -15,34 +15,27 @@ export const Mentors = () => {
           alt="Ellipse"
         />
       </h2>
-      <p className="font-stolzl text-sm text-para max-w-[869px] mx-auto text-center mt-2 font-book">
-        Meet the professionals guiding your path — seasoned leaders who’ve
-        worked with top companies and are now here to accelerate your growth
-      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
         <Mentor
-          img="/our-mentors/user-placeholder.png"
-          name="Hisham Khan"
-          position="Lead Career Mentor"
-          experience="Ex–Deloitte | Present–Career Strategist, CodIntern"
-          about="With years of consulting experience at Deloitte, Hisham brings sharp industry insights and a passion for mentoring students toward job-readiness."
+          img="/our-mentors/Anjali.jpg"
+          name="Anjali Sharma"
+          position="Founder"
+          proficiency={["Talent Acquisition", "Recruitment", "HR"]}
         />
         <Mentor
-          img="/our-mentors/user-placeholder.png"
-          name="Priya Malhotra"
-          position="Software Engineering Mentor"
-          experience="Present–Software Developer at Microsoft"
-          about="An expert in full-stack development, Priya blends technical depth with real-world case studies to help learners grasp modern development practices."
+          img="/our-mentors/Gaurav.jpg"
+          name="Gaurav Dwivedi"
+          position="Co-Founder"
+          proficiency={["Cloud Computing", "Python", "Digital Marketing"]}
         />
         <Mentor
-          img="/our-mentors/user-placeholder.png"
-          name="Ankur Jain"
-          position="Data Science & AI Mentor"
-          experience="Ex–Accenture | Present–AI Consultant"
-          about="With a strong background in AI and data analytics, Ankur guides students through hands-on projects and industry-relevant tools."
+          img="/our-mentors/Akansha.jpg"
+          name="Akanksha Chaturvedi"
+          position="Placement Head-Recruitment"
+          proficiency={["Placements", "Soft Skill Trainer"]}
         />
       </div>
     </section>
   );
-};
+}
