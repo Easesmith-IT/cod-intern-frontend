@@ -7,7 +7,7 @@ import { CourseCard } from "./course-card";
 
 export const CourseOverview = () => {
   return (
-    <section className="section-container grid grid-cols-[1fr_400px] gap-20 py-28">
+    <section className="section-container grid grid-cols-[1fr_400px] gap-20 pt-24">
       <div className="w-full">
         <CourseOverviewSection />
         <WhatCourseIncludes />

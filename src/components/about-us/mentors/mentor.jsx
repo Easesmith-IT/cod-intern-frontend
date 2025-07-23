@@ -5,7 +5,7 @@ import React from "react";
 export const Mentor = ({ img, name, position, about, experience }) => {
   return (
     <Card className="border-border-1 rounded-md">
-      <CardContent>
+      <CardContent className="flex flex-col justify-between h-full">
         <Image
           src={img}
           width={458}
@@ -23,8 +23,8 @@ export const Mentor = ({ img, name, position, about, experience }) => {
             {experience}
           </p>
 
-          <p className="font-stolzl text-sm font-book mt-6">{about}</p>
         </div>
+          <p className="font-stolzl text-sm font-book mt-auto">{about}</p>
       </CardContent>
     </Card>
   );

@@ -1,14 +1,20 @@
+"use client";
+
+import { CounterItem, CounterSeperator } from "@/components/counter/counter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
+import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import Image from "next/image";
 
 export const SingleCard = ({ index, title, desc, timing }) => {
+  const { days, hours, minutes, seconds } = usePersistentCountdown();
+
   return (
     <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
       <div className="p-1">
         <Card className="border-border-1 rounded-lg pt-0 h-[600px] sm:h-[650px] lg:h-[550px]">
-          <CardContent className="px-0">
+          <CardContent className="px-0 relative">
             {/* <div className="px-6">
               <div className="flex gap-4 justify-between items-center">
                 <div>
@@ -58,6 +64,27 @@ export const SingleCard = ({ index, title, desc, timing }) => {
               className="w-full rounded-tl-[6px] rounded-tr-[6px]"
               alt="course"
             />
+            <div className="absolute top-4 left-4">
+              <p className="font-stolzl text-xs text-white font-book">
+                Next batch started in:
+              </p>
+              <div className="flex items-center font-stolzl text-xs md:text-base -mt-0.5">
+                <CounterItem
+                  value={`${hours} hrs`}
+                  className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
+                />
+                <CounterSeperator className="text-white px-1" />
+                <CounterItem
+                  value={`${minutes} mins`}
+                  className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
+                />
+                <CounterSeperator className="text-white px-1" />
+                <CounterItem
+                  value={`${seconds} sec`}
+                  className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
+                />
+              </div>
+            </div>
             {/* <Separator className="my-4 bg-border-1" /> */}
             <div className="px-6 mt-4">
               <div className="flex gap-2 items-start">

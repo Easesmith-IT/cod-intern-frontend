@@ -1,9 +1,11 @@
-import { Counter } from "@/components/counter";
+import { CounterItem, CounterSeperator } from "@/components/counter/counter";
 import { Button } from "@/components/ui/button";
+import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import Image from "next/image";
-import React from "react";
 
 export const UpcomingBatch = () => {
+  const { days, hours, minutes, seconds } = usePersistentCountdown();
+
   return (
     <section className="section-container py-28">
       <h2 className="text-[46px] font-medium leading-14 text-center">
@@ -80,20 +82,26 @@ export const UpcomingBatch = () => {
                   <span className="text-sm text-[#A49DAE]">sec</span>
                 </div>
               </div> */}
-              <div className="mt-4">
-              <Counter />
+              <div className="flex items-center font-stolzl text-xs md:text-base mt-4">
+                <CounterItem value={days} />
+                <CounterSeperator />
+                <CounterItem value={hours} />
+                <CounterSeperator />
+                <CounterItem value={minutes} />
+                <CounterSeperator />
+                <CounterItem value={seconds} />
               </div>
             </div>
             <div>
-              <p className="text-sm font-stolzl text-main">
+              {/* <p className="text-sm font-stolzl text-main">
                 Hurry only 2 seats left !!
-              </p>
+              </p> */}
               <Button
                 size="lg"
                 variant="linearGradient"
                 className="rounded-sm px-5 h-12 mt-4"
               >
-                View Batch Details
+                Coming Soon
               </Button>
             </div>
           </div>

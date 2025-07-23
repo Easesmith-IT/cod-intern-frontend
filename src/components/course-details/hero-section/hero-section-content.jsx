@@ -70,7 +70,7 @@ export const HeroSectionContent = () => {
               Limited Seats
             </div>
           </div>
-          <p className="font-stolzl text-xl font-medium mt-4">Comming Soon</p>
+          <p className="font-stolzl text-xl font-medium mt-4">Coming Soon</p>
         </div>
         <div className="p-3 bg-gradient-to-r w-[299px] bg-white rounded-md">
           <div className="flex gap-3 items-center justify-between">

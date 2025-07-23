@@ -4,7 +4,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
   NavigationMenu,
@@ -13,20 +13,23 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Counter } from "../counter";
 import { Button } from "../ui/button";
+import { CounterItem, CounterSeperator } from "../counter/counter";
+import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 
 export const Header = () => {
   const router = useRouter();
+  const { days, hours, minutes, seconds } = usePersistentCountdown();
 
   return (
-    <header className="shadow-md shadow-black/5 z-10 sticky top-0 bg-white">
+    <header className="shadow-md shadow-black/5 z-20 sticky top-0 bg-white">
       <div className="flex flex-col sm:flex-row py-3 justify-center items-center gap-3 border-b-[1.5px]">
         <div className="flex items-center gap-2">
           <Image src="./clock.svg" width={20} height={20} alt="clock" />
@@ -34,7 +37,15 @@ export const Header = () => {
             Limited Time Offer - Hurry Up!
           </p>
         </div>
-        <Counter />
+        <div className="flex items-center font-stolzl text-xs md:text-base">
+          <CounterItem value={days} />
+          <CounterSeperator />
+          <CounterItem value={hours} />
+          <CounterSeperator />
+          <CounterItem value={minutes} />
+          <CounterSeperator />
+          <CounterItem value={seconds} />
+        </div>
       </div>
 
       <div className="flex gap-4 justify-between section-container py-2">
@@ -57,7 +68,7 @@ export const Header = () => {
             alt="logo"
           />
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-4">
           {/* <DropdownMenu modal={false}>
             <DropdownMenuTrigger>
               <Button variant="ghost">
@@ -71,7 +82,7 @@ export const Header = () => {
               className="space-y-2 px-2 w-40"
             >
               <DropdownMenuItem className="font-medium hover:underline">
-                Comming Soon
+                Coming Soon
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu> */}
@@ -92,7 +103,7 @@ export const Header = () => {
               className="space-y-2 px-2 w-40"
             >
               <DropdownMenuItem className="font-medium hover:underline">
-                Comming Soon
+                Coming Soon
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu> */}
@@ -104,7 +115,7 @@ export const Header = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="md:w-40">
-                    <NavigationMenuLink>Comming Soon</NavigationMenuLink>
+                    <NavigationMenuLink>Coming Soon</NavigationMenuLink>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -113,7 +124,18 @@ export const Header = () => {
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent font-stolzl">
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  asChild
+                >
+                  <Link
+                    href="/course-details/123"
+                    className="font-bold font-stolzl"
+                  >
+                    Course
+                  </Link>
+                </NavigationMenuLink>
+                {/* <NavigationMenuTrigger className="bg-transparent font-stolzl">
                   Courses{" "}
                   <div className="bg-[#E32420] px-2 py-0.5 uppercase rounded-md ml-2 text-sm text-white">
                     offer
@@ -121,9 +143,9 @@ export const Header = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="md:w-44">
-                    <NavigationMenuLink>Comming Soon</NavigationMenuLink>
+                    <NavigationMenuLink>Coming Soon</NavigationMenuLink>
                   </div>
-                </NavigationMenuContent>
+                </NavigationMenuContent> */}
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

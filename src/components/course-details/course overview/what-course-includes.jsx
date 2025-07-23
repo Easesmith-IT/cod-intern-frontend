@@ -31,11 +31,11 @@ export const WhatCourseIncludes = () => {
       </h2>
 
       <div className="flex flex-col gap-5 mt-10">
-        <Module title="Module 1" duration="2.4 Weeks" list={list} />
-        <Module title="Module 1" duration="2.4 Weeks" list={list} />
-        <Module title="Module 1" duration="2.4 Weeks" list={list} />
-        <Module title="Module 1" duration="2.4 Weeks" list={list} />
-        <Module title="Module 1" duration="2.4 Weeks" list={list} />
+        <Module title="Module 1" duration="3 Weeks" list={list} />
+        <Module title="Module 2" duration="3 Weeks" list={list} />
+        <Module title="Module 3" duration="3 Weeks" list={list} />
+        <Module title="Module 4" duration="3 Weeks" list={list} />
+        <Module title="Module 5" duration="3 Weeks" list={list} />
       </div>
       <Button size="xl" variant="codIntern" className="mt-10 rounded">
         <span>Download Syllabus</span>
