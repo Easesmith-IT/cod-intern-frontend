@@ -3,10 +3,13 @@
 import React, { useEffect, useRef } from "react";
 import { useTimer } from "react-timer-hook";
 
-const EXPIRY_KEY = "countdownExpiry";
-const durationInSeconds = 6 * 24 * 60 * 60; // 6 days
+// const EXPIRY_KEY = "countdownExpiry";
+// const durationInSeconds = 6 * 24 * 60 * 60; // 6 days
 
-export const Counter = () => {
+export const Counter = ({
+  EXPIRY_KEY = "countdownExpiry",
+  durationInSeconds = 6 * 24 * 60 * 60,
+}) => {
   const intervalRef = useRef(null);
 
   const createNewExpiry = () => {

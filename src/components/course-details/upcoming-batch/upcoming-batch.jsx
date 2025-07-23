@@ -1,3 +1,4 @@
+import { Counter } from "@/components/counter";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
@@ -63,7 +64,7 @@ export const UpcomingBatch = () => {
               <h4 className="font-stolzl font-normal text-xl text-para-3">
                 Upcoming Batch Starts In
               </h4>
-              <div className="flex items-center font-stolzl mt-4">
+              {/* <div className="flex items-center font-stolzl mt-4">
                 <div className="flex justify-center gap-2 border h-12 px-2 py-1 rounded items-center p-2">
                   <span className="text-2xl text-para-3">47</span>
                   <span className="text-sm text-[#A49DAE]">hrs</span>
@@ -78,6 +79,9 @@ export const UpcomingBatch = () => {
                   <span className="text-2xl text-para-3">45</span>
                   <span className="text-sm text-[#A49DAE]">sec</span>
                 </div>
+              </div> */}
+              <div className="mt-4">
+              <Counter />
               </div>
             </div>
             <div>

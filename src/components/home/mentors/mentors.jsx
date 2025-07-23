@@ -18,19 +18,19 @@ export const Mentors = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
         <Mentor
-          img="/our-mentors/Anjali.jpg"
+          img="/our-mentors/Anjali-img.jpg"
           name="Anjali Sharma"
           position="Founder"
           proficiency={["Talent Acquisition", "Recruitment", "HR"]}
         />
         <Mentor
-          img="/our-mentors/Gaurav.jpg"
+          img="/our-mentors/Gaurav-img.jpg"
           name="Gaurav Dwivedi"
           position="Co-Founder"
           proficiency={["Cloud Computing", "Python", "Digital Marketing"]}
         />
         <Mentor
-          img="/our-mentors/Akansha.jpg"
+          img="/our-mentors/Akansha-img.jpg"
           name="Akanksha Chaturvedi"
           position="Placement Head-Recruitment"
           proficiency={["Placements", "Soft Skill Trainer"]}
