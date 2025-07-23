@@ -23,13 +23,17 @@ export function useApiMutation({
   method,
   invalidateKey = null,
   config = {},
+  isToast = true,
 }) {
   const queryClient = useQueryClient();
 
   return useMutation({
     mutationFn: (data) => apiCall({ url, method, data, config }),
     onSuccess: (data) => {
-      toast.success(data?.message || "Action successful!");
+      if (isToast) {
+        toast.success(data?.message || "Action successful!");
+      }
+
       if (invalidateKey) {
         queryClient.invalidateQueries(invalidateKey);
       }

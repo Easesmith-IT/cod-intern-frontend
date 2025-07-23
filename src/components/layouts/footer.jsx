@@ -157,7 +157,7 @@ export const Footer = () => {
         <div className="section-container flex flex-col sm:flex-row justify-between items-center gap-5">
           <div className="flex flex-wrap justify-center gap-4">
             <p className="font-stolzl font-book text-sm text-white">
-              Copyright © 2023
+              Copyright © 2025
             </p>
             <p className="font-stolzl font-book text-sm text-white">
               All Rights Reserved.

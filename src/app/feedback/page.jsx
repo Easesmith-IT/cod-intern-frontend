@@ -23,8 +23,11 @@ import { FeedbackFormSchema } from "@/schemas/FeedbackFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { POST } from "@/constants/apiMethods";
+import { useState } from "react";
+import { SuccessModal } from "@/components/success-modal";
 
 const Feedback = () => {
+  const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(FeedbackFormSchema),
     defaultValues: {
@@ -42,17 +45,17 @@ const Feedback = () => {
     },
   });
 
-  const { mutate: submitForm, isPending: isSubmitFormLoading } = useApiMutation(
-    {
+  const { mutateAsync: submitForm, isPending: isSubmitFormLoading } =
+    useApiMutation({
       url: "/feedBack/submit",
       method: POST,
       invalidateKey: ["feedBack-submit"],
-    }
-  );
+      isToast: false,
+    });
 
   console.log("isSubmitFormLoading :", isSubmitFormLoading);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log("data :", data);
     const apiData = {
       firstName: data.firstName,
@@ -70,13 +73,14 @@ const Feedback = () => {
       workshopDate: "2025-07-23",
     };
 
-    submitForm(apiData)
-    form.reset()
+    await submitForm(apiData);
+    form.reset();
+    setOpen(true)
   };
-
 
   return (
     <section className="px-5 py-20">
+      {open && <SuccessModal open={open} setOpen={setOpen} />}
       <div className="max-w-5xl mx-auto shadow-[0px_0px_15px_0px_#0000001F] p-5 rounded-md border">
         <h1 className="text-2xl font-medium font-stolzl text-center">
           Feedback Form
