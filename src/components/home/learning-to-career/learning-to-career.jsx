@@ -102,7 +102,8 @@ export const LearningToCareer = ({className}) => {
         </LearningStep>
         <LearningStep
           index={6}
-          title="Get Certified & Career Matched (AI Career Matchmaking)"
+          title="Get Certified & Career Matched"
+          title1="(AI Career Matchmaking)"
         >
           Upon certification, our sophisticated AI engine connects you with
           internships, projects, and job positions that exactly match your skill
