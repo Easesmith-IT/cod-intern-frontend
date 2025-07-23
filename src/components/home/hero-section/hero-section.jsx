@@ -157,9 +157,11 @@ export const HeroSection = () => {
           <CarouselItem>
             <Image
               // className="h-[70vh] md:size-full"
-              className="h-[30vh] md:size-full"
+              className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
+              quality={100}
+              unoptimized
               src="/home/Banner1.png"
               alt="hero-banner"
             />
@@ -167,19 +169,23 @@ export const HeroSection = () => {
           <CarouselItem className="">
             <Image
               // className="h-[70vh] md:size-full"
-              className="h-[30vh] md:size-full"
+              className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src="/home/Banner2.png"
+              quality={100}
+              unoptimized
+              src="/home/banner2.png"
               alt="hero-banner"
             />
           </CarouselItem>
           <CarouselItem className="">
             <Image
               // className="h-[70vh] md:size-full"
-              className="h-[30vh] md:size-full"
+              className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
+              quality={100}
+              unoptimized
               src="/home/Banner3.png"
               alt="hero-banner"
             />
