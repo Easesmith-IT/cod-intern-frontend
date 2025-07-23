@@ -160,7 +160,7 @@ export const HeroSection = () => {
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src="/home/banner1.png"
+              src="/home/banner-1.png"
               alt="hero-banner"
             />
           </CarouselItem>
@@ -170,7 +170,7 @@ export const HeroSection = () => {
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src="/home/banner2.png"
+              src="/home/banner-2.png"
               alt="hero-banner"
             />
           </CarouselItem>
@@ -180,7 +180,7 @@ export const HeroSection = () => {
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src="/home/banner3.png"
+              src="/home/banner-3.png"
               alt="hero-banner"
             />
           </CarouselItem>
