@@ -162,7 +162,7 @@ export const HeroSection = () => {
               height={430}
               quality={100}
               unoptimized
-              src="/home/Banner1.png"
+              src="/home/banner1.png"
               alt="hero-banner"
             />
           </CarouselItem>
@@ -186,7 +186,7 @@ export const HeroSection = () => {
               height={430}
               quality={100}
               unoptimized
-              src="/home/Banner3.png"
+              src="/home/banner3.png"
               alt="hero-banner"
             />
           </CarouselItem>
