@@ -155,7 +155,7 @@ export const HeroSection = () => {
 
         <CarouselContent>
           <CarouselItem>
-            <Image
+            <img
               // className="h-[70vh] md:size-full"
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
@@ -167,7 +167,7 @@ export const HeroSection = () => {
             />
           </CarouselItem>
           <CarouselItem className="">
-            <Image
+            <img
               // className="h-[70vh] md:size-full"
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
@@ -179,7 +179,7 @@ export const HeroSection = () => {
             />
           </CarouselItem>
           <CarouselItem className="">
-            <Image
+            <img
               // className="h-[70vh] md:size-full"
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
