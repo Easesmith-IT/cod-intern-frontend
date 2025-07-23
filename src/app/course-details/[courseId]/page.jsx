@@ -22,7 +22,7 @@ const CourseDetails = () => {
     <main>
       <HeroSection />
       <CourseOverview />
-      {/* <TopCompanies /> */}
+      {/* <TopCompanies /> comment this */}
       <IndustryProjects />
       <KeyHighlights />
       <GloballyRecognized />

@@ -13,13 +13,13 @@ export const CustomBreadCrumb = () => {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink className="text-black font-medium" href="/">
+          <BreadcrumbLink className="text-black font-medium text-sm md:text-base" href="/">
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage className="text-main font-medium">
+          <BreadcrumbPage className="text-main font-medium text-sm md:text-base">
             Breadcrumb
           </BreadcrumbPage>
         </BreadcrumbItem>

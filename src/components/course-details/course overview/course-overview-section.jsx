@@ -10,7 +10,7 @@ export const CourseOverviewSection = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-4">
+      <div className="flex md:grid grid-cols-4 overflow-x-auto">
         <Tab
           active={selectedTab === "course-overview"}
           alt="Homework"
@@ -45,10 +45,10 @@ export const CourseOverviewSection = () => {
         />
       </div>
 
-      <h2 className="text-2xl font-bold font-stolzl mt-7 text-para-3">
+      <h2 className="text-xl md:text-2xl font-bold font-stolzl mt-7 text-para-3">
         Course Overview
       </h2>
-      <p className="mt-3 font-stolzl font-book text-para">
+      <p className="mt-3 font-stolzl text-xs md:text-base font-book text-para">
         Immerse yourself in the heart of our AI-powered programs. This overview
         gives you a complete glance at what you'll study, the skills you'll
         develop, and how our experiential learning approach gets you ready to

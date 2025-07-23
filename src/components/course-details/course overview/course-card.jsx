@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export const CourseCard = () => {
   return (
-    <div className="shadow-[0px_8px_25px_0px_#0000001A] p-3 rounded-md">
+    <div className="shadow-[0px_8px_25px_0px_#0000001A] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 lg:gap-0 p-3 rounded-md">
       <Image
         src="/course-img.jpg"
         className="w-full rounded-md"
@@ -16,11 +16,15 @@ export const CourseCard = () => {
       />
       <div className="mt-2 px-2">
         <div className="flex justify-between items-center gap-4 mb-4">
-          <h3 className="font-stolzl font-medium">Include This Course</h3>
+          <h3 className="font-stolzl text-sm sm:text-base font-medium">
+            Include This Course
+          </h3>
           <p className="font-stolzl flex gap-1 items-center">
-            <span className="text-[#9D9D9D] text-sm">Costs:</span>
-            <span className="text-main font-bold">Rs.1995</span>
-            <span className="text-sm line-through text-[#9D9D9D]">Rs.2495</span>
+            <span className="text-[#9D9D9D] text-xs sm:text-sm">Costs:</span>
+            <span className="text-main font-bold text-sm sm:text-base">Rs.1995</span>
+            <span className="text-xs sm:text-sm line-through text-[#9D9D9D]">
+              Rs.2495
+            </span>
           </p>
         </div>
         <Info
@@ -45,7 +49,7 @@ export const CourseCard = () => {
         <Info src="/venue.svg" alt="Venue" title="Venue" desc="Online" />
       </div>
       <div className="mt-4">
-        <p className="font-stolzl text-lg font-medium">Payment:</p>
+        <p className="font-stolzl text-base sm:text-lg font-medium">Payment:</p>
         <div className="flex gap-1 items-center mt-2">
           <Image src="/visa.svg" width={36} height={23} alt="Visa" />
           <Image
@@ -63,7 +67,11 @@ export const CourseCard = () => {
           />
         </div>
       </div>
-      <Button className="mt-4 rounded w-full" size="xl" variant="linearGradient">
+      <Button
+        className="mt-4 rounded w-full"
+        size="xl"
+        variant="linearGradient"
+      >
         <span>View Cart</span>
         <ArrowRight />
       </Button>

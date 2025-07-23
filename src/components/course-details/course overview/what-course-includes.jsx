@@ -19,8 +19,8 @@ const list = [
 export const WhatCourseIncludes = () => {
   return (
     <div className="mt-28">
-      <h2 className="text-[46px] font-medium">
-        <span className="text-main">What This Course</span> Offers course
+      <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+        <span className="text-main">What This Course</span> Offers
         <Image
           src="/ellipse-group.svg"
           className="inline-block ml-2"

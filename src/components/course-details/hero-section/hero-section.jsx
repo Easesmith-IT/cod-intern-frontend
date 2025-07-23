@@ -9,7 +9,7 @@ export const HeroSection = () => {
       style={{ backgroundImage: "url(/hero-bg.svg)" }}
       // className="h-[600px]"
     >
-      <div className="section-container relative flex items-center gap-5 py-10">
+      <div className="section-container relative flex flex-col lg:flex-row items-center lg:items-center gap-10 lg:gap-5 py-10">
         <HeroSectionContent />
         <ApplyNowForm />
         <Image
@@ -21,7 +21,7 @@ export const HeroSection = () => {
         />
       </div>
       <Image
-        className="absolute right-0 top-5 bottom-0"
+        className="absolute right-0 top-5 bottom-0 hidden lg:block"
         width={562}
         height={630}
         src="/hero-bg-1.svg"

@@ -40,13 +40,13 @@ export const ApplyNowForm = () => {
   };
 
   return (
-    <div className="max-w-[550px] rounded-md w-full bg-white relative z-10 p-5">
-      <h2 className="font-stolzl text-2xl font-medium">
+    <div className="max-w-[550px] mx-auto lg:mx-0 rounded-md w-full bg-white relative z-10 p-5">
+      <h2 className="font-stolzl text-xl md:text-2xl font-medium">
         Interested? Apply Now
       </h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 mt-4">
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <FormField
               control={form.control}
               name="firstName"
@@ -120,7 +120,7 @@ export const ApplyNowForm = () => {
             )}
           />
 
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <FormField
               control={form.control}
               name="education"
@@ -129,7 +129,7 @@ export const ApplyNowForm = () => {
                   <FormLabel></FormLabel>
                   <FormControl>
                     <Select>
-                      <SelectTrigger className="w-full py-5 bg-[#FDFBFF] border-[#9237E347] font-stolzl rounded">
+                      <SelectTrigger className="w-full py-5 bg-[#FDFBFF] data-[placeholder]:text-[#00000066] font-medium border-[#9237E347] rounded">
                         <SelectValue placeholder="Education" />
                       </SelectTrigger>
                       <SelectContent>

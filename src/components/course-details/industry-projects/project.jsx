@@ -16,10 +16,10 @@ export const Project = () => {
             </div>
             <Separator className="my-4 bg-border-1" />
             <div className="px-6">
-              <h3 className="text-xl text-center font-stolzl font-medium">
+              <h3 className="text-lg sm:text-xl text-center font-stolzl font-medium">
                 Dmart Analysis
               </h3>
-              <p className="text-para font-stolzl font-book text-sm text-center">
+              <p className="text-para font-stolzl font-book text-xs sm:text-sm text-center">
                 This project focuses on analysing DMart's sales data to optimize
                 inventory levels, pricing strategies, and overall profitability.
                 You'll uncover patterns in product movement and seasonal trends.
@@ -31,7 +31,7 @@ export const Project = () => {
           </CardContent>
 
           <CardFooter className="flex justify-center">
-            <div className="px-3 py-0.5 font-medium rounded-md bg-[#9237E31A] text-main uppercase">
+            <div className="px-3 py-0.5 text-xs sm:text-base font-medium rounded-md bg-[#9237E31A] text-main uppercase">
               Pbi
             </div>
           </CardFooter>

@@ -31,13 +31,13 @@ export const Module = ({ title, duration, list }) => {
         <div className="flex items-center gap-3">
           <div className="flex gap-2 items-center">
             <Clock4 />
-            <p className="font-stolzl font-normal text-sm">{duration}</p>
+            <p className="font-stolzl font-normal text-xs sm:text-sm">{duration}</p>
           </div>
           <div className="w-7 h-7">
             {isOpen ? (
-              <EyeOff className="text-white size-6" />
+              <EyeOff className="text-white size-5 sm:size-6" />
             ) : (
-              <Eye className="fill-white text-para-3 size-7" />
+              <Eye className="fill-white text-para-3 size-5 md:size-7" />
             )}
           </div>
         </div>
@@ -51,9 +51,9 @@ export const Module = ({ title, duration, list }) => {
           }}
         >
           <div className="border-l-2 border-main pl-5">
-            <ul className="grid grid-cols-3 gap-5 list-disc ml-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 list-disc ml-4">
               {list.map((item, i) => (
-                <li className="text-sm font-stolzl font-book" key={i}>
+                <li className="text-xs sm:text-sm font-stolzl font-book" key={i}>
                   {item}
                 </li>
               ))}

@@ -23,30 +23,50 @@ import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import { CounterItem, CounterSeperator } from "../counter/counter";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
+import { useEffect, useState } from "react";
+import { throttle } from "lodash";
 
 export const Header = () => {
   const router = useRouter();
   const { days, hours, minutes, seconds } = usePersistentCountdown();
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = throttle(() => {
+      const scrollTop = window.scrollY;
+      const shouldBeVisible = scrollTop <= 200;
+
+      setIsVisible((prev) =>
+        prev !== shouldBeVisible ? shouldBeVisible : prev
+      );
+    }, 500); // runs at most once every 100ms
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
     <header className="shadow-md shadow-black/5 z-20 sticky top-0 bg-white">
-      <div className="flex flex-col sm:flex-row py-3 justify-center items-center gap-3 border-b-[1.5px]">
-        <div className="flex items-center gap-2">
-          <Image src="./clock.svg" width={20} height={20} alt="clock" />
-          <p className="font-stolzl text-xs md:text-base">
-            Limited Time Offer - Hurry Up!
-          </p>
+      {/* {isVisible && ( */}
+        <div className="flex flex-col sm:flex-row py-3 justify-center items-center gap-3 border-b-[1.5px]">
+          <div className="flex items-center gap-2">
+            <Image src="./clock.svg" width={20} height={20} alt="clock" />
+            <p className="font-stolzl text-xs md:text-base">
+              Limited Time Offer - Hurry Up!
+            </p>
+          </div>
+          <div className="flex items-center font-stolzl text-xs md:text-base">
+            <CounterItem value={days} />
+            <CounterSeperator />
+            <CounterItem value={hours} />
+            <CounterSeperator />
+            <CounterItem value={minutes} />
+            <CounterSeperator />
+            <CounterItem value={seconds} />
+          </div>
         </div>
-        <div className="flex items-center font-stolzl text-xs md:text-base">
-          <CounterItem value={days} />
-          <CounterSeperator />
-          <CounterItem value={hours} />
-          <CounterSeperator />
-          <CounterItem value={minutes} />
-          <CounterSeperator />
-          <CounterItem value={seconds} />
-        </div>
-      </div>
+      {/* )} */}
 
       <div className="flex gap-4 justify-between section-container py-2">
         <div className="flex gap-1 items-center">
