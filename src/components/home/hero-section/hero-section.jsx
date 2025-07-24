@@ -52,7 +52,7 @@ export const HeroSection = () => {
                 variant="outline"
                 className="rounded-sm px-5 h-12"
               >
-                <Image src="./google.svg" width={25} height={25} alt="email" />
+                <Image src="/google.svg" width={25} height={25} alt="email" />
                 Continue With Email
               </Button>
               <Button

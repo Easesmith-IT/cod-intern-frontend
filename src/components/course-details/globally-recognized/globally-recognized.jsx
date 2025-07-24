@@ -4,8 +4,8 @@ import React from "react";
 
 export const GloballyRecognized = () => {
   return (
-    <section className="section-container pb-28">
-      <h2 className="text-[46px] font-medium leading-14 text-center">
+    <section className="section-container pb-12 md:pb-24">
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
         <span className="text-main">Globally Acclaimed</span> Credentials
         <Image
           src="/ellipse-group.svg"
@@ -27,20 +27,26 @@ export const GloballyRecognized = () => {
       </p> */}
 
       <div className="flex gap-5 items-center justify-center mt-10">
-        <Button variant="codIntern" className="rounded font-book">
+        <Button
+          variant="codIntern"
+          className="rounded font-book text-xs md:text-sm"
+        >
           Codintern Certification
         </Button>
-        <Button variant="outline" className="rounded font-book">
+        <Button
+          variant="outline"
+          className="rounded font-book text-xs md:text-sm"
+        >
           Skill India Certification
         </Button>
       </div>
 
-      <div className="flex justify-between gap-10 mt-12">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-10 mt-12">
         <div className="">
-          <h3 className="font-stolzl font-medium text-para-3 text-4xl max-w-[543px] leading-11">
+          <h3 className="font-stolzl font-medium text-para-3 text-xl sm:text-2xl lg:text-4xl max-w-[543px] leading-9 sm:leading-10 lg:leading-11">
             Master Certification in Data Science & Analytics with AI
           </h3>
-          <p className="font-stolzl font-book text-para max-w-[590px] text-base mt-5">
+          <p className="font-stolzl font-book text-para max-w-[590px] text-xs sm:text-sm lg:text-base mt-5">
             Our detailed Master Data Science & Analytics with AI Certification
             Course is carefully crafted to give you a deep knowledge of
             analytics and advanced AI, making you ready for the illustrious
@@ -53,7 +59,7 @@ export const GloballyRecognized = () => {
           <Button
             size="lg"
             variant="linearGradient"
-            className="rounded-sm px-5 h-12 mt-10"
+            className="rounded-sm px-3 h-10 sm:px-5 sm:h-12 mt-10 text-xs md:text-sm"
           >
             Inquire Now
           </Button>

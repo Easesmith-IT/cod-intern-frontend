@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 export const ShapingFutures = ({ className }) => {
   return (
-    <section className={cn("section-container pb-24", className)}>
-      <h2 className="text-[46px] font-medium leading-14 capitalize text-center">
+    <section className={cn("section-container pb-12 md:pb-24", className)}>
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize text-center">
         <span className="text-main">Crafting Careers</span> with Vision
         <Image
           src="/ellipse-group.svg"
@@ -16,18 +16,18 @@ export const ShapingFutures = ({ className }) => {
           alt="Ellipse"
         />
       </h2>
-      <p className="font-stolzl text-sm text-para mt-2 font-book text-center">
+      <p className="font-stolzl text-xs sm:text-sm text-para mt-2 font-book text-center">
         Identify the right decision-makers and seal the deal with confidence.
       </p>
 
-      <p className="font-stolzl text-sm text-para mt-4 font-book mx-auto text-center max-w-4xl">
+      <p className="font-stolzl text-xs sm:text-sm text-para mt-4 font-book mx-auto text-center max-w-4xl">
         At CodIntern, we enable every student to think big and construct boldly.
         Our vision is to prepare future creators with the talent, mentorship,
         and attitude required to succeed. We're democratizing technology
         education to make it accessible, engaging, and meaningful.
       </p>
 
-      <div className="grid grid-cols-3 gap-5 mt-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
         <Info
           img="/about-us/who-we-are.svg"
           title="Who We Are?"

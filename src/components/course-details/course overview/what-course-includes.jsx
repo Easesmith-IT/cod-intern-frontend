@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
 const list = [
-    "Introduction to Excel",
-    "Introduction to Excel",
-    "Introduction to Excel",
-    "Introduction to Excel",
-    "Introduction to Excel",
-    "Introduction to Excel",
-    "Introduction to Excel",
-    "Introduction to Excel",
-    "Introduction to Excel",
-  ]
+  "Introduction to Excel",
+  "Introduction to Excel",
+  "Introduction to Excel",
+  "Introduction to Excel",
+  "Introduction to Excel",
+  "Introduction to Excel",
+  "Introduction to Excel",
+  "Introduction to Excel",
+  "Introduction to Excel",
+];
 
 export const WhatCourseIncludes = () => {
   return (
     <div className="mt-28">
-      <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
         <span className="text-main">What This Course</span> Offers
         <Image
           src="/ellipse-group.svg"

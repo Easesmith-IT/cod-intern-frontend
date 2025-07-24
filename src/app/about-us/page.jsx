@@ -19,8 +19,8 @@ const AboutUs = () => {
       <StartYourCourse />
       <ExpertInstructorLiveClasses />
       <Mentors />
-      <LearningToCareer className="py-24" />
-      <LearnersStories className="pt-0" />
+      <LearningToCareer className="py-12 sm:py-24" />
+      <LearnersStories className="!pt-0" />
     </section>
   );
 };

@@ -6,7 +6,7 @@ export const ThreeStepApproach = () => {
   return (
     <section className="py-12 md:py-24 section-container">
       <div className="flex justify-center text-center section-container px-0 max-w-[900px]">
-        <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
           <span className="text-main">Our 3-Step </span> AI-Enhanced Recruitment
           Approach
           <Image

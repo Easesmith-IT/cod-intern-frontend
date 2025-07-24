@@ -19,7 +19,7 @@ export const PopularCourses = () => {
   return (
     <section className="section-container">
       <div className="flex justify-center text-center section-container px-0 max-w-[900px]">
-        <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
+        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
           <span className="text-main">Our flagship</span> course offerings
           <Image
             src="/ellipse-group.svg"
@@ -86,7 +86,7 @@ export const PopularCourses = () => {
         <Button
           size="lg"
           variant="linearGradient"
-          className="rounded-sm px-5 h-12"
+          className="rounded-sm px-3 h-10 md:px-5 md:h-12 text-xs sm:text-sm"
         >
           View More
         </Button>

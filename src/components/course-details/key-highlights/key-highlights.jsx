@@ -8,16 +8,16 @@ import {
 } from "@/components/ui/carousel";
 import { MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
-import { KeyHighlight } from './key-highlight';
+import { KeyHighlight } from "./key-highlight";
 import highlights from "@/data/highlights.json";
 
 export const KeyHighlights = () => {
   return (
-    <section className="section-container pb-28">
+    <section className="section-container pb-12 md:pb-24">
       <Carousel className="w-full">
         <div className="flex justify-between items-center gap-5">
           <div>
-            <h2 className="text-[46px] font-medium leading-14 max-w-[788px]">
+            <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium max-w-[788px]">
               <span className="text-main">What Makes Our</span> Data Science &
               AI Course Stand Out
               <Image
@@ -28,11 +28,11 @@ export const KeyHighlights = () => {
                 alt="Ellipse"
               />
             </h2>
-            <p className="max-w-[491px] font-stolzl font-book text-para mt-4">
+            <p className="max-w-[491px] text-xs sm:text-sm md:text-base font-stolzl font-book text-para mt-4">
               Every Feature Empowers the Career You’ve Always Wanted
             </p>
           </div>
-          <div className="flex gap-4">
+          <div className="hidden md:flex gap-4">
             <CarouselPrevious
               //   className="static translate-0 disabled:bg-[#ababab75]"
               className="static translate-0 border w-[77px] rounded-md h-[33px] disabled:bg-[#ababab75]"
@@ -52,7 +52,20 @@ export const KeyHighlights = () => {
             <KeyHighlight key={index} highlight={highlight} />
           ))}
         </CarouselContent>
+        <div className="md:hidden flex justify-center mt-6 gap-4">
+          <CarouselPrevious
+            //   className="static translate-0 disabled:bg-[#ababab75]"
+            className="static translate-0 border w-[77px] rounded-md h-[33px] disabled:bg-[#ababab75]"
+            variant="ghost"
+            icon={MoveLeft}
+          />
+          <CarouselNext
+            className="static translate-0 border w-[77px] rounded-md h-[33px] disabled:bg-[#ababab75]"
+            variant="ghost"
+            icon={MoveRight}
+          />
+        </div>
       </Carousel>
     </section>
   );
-}
+};

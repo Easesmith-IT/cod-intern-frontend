@@ -10,7 +10,7 @@ export const CourseCard = ({name,src}) => {
     <Card className="rounded-sm py-0">
       <CardContent className="px-0">
         <Image
-          src={src|| "/course-img.jpg"}
+          src={src || "/course-img.jpg"}
           className="w-full"
           width={300}
           height={200}
@@ -32,7 +32,7 @@ export const CourseCard = ({name,src}) => {
             </div>
             <p className="text-para-2 font-book font-stolzl text-xs">(4.5)</p>
           </div>
-          <h3 className="font-stolzl text-heading font-medium text-xl mt-2 line-clamp-2">
+          <h3 className="font-stolzl text-heading font-medium text-lg sm:text-xl mt-2 line-clamp-2">
             {name}
           </h3>
 
@@ -52,7 +52,7 @@ export const CourseCard = ({name,src}) => {
           </div>
           <Button
             variant="ghost"
-            className="text-main py-0 has-[>svg]:px-0 gap-1 mt-5"
+            className="text-main py-0 has-[>svg]:px-0 gap-1 mt-5 text-xs sm:text-sm"
             asChild
           >
             <Link href="/course-details/123">

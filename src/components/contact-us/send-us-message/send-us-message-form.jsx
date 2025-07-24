@@ -33,8 +33,8 @@ export const SendUsMessageForm = () => {
   };
 
   return (
-    <div className="max-w-[836px] pr-[50px]">
-      <h2 className="text-[46px] font-medium">
+    <div className="max-w-[836px] md:pr-[50px]">
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
         <span className="text-main">Send Us</span> a Message
         <Image
           src="/ellipse-group.svg"
@@ -47,7 +47,7 @@ export const SendUsMessageForm = () => {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 mt-4">
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             <FormField
               control={form.control}
               name="name"
@@ -123,7 +123,7 @@ export const SendUsMessageForm = () => {
             />
           </div>
 
-          <p className="mt-4 text-para font-stolzl font-book text-sm">
+          <p className="mt-4 text-para font-stolzl font-book text-xs sm:text-sm">
             The information you provide shall be processed by IT Service
             Management Limited – a professional training organisation. Your data
             shall be used by a member of staff to contact you regarding your
@@ -142,7 +142,7 @@ export const SendUsMessageForm = () => {
                       onCheckedChange={field.onChange}
                     />
                   </FormControl>
-                  <FormLabel className="font-stolzl text-sm text-para font-book">
+                  <FormLabel className="font-stolzl text-xs sm:text-sm text-para font-book">
                     Click here to sign up to our email marketing, offers and
                     discounts
                   </FormLabel>
@@ -153,7 +153,7 @@ export const SendUsMessageForm = () => {
           />
 
           <Button
-            className="mt-5 rounded"
+            className="mt-5 rounded text-xs md:text-sm"
             size="lg"
             type="submit"
             variant="linearGradient"

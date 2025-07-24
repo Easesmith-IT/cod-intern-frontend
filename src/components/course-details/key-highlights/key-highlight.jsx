@@ -16,7 +16,7 @@ export const KeyHighlight = ({ highlight }) => {
               alt="highlight"
               className='h-14 w-14'
             />
-            <h3 className="font-medium text-center text-base font-stolzl mt-4">
+            <h3 className="font-medium text-center text-sm md:text-base font-stolzl mt-4">
               {highlight?.title || "Pan India Placements"}
             </h3>
           </CardContent>

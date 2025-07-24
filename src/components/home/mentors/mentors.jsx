@@ -1,11 +1,11 @@
-import Image from 'next/image'
-import React from 'react'
-import { Mentor } from './mentor';
+import Image from "next/image";
+import React from "react";
+import { Mentor } from "./mentor";
 
 export const Mentors = () => {
   return (
     <section className="section-container">
-      <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
         <span className="text-main">Mentors behind</span> your career growth
         <Image
           src="/ellipse-group.svg"
@@ -16,7 +16,7 @@ export const Mentors = () => {
         />
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
         <Mentor
           img="/our-mentors/Anjali-img.jpg"
           name="Anjali Sharma"
@@ -38,4 +38,4 @@ export const Mentors = () => {
       </div>
     </section>
   );
-}
+};

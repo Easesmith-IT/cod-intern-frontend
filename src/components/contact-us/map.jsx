@@ -18,7 +18,7 @@ export const Map = () => {
   }, []);
 
   return (
-    <div className="w-full h-[600px] max-w-[1500px] mx-auto relative">
+    <div className="w-full h-[400px] sm:h-[600px] max-w-[1500px] mx-auto relative">
       {isLoading && (
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-white">
           <span className="loader" />

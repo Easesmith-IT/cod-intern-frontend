@@ -6,11 +6,11 @@ import Link from "next/link";
 
 export const AchieveYourGoals = () => {
   return (
-    <div className="section-container py-24 grid grid-cols-[530px_1fr] items-center gap-14">
+    <div className="section-container py-12 md:py-24 flex flex-col-reverse xl:grid xl:grid-cols-[530px_1fr] items-center gap-14">
       <div>
         <div className="shadow-[0px_0px_15px_0px_#0000001F] max-w-[530px] p-4 rounded-md">
           <div className="flex gap-2 items-center">
-            <h3 className="font-medium font-stolzl text-2xl">
+            <h3 className="font-medium font-stolzl text-lg sm:text-2xl">
               Active User right now
             </h3>
             <Image
@@ -20,8 +20,8 @@ export const AchieveYourGoals = () => {
               alt="Light On"
             />
           </div>
-          <div className="flex gap-4 mt-5">
-            <div className="w-[150px]">
+          <div className="flex items-center flex-col sm:flex-row gap-4 mt-5">
+            <div className="sm:w-[150px]">
               <h3 class="bg-gradient-to-r text-center font-stolzl font-bold text-3xl from-main to-para-3 bg-clip-text text-transparent">
                 89%
               </h3>
@@ -29,7 +29,7 @@ export const AchieveYourGoals = () => {
                 of customer say they read reviews before buying a course
               </p>
               <Separator className="my-4" />
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center justify-center sm:justify-start">
                 <Image
                   src="/about-us/star-fill.svg"
                   width={24}
@@ -74,7 +74,7 @@ export const AchieveYourGoals = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
+        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
           <span className="text-main">Reach Your Ambitions</span> with Enhanced
           CodIntern Programs
           <Image
@@ -85,7 +85,7 @@ export const AchieveYourGoals = () => {
             alt="Ellipse"
           />
         </h2>
-        <p className="font-stolzl text-sm text-para mt-5 font-book">
+        <p className="font-stolzl text-xs sm:text-sm text-para mt-5 font-book">
           We don't only educate at CodIntern — we evolve. Our enhanced courses
           are tailored to narrow the gap between what they learn and what the
           job market requires. Through practical projects, AI-driven learning
@@ -100,7 +100,7 @@ export const AchieveYourGoals = () => {
               height={17}
               alt="List Item"
             />
-            <span className="text-sm font-stolzl font-book text-para">
+            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
               Master In-Demand Skills From programming to AI, web development to
               aptitude — know what employers are really looking for.
             </span>
@@ -112,7 +112,7 @@ export const AchieveYourGoals = () => {
               height={17}
               alt="List Item"
             />
-            <span className="text-sm font-stolzl font-book text-para">
+            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
               Crack Internships & Job Interviews Practice with resume
               assistance, mock interviews, and placement-ready training.
             </span>
@@ -124,7 +124,7 @@ export const AchieveYourGoals = () => {
               height={17}
               alt="List Item"
             />
-            <span className="text-sm font-stolzl font-book text-para">
+            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
               Build Real-World Projects Practice in the real world. Practice
               problems, develop apps, and present your portfolio to recruiters.
             </span>
@@ -136,7 +136,7 @@ export const AchieveYourGoals = () => {
               height={17}
               alt="List Item"
             />
-            <span className="text-sm font-stolzl font-book text-para">
+            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
               Learn Smarter with AI Get personalized learning with AI-created
               quizzes, progress monitoring, and adaptive difficulty levels.
             </span>
@@ -148,13 +148,18 @@ export const AchieveYourGoals = () => {
               height={17}
               alt="List Item"
             />
-            <span className="text-sm font-stolzl font-book text-para">
+            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
               Upskill Anytime, Anywhere With multilingual material, downloadable
               content, and mobile-supported access — learning is within reach
             </span>
           </li>
         </ul>
-        <Button asChild size="xl" className="mt-5" variant="linearGradient">
+        <Button
+          asChild
+          size="xl"
+          className="mt-5 text-xs sm:text-sm"
+          variant="linearGradient"
+        >
           <Link href="/course-details/123">View Our Courses</Link>
         </Button>
       </div>

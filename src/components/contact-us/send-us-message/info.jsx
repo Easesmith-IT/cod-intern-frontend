@@ -13,8 +13,8 @@ export const Info = ({ title, desc, icon, alt, width, height }) => {
         <Image src={icon} width={width} height={height} alt={alt} />
       </div>
       <div>
-        <h4 className="font-stolzl text-para-3 font-normal">{title}</h4>
-        <p className="bg-gradient-to-r font-stolzl font-normal text-sm from-main to-para-3 bg-clip-text text-transparent">
+        <h4 className="font-stolzl text-sm sm:text-base text-para-3 font-normal">{title}</h4>
+        <p className="bg-gradient-to-r font-stolzl font-normal text-xs sm:text-sm from-main to-para-3 bg-clip-text text-transparent">
           {desc}
         </p>
       </div>

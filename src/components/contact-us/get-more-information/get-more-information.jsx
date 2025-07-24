@@ -4,8 +4,8 @@ import { Info } from "./info";
 
 export const GetMoreInformation = () => {
   return (
-    <section className="section-container py-24">
-      <h2 className="text-[46px] font-medium text-center">
+    <section className="section-container py-12 md:py-24">
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
         <span className="text-main">Discover</span> More
         <Image
           src="/ellipse-group.svg"
@@ -16,11 +16,11 @@ export const GetMoreInformation = () => {
         />
       </h2>
 
-      <div className="w-full h-[1px] bg-[#C9C9C9] relative mt-32">
+      <div className="w-full hidden md:block h-[1px] bg-[#C9C9C9] relative mt-32">
         <div className="size-2 rounded-full bg-[#C9C9C9] absolute -left-0.5 -top-1"></div>
         <div className="size-2 rounded-full bg-[#C9C9C9] absolute -right-0.5 -top-1"></div>
       </div>
-      <div className="flex gap-[30px] justify-center items-start">
+      <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 mt-10 md:mt-0 md:flex gap-7 sm:gap-5 lg:gap-[30px] justify-center items-start">
         <Info
           index={1}
           icon="/contact-us/time-saving.svg"
@@ -30,7 +30,7 @@ export const GetMoreInformation = () => {
           desc="CodIntern's AI-powered learning and streamlined coursework maximize your study time so you learn the fundamentals effectively and get career-ready at the fastest pace without any wastage of time."
         />
         <Image
-          className="-translate-y-2"
+          className="-translate-y-2 hidden md:block"
           src="/contact-us/arrow-right.svg"
           width={15}
           height={19}
@@ -45,7 +45,7 @@ export const GetMoreInformation = () => {
           desc="Access high-quality tech training, thorough resources, and professional mentorship at a reasonable investment. CodIntern provides superior value, putting high-quality skilling within reach and returning high value on education."
         />
         <Image
-          className="-translate-y-2"
+          className="-translate-y-2 hidden md:block"
           src="/contact-us/arrow-right.svg"
           width={15}
           height={19}

@@ -7,8 +7,8 @@ export const UpcomingBatch = () => {
   const { days, hours, minutes, seconds } = usePersistentCountdown();
 
   return (
-    <section className="section-container py-28">
-      <h2 className="text-[46px] font-medium leading-14 text-center">
+    <section className="section-container py-12 md:py-24">
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
         <span className="text-main">Next Batch</span> Enrollment
         <Image
           src="/ellipse-group.svg"
@@ -19,7 +19,7 @@ export const UpcomingBatch = () => {
         />
       </h2>
 
-      <div className="flex justify-between gap-10 mt-12">
+      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-10 mt-12">
         <div className="flex gap-5 relative">
           <Image
             src="/upcoming-batch-img.jpg"
@@ -35,35 +35,35 @@ export const UpcomingBatch = () => {
             alt="upcoming-batch-img-1"
             className="absolute -bottom-4 -left-4 z-0"
           />
-          <div className="bg-white text-para-3 rounded-2xl px-4 py-1 absolute top-3 left-3 z-[3] text-sm font-stolzl">
+          <div className="bg-white text-para-3 rounded-2xl px-4 py-1 absolute top-3 left-3 z-[3] text-xs sm:text-sm font-stolzl">
             Data Science and AI Course
           </div>
         </div>
         <div className="">
-          <h3 className="font-stolzl font-medium text-para-3 text-4xl max-w-[667px] leading-11">
+          <h3 className="font-stolzl font-medium text-para-3 max-w-[667px] text-lg sm:text-2xl lg:text-4xl leading-9 sm:leading-10 lg:leading-11">
             Launch Your Tech Career with CodIntern
           </h3>
           <ul className="mt-5 space-y-4 list-disc ml-5">
-            <li className="font-stolzl text-sm text-para">
+            <li className="font-stolzl text-xs sm:text-sm text-para">
               Comprehensive Course Access
             </li>
-            <li className="font-stolzl text-sm text-para">
+            <li className="font-stolzl text-xs sm:text-sm text-para">
               Focused Learning Environment
             </li>
-            <li className="font-stolzl text-sm text-para">
+            <li className="font-stolzl text-xs sm:text-sm text-para">
               Practical Experience & Credentials
             </li>
-            <li className="font-stolzl text-sm text-para">
+            <li className="font-stolzl text-xs sm:text-sm text-para">
               Coding Challenge Practice
             </li>
-            <li className="font-stolzl text-sm text-para">
+            <li className="font-stolzl text-xs sm:text-sm text-para">
               Industry Exposure & Support
             </li>
           </ul>
 
           <div className="flex gap-5 justify-between items-center mt-10">
             <div>
-              <h4 className="font-stolzl font-normal text-xl text-para-3">
+              <h4 className="font-stolzl font-normal sm:text-lg md:text-xl text-para-3">
                 Upcoming Batch Starts In
               </h4>
               {/* <div className="flex items-center font-stolzl mt-4">
@@ -99,7 +99,7 @@ export const UpcomingBatch = () => {
               <Button
                 size="lg"
                 variant="linearGradient"
-                className="rounded-sm px-5 h-12 mt-4"
+                className="rounded-sm px-3 h-10 md:px-5 md:h-12 mt-4 text-xs md:text-sm"
               >
                 Coming Soon
               </Button>

@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 
 export const WeJustKeepGrowing = () => {
   return (
     <div className="section-container flex flex-col items-center">
-      <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
         <span className="text-main">We Just</span> Keep Growing
         <Image
           src="/ellipse-group.svg"
@@ -30,4 +30,4 @@ export const WeJustKeepGrowing = () => {
       />
     </div>
   );
-}
+};

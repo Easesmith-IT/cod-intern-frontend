@@ -45,13 +45,12 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   return (
     <header className="shadow-md shadow-black/5 z-20 sticky top-0 bg-white">
       {/* {isVisible && ( */}
       <div className="flex flex-col sm:flex-row py-3 justify-center items-center gap-3 border-b-[1.5px]">
         <div className="flex items-center gap-2">
-          <Image src="./clock.svg" width={20} height={20} alt="clock" />
+          <Image src="/clock.svg" width={20} height={20} alt="clock" />
           <p className="font-stolzl text-xs md:text-base">
             Limited Time Offer - Hurry Up!
           </p>
@@ -73,7 +72,7 @@ export const Header = () => {
           <Link href="/">
             <Image
               className="w-[160px] h-14 sm:w-[224px] sm:h-[65px]"
-              src="./logo.svg"
+              src="/logo.svg"
               width={224}
               height={65}
               alt="logo"
@@ -82,7 +81,7 @@ export const Header = () => {
           <Separator orientation="vertical" className="mr-2" />
           <Image
             className="w-16 h-7 sm:w-[100px] sm:h-[33px]"
-            src="./skill-india.svg"
+            src="/skill-india.svg"
             width={100}
             height={33}
             alt="logo"
@@ -174,7 +173,7 @@ export const Header = () => {
             size="lg"
             className="rounded-sm px-5 hidden md:block"
           >
-            Login
+            <Link href="/login">Login</Link>
           </Button>
           <Button
             size="lg"

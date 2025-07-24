@@ -13,9 +13,9 @@ import Autoplay from "embla-carousel-autoplay";
 import stories from "@/data/stories.json";
 import { cn } from "@/lib/utils";
 
-export const LearnersStories = ({className}) => {
+export const LearnersStories = ({ className }) => {
   return (
-    <section className={cn("section-container py-24", className)}>
+    <section className={cn("section-container py-12 md:py-24", className)}>
       <Carousel
         plugins={[
           Autoplay({
@@ -28,7 +28,7 @@ export const LearnersStories = ({className}) => {
         className="w-full"
       >
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-5">
-          <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+          <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
             <span className="text-main">Learners Who Fuel Progress</span>{" "}
             Stories That Ignite
             <Image

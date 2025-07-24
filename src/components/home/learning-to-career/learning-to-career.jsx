@@ -2,10 +2,10 @@ import Image from "next/image";
 import { LearningStep } from "./learning-step";
 import { cn } from "@/lib/utils";
 
-export const LearningToCareer = ({className}) => {
+export const LearningToCareer = ({ className }) => {
   return (
     <div className={cn("section-container", className)}>
-      <h2 className="text-2xl leading-8 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center capitalize w-full">
+      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center capitalize w-full">
         <span className="text-main">Transform Learning</span> into a Proud
         Career
         <Image

@@ -4,11 +4,11 @@ import { SendUsMessageForm } from "./send-us-message-form";
 
 export const SendUsMessage = () => {
   return (
-    <section className="section-container flex justify-between items-center">
+    <section className="section-container flex flex-col md:flex-row py-12 md:py-0 justify-between gap-10 items-center">
       <SendUsMessageForm />
-      <div className="h-[660px] w-[340px] flex flex-col justify-center bg-[linear-gradient(263.55deg,_#F3F1F5_8.66%,_#F3F4FF_100%)] relative">
-        <div className="w-[355px] rounded-tr-lg rounded-br-lg -translate-x-[50px] bg-white shadow-[0px_8px_25px_0px_#0000001F] p-4">
-          <h3 className="font-stolzl font-medium text-2xl text-para-3">
+      <div className="md:h-[660px] md:w-[340px] flex flex-col justify-center md:bg-[linear-gradient(263.55deg,_#F3F1F5_8.66%,_#F3F4FF_100%)] relative">
+        <div className="md:w-[355px] rounded-tr-lg rounded-br-lg md:-translate-x-[50px] bg-white shadow-[0px_8px_25px_0px_#0000001F] p-4">
+          <h3 className="font-stolzl font-medium text-xl md:text-2xl text-para-3">
             Contact Information
           </h3>
           <div className="space-y-9 mt-9">
@@ -40,7 +40,7 @@ export const SendUsMessage = () => {
           </div>
         </div>
         <Image
-          className="-translate-x-[50px]"
+          className="-translate-x-[50px] hidden md:block"
           src="/contact-us/contact-icon.svg"
           width={51}
           height={49}

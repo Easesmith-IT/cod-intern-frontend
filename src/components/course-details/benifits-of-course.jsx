@@ -4,8 +4,8 @@ import { Separator } from "../ui/separator";
 
 export const BenifitsOfCourse = () => {
   return (
-    <section className="section-container h-[760px] relative">
-      <h2 className="text-[46px] font-medium capitalize text-center leading-14 max-w-[680px] mx-auto">
+    <section className="section-container sm:h-[400px] md:h-[760px] relative">
+      <h2 className="font-medium capitalize text-center max-w-[680px] mx-auto text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px]">
         <span className="text-main">Advantages of Enrolling</span> in a
         CodIntern Course
       </h2>
@@ -21,7 +21,7 @@ export const BenifitsOfCourse = () => {
         src="/benefit-img.jpg"
         width={310}
         height={249}
-        className="mx-auto mt-10"
+        className="mx-auto max-[1130px]:hidden mt-10"
         alt="benefit"
       />
 
@@ -29,7 +29,7 @@ export const BenifitsOfCourse = () => {
         src="/benefit-4.jpg"
         width={340}
         height={249}
-        className="mx-auto mt-32"
+        className="mx-auto max-[1130px]:hidden mt-32"
         alt="benefit"
       />
 
@@ -37,7 +37,7 @@ export const BenifitsOfCourse = () => {
         src="/benefit.jpg"
         width={343}
         height={250}
-        className="absolute -top-1 left-0"
+        className="absolute max-[1130px]:hidden w-[250px] lg:w-[250px] xl:w-[343px] -top-1 left-0"
         alt="benefit"
       />
 
@@ -45,14 +45,14 @@ export const BenifitsOfCourse = () => {
         src="/benefit-1.jpg"
         width={309}
         height={249}
-        className="absolute -top-1 right-0"
+        className="absolute max-[1130px]:hidden -top-1 right-0 lg:w-[250px] xl:w-[309px]"
         alt="benefit"
       />
       <Image
         src="/benefit-2.jpg"
         width={309}
         height={249}
-        className="absolute top-80 left-20"
+        className="absolute max-[1130px]:hidden top-80 left-20 lg:w-[250px] xl:w-[309px]"
         alt="benefit"
       />
       {/* <div className="absolute top-80 left-20 ">
@@ -97,9 +97,55 @@ export const BenifitsOfCourse = () => {
         src="/benefit-3.jpg"
         width={268}
         height={249}
-        className="absolute top-80 right-20"
+        className="absolute max-[1130px]:hidden top-80 right-20 lg:w-[240px] xl:w-[268px]"
         alt="benefit"
       />
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 min-[1130px]:hidden mt-10">
+        <Image
+          src="/benefit-4.jpg"
+          width={340}
+          height={249}
+          className=""
+          alt="benefit"
+        />
+        <Image
+          src="/benefit-img.jpg"
+          width={310}
+          height={249}
+          className="hidden md:block"
+          alt="benefit"
+        />
+        <Image
+          src="/benefit.jpg"
+          width={343}
+          height={250}
+          className=""
+          alt="benefit"
+        />
+
+        <Image
+          src="/benefit-1.jpg"
+          width={309}
+          height={249}
+          className=""
+          alt="benefit"
+        />
+        <Image
+          src="/benefit-2.jpg"
+          width={309}
+          height={249}
+          className=""
+          alt="benefit"
+        />
+
+        <Image
+          src="/benefit-3.jpg"
+          width={268}
+          height={249}
+          className=""
+          alt="benefit"
+        />
+      </div>
     </section>
   );
 };

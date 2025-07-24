@@ -6,9 +6,9 @@ import { StepSeperator } from "./step-seperator";
 
 export const BecomeProjectManager = () => {
   return (
-    <section className="pt-28 section-container">
+    <section className="pt-12 md:pt-24 section-container">
       <div className="flex justify-center text-center section-container max-w-[830px]">
-        <h2 className="text-[46px] font-medium leading-14 capitalize">
+        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
           <span className="text-main">Path to Becoming</span> a Certified
           Project Manager
           <Image
@@ -20,8 +20,8 @@ export const BecomeProjectManager = () => {
           />
         </h2>
       </div>
-      <div className="flex items-start gap-2 mt-10">
-        <StepLeftImg />
+      <div className="flex flex-col items-center sm:flex-row flex-wrap justify-center lg:flex-nowrap sm:items-start gap-5 sm:gap-10 lg:gap-2 mt-10">
+        <StepLeftImg className="mb-4 sm:hidden lg:block" />
 
         <Step
           icon="/step.svg"
@@ -30,7 +30,7 @@ export const BecomeProjectManager = () => {
           index="1"
         />
 
-        <StepSeperator />
+        <StepSeperator className="sm:hidden lg:block" />
 
         <Step
           icon="/step-1.svg"
@@ -39,7 +39,7 @@ export const BecomeProjectManager = () => {
           index="2"
         />
 
-        <StepSeperator className="rotate-180" />
+        <StepSeperator className="rotate-180 sm:hidden lg:block" />
 
         <Step
           icon="/step-2.svg"
@@ -48,17 +48,20 @@ export const BecomeProjectManager = () => {
           index="3"
         />
 
-        <StepSeperator />
+        <StepSeperator className="sm:hidden lg:block" />
 
         <Step
           icon="/step-3.svg"
           title="Get Certified"
           className="text-main"
           desc="Complete the course successfully and get your globally accepted certification. With CodIntern's support, you'll obtain the credentials and self-belief to become a certified Project Manager."
-          index="1"
+          index="4"
         />
 
-        <StepLeftImg className="mt-16 rotate-180" alt="Step Right Img" />
+        <StepLeftImg
+          className="mt-4 sm:mt-16 rotate-180 sm:hidden lg:block"
+          alt="Step Right Img"
+        />
       </div>
     </section>
   );

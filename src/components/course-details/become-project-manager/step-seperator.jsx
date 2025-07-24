@@ -7,7 +7,7 @@ export const StepSeperator = ({ className }) => {
       src="/step-seperator-img.svg"
       width={70}
       height={16}
-      className={cn("mt-14 -mx-4", className)}
+      className={cn("mt-auto sm:mt-14 -mx-4", className)}
       alt="Step Seperator"
     />
   );

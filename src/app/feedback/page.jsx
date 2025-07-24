@@ -370,7 +370,7 @@ const Feedback = () => {
 
             <div className="flex justify-end mt-10">
               <Button
-                className="rounded w-full sm:w-60 ml-auto"
+                className="rounded w-full sm:w-60 ml-auto text-xs sm:text-sm"
                 size="lg"
                 type="submit"
                 variant="linearGradient"
