@@ -1,20 +1,8 @@
-import { Footer } from "@/components/layouts/footer";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
-import { Header } from "@/components/layouts/header";
 import ReactQueryProvider from "@/components/providers/ReactQueryProvider";
 import { Toaster } from "@/components/ui/sonner";
+import { Inter } from "next/font/google";
 import Script from "next/script";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,9 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <Header />
         <ReactQueryProvider>{children}</ReactQueryProvider>
-        <Footer />
 
         <Toaster richColors position="top-center" />
 

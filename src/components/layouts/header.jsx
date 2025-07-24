@@ -75,7 +75,7 @@ export const Header = () => {
               src="/logo.svg"
               width={224}
               height={65}
-              alt="logo"
+              alt="Logo"
             />
           </Link>
           <Separator orientation="vertical" className="mr-2" />
