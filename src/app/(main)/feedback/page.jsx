@@ -374,6 +374,7 @@ const Feedback = () => {
                 size="lg"
                 type="submit"
                 variant="linearGradient"
+                disabled={isSubmitFormLoading}
               >
                 {isSubmitFormLoading ? "Submitting..." : "Submit Now"}
               </Button>

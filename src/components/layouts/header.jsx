@@ -16,34 +16,20 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
+import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
 import { CounterItem, CounterSeperator } from "../counter/counter";
-import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
-import { useEffect, useState } from "react";
-import { throttle } from "lodash";
+import { Button } from "../ui/button";
+import { useAuth } from "@/hooks/useAuth";
+import { ProfileAvatar } from "../user-profile/profile-avatar";
 
 export const Header = () => {
   const router = useRouter();
   const { days, hours, minutes, seconds } = usePersistentCountdown();
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = throttle(() => {
-      const scrollTop = window.scrollY;
-      const shouldBeVisible = scrollTop <= 200;
-
-      setIsVisible((prev) =>
-        prev !== shouldBeVisible ? shouldBeVisible : prev
-      );
-    }, 500); // runs at most once every 100ms
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { data: isLoggedIn } = useAuth();
 
   return (
     <header className="shadow-md shadow-black/5 z-20 sticky top-0 bg-white">
@@ -154,34 +140,48 @@ export const Header = () => {
                     Course
                   </Link>
                 </NavigationMenuLink>
-                {/* <NavigationMenuTrigger className="bg-transparent font-stolzl">
-                  Courses{" "}
-                  <div className="bg-[#E32420] px-2 py-0.5 uppercase rounded-md ml-2 text-sm text-white">
-                    offer
-                  </div>
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="md:w-44">
-                    <NavigationMenuLink>Coming Soon</NavigationMenuLink>
-                  </div>
-                </NavigationMenuContent> */}
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-sm px-5 hidden md:block"
-          >
-            <Link href="/login">Login</Link>
-          </Button>
-          <Button
-            size="lg"
-            variant="linearGradient"
-            className="rounded-sm px-5 hidden md:block"
-          >
-            Register
-          </Button>
+          {isLoggedIn ? (
+            <>
+          <NavigationMenu className="hidden lg:block">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  asChild
+                >
+                  <Link
+                    href="/user/my-courses"
+                    className="font-bold font-stolzl"
+                  >
+                    My Courses
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+            <ProfileAvatar />
+            </>
+          ) : (
+            <>
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-sm px-5 hidden md:block"
+              >
+                <Link href="/login">Login</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="linearGradient"
+                className="rounded-sm px-5 hidden md:block"
+              >
+                Register
+              </Button>
+            </>
+          )}
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
               <Button

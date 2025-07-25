@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
-import React from 'react'
+import { cn } from "@/lib/utils";
+import React from "react";
 
 export const Stepper = ({ steps, currentStep, className }) => {
   return (
@@ -9,11 +9,11 @@ export const Stepper = ({ steps, currentStep, className }) => {
           {/* Step Circle */}
           <div
             className={cn(
-              "flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-colors",
+              "flex w-9 h-9 sm:h-11 sm:w-11 items-center justify-center rounded-full text-sm font-medium transition-colors",
               {
-                "bg-violet-600 text-white": step.id === currentStep,
+                "bg-main text-white": step.id === currentStep,
                 "bg-green-600 text-white": step.completed,
-                "bg-gray-400 text-white":
+                "bg-[#ADABB4] text-white":
                   step.id !== currentStep && !step.completed,
               }
             )}
@@ -33,14 +33,14 @@ export const Stepper = ({ steps, currentStep, className }) => {
                 />
               </svg>
             ) : (
-              step.id
+              <span className="font-stolzl sm:text-lg">{step.id}</span>
             )}
           </div>
 
           {/* Connector Line */}
           {index < steps.length - 1 && (
             <div
-              className={cn("h-0.5 w-16 transition-colors", {
+              className={cn("h-0.5 w-12 sm:w-16 transition-colors", {
                 "bg-green-600": step.completed,
                 "bg-gray-300": !step.completed,
               })}

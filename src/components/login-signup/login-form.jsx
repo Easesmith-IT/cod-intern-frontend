@@ -19,9 +19,13 @@ import { LoginInSchema } from "@/schemas/SignInSchema";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSetLogin } from "@/hooks/useAuth";
+import { useRouter } from "next/navigation";
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { login } = useSetLogin();
+  const router = useRouter();
 
   const form = useForm({
     resolver: zodResolver(LoginInSchema),
@@ -34,6 +38,8 @@ export const LoginForm = () => {
 
   function onSubmit(values) {
     console.log("Login attempt:", values);
+    login("test-token-123");
+    router.push("/");
   }
 
   return (
@@ -184,7 +190,9 @@ export const LoginForm = () => {
         </div>
         <p className="mt-4 font-stolzl text-xs sm:text-sm md:text-base font-book text-center">
           Don’t have an account?
-          <Link href="/sign-up" className="text-main ml-2">Sign Up</Link>
+          <Link href="/sign-up" className="text-main ml-2">
+            Sign Up
+          </Link>
         </p>
       </div>
     </div>

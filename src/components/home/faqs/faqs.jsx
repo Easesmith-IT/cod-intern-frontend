@@ -70,13 +70,13 @@ export const FAQs = () => {
       </div>
       <div className="flex justify-between md:flex-col gap-8 md:gap-0 sm:justify-center">
         <div>
-          <CircularProgressBar value={95} size={141} color="#9237E3" />
+          <CircularProgressBar value={85} strokeWidth={10} size={141} headingClassName="text-black text-2xl sm:text-4xl font-bold" colors="#9237E3" />
           <p className="font-stolzl font-book text-sm md:text-base mt-4 text-center">
             Quality of work
           </p>
         </div>
         <div className="md:mt-10">
-          <CircularProgressBar value={70} size={141} color="#2C1D43" />
+          <CircularProgressBar value={77} strokeWidth={10} size={141} headingClassName="text-black text-2xl sm:text-4xl font-bold" colors="#2C1D43" />
           <p className="font-stolzl font-book text-sm sm:text-base mt-4 text-center">
             Affordable cost
           </p>
