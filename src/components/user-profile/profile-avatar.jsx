@@ -7,8 +7,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 
 export const ProfileAvatar = () => {
+  const router = useRouter();
+
   return (
     <div>
       <DropdownMenu modal={false}>
@@ -26,10 +29,16 @@ export const ProfileAvatar = () => {
           align="start"
           className="space-y-2 px-2 w-40"
         >
-          <DropdownMenuItem className="font-medium hover:underline px-2">
+          <DropdownMenuItem
+            onSelect={() => router.push("/user/profile")}
+            className="font-medium hover:underline px-2"
+          >
             Profile
           </DropdownMenuItem>
-          <DropdownMenuItem className="font-medium hover:underline px-2">
+          <DropdownMenuItem
+            onSelect={() => router.push("/user/settings/account-settings")}
+            className="font-medium hover:underline px-2"
+          >
             Settings
           </DropdownMenuItem>
           <DropdownMenuItem className="font-medium hover:underline px-2">

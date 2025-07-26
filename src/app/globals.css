@@ -216,6 +216,10 @@
     @apply bg-background text-foreground;
   }
 
+  .animate-btn{
+    @apply hover:scale-105 transition-all active:scale-95;
+  }
+
   .section-container {
     @apply max-w-[1350px] mx-auto px-5;
   }

@@ -1,7 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -11,8 +10,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { z } from "zod";
-import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -21,6 +18,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ApplyNowSchema } from "@/schemas/ApplyNowSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 export const ApplyNowForm = () => {
   const form = useForm({

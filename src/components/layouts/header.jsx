@@ -145,24 +145,25 @@ export const Header = () => {
           </NavigationMenu>
           {isLoggedIn ? (
             <>
-          <NavigationMenu className="hidden lg:block">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
-                  <Link
-                    href="/user/my-courses"
-                    className="font-bold font-stolzl"
-                  >
-                    My Courses
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-            <ProfileAvatar />
+              <NavigationMenu className="hidden lg:block">
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      asChild
+                    >
+                      <Link
+                        href="/user/my-courses"
+                        className="font-bold font-stolzl"
+                      >
+                        My Courses
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+
+              <ProfileAvatar />
             </>
           ) : (
             <>

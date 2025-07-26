@@ -59,8 +59,8 @@ export const PopularCourses = () => {
             />
           ))}
         </CarouselContent>
-        <CarouselPrevious variant="default" className="left-0 z-20" />
-        <CarouselNext variant="default" className="right-0 z-20" />
+        <CarouselPrevious variant="default" className="left-0 z-10" />
+        <CarouselNext variant="default" className="right-0 z-10" />
       </Carousel>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">

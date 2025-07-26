@@ -1,3 +1,4 @@
+import { FreshJobs } from '@/components/home/fresh-jobs/fresh-jobs'
 import { CompletedCourses } from '@/components/user-profile/completed-course/completed-course'
 import { MyActiveCourses } from '@/components/user-profile/my-active-courses/my-active-courses'
 import { RecommendedCourses } from '@/components/user-profile/recommended-courses/recommended-courses'
@@ -9,6 +10,7 @@ const MyCourses = () => {
     <section>
       <WelcomeBack />
       <MyActiveCourses />
+      <FreshJobs className="pt-12 md:pt-24" />
       <CompletedCourses />
       <RecommendedCourses />
     </section>
