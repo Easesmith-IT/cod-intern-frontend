@@ -74,7 +74,7 @@ export const AchieveYourGoals = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
+        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
           <span className="text-main">Reach Your Ambitions</span> with Enhanced
           CodIntern Programs
           <Image
@@ -160,7 +160,7 @@ export const AchieveYourGoals = () => {
           className="mt-5 text-xs sm:text-sm"
           variant="linearGradient"
         >
-          <Link href="/course-details/123">View Our Courses</Link>
+          <Link href="/courses/123">View Our Courses</Link>
         </Button>
       </div>
     </div>

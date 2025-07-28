@@ -12,7 +12,7 @@ export const WhyCodInterns = () => {
   return (
     <section className="section-container py-12 sm:py-24 flex flex-col lg:flex-row gap-16 overflow-x-hidden">
       <div className="">
-        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium lg:w-[525px]">
+        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium lg:w-[525px]">
           <span className="text-main">What Attracts</span> Diverse Learners to
           CodIntern's Programs?
           <Image

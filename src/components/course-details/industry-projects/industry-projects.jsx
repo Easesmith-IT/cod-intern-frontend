@@ -12,7 +12,7 @@ export const IndustryProjects = () => {
   return (
     <section className="py-12 md:py-24 section-container">
       <div className="flex justify-center text-center section-container max-w-5xl">
-        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
           <span className="text-main">Industry Projects</span>That Shines On
           Resumes
           <Image

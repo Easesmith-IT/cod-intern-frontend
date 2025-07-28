@@ -10,7 +10,7 @@ export const ConnectWithUs = () => {
     >
       <div className="section-container flex justify-between items-center">
         <div className="py-16">
-          <h3 className="text-2xl leading-9 md:text-4xl lg:text-[46px] font-medium lg:leading-[60px] text-white max-w-[900px]">
+          <h3 className="text-2xl font-stolzl leading-9 md:text-4xl lg:text-[46px] font-medium lg:leading-[60px] text-white max-w-[900px]">
             Connect with Confidence — We’re Ready to Build What’s Next.
           </h3>
           <p className="font-stolzl max-w-[710px] text-xs md:text-sm text-[#FFFFFFCC] mt-4 mb-6 font-book">

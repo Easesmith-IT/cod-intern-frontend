@@ -11,12 +11,12 @@ export const SideBar = () => {
   const pathname = usePathname();
 
   return (
-      <aside className="w-60 lg:w-80 hidden md:block">
+      <aside className="w-full md:w-60 lg:w-80 flex flex-row md:flex-col overflow-x-auto">
         {sidebarItems.map(({ href, icon: Icon, label }) => (
           <Link key={label} href={href}>
             <div
               className={cn(
-                "flex gap-5 items-center py-5 border-b group px-5 w-full transition-all hover:bg-[#F5EDFC] rounded-t-sm",
+                "flex flex-col sm:flex-row gap-2 sm:gap-5 items-center py-2 sm:py-5 border-b group px-2 sm:px-5 w-full transition-all hover:bg-[#F5EDFC] rounded-t-sm",
                 pathname === href && "bg-[#F5EDFC]"
               )}
             >
@@ -28,7 +28,7 @@ export const SideBar = () => {
               />
               <span
                 className={cn(
-                  "text-base sm:text-lg group-hover:text-para-3 font-medium",
+                  "text-xs sm:text-base md:text-lg text-center sm:text-left group-hover:text-para-3 font-medium",
                   pathname === href && "text-para-3"
                 )}
               >

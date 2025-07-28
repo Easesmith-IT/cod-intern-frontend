@@ -32,7 +32,7 @@ export const CourseCard = ({name,src}) => {
             </div>
             <p className="text-para-2 font-book font-stolzl text-xs">(4.5)</p>
           </div>
-          <h3 className="font-stolzl text-heading font-medium text-lg sm:text-xl mt-2 line-clamp-2">
+          <h3 className="font-stolzl text-heading font-medium text-lg md:text-xl mt-2 line-clamp-2">
             {name}
           </h3>
 
@@ -55,7 +55,7 @@ export const CourseCard = ({name,src}) => {
             className="text-main py-0 has-[>svg]:px-0 gap-1 mt-5 text-xs sm:text-sm"
             asChild
           >
-            <Link href="/course-details/123">
+            <Link href="/courses/123">
               <span>Know More</span>
               <ChevronRight className="size-5" />
             </Link>

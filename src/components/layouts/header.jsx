@@ -112,20 +112,20 @@ export const Header = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu> */}
-          <NavigationMenu className="hidden lg:block">
+          {/* <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent font-stolzl">
-                  Jobs
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="md:w-40">
-                    <NavigationMenuLink>Coming Soon</NavigationMenuLink>
-                  </div>
-                </NavigationMenuContent>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  asChild
+                >
+                  <Link href="/courses" className="font-bold font-stolzl">
+                    Courses
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+              </NavigationMenuList>
+              </NavigationMenu> */}
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -133,11 +133,21 @@ export const Header = () => {
                   className={navigationMenuTriggerStyle()}
                   asChild
                 >
-                  <Link
-                    href="/course-details/123"
-                    className="font-bold font-stolzl"
-                  >
-                    Course
+                  <Link href="/jobs" className="font-bold font-stolzl">
+                    Jobs
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <div className="border-r-2 h-6"></div>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  asChild
+                >
+                  <Link href="/courses" className="font-bold font-stolzl">
+                    Courses
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -218,34 +228,45 @@ export const Header = () => {
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="lg:hidden font-medium hover:underline"
-                onSelect={() => {}}
+                onSelect={() => router.push("/jobs")}
               >
                 Jobs
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="lg:hidden font-medium hover:underline"
-                onSelect={() => router.push("/course-details/123")}
+                onSelect={() => router.push("/courses")}
               >
                 Courses
               </DropdownMenuItem>
-              <DropdownMenuItem asChild className="md:hidden">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="rounded-sm px-5 w-full"
+              {isLoggedIn ? (
+                <DropdownMenuItem
+                  className="lg:hidden font-medium hover:underline"
+                  onSelect={() => router.push("/user/my-courses")}
                 >
-                  Login
-                </Button>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild className="md:hidden">
-                <Button
-                  size="lg"
-                  variant="linearGradient"
-                  className="rounded-sm px-5 w-full"
-                >
-                  Register
-                </Button>
-              </DropdownMenuItem>
+                  My Courses
+                </DropdownMenuItem>
+              ) : (
+                <>
+                  <DropdownMenuItem asChild className="md:hidden">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="rounded-sm px-5 w-full"
+                    >
+                      Login
+                    </Button>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="md:hidden">
+                    <Button
+                      size="lg"
+                      variant="linearGradient"
+                      className="rounded-sm px-5 w-full"
+                    >
+                      Register
+                    </Button>
+                  </DropdownMenuItem>
+                </>
+              )}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

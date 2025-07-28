@@ -4,7 +4,7 @@ import React from "react";
 const AccountSettings = () => {
   return (
     <div>
-      <h2 className="text-2xl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] text-para-3 font-medium capitalize">
+      <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] text-para-3 font-medium capitalize">
         Account Settings
       </h2>
       <div className="mt-5">

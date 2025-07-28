@@ -14,7 +14,7 @@ export const FAQs = () => {
   return (
     <section className="section-container grid justify-center md:grid-cols-[auto_1fr_auto] gap-10 py-12 md:py-24">
       <div className="flex flex-col items-center md:items-start">
-        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium sm:max-w-[400px]">
+        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium sm:max-w-[400px]">
           <span className="text-main">Frequently</span> <br /> Asked Questions
         </h2>
         <Image
@@ -70,13 +70,25 @@ export const FAQs = () => {
       </div>
       <div className="flex justify-between md:flex-col gap-8 md:gap-0 sm:justify-center">
         <div>
-          <CircularProgressBar value={85} strokeWidth={10} size={141} headingClassName="text-black text-2xl sm:text-4xl font-bold" colors="#9237E3" />
+          <CircularProgressBar
+            value={85}
+            strokeWidth={10}
+            size={141}
+            headingClassName="text-black text-2xl sm:text-4xl font-bold"
+            colors="#9237E3"
+          />
           <p className="font-stolzl font-book text-sm md:text-base mt-4 text-center">
             Quality of work
           </p>
         </div>
         <div className="md:mt-10">
-          <CircularProgressBar value={77} strokeWidth={10} size={141} headingClassName="text-black text-2xl sm:text-4xl font-bold" colors="#2C1D43" />
+          <CircularProgressBar
+            value={77}
+            strokeWidth={10}
+            size={141}
+            headingClassName="text-black text-2xl sm:text-4xl font-bold"
+            colors="#2C1D43"
+          />
           <p className="font-stolzl font-book text-sm sm:text-base mt-4 text-center">
             Affordable cost
           </p>

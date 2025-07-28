@@ -8,9 +8,10 @@ import { Info } from './info';
 export const ExpertInstructorLiveClasses = () => {
   return (
     <section className="py-12 md:py-24 section-container flex flex-col lg:flex-row gap-20 items-center">
-      <div className='max-w-3xl'>
-        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
-          <span className="text-main">Live Skill-Building</span> Sessions by Experts
+      <div className="max-w-3xl">
+        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
+          <span className="text-main">Live Skill-Building</span> Sessions by
+          Experts
           <Image
             src="/ellipse-group.svg"
             className="inline-block ml-2"

@@ -60,7 +60,10 @@ const Profile = () => {
   return (
     <section className="section-container pt-10 pb-12 md:pb-24 md:pt-20">
       <Form {...form}>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:flex-row items-center md:items-start gap-6">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col md:flex-row items-center md:items-start gap-6"
+        >
           <div className="w-80 flex flex-col items-center gap-2">
             <FormField
               control={control}
@@ -100,7 +103,7 @@ const Profile = () => {
             </p>
           </div>
           <div className="w-full md:flex-1">
-            <h2 className="text-2xl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] text-para-3 font-medium capitalize">
+            <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] text-para-3 font-medium capitalize">
               Profile Settings
             </h2>
             <h5 className="font-stolzl font-medium mt-5 text-heading text-base sm:text-lg">

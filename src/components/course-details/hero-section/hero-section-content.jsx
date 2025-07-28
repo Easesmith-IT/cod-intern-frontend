@@ -5,7 +5,12 @@ import React from "react";
 export const HeroSectionContent = () => {
   return (
     <div className="z-10 relative">
-      <CustomBreadCrumb />
+      <CustomBreadCrumb
+        options={[
+          { label: "Home", url: "/", isLink: true },
+          { label: "Project Management Training", url: "", isLink: false },
+        ]}
+      />
       <div className="flex flex-wrap gap-5 items-center mt-8">
         <div className="py-1.5 px-3 flex gap-2 items-center bg-[#FFFFFF80] rounded-2xl">
           <Image

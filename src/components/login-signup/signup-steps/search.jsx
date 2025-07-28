@@ -1,4 +1,5 @@
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 import { SearchIcon } from "lucide-react";
 
 export const Search = ({
@@ -6,6 +7,8 @@ export const Search = ({
   searchQuery,
   setSearchQuery,
   placeholder = "Find an interest",
+  inputClassName,
+  iconClassName,
 }) => {
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -13,16 +16,24 @@ export const Search = ({
   };
 
   return (
-    <div className={`relative w-full max-w-md mx-auto ${className}`}>
+    <div className={cn("relative w-full max-w-md mx-auto", className)}>
       <Input
         type="text"
         placeholder={placeholder}
         value={searchQuery}
         onChange={handleInputChange}
-        className="w-full text-gray-700 placeholder:text-gray-500 pr-12 h-12 rounded focus:bg-white focus:border-purple-200 transition-colors"
+        className={cn(
+          "w-full text-gray-700 placeholder:text-gray-500 pr-12 h-12 rounded focus:bg-white focus:border-purple-200 transition-colors",
+          inputClassName
+        )}
       />
       <div className="absolute top-0 right-0 p-1 pointer-events-none">
-        <div className="bg-custom size-10 flex items-center justify-center rounded-full">
+        <div
+          className={cn(
+            "bg-custom size-10 flex items-center justify-center rounded-full",
+            iconClassName
+          )}
+        >
           <SearchIcon className="h-4 w-4 text-gray-400" />
         </div>
       </div>

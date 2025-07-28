@@ -34,7 +34,7 @@ export const SendUsMessageForm = () => {
 
   return (
     <div className="max-w-[836px] md:pr-[50px]">
-      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
         <span className="text-main">Send Us</span> a Message
         <Image
           src="/ellipse-group.svg"

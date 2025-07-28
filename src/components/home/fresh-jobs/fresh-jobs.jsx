@@ -13,7 +13,7 @@ export const FreshJobs = ({className}) => {
     <section className={cn("section-container",className)}>
       <Carousel className="w-full">
         <div className="flex justify-between items-center gap-5">
-          <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+          <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
             <span className="text-main">Fresh</span> Jobs
             <Image
               src="/ellipse-group.svg"

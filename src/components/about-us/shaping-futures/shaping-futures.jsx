@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export const ShapingFutures = ({ className }) => {
   return (
     <section className={cn("section-container pb-12 md:pb-24", className)}>
-      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize text-center">
+      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize text-center">
         <span className="text-main">Crafting Careers</span> with Vision
         <Image
           src="/ellipse-group.svg"

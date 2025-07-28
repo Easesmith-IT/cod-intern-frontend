@@ -8,7 +8,7 @@ export const BecomeProjectManager = () => {
   return (
     <section className="pt-12 md:pt-24 section-container">
       <div className="flex justify-center text-center section-container max-w-[830px]">
-        <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
+        <h2 className="text-2xl leading-9 font-stolzl lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
           <span className="text-main">Path to Becoming</span> a Certified
           Project Manager
           <Image

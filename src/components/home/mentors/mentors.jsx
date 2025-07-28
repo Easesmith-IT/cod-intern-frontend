@@ -5,7 +5,7 @@ import { Mentor } from "./mentor";
 export const Mentors = () => {
   return (
     <section className="section-container">
-      <h2 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
+      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
         <span className="text-main">Mentors behind</span> your career growth
         <Image
           src="/ellipse-group.svg"
