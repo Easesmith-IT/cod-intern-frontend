@@ -102,7 +102,7 @@ const JobDetails = () => {
         Job Detail Page
       </h2> */}
 
-      <h2 className="text-2xl mt-10 font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+      <h2 className="text-2xl mt-6 sm:mt-10 font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
         <span className="text-main">Accountant</span> Fresher Job
         <Image
           src="/ellipse-group.svg"
