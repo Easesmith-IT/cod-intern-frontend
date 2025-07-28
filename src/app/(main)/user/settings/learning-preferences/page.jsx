@@ -15,7 +15,7 @@ const LearningPreferences = () => {
   const form = useForm({
     resolver: zodResolver(LearningPreferencesSchema),
     defaultValues: {
-      interfaceTheme: localStorage.getItem("cod-intern-theme") || "light",
+      interfaceTheme: "light",
       playbackSpeed: "1.0x",
       subtitles: false,
       courseLanguage: "english",
