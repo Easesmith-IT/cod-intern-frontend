@@ -12,7 +12,7 @@ const BlogDetails = () => {
         ]}
       />
 
-      <div className="flex flex-col lg:flex-row gap-10 mt-12">
+      <div className="flex flex-col lg:flex-row gap-10 mt-6 sm:mt-12">
         <div className="flex-1">
           <Image
             src="/blog/blog-1.jpg"
