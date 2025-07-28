@@ -238,6 +238,12 @@ export const Header = () => {
               >
                 Courses
               </DropdownMenuItem>
+              <DropdownMenuItem
+                className="font-medium hover:underline"
+                onSelect={() => router.push("/blogs")}
+              >
+                Blogs
+              </DropdownMenuItem>
               {isLoggedIn ? (
                 <DropdownMenuItem
                   className="lg:hidden font-medium hover:underline"

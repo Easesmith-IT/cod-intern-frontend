@@ -16,13 +16,13 @@ export const RecommendedCourses = () => {
             alt="Ellipse"
           />
         </h2>
-        <Image
+        {/* <Image
           src="/Rectangle.svg"
           className="absolute right-[27%] sm:right-[18%] w-[200px] sm:w-[257px] bottom-2"
           width={257}
           height={14}
           alt="Rectangle"
-        />
+        /> */}
       </div>
       <p className="text-center font-stolzl text-xs sm:text-para text-para mt-2 max-w-[900px] mx-auto">
         Lorem ipsum dolor sit amet consectetur. Scelerisque suspendisse in nisl
