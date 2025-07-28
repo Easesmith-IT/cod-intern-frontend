@@ -111,7 +111,7 @@ export function PaginationComp({ pageCount, page, setPage, className }) {
       )}
     >
       <Pagination>
-        <PaginationContent className="max-sm:gap-0 gap-3">
+        <PaginationContent className="gap-3">
           <PaginationItem className="cursor-pointer">
             <PaginationPrevious
               onClick={handlePrevious}
