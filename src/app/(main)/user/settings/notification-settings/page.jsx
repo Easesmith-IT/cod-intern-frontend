@@ -15,6 +15,7 @@ const NotificationSettings = () => {
       assignmentDeadlines: false,
       liveEventsAndWebinars: false,
       weeklyLearningTips: false,
+      promotionsAndDiscounts: false,
     },
   });
 
