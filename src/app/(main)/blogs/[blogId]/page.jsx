@@ -223,7 +223,7 @@ const BlogDetails = () => {
 
           <div className="mt-5 relative w-full p-4 overflow-hidden rounded-md bg-para-3 text-white flex justify-between flex-wrap items-center gap-4">
             <Image
-              src="/blog/blog-2.png"
+              src="/blog/bg.png"
               className="absolute top-0 left-1 opacity-20"
               width={400}
               height={30}
