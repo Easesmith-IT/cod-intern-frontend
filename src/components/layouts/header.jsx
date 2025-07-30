@@ -189,7 +189,7 @@ export const Header = () => {
                 variant="linearGradient"
                 className="rounded-sm px-5 hidden md:block"
               >
-                Register
+                <Link href="/sign-up">Register</Link>
               </Button>
             </>
           )}
@@ -259,7 +259,7 @@ export const Header = () => {
                       size="lg"
                       className="rounded-sm px-5 w-full"
                     >
-                      Login
+                      <Link href="/login">Login</Link>
                     </Button>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild className="md:hidden">
@@ -268,7 +268,7 @@ export const Header = () => {
                       variant="linearGradient"
                       className="rounded-sm px-5 w-full"
                     >
-                      Register
+                      <Link href="/sign-up">Register</Link>
                     </Button>
                   </DropdownMenuItem>
                 </>

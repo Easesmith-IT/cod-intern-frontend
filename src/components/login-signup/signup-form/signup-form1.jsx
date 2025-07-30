@@ -1,3 +1,4 @@
+import Spinner from "@/components/Spinner";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -9,9 +10,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { POST } from "@/constants/apiMethods";
+import { useApiMutation } from "@/hooks/useApiMutation";
 import { SignupSchema } from "@/schemas/SignupSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { Eye, EyeOff, Lock, Mail, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -23,17 +26,39 @@ export const SignupForm1 = ({ setIsOtp }) => {
   const form = useForm({
     resolver: zodResolver(SignupSchema),
     defaultValues: {
+      name: "",
       email: "",
       password: "",
       rememberMe: false,
     },
   });
 
-  function onSubmit(values) {
-    console.log("Login attempt:", values);
+  const { reset, handleSubmit, control } = form;
+
+  const { mutateAsync: submitForm, isPending: isSubmitFormLoading } =
+    useApiMutation({
+      url: "/student/auth/signup",
+      method: POST,
+      invalidateKey: ["signup"],
+      // isToast: false,
+    });
+
+  const onSubmit = async (data) => {
+    console.log("signup attempt:", data);
+
+    const apiData = {
+      ...data,
+      emailId: data.email,
+    };
+
+    localStorage.setItem("cod-intern-email",data.email)
+
+    await submitForm(apiData);
+
+    reset();
     setIsOtp(true);
-  }
-  
+  };
+
   return (
     <div className="">
       <h2 className="font-stolzl text-2xl md:text-3xl font-medium">
@@ -41,11 +66,33 @@ export const SignupForm1 = ({ setIsOtp }) => {
       </h2>
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit)}
           className="space-y-6 mt-8 sm:mt-10"
         >
           <FormField
-            control={form.control}
+            control={control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-normal font-stolzl">
+                  Name
+                </FormLabel>
+                <FormControl>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#84818C] h-4 w-4" />
+                    <Input
+                      placeholder="Enter name"
+                      className="pl-10 h-12 border-gray-200 focus:border-purple-500 focus:ring-purple-500"
+                      {...field}
+                    />
+                  </div>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={control}
             name="email"
             render={({ field }) => (
               <FormItem>
@@ -68,7 +115,7 @@ export const SignupForm1 = ({ setIsOtp }) => {
           />
 
           <FormField
-            control={form.control}
+            control={control}
             name="password"
             render={({ field }) => (
               <FormItem>
@@ -104,7 +151,7 @@ export const SignupForm1 = ({ setIsOtp }) => {
 
           <div className="flex items-center justify-between my-8">
             <FormField
-              control={form.control}
+              control={control}
               name="rememberMe"
               render={({ field }) => (
                 <FormItem className="flex flex-row items-start space-x-1 space-y-0">
@@ -135,8 +182,13 @@ export const SignupForm1 = ({ setIsOtp }) => {
             type="submit"
             variant="linearGradient"
             className="w-full h-12"
+            disabled={isSubmitFormLoading}
           >
-            Sign up
+            {isSubmitFormLoading ? (
+              <Spinner spinnerClassName="size-6" />
+            ) : (
+              "Sign up"
+            )}
           </Button>
         </form>
       </Form>

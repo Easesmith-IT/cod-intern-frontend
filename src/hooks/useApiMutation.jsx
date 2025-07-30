@@ -14,7 +14,7 @@ const apiCall = async ({ url, method, data, config = {} }) => {
     return response.data;
   } catch (error) {
     console.error("API Error:", error);
-    throw new Error(error?.response?.data?.error || "Something went wrong!");
+    throw new Error(error?.response?.data?.message || "Something went wrong!");
   }
 };
 
