@@ -67,7 +67,7 @@ export const MultiSelectCardGroup = ({
                 return (
                   <Card
                     key={option}
-                    className={`relative p-0 cursor-pointer transition-all rounded-md duration-200 hover:shadow-md
+                    className={`relative p-0 cursor-pointer flex justify-center items-center transition-all rounded-md duration-200 hover:shadow-md
                       ${
                         isSelected
                           ? "border-primary bg-primary/5 shadow-sm"

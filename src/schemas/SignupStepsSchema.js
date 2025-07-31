@@ -114,9 +114,9 @@ export const currentRoleOptions = [
   "Other",
 ];
 export const educationOptions = [
-  "Less than high school diploma",
-  "High school diploma ",
-  "Bachelor's degree",
-  "Master's degree",
-  "Doctorate degree",
+  { label: "Less than high school diploma", value: "10th" },
+  { label: "High school diploma", value: "12th" },
+  { label: "Bachelor's degree", value: "Bachelors" },
+  { label: "Master's degree", value: "Masters" },
+  { label: "Doctorate degree", value: "Doctorate" },
 ];

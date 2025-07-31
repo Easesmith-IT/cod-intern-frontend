@@ -29,9 +29,26 @@ export const BlogsComp = ({ children, category, className }) => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6 sm:mt-10">
-        {Array.from({ length: 4 }).map((_, index) => (
-          <Blog key={index} />
-        ))}
+        <Blog
+          href="/blogs/1"
+          src="/blog/blog1.png"
+          title="Code Optimization: Writing Smarter, Faster & Cleaner Code"
+          timeStamp="31 July 2025 at 05:54"
+          desc="In the fast-paced world of technology, simply writing code that works isn’t enough.
+Whether you’re building a mobile app, a website, or a data-heavy backend system — your
+users, clients, and teammates expect more than just functionality. They expect"
+        />
+        <Blog
+          href="/blogs/2"
+          src="/blog/blog2.png"
+          title="When Robots Learn on Their Own: The Rise
+of Self-Evolving AI in Robotics"
+          timeStamp="31 July 2025 at 05:54"
+          desc="In a world where machines are no longer just programmed — but learn, adapt, and evolve
+— we are stepping into a new age of robotics powered by artificial intelligence. Gone are
+the days when robots could only perform repetitive tasks. Today, they are becoming selflearners, capable of improving their performance without explicit human instructions. This
+is not science fiction — it’s the dawn of self-evolving AI in robotics."
+        />
       </div>
     </div>
   );

@@ -7,7 +7,6 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { Label } from "@/components/ui/label";
 import { educationOptions } from "@/schemas/SignupStepsSchema";
 import { useFormContext, useWatch } from "react-hook-form";
 import { Heading } from "./heading";
@@ -28,32 +27,32 @@ function SignupStep4() {
             <FormControl>
               <div className="flex flex-col space-y-2">
                 {educationOptions.map((option) => {
-                  const isSelected = selectedValue === option;
+                  const isSelected = selectedValue === option.value;
 
                   return (
                     <Card
-                      key={option}
+                      key={option.value}
                       className={`relative p-0 cursor-pointer transition-all rounded-md duration-200 hover:shadow-md ${
                         isSelected
                           ? "border-primary bg-primary/5 shadow-sm"
                           : "border-border hover:border-primary/50"
                       }`}
                     >
-                      <label htmlFor={option} className="w-full">
+                      <label htmlFor={option.value} className="w-full">
                         <div className="px-6 py-5 flex items-center justify-between w-full gap-3">
                           <span
                             className={`font-medium text-sm md:text-base transition-colors ${
                               isSelected ? "text-primary" : "text-foreground"
                             }`}
                           >
-                            {option}
+                            {option.label}
                           </span>
 
                           <input
                             type="radio"
-                            id={option}
-                            value={option}
-                            checked={field.value === option}
+                            id={option.value}
+                            value={option.value}
+                            checked={field.value === option.value}
                             onChange={(e) => {
                               field.onChange(e.target.value);
                               clearErrors("education");

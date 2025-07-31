@@ -1,16 +1,18 @@
+import Spinner from "@/components/Spinner";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { SignupOtpSchema, SignupSchema } from "@/schemas/SignupSchema";
+import { POST } from "@/constants/apiMethods";
+import { useApiMutation } from "@/hooks/useApiMutation";
+import { SignupOtpSchema } from "@/schemas/SignupSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Eye, EyeOff, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -26,10 +28,41 @@ export const SignupForm2 = () => {
     },
   });
 
-  function onSubmit(values) {
-    console.log("Login attempt:", values);
+  const { reset, handleSubmit, control } = form;
+  const email = localStorage.getItem("cod-intern-email");
+
+  const { mutateAsync: submitForm, isPending: isSubmitFormLoading } =
+    useApiMutation({
+      url: "/student/auth/verify-otp",
+      method: POST,
+      invalidateKey: ["verify-otp"],
+      // isToast: false,
+    });
+
+  const { mutateAsync: resendOtp, isPending: isResendOtpLoading } =
+    useApiMutation({
+      url: "/student/auth/resend-otp",
+      method: POST,
+      invalidateKey: ["resend-otp"],
+      // isToast: false,
+    });
+
+  const handleResendOtp = async () => {
+    await resendOtp({ email });
+  };
+
+  const onSubmit = async (data) => {
+    console.log("Login attempt:", data);
+    const apiData = {
+      otp: data.code,
+      email,
+    };
+
+    await submitForm(apiData);
+
+    reset();
     router.push("/sign-up/information");
-  }
+  };
 
   return (
     <div className="">
@@ -38,7 +71,7 @@ export const SignupForm2 = () => {
       </h2>
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit)}
           className="space-y-6 mt-8 sm:mt-10"
         >
           <p className="font-stolzl text-xl font-book leading-7">
@@ -46,7 +79,7 @@ export const SignupForm2 = () => {
             up.
           </p>
           <FormField
-            control={form.control}
+            control={control}
             name="code"
             render={({ field }) => (
               <FormItem>
@@ -76,11 +109,20 @@ export const SignupForm2 = () => {
             variant="linearGradient"
             className="w-full h-12"
           >
-            Sign up
+            {isSubmitFormLoading ? (
+              <Spinner spinnerClassName="size-6" />
+            ) : (
+              "Sign up"
+            )}
           </Button>
         </form>
       </Form>
-      <Button variant="link" className="mt-5 px-0 font-normal">
+      <Button
+        onClick={handleResendOtp}
+        variant="link"
+        className="mt-5 px-0 font-normal"
+        disabled={isResendOtpLoading}
+      >
         Resend Code
       </Button>
     </div>

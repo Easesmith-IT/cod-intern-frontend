@@ -36,7 +36,7 @@ function SignupStep2({ form }) {
             options={techOptions}
             max={5}
             className="mt-4"
-            containerClassName="grid-cols-1 md:grid-cols-3 lg:grid-cols-6"
+            containerClassName="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6"
             itemClassName="px-4 py-3"
           />
         </div>
@@ -47,7 +47,7 @@ function SignupStep2({ form }) {
             options={businessOptions}
             max={5}
             className="mt-4"
-            containerClassName="grid-cols-1 md:grid-cols-3 lg:grid-cols-6"
+            containerClassName="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6"
             itemClassName="px-4 py-3"
           />
         </div>
@@ -58,7 +58,7 @@ function SignupStep2({ form }) {
             options={creativeOptions}
             max={5}
             className="mt-4"
-            containerClassName="grid-cols-1 md:grid-cols-3 lg:grid-cols-6"
+            containerClassName="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6"
             itemClassName="px-4 py-3"
           />
         </div>
@@ -69,7 +69,7 @@ function SignupStep2({ form }) {
             options={academicOptions}
             max={5}
             className="mt-4"
-            containerClassName="grid-cols-1 md:grid-cols-3 lg:grid-cols-6"
+            containerClassName="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6"
             itemClassName="px-4 py-3"
           />
         </div>

@@ -5,11 +5,13 @@ import SignupStep2 from "@/components/login-signup/signup-steps/signup-step2";
 import SignupStep3 from "@/components/login-signup/signup-steps/signup-step3";
 import SignupStep4 from "@/components/login-signup/signup-steps/signup-step4";
 import { Stepper } from "@/components/login-signup/signup-steps/stepper";
+import Spinner from "@/components/Spinner";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+import { PATCH } from "@/constants/apiMethods";
+import { useApiMutation } from "@/hooks/useApiMutation";
 import {
   fullSignupFormSchema,
-  getStepFields,
   step1Schema,
   step2Schema,
   step3Schema,
@@ -18,7 +20,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Information = () => {
@@ -37,6 +39,8 @@ const Information = () => {
       education: "",
     },
   });
+
+  const { handleSubmit, trigger } = form;
 
   const handleNext = async () => {
     let schema;
@@ -58,21 +62,52 @@ const Information = () => {
         return;
     }
 
-    const valid = await form.trigger(Object.keys(schema.shape));
+    const valid = await trigger(Object.keys(schema.shape));
     if (valid) {
       setStep(step + 1);
     }
   };
 
-  function onSubmit(values) {
-    console.log("Login attempt:", values);
-    router.push("/login")
-  }
+  const email = localStorage.getItem("cod-intern-email");
+  const studentId = localStorage.getItem("cod-intern-student-id");
+
+  const {
+    mutateAsync: submitForm,
+    isPending: isSubmitFormLoading,
+    data: result,
+  } = useApiMutation({
+    url: "/student/auth/signup-2",
+    method: PATCH,
+    invalidateKey: ["signup-2"],
+    // isToast: false,
+  });
+
+  const onSubmit = async (data) => {
+    console.log("data", data);
+
+    const apiData = {
+      ...data,
+      currentRole: data.currentRole[0],
+      educationLevel: data.education,
+      email,
+      studentId,
+    };
+
+    await submitForm(apiData);
+  };
+
+  useEffect(() => {
+    if (result) {
+      localStorage.removeItem("cod-intern-email");
+      localStorage.removeItem("cod-intern-student-id");
+      router.push("/login");
+    }
+  }, [result]);
 
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmit)}
         className="h-screen overflow-y-auto"
       >
         <div className="section-container flex flex-col h-full justify-between ">
@@ -113,8 +148,13 @@ const Information = () => {
                 size="xl"
                 className="rounded px-8"
                 type="submit"
+                disabled={isSubmitFormLoading}
               >
-                Finished
+                {isSubmitFormLoading ? (
+                  <Spinner spinnerClassName="size-6" />
+                ) : (
+                  "Finished"
+                )}
                 <ArrowRight />
               </Button>
             ) : (

@@ -15,7 +15,7 @@ const Blogs = () => {
         <span className="text-main">Our</span> Recent Blogs
       </BlogsComp>
 
-      <BlogsComp category="latest">
+      {/* <BlogsComp category="latest">
         <span className="text-main">Latest</span> Articles
       </BlogsComp>
 
@@ -25,7 +25,7 @@ const Blogs = () => {
 
       <BlogsComp category="career-advice">
         <span className="text-main">Career</span> Advice
-      </BlogsComp>
+      </BlogsComp> */}
     </section>
   );
 };

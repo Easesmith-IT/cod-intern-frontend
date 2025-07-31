@@ -17,7 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff, Lock, Mail, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const SignupForm1 = ({ setIsOtp }) => {
@@ -35,14 +35,18 @@ export const SignupForm1 = ({ setIsOtp }) => {
 
   const { reset, handleSubmit, control } = form;
 
-  const { mutateAsync: submitForm, isPending: isSubmitFormLoading } =
-    useApiMutation({
-      url: "/student/auth/signup",
-      method: POST,
-      invalidateKey: ["signup"],
-      // isToast: false,
-    });
+  const {
+    mutateAsync: submitForm,
+    isPending: isSubmitFormLoading,
+    data: result,
+  } = useApiMutation({
+    url: "/student/auth/signup",
+    method: POST,
+    invalidateKey: ["signup"],
+    // isToast: false,
+  });
 
+  console.log("signup data:", result);
   const onSubmit = async (data) => {
     console.log("signup attempt:", data);
 
@@ -51,13 +55,17 @@ export const SignupForm1 = ({ setIsOtp }) => {
       emailId: data.email,
     };
 
-    localStorage.setItem("cod-intern-email",data.email)
-
     await submitForm(apiData);
-
-    reset();
-    setIsOtp(true);
   };
+
+  useEffect(() => {
+    if (result) {
+      localStorage.setItem("cod-intern-email", result?.student?.emailId);
+      localStorage.setItem("cod-intern-student-id", result?.student?._id);
+      reset();
+      setIsOtp(true);
+    }
+  }, [result]);
 
   return (
     <div className="">

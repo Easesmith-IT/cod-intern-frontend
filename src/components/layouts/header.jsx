@@ -180,14 +180,16 @@ export const Header = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-sm px-5 hidden md:block"
+                className="rounded-sm px-5 py-2 hidden md:block"
+                asChild
               >
                 <Link href="/login">Login</Link>
               </Button>
               <Button
                 size="lg"
                 variant="linearGradient"
-                className="rounded-sm px-5 hidden md:block"
+                className="rounded-sm px-5 py-2 hidden md:block"
+                asChild
               >
                 <Link href="/sign-up">Register</Link>
               </Button>

@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const ProfileSchema = z.object({
   profileImg: z.any(),
+  name: z.string(),
   profileImgPreview: z.string().optional(),
   email: z.string().email({ message: "Invalid email address" }),
   phone: z.string().regex(/^[0-9]{10}$/, {

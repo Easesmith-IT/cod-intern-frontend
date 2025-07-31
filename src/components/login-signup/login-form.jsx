@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
@@ -21,6 +21,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSetLogin } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
+import { useApiMutation } from "@/hooks/useApiMutation";
+import { POST } from "@/constants/apiMethods";
+import Spinner from "../Spinner";
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,11 +39,36 @@ export const LoginForm = () => {
     },
   });
 
-  function onSubmit(values) {
-    console.log("Login attempt:", values);
-    login("test-token-123");
-    router.push("/");
-  }
+  const { reset, handleSubmit, control } = form;
+
+  const {
+    mutateAsync: submitForm,
+    isPending: isSubmitFormLoading,
+    data: result,
+  } = useApiMutation({
+    url: "/student/auth/login",
+    method: POST,
+    invalidateKey: ["login"],
+    // isToast: false,
+  });
+
+  const onSubmit = async (data) => {
+    console.log("Login attempt:", data);
+    const apiData = {
+      ...data,
+      emailId: data.email,
+    };
+
+    await submitForm(apiData);
+  };
+
+  useEffect(() => {
+    if (result) {
+      login("test-token-123");
+      reset();
+      router.push("/");
+    }
+  }, [result]);
 
   return (
     <div className="bg-white flex flex-col justify-center py-5 px-7 sm:px-14 gap-4">
@@ -48,11 +76,11 @@ export const LoginForm = () => {
         <h2 className="font-stolzl text-2xl md:text-3xl font-medium">Login</h2>
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(onSubmit)}
             className="space-y-6 mt-8 sm:mt-10"
           >
             <FormField
-              control={form.control}
+              control={control}
               name="email"
               render={({ field }) => (
                 <FormItem>
@@ -75,7 +103,7 @@ export const LoginForm = () => {
             />
 
             <FormField
-              control={form.control}
+              control={control}
               name="password"
               render={({ field }) => (
                 <FormItem>
@@ -111,7 +139,7 @@ export const LoginForm = () => {
 
             <div className="flex items-center justify-between my-8">
               <FormField
-                control={form.control}
+                control={control}
                 name="rememberMe"
                 render={({ field }) => (
                   <FormItem className="flex flex-row items-start space-x-1 space-y-0">
@@ -143,7 +171,11 @@ export const LoginForm = () => {
               variant="linearGradient"
               className="w-full h-12"
             >
-              Log in
+              {isSubmitFormLoading ? (
+                <Spinner spinnerClassName="size-6" />
+              ) : (
+                "Log in"
+              )}
             </Button>
           </form>
         </Form>
