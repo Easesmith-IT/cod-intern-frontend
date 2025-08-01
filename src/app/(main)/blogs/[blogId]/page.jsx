@@ -3,6 +3,9 @@
 import { Blog } from "@/components/blogs/blog";
 import { Blog1 } from "@/components/blogs/blog1";
 import { Blog2 } from "@/components/blogs/blog2";
+import { Blog3 } from "@/components/blogs/blog3";
+import { Blog4 } from "@/components/blogs/blog4";
+import { Blog5 } from "@/components/blogs/blog5";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -23,8 +26,11 @@ const BlogDetails = () => {
 
       {params.blogId === "1" && <Blog1 />}
       {params.blogId === "2" && <Blog2 />}
+      {params.blogId === "3" && <Blog3 />}
+      {params.blogId === "4" && <Blog4 />}
+      {params.blogId === "5" && <Blog5 />}
 
-      {/* <h2 className="text-2xl font-stolzl mt-12 md:mt-32 text-center leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+      {/* <h2 className="text-2xl font-stolzl mt-12 md:mt-32 text-center leading-9 lg:leading-14 md:text-4xl  font-medium">
         <span className="text-main">Related</span> Blogs
         <Image
           src="/ellipse-group.svg"

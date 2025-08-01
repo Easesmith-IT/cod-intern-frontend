@@ -9,7 +9,7 @@ export const BlogsComp = ({ children, category, className }) => {
   return (
     <div className={cn("mt-6 sm:mt-12", className)}>
       <div className="flex justify-between items-center gap-4">
-        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium">
           {children}
           <Image
             src="/ellipse-group.svg"
@@ -48,6 +48,35 @@ of Self-Evolving AI in Robotics"
 — we are stepping into a new age of robotics powered by artificial intelligence. Gone are
 the days when robots could only perform repetitive tasks. Today, they are becoming selflearners, capable of improving their performance without explicit human instructions. This
 is not science fiction — it’s the dawn of self-evolving AI in robotics."
+        />
+        <Blog
+          href="/blogs/3"
+          src="/blog/blog3.png"
+          title="Dynamic Programming: The Smart Way to
+Solve Tough Problems"
+          timeStamp="01 August 2025 at 10:28"
+          desc="Let’s face it — the words “Dynamic Programming” sound technical, maybe even scary.
+But what if I told you that it’s actually just a smart way to solve big problems by thinking
+ahead and remembering what you’ve already done?"
+        />
+        <Blog
+          href="/blogs/4"
+          src="/blog/blog4.png"
+          title="Top Robotics Trends That Will Dominate
+the Next Decade"
+          timeStamp="01 August 2025 at 11:21"
+          desc="Robots are no longer just machines in science fiction movies. They are now part of our
+everyday lives — helping us in hospitals, factories, homes, and even in space. But what
+does the future hold?"
+        />
+        <Blog
+          href="/blogs/5"
+          src="/blog/blog5.png"
+          title="What is API Integration? A Simple Guide for Everyone"
+          timeStamp="01 August 2025 at 12:12"
+          desc="In today’s fast-paced digital world, apps and platforms need to work together seamlessly. Think
+about reserving a cab, placing an online order, or getting a payment notifcation — all of this
+happens because different systems are communicating behind the scenes."
         />
       </div>
     </div>

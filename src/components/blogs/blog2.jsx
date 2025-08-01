@@ -35,7 +35,7 @@ export const Blog2 = () => {
           </div> */}
         </div>
 
-        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[40px] font-medium mt-5">
+        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium mt-5">
           When Robots Learn on Their Own: The Rise of Self-Evolving AI in
           Robotics
         </h2>
@@ -285,9 +285,10 @@ export const Blog2 = () => {
         {/* <Separator className="mt-8 md:mt-20" /> */}
       </div>
       <div className="max-w-[400px] w-full">
-        <InThisArticle />
+        {/* <InThisArticle /> */}
 
-        <div className="mt-10">
+        {/* <div className="mt-10"> */}
+        <div>
           <h3 className="font-stolzl font-medium text-2xl">Related Blog</h3>
           <div className="flex flex-col gap-5 mt-5">
             <Blog
@@ -298,6 +299,36 @@ export const Blog2 = () => {
               desc="In the fast-paced world of technology, simply writing code that works isn’t enough.
             Whether you’re building a mobile app, a website, or a data-heavy backend system — your
             users, clients, and teammates expect more than just functionality. They expect"
+            />
+
+            <Blog
+              href="/blogs/3"
+              src="/blog/blog3.png"
+              title="Dynamic Programming: The Smart Way to
+            Solve Tough Problems"
+              timeStamp="01 August 2025 at 10:28"
+              desc="Let’s face it — the words “Dynamic Programming” sound technical, maybe even scary.
+            But what if I told you that it’s actually just a smart way to solve big problems by thinking
+            ahead and remembering what you’ve already done?"
+            />
+            <Blog
+              href="/blogs/4"
+              src="/blog/blog4.png"
+              title="Top Robotics Trends That Will Dominate
+            the Next Decade"
+              timeStamp="01 August 2025 at 11:21"
+              desc="Robots are no longer just machines in science fiction movies. They are now part of our
+            everyday lives — helping us in hospitals, factories, homes, and even in space. But what
+            does the future hold?"
+            />
+            <Blog
+              href="/blogs/5"
+              src="/blog/blog5.png"
+              title="What is API Integration? A Simple Guide for Everyone"
+              timeStamp="01 August 2025 at 12:12"
+              desc="In today’s fast-paced digital world, apps and platforms need to work together seamlessly. Think
+            about reserving a cab, placing an online order, or getting a payment notifcation — all of this
+            happens because different systems are communicating behind the scenes."
             />
           </div>
         </div>
