@@ -44,9 +44,6 @@ export const LoginForm = () => {
   const handleGoogleLogin = () => {
     const url = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_URL;
 
-    console.log("url", url);
-    
-
     window.location.href = `${url}?intent=signup`; // redirect to Node backend
   };
 
@@ -60,6 +57,9 @@ export const LoginForm = () => {
     invalidateKey: ["login"],
     // isToast: false,
   });
+
+  console.log("login result", result);
+  
 
   const onSubmit = async (data) => {
     console.log("Login attempt:", data);
