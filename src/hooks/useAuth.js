@@ -1,6 +1,7 @@
 // hooks/useAuth.ts
 "use client";
 
+import { readCookie } from "@/lib/readCookie";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
 
@@ -17,8 +18,11 @@ export const useAuth = () => {
   });
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const isLoggedIn = !!token;
+    const isAuthenticated = readCookie("isAuthenticated");
+
+    console.log("isAuthenticated", isAuthenticated);
+
+    const isLoggedIn = !!isAuthenticated;
     queryClient.setQueryData(AUTH_KEY, isLoggedIn);
   }, [queryClient]);
 
@@ -29,12 +33,10 @@ export const useSetLogin = () => {
   const queryClient = useQueryClient();
 
   const login = (token) => {
-    localStorage.setItem("token", token);
     queryClient.setQueryData(AUTH_KEY, true);
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
     queryClient.setQueryData(AUTH_KEY, false);
   };
 

@@ -7,7 +7,7 @@ export const MyActiveCourses = () => {
   return (
     <section className="section-container">
       <div className="relative max-w-[511px] mx-auto">
-        <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize text-center">
+        <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl  font-medium capitalize text-center">
           <span className="text-main">My Active</span> Courses
           <Image
             src="/ellipse-group.svg"
@@ -17,13 +17,13 @@ export const MyActiveCourses = () => {
             alt="Ellipse"
           />
         </h2>
-        <Image
+        {/* <Image
           src="/Rectangle.svg"
           className="absolute right-[27%] sm:right-[18%] w-[200px] sm:w-[257px] bottom-2"
           width={257}
           height={14}
           alt="Rectangle"
-        />
+        /> */}
       </div>
       <p className="text-center font-stolzl text-para mt-2 text-xs sm:text-para">
         Here’s what you’re currently learning

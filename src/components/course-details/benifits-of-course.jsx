@@ -5,7 +5,7 @@ import { Separator } from "../ui/separator";
 export const BenifitsOfCourse = () => {
   return (
     <section className="section-container sm:h-[400px] md:h-[760px] relative">
-      <h2 className="font-medium capitalize text-center max-w-[680px] mx-auto text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px]">
+      <h2 className="font-medium capitalize text-center max-w-[680px] mx-auto text-2xl leading-9 lg:leading-14 md:text-4xl ">
         <span className="text-main">Advantages of Enrolling</span> in a
         CodIntern Course
       </h2>

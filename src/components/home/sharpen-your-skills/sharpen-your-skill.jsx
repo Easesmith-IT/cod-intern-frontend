@@ -8,7 +8,7 @@ export const SharpenYourSkill = () => {
     <section className="section-container py-12 md:py-24 flex flex-col lg:flex-row items-center sm:justify-between gap-10">
       <div className="">
         <div className="flex max-w-[590px]">
-          <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+          <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium">
             <span className="text-main">Master In-Demand Skills</span> with Our
             Online Courses
             <Image

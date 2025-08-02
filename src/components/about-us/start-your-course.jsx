@@ -12,7 +12,7 @@ export const StartYourCourse = () => {
           height={316}
           alt="start-your-course"
         />
-        <h3 className="max-w-[400px] font-stolzl text-white text-2xl leading-10 lg:leading-14 md:text-4xl lg:text-[46px] text-center md:text-left font-medium">
+        <h3 className="max-w-[400px] font-stolzl text-white text-2xl leading-10 lg:leading-14 md:text-4xl  text-center md:text-left font-medium">
           Lets Start Your Course With Us?
         </h3>
         <div className="flex gap-4 sm:gap-10 md:gap-20 lg:gap-32">

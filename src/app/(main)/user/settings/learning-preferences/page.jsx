@@ -44,7 +44,7 @@ const LearningPreferences = () => {
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] text-para-3 font-medium capitalize">
+        <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl  text-para-3 font-medium capitalize">
           Learning Preferences
         </h2>
 

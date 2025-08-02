@@ -158,7 +158,7 @@ const Profile = () => {
               </p>
             </div>
             <div className="w-full md:flex-1">
-              <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] text-para-3 font-medium capitalize">
+              <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl  text-para-3 font-medium capitalize">
                 Profile Settings
               </h2>
               <h5 className="font-stolzl font-medium mt-5 text-heading text-base sm:text-lg">

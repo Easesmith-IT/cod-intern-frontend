@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-export const SignupLogin = () => {
+export const SignupLogin = ({ children, desc }) => {
   return (
     <div
       style={{
@@ -26,14 +26,13 @@ export const SignupLogin = () => {
         height={356}
         alt="Sign In"
       />
-      <h1 className="max-w-[555px] text-center text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
-        <span className="text-main">Online Community</span> For Front-end
-        Developers
+
+      <h1 className="max-w-[555px] text-center text-2xl leading-9 lg:leading-14 md:text-4xl font-medium capitalize">
+        {children}
       </h1>
       <p className="font-stolzl text-para text-xs sm:text-sm lg:text-base font-book max-w-[472px] text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididun.
+        {desc}
       </p>
     </div>
   );
-}
+};

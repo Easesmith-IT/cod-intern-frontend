@@ -1,15 +1,15 @@
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { Check, ChevronDown } from 'lucide-react';
-import Image from 'next/image'
-import React from 'react'
-import { Info } from './info';
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { Check, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import React from "react";
+import { Info } from "./info";
 
 export const ExpertInstructorLiveClasses = () => {
   return (
     <section className="py-12 md:py-24 section-container flex flex-col lg:flex-row gap-20 items-center">
       <div className="max-w-3xl">
-        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize">
+        <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium capitalize">
           <span className="text-main">Live Skill-Building</span> Sessions by
           Experts
           <Image
@@ -74,4 +74,4 @@ export const ExpertInstructorLiveClasses = () => {
       </div>
     </section>
   );
-}
+};

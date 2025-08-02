@@ -1,10 +1,10 @@
-import { AccountSettingItem } from '@/components/user-profile/settings/account-setting-item';
-import React from 'react'
+import { AccountSettingItem } from "@/components/user-profile/settings/account-setting-item";
+import React from "react";
 
 const SecurityAndPrivacy = () => {
   return (
     <div>
-      <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] text-para-3 font-medium capitalize">
+      <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl  text-para-3 font-medium capitalize">
         Security & Privacy
       </h2>
       <div className="mt-5">
@@ -32,6 +32,6 @@ const SecurityAndPrivacy = () => {
       </div>
     </div>
   );
-}
+};
 
-export default SecurityAndPrivacy
+export default SecurityAndPrivacy;

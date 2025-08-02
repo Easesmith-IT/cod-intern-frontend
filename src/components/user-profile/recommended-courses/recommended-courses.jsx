@@ -1,12 +1,12 @@
-import { CourseCard } from '@/components/home/popular-courses/course-card';
-import Image from 'next/image';
-import React from 'react'
+import { CourseCard } from "@/components/home/popular-courses/course-card";
+import Image from "next/image";
+import React from "react";
 
 export const RecommendedCourses = () => {
   return (
     <section className="section-container pb-12 md:pb-24">
       <div className="relative max-w-[611px] mx-auto">
-        <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium capitalize text-center">
+        <h2 className="text-2xl font-stolzl relative z-10 leading-9 lg:leading-14 md:text-4xl  font-medium capitalize text-center">
           <span className="text-main">Recommended</span> Courses
           <Image
             src="/ellipse-group.svg"
@@ -50,4 +50,4 @@ export const RecommendedCourses = () => {
       </div>
     </section>
   );
-}
+};

@@ -19,7 +19,7 @@ const list = [
 export const WhatCourseIncludes = () => {
   return (
     <div className="mt-28">
-      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium">
+      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium">
         <span className="text-main">What This Course</span> Offers
         <Image
           src="/ellipse-group.svg"

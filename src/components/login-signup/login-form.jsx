@@ -41,6 +41,12 @@ export const LoginForm = () => {
 
   const { reset, handleSubmit, control } = form;
 
+  const handleGoogleLogin = () => {
+    const url = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_URL;
+
+    window.location.href = `${url}?intent=signup`; // redirect to Node backend
+  };
+
   const {
     mutateAsync: submitForm,
     isPending: isSubmitFormLoading,
@@ -192,12 +198,13 @@ export const LoginForm = () => {
         </div>
         <div className="flex gap-4 items-center justify-center mt-6">
           <Button
+            onClick={handleGoogleLogin}
             variant="ghost"
             className="size-14 shadow flex justify-center items-center border border-[#EBEBEB] rounded-full"
           >
             <Image src="/google.svg" width={30} height={30} alt="Google" />
           </Button>
-          <Button
+          {/* <Button
             variant="ghost"
             className="size-14 shadow flex justify-center items-center border border-[#EBEBEB] rounded-full"
           >
@@ -205,10 +212,10 @@ export const LoginForm = () => {
               src="/sign-in/apple.svg"
               width={30}
               height={30}
-              alt="Google"
+              alt="apple"
             />
-          </Button>
-          <Button
+          </Button> */}
+          {/* <Button
             variant="ghost"
             className="size-14 shadow p-0 flex justify-center items-center border border-[#EBEBEB] rounded-full"
           >
@@ -216,9 +223,9 @@ export const LoginForm = () => {
               src="/sign-in/facebook.svg"
               width={30}
               height={30}
-              alt="Google"
+              alt="facebook"
             />
-          </Button>
+          </Button> */}
         </div>
         <p className="mt-4 font-stolzl text-xs sm:text-sm md:text-base font-book text-center">
           Don’t have an account?

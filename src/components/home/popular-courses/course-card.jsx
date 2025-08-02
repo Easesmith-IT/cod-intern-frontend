@@ -32,7 +32,7 @@ export const CourseCard = ({name,src}) => {
             </div>
             <p className="text-para-2 font-book font-stolzl text-xs">(4.5)</p>
           </div>
-          <h3 className="font-stolzl text-heading font-medium text-lg md:text-xl mt-2 line-clamp-2">
+          <h3 className="font-stolzl text-heading font-medium text-base md:text-lg mt-2 line-clamp-2">
             {name}
           </h3>
 

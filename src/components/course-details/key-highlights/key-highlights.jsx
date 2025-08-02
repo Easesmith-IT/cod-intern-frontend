@@ -17,7 +17,7 @@ export const KeyHighlights = () => {
       <Carousel className="w-full">
         <div className="flex justify-between items-center gap-5">
           <div>
-            <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium max-w-[788px]">
+            <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium max-w-[788px]">
               <span className="text-main">What Makes Our</span> Data Science &
               AI Course Stand Out
               <Image

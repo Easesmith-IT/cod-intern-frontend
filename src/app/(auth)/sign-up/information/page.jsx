@@ -25,6 +25,9 @@ import { useForm } from "react-hook-form";
 
 const Information = () => {
   const [step, setStep] = useState(1);
+  const [email, setEmail] = useState("");
+  const [studentId, setStudentId] = useState("");
+
   const router = useRouter();
 
   const form = useForm({
@@ -68,8 +71,13 @@ const Information = () => {
     }
   };
 
-  const email = localStorage.getItem("cod-intern-email");
-  const studentId = localStorage.getItem("cod-intern-student-id");
+  useEffect(() => {
+    const emailFromStorage = localStorage.getItem("cod-intern-email");
+    const studentIdFromStorage = localStorage.getItem("cod-intern-student-id");
+
+    if (emailFromStorage) setEmail(emailFromStorage);
+    if (studentIdFromStorage) setStudentId(studentIdFromStorage);
+  }, []);
 
   const {
     mutateAsync: submitForm,

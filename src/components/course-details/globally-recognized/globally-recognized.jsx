@@ -5,7 +5,7 @@ import React from "react";
 export const GloballyRecognized = () => {
   return (
     <section className="section-container pb-12 md:pb-24">
-      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
+      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium text-center">
         <span className="text-main">Globally Acclaimed</span> Credentials
         <Image
           src="/ellipse-group.svg"

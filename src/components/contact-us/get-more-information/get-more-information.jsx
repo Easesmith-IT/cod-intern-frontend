@@ -5,7 +5,7 @@ import { Info } from "./info";
 export const GetMoreInformation = () => {
   return (
     <section className="section-container py-12 md:py-24">
-      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl lg:text-[46px] font-medium text-center">
+      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium text-center">
         <span className="text-main">Discover</span> More
         <Image
           src="/ellipse-group.svg"

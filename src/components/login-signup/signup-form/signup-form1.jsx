@@ -35,6 +35,12 @@ export const SignupForm1 = ({ setIsOtp }) => {
 
   const { reset, handleSubmit, control } = form;
 
+  const handleGoogleLogin = () => {
+    const url = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_URL;
+
+    window.location.href = `${url}?intent=signup`; // redirect to Node backend
+  };
+
   const {
     mutateAsync: submitForm,
     isPending: isSubmitFormLoading,
@@ -213,28 +219,34 @@ export const SignupForm1 = ({ setIsOtp }) => {
       </div>
       <div className="flex gap-4 items-center justify-center mt-6">
         <Button
+          onClick={handleGoogleLogin}
           variant="ghost"
           className="size-14 shadow flex justify-center items-center border border-[#EBEBEB] rounded-full"
         >
           <Image src="/google.svg" width={30} height={30} alt="Google" />
         </Button>
-        <Button
-          variant="ghost"
-          className="size-14 shadow flex justify-center items-center border border-[#EBEBEB] rounded-full"
-        >
-          <Image src="/sign-in/apple.svg" width={30} height={30} alt="Google" />
-        </Button>
-        <Button
-          variant="ghost"
-          className="size-14 shadow p-0 flex justify-center items-center border border-[#EBEBEB] rounded-full"
-        >
-          <Image
-            src="/sign-in/facebook.svg"
-            width={30}
-            height={30}
-            alt="Google"
-          />
-        </Button>
+        {/* <Button
+                    variant="ghost"
+                    className="size-14 shadow flex justify-center items-center border border-[#EBEBEB] rounded-full"
+                  >
+                    <Image
+                      src="/sign-in/apple.svg"
+                      width={30}
+                      height={30}
+                      alt="apple"
+                    />
+                  </Button> */}
+        {/* <Button
+                    variant="ghost"
+                    className="size-14 shadow p-0 flex justify-center items-center border border-[#EBEBEB] rounded-full"
+                  >
+                    <Image
+                      src="/sign-in/facebook.svg"
+                      width={30}
+                      height={30}
+                      alt="facebook"
+                    />
+                  </Button> */}
       </div>
       <p className="mt-4 font-stolzl text-xs sm:text-sm md:text-base font-book text-center">
         Already have an account?

@@ -4,7 +4,7 @@ import React from "react";
 export const EvolutionOFCodIntern = () => {
   return (
     <section className="section-container py-24">
-      <h2 className="text-[46px] font-medium leading-14 capitalize text-center">
+      <h2 className="text-2xl font-stolzl relative leading-9 lg:leading-14 md:text-4xl lg:text-[40px] text-para-3 font-medium capitalize text-center">
         <span className="text-main">The Evolution</span> of CodIntern Timeline
         <Image
           src="/ellipse-group.svg"

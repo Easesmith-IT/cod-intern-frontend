@@ -29,7 +29,7 @@ const Courses = () => {
       />
 
       <div className="flex justify-between gap-3 items-center mt-6 sm:mt-10">
-        <h2 className="text-2xl font-stolzl relative leading-9 lg:leading-14 md:text-4xl lg:text-[46px] text-para-3 font-medium capitalize">
+        <h2 className="text-2xl font-stolzl relative leading-9 lg:leading-14 md:text-4xl  text-para-3 font-medium capitalize">
           All courses
         </h2>
         <div className="md:hidden">
