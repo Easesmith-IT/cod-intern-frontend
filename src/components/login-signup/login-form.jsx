@@ -45,7 +45,7 @@ export const LoginForm = () => {
   const handleGoogleLogin = () => {
     const url = process.env.NEXT_PUBLIC_GOOGLE_LOGIN_URL;
 
-    window.location.href = `${url}?intent=signup`; // redirect to Node backend
+    window.location.href = `${url}?intent=login`; // redirect to Node backend
   };
 
   const {

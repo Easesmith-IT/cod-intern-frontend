@@ -20,17 +20,25 @@ import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { CounterItem, CounterSeperator } from "../counter/counter";
 import { Button } from "../ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { ProfileAvatar } from "../user-profile/profile-avatar";
+import { setAuthCookies } from "@/lib/setCookies";
 
 export const Header = () => {
   const router = useRouter();
   const { days, hours, minutes, seconds } = usePersistentCountdown();
   const { data: isLoggedIn } = useAuth();
-   console.log("login data local:", isLoggedIn);
+
+  const searchParams = useSearchParams();
+
+  setAuthCookies({
+    accessToken: searchParams.get("accessToken"),
+    refreshToken: searchParams.get("refreshToken"),
+    userInfo: searchParams.get("userInfo"),
+  });
 
   return (
     <header className="shadow-md shadow-black/5 z-20 sticky top-0 bg-white">
