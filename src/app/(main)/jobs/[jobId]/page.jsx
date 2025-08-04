@@ -113,43 +113,46 @@ const JobDetails = () => {
         />
       </h2>
 
-      <JobDetailCard />
+      <div className="flex gap-10 flex-col md:flex-row justify-between">
+        <JobDetailCard />
 
-      <h3 className="text-lg sm:text-2xl font-stolzl font-medium mt-10">
-        About the Job
-      </h3>
-      <p className="mt-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
-        Key responsibilities:
-      </p>
+        <div className="flex-1">
+          <h3 className="text-lg sm:text-2xl font-stolzl font-medium mt-10">
+            About the Job
+          </h3>
+          <p className="mt-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
+            Key responsibilities:
+          </p>
 
-      <ol className="mt-4 text-xs space-y-1 sm:text-sm md:text-base list-decimal ml-4 font-stolzl text-para font-book">
-        {keyResponsibility.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ol>
-
-      <Heading title="Benefits:" />
+          <ol className="mt-4 text-xs space-y-1 sm:text-sm md:text-base list-decimal ml-4 font-stolzl text-para font-book">
+            {keyResponsibility.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
+      {/* <Heading title="Benefits:" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-6">
         {benifits.map((benifit) => (
           <Benifit key={benifit.title} benifit={benifit} />
         ))}
-      </div>
+      </div> */}
 
-      <Heading title="Note" />
+      {/* <Heading title="Note" />
       <ol className="mt-4 text-xs space-y-1 sm:text-sm md:text-base list-decimal ml-4 font-stolzl text-para font-book">
         {notes.map((item) => (
           <li key={item}>{item}</li>
         ))}
-      </ol>
+      </ol> */}
 
-      <Heading title="Skill(s) Required" />
+      {/* <Heading title="Skill(s) Required" />
       <div className="mt-4 flex flex-wrap gap-4 items-center">
         {skills.map((skill) => (
           <Skill key={skill} skill={skill} />
         ))}
-      </div>
+      </div> */}
 
-      <Heading title="Earn certifications in these skills" />
+      {/* <Heading title="Earn certifications in these skills" />
       <div className="mt-4 flex flex-wrap gap-6 items-center">
         {links.map(({ href, label }) => (
           <Link
@@ -160,9 +163,9 @@ const JobDetails = () => {
             {label}
           </Link>
         ))}
-      </div>
+      </div> */}
 
-      <Heading title="Who can apply" />
+      {/* <Heading title="Who can apply" />
       <p className="mt-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
         Only those candidates can apply who:
       </p>
@@ -170,16 +173,16 @@ const JobDetails = () => {
         {whoCanApply.map((item) => (
           <li key={item}>{item}</li>
         ))}
-      </ol>
+      </ol> */}
 
-      <Heading title="Other requirements" />
+      {/* <Heading title="Other requirements" />
       <ol className="mt-4 text-xs space-y-1 sm:text-sm md:text-base list-decimal ml-4 font-stolzl text-para font-book">
         {otherRequirements.map((item) => (
           <li key={item}>{item}</li>
         ))}
-      </ol>
+      </ol> */}
 
-      <Heading title="Salary" />
+      {/* <Heading title="Salary" />
       <p className="mt-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
         Annual CTC: ₹ 4,20,000 - 4,40,000 /year
       </p>
@@ -190,13 +193,18 @@ const JobDetails = () => {
         {salaryBreakDown.map((item) => (
           <li key={item}>{item}</li>
         ))}
-      </ol>
+      </ol> */}
 
-      <Heading title="Number of openings" />
+      {/* <Heading title="Number of openings" />
       <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
         20
-      </p>
-      <Heading title="About Travel Lykke Private Limited" />
+      </p> */}
+
+      <Heading title="Roles & Reponsibilities" />
+
+      <Heading title="Good to Have" />
+
+      <Heading title="About the company" />
       <Link
         href="#"
         className="text-main font-stolzl text-xs hover:underline flex items-center gap-1 my-2"
@@ -215,7 +223,7 @@ const JobDetails = () => {
         you as our future friends and not just customers.
       </p>
 
-      <div className="border rounded-md max-w-4xl p-5 sm:p-10 mt-10">
+      {/* <div className="border rounded-md max-w-4xl p-5 sm:p-10 mt-10">
         <Heading title="Activity on CodeIntern" className="mt-0" />
 
         <div className="mt-8 flex flex-wrap gap-4">
@@ -226,7 +234,7 @@ const JobDetails = () => {
           />
           <Info heading="13 candidates hired" img="/job/candidates-hired.svg" />
         </div>
-      </div>
+      </div> */}
 
       <Button
         variant="linearGradient"
@@ -235,7 +243,7 @@ const JobDetails = () => {
         Apply Now
       </Button>
 
-      <div className="flex flex-wrap justify-center items-center gap-10 mt-10 lg:mt-20">
+      {/* <div className="flex flex-wrap justify-center items-center gap-10 mt-10 lg:mt-20">
         <SocialItem
           icon="/job/whatsapp.svg"
           title="WhatsApp"
@@ -266,7 +274,7 @@ const JobDetails = () => {
           className="bg-[#FF0033]"
           href="https://www.codeIntern.Com"
         />
-      </div>
+      </div> */}
     </section>
   );
 };
