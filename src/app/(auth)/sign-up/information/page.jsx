@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { PATCH } from "@/constants/apiMethods";
 import { useApiMutation } from "@/hooks/useApiMutation";
+import { useSetLogin } from "@/hooks/useAuth";
 import {
   fullSignupFormSchema,
   step1Schema,
@@ -27,6 +28,7 @@ const Information = () => {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
   const [studentId, setStudentId] = useState("");
+   const { login } = useSetLogin();
 
   const router = useRouter();
 
@@ -109,6 +111,7 @@ const Information = () => {
       localStorage.removeItem("cod-intern-email");
       localStorage.removeItem("cod-intern-student-id");
       // router.push("/login");
+       login();
       router.push("/");
     }
   }, [result]);

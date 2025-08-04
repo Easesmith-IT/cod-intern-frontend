@@ -10,6 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { POST } from "@/constants/apiMethods";
 import { useApiMutation } from "@/hooks/useApiMutation";
+import { useAuth, useSetLogin } from "@/hooks/useAuth";
 import { setAuthCookies } from "@/lib/setCookies";
 import { SignupOtpSchema } from "@/schemas/SignupSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,6 +22,8 @@ import { useForm } from "react-hook-form";
 export const SignupForm2 = () => {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const { login } = useSetLogin();
+  const { data } = useAuth();
 
   const form = useForm({
     resolver: zodResolver(SignupOtpSchema),
@@ -55,6 +58,7 @@ export const SignupForm2 = () => {
     await resendOtp({ email });
   };
 
+  console.log("result:", result);
   const onSubmit = async (data) => {
     console.log("Login attempt:", data);
     const apiData = {
@@ -74,6 +78,7 @@ export const SignupForm2 = () => {
       router.push("/sign-up/information");
     }
   }, [result]);
+  console.log("login data local:", data);
 
   return (
     <div className="">
