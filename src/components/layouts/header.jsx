@@ -8,24 +8,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
+  navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
+import { useAuth } from "@/hooks/useAuth";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
+import { setAuthCookies } from "@/lib/setCookies";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { CounterItem, CounterSeperator } from "../counter/counter";
 import { Button } from "../ui/button";
-import { useAuth } from "@/hooks/useAuth";
 import { ProfileAvatar } from "../user-profile/profile-avatar";
-import { setAuthCookies } from "@/lib/setCookies";
+import { useEffect } from "react";
 
 export const Header = () => {
   const router = useRouter();
@@ -34,11 +33,19 @@ export const Header = () => {
 
   const searchParams = useSearchParams();
 
-  setAuthCookies({
-    accessToken: searchParams.get("accessToken"),
-    refreshToken: searchParams.get("refreshToken"),
-    userInfo: searchParams.get("userInfo"),
-  });
+  useEffect(() => {
+    const accessToken = searchParams.get("accessToken");
+    const refreshToken = searchParams.get("refreshToken");
+    const userInfo = searchParams.get("userInfo");
+
+    if (accessToken && refreshToken && userInfo) {
+      setAuthCookies({
+        accessToken,
+        refreshToken,
+        userInfo,
+      });
+    }
+  }, [searchParams]);
 
   return (
     <header className="shadow-md shadow-black/5 z-20 sticky top-0 bg-white">
