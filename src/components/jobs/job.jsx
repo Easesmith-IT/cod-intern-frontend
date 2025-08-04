@@ -19,7 +19,7 @@ export const Job = () => {
               Accountant
             </h3>
             <p className="font-stolzl text-para font-book text-xs sm:text-sm mt-1">
-              Cinderella Tours
+              JOB-2345-3498
             </p>
           </div>
           <Image src="/job-logo.svg" width={69} height={86} alt="job" />
