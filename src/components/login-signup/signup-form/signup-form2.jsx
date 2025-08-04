@@ -10,11 +10,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { POST } from "@/constants/apiMethods";
 import { useApiMutation } from "@/hooks/useApiMutation";
+import { setAuthCookies } from "@/lib/setCookies";
 import { SignupOtpSchema } from "@/schemas/SignupSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Lock } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const SignupForm2 = () => {
@@ -31,13 +32,16 @@ export const SignupForm2 = () => {
   const { reset, handleSubmit, control } = form;
   const email = localStorage.getItem("cod-intern-email");
 
-  const { mutateAsync: submitForm, isPending: isSubmitFormLoading } =
-    useApiMutation({
-      url: "/student/auth/verify-otp",
-      method: POST,
-      invalidateKey: ["verify-otp"],
-      // isToast: false,
-    });
+  const {
+    mutateAsync: submitForm,
+    isPending: isSubmitFormLoading,
+    data: result,
+  } = useApiMutation({
+    url: "/student/auth/verify-otp",
+    method: POST,
+    invalidateKey: ["verify-otp"],
+    // isToast: false,
+  });
 
   const { mutateAsync: resendOtp, isPending: isResendOtpLoading } =
     useApiMutation({
@@ -59,10 +63,17 @@ export const SignupForm2 = () => {
     };
 
     await submitForm(apiData);
-
-    reset();
-    router.push("/sign-up/information");
   };
+
+  useEffect(() => {
+    if (result) {
+      const { accessToken, refreshToken, userInfo } = result.cookies;
+      setAuthCookies({ accessToken, refreshToken, userInfo });
+      login();
+      reset();
+      router.push("/sign-up/information");
+    }
+  }, [result]);
 
   return (
     <div className="">

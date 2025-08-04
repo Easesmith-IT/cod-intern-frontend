@@ -108,7 +108,8 @@ const Information = () => {
     if (result) {
       localStorage.removeItem("cod-intern-email");
       localStorage.removeItem("cod-intern-student-id");
-      router.push("/login");
+      // router.push("/login");
+      router.push("/");
     }
   }, [result]);
 
