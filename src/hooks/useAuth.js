@@ -2,6 +2,7 @@
 "use client";
 
 import { readCookie } from "@/lib/readCookie";
+import { setAuthCookies } from "@/lib/setCookies";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
 
@@ -32,11 +33,17 @@ export const useAuth = () => {
 export const useSetLogin = () => {
   const queryClient = useQueryClient();
 
-  const login = (token) => {
+  const login = () => {
     queryClient.setQueryData(AUTH_KEY, true);
   };
 
   const logout = () => {
+    setAuthCookies({
+      accessToken: "",
+      refreshToken: "",
+      userInfo: "",
+      isAuthenticated: false,
+    });
     queryClient.setQueryData(AUTH_KEY, false);
   };
 

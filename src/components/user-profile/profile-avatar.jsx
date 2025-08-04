@@ -35,7 +35,7 @@ export const ProfileAvatar = () => {
   });
 
   const handleLogout = async () => {
-    await logout({ email: userInfo.email });
+    // await logout({ email: userInfo.email });
     localLogout();
     router.push("/");
   };

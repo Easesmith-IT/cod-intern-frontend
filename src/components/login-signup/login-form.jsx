@@ -24,6 +24,7 @@ import { useRouter } from "next/navigation";
 import { useApiMutation } from "@/hooks/useApiMutation";
 import { POST } from "@/constants/apiMethods";
 import Spinner from "../Spinner";
+import { setAuthCookies } from "@/lib/setCookies";
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -59,7 +60,6 @@ export const LoginForm = () => {
   });
 
   console.log("login result", result);
-  
 
   const onSubmit = async (data) => {
     console.log("Login attempt:", data);
@@ -73,7 +73,9 @@ export const LoginForm = () => {
 
   useEffect(() => {
     if (result) {
-      login("test-token-123");
+      const { accessToken, refreshToken, userInfo } = result.cookies;
+      setAuthCookies({ accessToken, refreshToken, userInfo });
+      login();
       reset();
       router.push("/");
     }
