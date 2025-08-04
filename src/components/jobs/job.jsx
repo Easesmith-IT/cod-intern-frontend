@@ -76,7 +76,7 @@ export const Job = () => {
           variant="ghost"
           className="text-main text-xs sm:text-sm"
         >
-          <Link href={`/jobs/${123456}`} className="gap-1">
+          <Link href={`/jobs/JOB-2345-3498`} className="gap-1">
             <span>View Details</span>
             <ChevronRight className="size-5" />
           </Link>
