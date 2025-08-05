@@ -11,10 +11,10 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth, useSetLogin } from "@/hooks/useAuth";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import { setAuthCookies } from "@/lib/setCookies";
 import { Menu } from "lucide-react";
@@ -30,7 +30,7 @@ export const Header = () => {
   const router = useRouter();
   const { days, hours, minutes, seconds } = usePersistentCountdown();
   const { data: isLoggedIn } = useAuth();
-   console.log("isLoggedIn", isLoggedIn);
+  const { login } = useSetLogin();
 
   const searchParams = useSearchParams();
 
@@ -43,8 +43,9 @@ export const Header = () => {
       setAuthCookies({
         accessToken,
         refreshToken,
-        userInfo,
+        userInfo: JSON.parse(userInfo),
       });
+      login();
     }
   }, [searchParams, isLoggedIn]);
 

@@ -58,7 +58,7 @@ export default function InformationClient() {
       setAuthCookies({
         accessToken,
         refreshToken,
-        userInfo,
+        userInfo: JSON.parse(userInfo),
       });
     }
   }, [searchParams]);
@@ -94,7 +94,10 @@ export default function InformationClient() {
   useEffect(() => {
     const emailFromStorage = localStorage.getItem("cod-intern-email");
     const studentIdFromStorage = localStorage.getItem("cod-intern-student-id");
-    const userInfo = JSON.parse(readCookie("userInfo") || "");
+    // const userInfo = JSON.parse(readCookie("userInfo"));
+    const userInfo = readCookie("userInfo");
+    console.log("userInfo", userInfo);
+    console.log("emailFromStorage", emailFromStorage);
 
     emailFromStorage ? setEmail(emailFromStorage) : setEmail(userInfo.email);
 
@@ -114,6 +117,7 @@ export default function InformationClient() {
     // isToast: false,
   });
 
+  console.log("result", result);
   const onSubmit = async (data) => {
     console.log("data", data);
 

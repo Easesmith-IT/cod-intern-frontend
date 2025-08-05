@@ -56,6 +56,8 @@ const Profile = () => {
     setUserInfo(readCookie("userInfo"));
   }, []);
 
+  console.log("userInfo", userInfo);
+
   const { register, watch, handleSubmit, control, setValue } = form;
 
   const profileImgRef = register("profileImg");
