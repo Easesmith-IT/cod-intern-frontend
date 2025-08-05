@@ -26,7 +26,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { useSearchParams } from "next/navigation";
 export default function InformationClient() {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
