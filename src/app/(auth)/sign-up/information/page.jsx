@@ -11,6 +11,8 @@ import { Form } from "@/components/ui/form";
 import { PATCH } from "@/constants/apiMethods";
 import { useApiMutation } from "@/hooks/useApiMutation";
 import { useSetLogin } from "@/hooks/useAuth";
+import { readCookie } from "@/lib/readCookie";
+import { setAuthCookies } from "@/lib/setCookies";
 import {
   fullSignupFormSchema,
   step1Schema,
@@ -20,7 +22,7 @@ import {
 } from "@/schemas/SignupStepsSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -28,7 +30,7 @@ const Information = () => {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
   const [studentId, setStudentId] = useState("");
-   const { login } = useSetLogin();
+  const { login } = useSetLogin();
 
   const router = useRouter();
 
@@ -44,6 +46,22 @@ const Information = () => {
       education: "",
     },
   });
+
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const accessToken = searchParams.get("accessToken");
+    const refreshToken = searchParams.get("refreshToken");
+    const userInfo = searchParams.get("userInfo");
+
+    if (accessToken && refreshToken && userInfo) {
+      setAuthCookies({
+        accessToken,
+        refreshToken,
+        userInfo,
+      });
+    }
+  }, [searchParams]);
 
   const { handleSubmit, trigger } = form;
 
@@ -76,9 +94,15 @@ const Information = () => {
   useEffect(() => {
     const emailFromStorage = localStorage.getItem("cod-intern-email");
     const studentIdFromStorage = localStorage.getItem("cod-intern-student-id");
+    const userInfo = JSON.parse(readCookie("userInfo") || "");
+    console.log("userInfo", userInfo);
+    
 
-    if (emailFromStorage) setEmail(emailFromStorage);
-    if (studentIdFromStorage) setStudentId(studentIdFromStorage);
+    emailFromStorage ? setEmail(emailFromStorage) : setEmail(userInfo.email);
+
+    studentIdFromStorage
+      ? setStudentId(studentIdFromStorage)
+      : setStudentId(userInfo.id);
   }, []);
 
   const {
@@ -111,7 +135,7 @@ const Information = () => {
       localStorage.removeItem("cod-intern-email");
       localStorage.removeItem("cod-intern-student-id");
       // router.push("/login");
-       login();
+      login();
       router.push("/");
     }
   }, [result]);
