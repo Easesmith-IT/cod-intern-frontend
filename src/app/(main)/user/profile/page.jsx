@@ -32,7 +32,7 @@ import { previewImage } from "@/lib/utils";
 import { ProfileSchema } from "@/schemas/ProfileSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Profile = () => {
