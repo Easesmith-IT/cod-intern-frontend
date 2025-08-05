@@ -50,7 +50,11 @@ const Profile = () => {
     },
   });
 
-  const userInfo = readCookie("userInfo");
+  const [userInfo, setUserInfo] = useState(null);
+
+  useEffect(() => {
+    setUserInfo(readCookie("userInfo"));
+  }, []);
 
   const { register, watch, handleSubmit, control, setValue } = form;
 
@@ -63,7 +67,7 @@ const Profile = () => {
   }, [profileImgWatch, setValue]);
 
   const { data, isLoading, error } = useApiQuery({
-    url: `/student/main/get-profile?studentId=${userInfo.id}`,
+    url: `/student/main/get-profile?studentId=${userInfo?.id}`,
     queryKey: "profile",
   });
 
@@ -107,8 +111,6 @@ const Profile = () => {
     formData.append("image", data.profileImg[0]);
 
     await submitForm(formData);
-
-    
   };
 
   return (
