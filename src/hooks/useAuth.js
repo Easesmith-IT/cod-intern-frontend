@@ -19,12 +19,17 @@ export const useAuth = () => {
   });
 
   useEffect(() => {
-    const isAuthenticated = readCookie("isAuthenticated");
+    const checkAuth = () => {
+      const isAuthenticated = readCookie("isAuthenticated");
+      queryClient.setQueryData(AUTH_KEY, isAuthenticated);
+    };
 
-    console.log("isAuthenticated", isAuthenticated);
+    checkAuth();
 
-    const isLoggedIn = !!isAuthenticated;
-    queryClient.setQueryData(AUTH_KEY, isLoggedIn);
+    // Optional: refresh on window focus (e.g., tab switch)
+    // window.addEventListener("focus", checkAuth);
+
+    // return () => window.removeEventListener("focus", checkAuth);
   }, [queryClient]);
 
   return result;

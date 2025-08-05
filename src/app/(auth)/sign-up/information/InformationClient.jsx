@@ -95,7 +95,6 @@ export default function InformationClient() {
     const emailFromStorage = localStorage.getItem("cod-intern-email");
     const studentIdFromStorage = localStorage.getItem("cod-intern-student-id");
     const userInfo = JSON.parse(readCookie("userInfo") || "");
-    console.log("userInfo", userInfo);
 
     emailFromStorage ? setEmail(emailFromStorage) : setEmail(userInfo.email);
 

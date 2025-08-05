@@ -26,6 +26,7 @@ import { ProfileSkeleton } from "@/components/user-profile/skeletons/profile-ske
 import { PATCH } from "@/constants/apiMethods";
 import { useApiMutation } from "@/hooks/useApiMutation";
 import { useApiQuery } from "@/hooks/useApiQuery";
+import { readCookie } from "@/lib/readCookie";
 import { updatePreview } from "@/lib/updatePreview";
 import { previewImage } from "@/lib/utils";
 import { ProfileSchema } from "@/schemas/ProfileSchema";
@@ -49,6 +50,8 @@ const Profile = () => {
     },
   });
 
+  const userInfo = readCookie("userInfo");
+
   const { register, watch, handleSubmit, control, setValue } = form;
 
   const profileImgRef = register("profileImg");
@@ -60,7 +63,7 @@ const Profile = () => {
   }, [profileImgWatch, setValue]);
 
   const { data, isLoading, error } = useApiQuery({
-    url: "/student/main/get-profile",
+    url: `/student/main/get-profile?studentId=${userInfo.id}`,
     queryKey: "profile",
   });
 
@@ -99,10 +102,13 @@ const Profile = () => {
     formData.append("phone", data.phone);
     formData.append("contactMethod", data.contactMethod);
     formData.append("bio", data.bio);
+    formData.append("studentId", userInfo.id);
     formData.append("profileVisibility", data.profileVisibility);
     formData.append("image", data.profileImg[0]);
 
     await submitForm(formData);
+
+    
   };
 
   return (

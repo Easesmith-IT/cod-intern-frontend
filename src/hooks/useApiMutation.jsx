@@ -1,5 +1,6 @@
 import { DELETE } from "@/constants/apiMethods";
 import { axiosInstance } from "@/lib/axiosInstance";
+import { readCookie } from "@/lib/readCookie";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
@@ -40,6 +41,10 @@ export function useApiMutation({
     },
     onError: (error) => {
       toast.error(error.message);
+    },
+    onSettled: () => {
+      const isAuthenticated = readCookie("isAuthenticated");
+      queryClient.setQueryData(["isLoggedIn"], isAuthenticated);
     },
   });
 }

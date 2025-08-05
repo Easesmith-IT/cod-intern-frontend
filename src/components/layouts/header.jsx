@@ -30,6 +30,7 @@ export const Header = () => {
   const router = useRouter();
   const { days, hours, minutes, seconds } = usePersistentCountdown();
   const { data: isLoggedIn } = useAuth();
+   console.log("isLoggedIn", isLoggedIn);
 
   const searchParams = useSearchParams();
 
@@ -45,7 +46,7 @@ export const Header = () => {
         userInfo,
       });
     }
-  }, [searchParams]);
+  }, [searchParams, isLoggedIn]);
 
   return (
     <header className="shadow-md shadow-black/5 z-20 sticky top-0 bg-white">
