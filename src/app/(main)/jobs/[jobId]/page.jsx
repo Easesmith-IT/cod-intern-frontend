@@ -113,8 +113,8 @@ const JobDetails = () => {
         />
       </h2>
 
-      <div className="flex gap-10 flex-col md:flex-row justify-between">
         <JobDetailCard />
+      <div className="flex gap-10 flex-col md:flex-row justify-between">
 
         <div className="flex-1">
           <h3 className="text-lg sm:text-2xl font-stolzl font-medium mt-10">
