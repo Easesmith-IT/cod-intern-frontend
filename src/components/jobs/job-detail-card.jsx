@@ -82,7 +82,7 @@ export const JobDetailCard = () => {
           <Info img="/job/apply-by.svg" heading="Apply By" value="15 Aug 25" /> */}
         </div>
       </CardContent>
-      <CardFooter className="flex justify-between items-center mt-6">
+      <CardFooter className="flex justify-between flex-wrap gap-5 items-center mt-6">
         {/* <div className="flex gap-2 items-center opacity-0">
           <Image src="/job/applicants.svg" width={16} height={16} alt="user" />
           <p className="font-stolzl font-book text-para text-xs sm:text-sm uppercase">
@@ -140,7 +140,7 @@ export const JobDetailCard = () => {
         </div>
 
         <div className="flex gap-4 items-center">
-          <Share2Icon className="text-main cursor-pointer animate-btn" />
+          {/* <Share2Icon className="text-main cursor-pointer animate-btn" /> */}
           <Button
             variant="linearGradient"
             className="text-xs sm:text-sm gap-1 h-9 md:h-10"
