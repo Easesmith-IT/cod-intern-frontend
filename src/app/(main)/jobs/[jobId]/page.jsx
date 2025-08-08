@@ -113,24 +113,84 @@ const JobDetails = () => {
         />
       </h2>
 
-        <JobDetailCard />
-      <div className="flex gap-10 flex-col md:flex-row justify-between">
+      <JobDetailCard />
 
-        <div className="flex-1">
-          <h3 className="text-lg sm:text-2xl font-stolzl font-medium mt-10">
-            About the Job
-          </h3>
-          <p className="mt-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
-            Key responsibilities:
-          </p>
+      <Heading title="About the company" />
+      <Link
+        href="#"
+        className="text-main font-stolzl text-xs hover:underline flex items-center gap-1 my-2"
+      >
+        <span>Website</span>
+        <ExternalLinkIcon className="size-3" />
+      </Link>
+      <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
+        We are a travel brand curating unique, experiential & sustainable
+        holidays for you. Our trips are not limited to usual travel
+        arrangements. We design unique, immersive experiences that make their
+        mark in your heart. We also believe in sustainable tourism. We try to
+        make our trips as environmentally friendly as possible and engage local
+        communities in the destinations. Other than the usual blah blah blah, we
+        are a bunch of youngsters, insanely passionate about travel. We think of
+        you as our future friends and not just customers.
+      </p>
 
-          <ol className="mt-4 text-xs space-y-1 sm:text-sm md:text-base list-decimal ml-4 font-stolzl text-para font-book">
-            {keyResponsibility.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ol>
-        </div>
+      <div className="flex-1">
+        <Heading title="About the Job" />
+        <p className="mt-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
+          Key responsibilities:
+        </p>
+
+        <ol className="mt-4 text-xs space-y-1 sm:text-sm md:text-base list-decimal ml-4 font-stolzl text-para font-book">
+          {keyResponsibility.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ol>
       </div>
+
+      <Heading title="Roles & Reponsibilities" />
+
+      <Heading title="Good to Have" />
+
+      <Button
+        variant="linearGradient"
+        className="text-xs sm:text-sm gap-1 rounded-sm h-9 px-9 md:h-11 mt-10"
+      >
+        Apply Now
+      </Button>
+
+      <div className="flex flex-wrap justify-center items-center gap-10 mt-10 lg:mt-20">
+        <SocialItem
+          icon="/job/whatsapp.svg"
+          title="WhatsApp"
+          className="bg-[#00AD3B]"
+          href="https://www.codeIntern.Com"
+        />
+        <SocialItem
+          icon="/job/instagram.svg"
+          title="Instagram"
+          className="bg-gradient-to-r from-[#7E0CFF] to-[#FF009B]"
+          href="https://www.codeIntern.Com"
+        />
+        <SocialItem
+          icon="/job/linkedin.svg"
+          title="Linkedin"
+          className="bg-[#0A66C2]"
+          href="https://www.codeIntern.Com"
+        />
+        <SocialItem
+          icon="/job/facebook-1.svg"
+          title="Facebook"
+          className="bg-[#1877F2]"
+          href="https://www.codeIntern.Com"
+        />
+        <SocialItem
+          icon="/job/youtube.svg"
+          title="Youtube"
+          className="bg-[#FF0033]"
+          href="https://www.codeIntern.Com"
+        />
+      </div>
+
       {/* <Heading title="Benefits:" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-6">
         {benifits.map((benifit) => (
@@ -200,29 +260,6 @@ const JobDetails = () => {
         20
       </p> */}
 
-      <Heading title="Roles & Reponsibilities" />
-
-      <Heading title="Good to Have" />
-
-      <Heading title="About the company" />
-      <Link
-        href="#"
-        className="text-main font-stolzl text-xs hover:underline flex items-center gap-1 my-2"
-      >
-        <span>Website</span>
-        <ExternalLinkIcon className="size-3" />
-      </Link>
-      <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
-        We are a travel brand curating unique, experiential & sustainable
-        holidays for you. Our trips are not limited to usual travel
-        arrangements. We design unique, immersive experiences that make their
-        mark in your heart. We also believe in sustainable tourism. We try to
-        make our trips as environmentally friendly as possible and engage local
-        communities in the destinations. Other than the usual blah blah blah, we
-        are a bunch of youngsters, insanely passionate about travel. We think of
-        you as our future friends and not just customers.
-      </p>
-
       {/* <div className="border rounded-md max-w-4xl p-5 sm:p-10 mt-10">
         <Heading title="Activity on CodeIntern" className="mt-0" />
 
@@ -234,46 +271,6 @@ const JobDetails = () => {
           />
           <Info heading="13 candidates hired" img="/job/candidates-hired.svg" />
         </div>
-      </div> */}
-
-      <Button
-        variant="linearGradient"
-        className="text-xs sm:text-sm gap-1 rounded-sm h-9 px-9 md:h-11 mt-10"
-      >
-        Apply Now
-      </Button>
-
-      {/* <div className="flex flex-wrap justify-center items-center gap-10 mt-10 lg:mt-20">
-        <SocialItem
-          icon="/job/whatsapp.svg"
-          title="WhatsApp"
-          className="bg-[#00AD3B]"
-          href="https://www.codeIntern.Com"
-        />
-        <SocialItem
-          icon="/job/instagram.svg"
-          title="Instagram"
-          className="bg-gradient-to-r from-[#7E0CFF] to-[#FF009B]"
-          href="https://www.codeIntern.Com"
-        />
-        <SocialItem
-          icon="/job/linkedin.svg"
-          title="Linkedin"
-          className="bg-[#0A66C2]"
-          href="https://www.codeIntern.Com"
-        />
-        <SocialItem
-          icon="/job/facebook-1.svg"
-          title="Facebook"
-          className="bg-[#1877F2]"
-          href="https://www.codeIntern.Com"
-        />
-        <SocialItem
-          icon="/job/youtube.svg"
-          title="Youtube"
-          className="bg-[#FF0033]"
-          href="https://www.codeIntern.Com"
-        />
       </div> */}
     </section>
   );

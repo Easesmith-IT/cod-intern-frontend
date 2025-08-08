@@ -1,13 +1,19 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Share2Icon } from "lucide-react";
 import Image from "next/image";
 import { Info } from "./info";
+import { useState } from "react";
+import { ApplyNowModal } from "./apply-now-modal";
 
 export const JobDetailCard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <Card className="border-none rounded-md w-full md:w-[300px] shadow-[0px_0px_10px_0px_#00000026] mt-8">
+    <Card className="border-none rounded-md w-full md:w-[700px] shadow-[0px_0px_10px_0px_#00000026] mt-8">
       <CardContent>
         <div className="flex gap-4 justify-between ">
           <div>
@@ -73,22 +79,27 @@ export const JobDetailCard = () => {
         </div>
       </CardContent>
       <CardFooter className="flex justify-between items-center mt-6">
-        {/* <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center opacity-0">
           <Image src="/job/applicants.svg" width={16} height={16} alt="user" />
           <p className="font-stolzl font-book text-para text-xs sm:text-sm uppercase">
             39 applicants
           </p>
-        </div> */}
+        </div>
 
         <div className="flex gap-4 items-center">
           <Share2Icon className="text-main cursor-pointer animate-btn" />
           <Button
             variant="linearGradient"
             className="text-xs sm:text-sm gap-1 h-9 md:h-10"
+            onClick={() => setIsModalOpen(true)}
           >
             Apply Now
           </Button>
         </div>
+
+        {isModalOpen && (
+          <ApplyNowModal open={isModalOpen} setOpen={setIsModalOpen} />
+        )}
       </CardFooter>
     </Card>
   );

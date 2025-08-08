@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 export const Job = () => {
@@ -58,9 +58,9 @@ export const Job = () => {
         </div>
 
         <div className="mt-1 flex gap-2 items-center">
-          <Image src="/sallary.svg" width={16} height={16} alt="sallary" />
+          <GraduationCap className="size-4 text-main/90" />
           <p className="font-stolzl font-book text-para text-xs sm:text-sm">
-            Rs. 10,00,000 - 20,00,000/ year
+            B.TECH, B.CA
           </p>
         </div>
       </CardContent>
