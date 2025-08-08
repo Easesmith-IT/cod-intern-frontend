@@ -154,8 +154,20 @@ const JobDetails = () => {
       </div>
 
       <Heading title="Roles & Reponsibilities" />
+      {/* <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam porro
+        distinctio adipisci molestiae veritatis esse nesciunt tempora placeat
+        repellat non dolores rem, iure quia saepe ipsam soluta amet? Accusamus,
+        dolores!
+      </p> */}
 
       <Heading title="Good to Have" />
+      {/* <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam porro
+        distinctio adipisci molestiae veritatis esse nesciunt tempora placeat
+        repellat non dolores rem, iure quia saepe ipsam soluta amet? Accusamus,
+        dolores!
+      </p> */}
 
       <Button
         variant="linearGradient"
@@ -169,38 +181,38 @@ const JobDetails = () => {
         <ApplyNowModal open={isModalOpen} setOpen={setIsModalOpen} />
       )}
 
-      <div className="flex flex-wrap justify-center items-center gap-10 mt-10 lg:mt-20">
+      {/* <div className="flex flex-wrap justify-center items-center gap-10 mt-10 lg:mt-20">
         <SocialItem
           icon="/job/whatsapp.svg"
           title="WhatsApp"
           className="bg-[#00AD3B]"
-          href="https://www.codeIntern.Com"
+          href="https://www.codeIntern.com"
         />
         <SocialItem
           icon="/job/instagram.svg"
           title="Instagram"
           className="bg-gradient-to-r from-[#7E0CFF] to-[#FF009B]"
-          href="https://www.codeIntern.Com"
+          href="https://www.codeIntern.com"
         />
         <SocialItem
           icon="/job/linkedin.svg"
           title="Linkedin"
           className="bg-[#0A66C2]"
-          href="https://www.codeIntern.Com"
+          href="https://www.codeIntern.com"
         />
         <SocialItem
           icon="/job/facebook-1.svg"
           title="Facebook"
           className="bg-[#1877F2]"
-          href="https://www.codeIntern.Com"
+          href="https://www.codeIntern.com"
         />
         <SocialItem
           icon="/job/youtube.svg"
           title="Youtube"
           className="bg-[#FF0033]"
-          href="https://www.codeIntern.Com"
+          href="https://www.codeIntern.com"
         />
-      </div>
+      </div> */}
 
       {/* <Heading title="Benefits:" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-6">

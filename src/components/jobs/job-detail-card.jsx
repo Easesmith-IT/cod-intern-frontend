@@ -3,14 +3,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Share2Icon } from "lucide-react";
+import { Instagram, Share2Icon } from "lucide-react";
 import Image from "next/image";
 import { Info } from "./info";
 import { useState } from "react";
 import { ApplyNowModal } from "./apply-now-modal";
+import { ShareLink } from "./share-link";
 
 export const JobDetailCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const url = (id) => {
+    return `${process.env.NEXT_PUBLIC_FRONTEND_URL}/jobs/${id}`;
+  };
 
   return (
     <Card className="border-none rounded-md w-full md:w-[700px] shadow-[0px_0px_10px_0px_#00000026] mt-8">
@@ -79,11 +83,60 @@ export const JobDetailCard = () => {
         </div>
       </CardContent>
       <CardFooter className="flex justify-between items-center mt-6">
-        <div className="flex gap-2 items-center opacity-0">
+        {/* <div className="flex gap-2 items-center opacity-0">
           <Image src="/job/applicants.svg" width={16} height={16} alt="user" />
           <p className="font-stolzl font-book text-para text-xs sm:text-sm uppercase">
             39 applicants
           </p>
+        </div> */}
+        <div className="flex gap-1 items-center">
+          <p>Share:</p>
+          <div className="flex gap-2 items-center">
+            <ShareLink
+              src="/social-1.svg"
+              href={`https://www.facebook.com/sharer/sharer.php?u=${url(
+                "JOB-ID-2345-3498"
+              )}`}
+              className="bg-main size-7 p-2.5"
+            />
+            <ShareLink
+              src="/social-1.svg"
+              href={`https://twitter.com/intent/tweet?url=${url(
+                "JOB-ID-2345-3498"
+              )}`}
+              className="bg-main size-7 p-1.5"
+            >
+              <Instagram className="text-white size-4" />
+            </ShareLink>
+
+            <ShareLink
+              src="/social-3.svg"
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${url(
+                "JOB-ID-2345-3498"
+              )}`}
+              className="bg-main size-7 p-1.5"
+              width={16}
+              height={16}
+            />
+
+            <ShareLink
+              src="/social-4.svg"
+              href="#"
+              className="bg-main size-7 p-1"
+              width={16}
+              height={16}
+            />
+
+            <ShareLink
+              src="/social-2.svg"
+              href={`https://twitter.com/intent/tweet?url=${url(
+                "JOB-ID-2345-3498"
+              )}`}
+              className="bg-main size-7 p-1"
+              width={16}
+              height={16}
+            />
+          </div>
         </div>
 
         <div className="flex gap-4 items-center">
