@@ -1,4 +1,7 @@
+"use client";
+
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
+import { ApplyNowModal } from "@/components/jobs/apply-now-modal";
 import { Benifit } from "@/components/jobs/benifit";
 import { Heading } from "@/components/jobs/heading";
 import { Info } from "@/components/jobs/info";
@@ -9,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLinkIcon, SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const keyResponsibility = [
   "Understand client preferences to tailor travel solutions",
@@ -90,6 +94,8 @@ const salaryBreakDown = [
 ];
 
 const JobDetails = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">
       <CustomBreadCrumb
@@ -154,9 +160,14 @@ const JobDetails = () => {
       <Button
         variant="linearGradient"
         className="text-xs sm:text-sm gap-1 rounded-sm h-9 px-9 md:h-11 mt-10"
+        onClick={() => setIsModalOpen(true)}
       >
         Apply Now
       </Button>
+
+      {isModalOpen && (
+        <ApplyNowModal open={isModalOpen} setOpen={setIsModalOpen} />
+      )}
 
       <div className="flex flex-wrap justify-center items-center gap-10 mt-10 lg:mt-20">
         <SocialItem

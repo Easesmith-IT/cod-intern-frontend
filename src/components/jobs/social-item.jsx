@@ -12,7 +12,7 @@ export const SocialItem = ({ icon, alt, title, className, href }) => {
         className
       )}
     >
-      <Image src={icon} className="size-12 sm:size-16" width={64} height={64} alt={alt} />
+      <Image src={icon} className="size-12 sm:size-16" width={64} height={64} alt={alt || title} />
       <div className="text-[#F5F5F5]">
         <p className="font-stolzl text-base sm:text-2xl font-book">Follow Us On</p>
         <h4 className="font-stolzl font-medium text-xl sm:text-4xl">{title}</h4>
