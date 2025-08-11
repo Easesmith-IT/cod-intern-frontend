@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
 import { Separator } from "@/components/ui/separator";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, GraduationCap } from "lucide-react";
 import Image from "next/image";
 
 export const Job = () => {
@@ -21,7 +21,7 @@ export const Job = () => {
                   Accountant
                 </h3>
                 <p className="font-stolzl text-para font-book text-xs sm:text-sm mt-1">
-                  Cinderella Tours
+                  JOB-ID-2345-3498
                 </p>
               </div>
               <Image src="/job-logo.svg" width={69} height={86} alt="job" />
@@ -37,9 +37,9 @@ export const Job = () => {
             </div>
 
             <div className="mt-1 flex gap-2 items-center">
-              <Image src="/sallary.svg" width={16} height={16} alt="sallary" />
+              <GraduationCap className="size-4 text-main/90" />
               <p className="font-stolzl font-book text-para text-xs sm:text-sm">
-                Rs. 10,00,000 - 20,00,000/ year
+                B.TECH, B.CA
               </p>
             </div>
           </CardContent>
@@ -47,7 +47,10 @@ export const Job = () => {
             <div className="w-[86px] h-[30px] flex items-center justify-center text-para rounded-md bg-[#F8F2FD] font-stolzl text-xs sm:text-sm font-book text-center">
               Job
             </div>
-            <Button variant="ghost" className="text-main text-xs sm:text-sm gap-1">
+            <Button
+              variant="ghost"
+              className="text-main text-xs sm:text-sm gap-1"
+            >
               <span>View Details</span>
               <ChevronRight className="size-5" />
             </Button>
