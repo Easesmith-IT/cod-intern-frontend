@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import Image from "next/image";
+import Link from "next/link";
 
 export const SingleCard = ({ index, title, desc, timing }) => {
   const { days, hours, minutes, seconds } = usePersistentCountdown();
@@ -137,8 +138,11 @@ export const SingleCard = ({ index, title, desc, timing }) => {
               size="lg"
               variant="linearGradient"
               className="rounded-sm text-xs sm:text-sm px-5 h-12"
+              asChild
             >
-              Know More
+              <Link href="/courses/123">
+                <span>Know More</span>
+              </Link>
             </Button>
           </CardFooter>
         </Card>

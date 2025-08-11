@@ -4,6 +4,7 @@ import { CarouselItem } from "@/components/ui/carousel";
 import { Separator } from "@/components/ui/separator";
 import { ChevronRight, GraduationCap } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Job = () => {
   return (
@@ -48,11 +49,14 @@ export const Job = () => {
               Job
             </div>
             <Button
+              asChild
               variant="ghost"
-              className="text-main text-xs sm:text-sm gap-1"
+              className="text-main text-xs sm:text-sm"
             >
-              <span>View Details</span>
-              <ChevronRight className="size-5" />
+              <Link href={`/jobs/JOB-ID-2345-3498`} className="gap-1">
+                <span>View Details</span>
+                <ChevronRight className="size-5" />
+              </Link>
             </Button>
           </CardFooter>
         </Card>
