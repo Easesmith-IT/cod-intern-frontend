@@ -13,12 +13,10 @@ import {
 
 export function PaginationComp({ pageCount, page, setPage, className }) {
   const totalPageCount = pageCount;
-  console.log("totalPageCount", totalPageCount);
 
   const renderPageNumbers = () => {
     const items = [];
     const maxVisiblePages = totalPageCount < 5 ? totalPageCount : 5;
-    console.log("maxVisiblePages", maxVisiblePages);
 
     if (totalPageCount <= maxVisiblePages) {
       for (let i = 1; i <= totalPageCount; i++) {

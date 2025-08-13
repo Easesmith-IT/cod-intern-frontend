@@ -11,9 +11,14 @@ const fetchApi = async ({ url, params }) => {
   }
 };
 
-export function useApiQuery({ url, queryKey, params = {}, options = {} }) {
+export function useApiQuery({
+  url,
+  queryKeys = [],
+  params = {},
+  options = {},
+}) {
   return useQuery({
-    queryKey: [queryKey, params], // Ensures caching based on query params
+    queryKey: [params, ...queryKeys], // Ensures caching based on query params
     queryFn: () => fetchApi({ url, params }),
     ...options, // Allows passing additional options like staleTime, enabled, etc.
   });

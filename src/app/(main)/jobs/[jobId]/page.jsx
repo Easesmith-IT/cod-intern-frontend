@@ -6,12 +6,15 @@ import { Benifit } from "@/components/jobs/benifit";
 import { Heading } from "@/components/jobs/heading";
 import { Info } from "@/components/jobs/info";
 import { JobDetailCard } from "@/components/jobs/job-detail-card";
+import { ParsedHtml } from "@/components/jobs/parsed-html";
 import { Skill } from "@/components/jobs/skill";
 import { SocialItem } from "@/components/jobs/social-item";
 import { Button } from "@/components/ui/button";
+import { useApiQuery } from "@/hooks/useApiQuery";
 import { ExternalLinkIcon, SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 
 const keyResponsibility = [
@@ -95,6 +98,32 @@ const salaryBreakDown = [
 
 const JobDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const params = useParams();
+
+  const { data, isLoading, error } = useApiQuery({
+    url: `/admin/jobs/get-details/${params?.jobId}`,
+    queryKeys: ["job"],
+  });
+
+  console.log("data", data);
+
+  const {
+    title,
+    status,
+    jobImage,
+    customId,
+    postingDate,
+    category,
+    city,
+    state,
+    country,
+    education,
+    _id,
+    aboutCompany,
+    aboutJob,
+    rolesAndReponsibilities,
+    goodToHave,
+  } = data?.job || {};
 
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">
@@ -108,8 +137,8 @@ const JobDetails = () => {
         Job Detail Page
       </h2> */}
 
-      <h2 className="text-2xl mt-6 sm:mt-10 font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium">
-        <span className="text-main">Accountant</span> Fresher Job
+      <h2 className="text-2xl mt-6 sm:mt-10 font-stolzl capitalize leading-9 lg:leading-14 md:text-4xl  font-medium">
+        <span className="text-main">{title}</span> {category} Job
         <Image
           src="/ellipse-group.svg"
           className="inline-block ml-2"
@@ -119,49 +148,28 @@ const JobDetails = () => {
         />
       </h2>
 
-      <JobDetailCard />
+      <JobDetailCard job={data?.job} />
 
       <Heading title="About the company" />
-      <Link
+      {/* <Link
         href="#"
         className="text-main font-stolzl text-xs hover:underline flex items-center gap-1 my-2"
       >
         <span>Website</span>
         <ExternalLinkIcon className="size-3" />
-      </Link>
-      <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
-        We are a travel brand curating unique, experiential & sustainable
-        holidays for you. Our trips are not limited to usual travel
-        arrangements. We design unique, immersive experiences that make their
-        mark in your heart. We also believe in sustainable tourism. We try to
-        make our trips as environmentally friendly as possible and engage local
-        communities in the destinations. Other than the usual blah blah blah, we
-        are a bunch of youngsters, insanely passionate about travel. We think of
-        you as our future friends and not just customers.
-      </p>
+      </Link> */}
+      <ParsedHtml data={aboutCompany} />
 
       <div className="flex-1">
         <Heading title="About the Job" />
-        <p className="mt-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
-          Key responsibilities:
-        </p>
-
-        <ol className="mt-4 text-xs space-y-1 sm:text-sm md:text-base list-decimal ml-4 font-stolzl text-para font-book">
-          {keyResponsibility.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ol>
+        <ParsedHtml data={aboutJob} />
       </div>
 
       <Heading title="Roles & Reponsibilities" />
-      {/* <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam porro
-        distinctio adipisci molestiae veritatis esse nesciunt tempora placeat
-        repellat non dolores rem, iure quia saepe ipsam soluta amet? Accusamus,
-        dolores!
-      </p> */}
+      <ParsedHtml data={rolesAndReponsibilities} />
 
       <Heading title="Good to Have" />
+      <ParsedHtml data={goodToHave} />
       {/* <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam porro
         distinctio adipisci molestiae veritatis esse nesciunt tempora placeat

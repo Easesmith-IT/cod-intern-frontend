@@ -9,9 +9,25 @@ import { Info } from "./info";
 import { useState } from "react";
 import { ApplyNowModal } from "./apply-now-modal";
 import { ShareLink } from "./share-link";
+import { format } from "date-fns";
 
-export const JobDetailCard = () => {
+export const JobDetailCard = ({ job }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const {
+    title,
+    status,
+    jobImage,
+    customId,
+    postingDate,
+    category,
+    city,
+    state,
+    country,
+    education,
+    _id,
+  } = job || {};
+
   const url = (id) => {
     return `${process.env.NEXT_PUBLIC_FRONTEND_URL}/jobs/${id}`;
   };
@@ -41,11 +57,11 @@ export const JobDetailCard = () => {
                 Actively Hiring
               </div>
             </div> */}
-            <h3 className="font-stolzl font-medium text-lg md:text-xl mt-0">
-              Accountant
+            <h3 className="font-stolzl capitalize font-medium text-lg md:text-xl mt-0">
+              {title}
             </h3>
             <p className="font-stolzl text-para font-book text-xs sm:text-sm mt-1">
-              JOB-ID-2345-3498
+              {customId}
             </p>
           </div>
           {/* <Image src="/job-logo.svg" width={115} height={144} alt="job" /> */}
@@ -53,8 +69,8 @@ export const JobDetailCard = () => {
 
         <div className="mt-5 flex gap-2 items-center">
           <Image src="/map-pin.svg" width={16} height={16} alt="map-pin" />
-          <p className="font-stolzl font-book text-para text-xs sm:text-sm">
-            Ajmer, Africa Camp
+          <p className="font-stolzl capitalize font-book text-para text-xs sm:text-sm">
+            {city}, {state}, {country}
           </p>
         </div>
 
@@ -64,7 +80,8 @@ export const JobDetailCard = () => {
           <Info
             img="/job/start-date.svg"
             heading="Date of Job Posting"
-            value="15 Aug 25"
+            // value="15 Aug 25"
+            value={postingDate && format(new Date(postingDate), "dd MMM yyyy")}
           />
 
           {/* <Info
