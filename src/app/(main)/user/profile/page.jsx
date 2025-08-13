@@ -58,7 +58,8 @@ const Profile = () => {
 
   console.log("userInfo", userInfo);
 
-  const { register, watch, handleSubmit, control, setValue } = form;
+  const { register, watch, handleSubmit, control, setValue, getValues, reset } =
+    form;
 
   const profileImgRef = register("profileImg");
 
@@ -70,20 +71,23 @@ const Profile = () => {
 
   const { data, isLoading, error } = useApiQuery({
     url: `/student/main/get-profile?studentId=${userInfo?.id}`,
-    queryKey: "profile",
+    queryKeys: ["profile", userInfo?.id],
   });
 
   console.log("data", data);
+  console.log("getValues", getValues());
 
   useEffect(() => {
-    if (data) {
-      setValue("name", data?.student?.name);
-      setValue("email", data?.student?.emailId);
-      setValue("phone", data?.student?.phone);
-      setValue("profileImgPreview", previewImage(data?.student?.image));
-      setValue("profileVisibility", data?.student?.profileVisibility);
-      setValue("contactMethod", data?.student?.contactMethod);
-      setValue("bio", data?.student?.bio);
+    if (data?.student) {
+      reset({
+        name: data?.student?.name,
+        email: data?.student?.emailId,
+        phone: data?.student?.phone,
+        profileImgPreview: data?.student?.image,
+        profileVisibility: data?.student?.profileVisibility,
+        contactMethod: data?.student?.contactMethod,
+        bio: data?.student?.bio,
+      });
     }
   }, [data]);
 

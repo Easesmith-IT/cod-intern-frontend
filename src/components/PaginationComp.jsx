@@ -101,6 +101,10 @@ export function PaginationComp({ pageCount, page, setPage, className }) {
     setPage((prev) => prev + 1);
   };
 
+  if (pageCount === 0) {
+    return null;
+  }
+
   return (
     <div
       className={cn(

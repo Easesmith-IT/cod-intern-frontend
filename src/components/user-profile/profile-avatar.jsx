@@ -54,7 +54,7 @@ export const ProfileAvatar = () => {
               <AvatarImage
                 src={
                   userInfo
-                    ? previewImage(userInfo?.image)
+                    ? userInfo?.image
                     : "/profile/user-profile.jpg"
                 }
               />

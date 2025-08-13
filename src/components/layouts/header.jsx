@@ -247,6 +247,12 @@ export const Header = () => {
                 Feedback Form
               </DropdownMenuItem>
               <DropdownMenuItem
+                className="font-medium hover:underline"
+                onSelect={() => router.push("/workshop/registration")}
+              >
+                Feedback Registration
+              </DropdownMenuItem>
+              <DropdownMenuItem
                 className="lg:hidden font-medium hover:underline"
                 onSelect={() => router.push("/jobs")}
               >
