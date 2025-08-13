@@ -10,6 +10,7 @@ import { ParsedHtml } from "@/components/jobs/parsed-html";
 import { Skill } from "@/components/jobs/skill";
 import { SocialItem } from "@/components/jobs/social-item";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useApiQuery } from "@/hooks/useApiQuery";
 import { ExternalLinkIcon, SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
@@ -137,18 +138,26 @@ const JobDetails = () => {
         Job Detail Page
       </h2> */}
 
-      <h2 className="text-2xl mt-6 sm:mt-10 font-stolzl capitalize leading-9 lg:leading-14 md:text-4xl  font-medium">
-        <span className="text-main">{title}</span> {category} Job
-        <Image
-          src="/ellipse-group.svg"
-          className="inline-block ml-2"
-          width={46}
-          height={16}
-          alt="Ellipse"
-        />
-      </h2>
+      {isLoading ? (
+        <Skeleton className="w-2/4 h-9 mt-6 sm:mt-10" />
+      ) : (
+        <h2 className="text-2xl mt-6 sm:mt-10 font-stolzl capitalize leading-9 lg:leading-14 md:text-4xl  font-medium">
+          <span className="text-main">{title}</span> {category} Job
+          <Image
+            src="/ellipse-group.svg"
+            className="inline-block ml-2"
+            width={46}
+            height={16}
+            alt="Ellipse"
+          />
+        </h2>
+      )}
 
-      <JobDetailCard job={data?.job} />
+      {isLoading ? (
+        <JobDetailCard.Skeleton />
+      ) : (
+        <JobDetailCard job={data?.job} />
+      )}
 
       <Heading title="About the company" />
       {/* <Link
@@ -158,18 +167,18 @@ const JobDetails = () => {
         <span>Website</span>
         <ExternalLinkIcon className="size-3" />
       </Link> */}
-      <ParsedHtml data={aboutCompany} />
+      <ParsedHtml data={aboutCompany} isLoading={isLoading} />
 
       <div className="flex-1">
         <Heading title="About the Job" />
-        <ParsedHtml data={aboutJob} />
+        <ParsedHtml data={aboutJob} isLoading={isLoading} />
       </div>
 
       <Heading title="Roles & Reponsibilities" />
-      <ParsedHtml data={rolesAndReponsibilities} />
+      <ParsedHtml data={rolesAndReponsibilities} isLoading={isLoading} />
 
       <Heading title="Good to Have" />
-      <ParsedHtml data={goodToHave} />
+      <ParsedHtml data={goodToHave} isLoading={isLoading} />
       {/* <p className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam porro
         distinctio adipisci molestiae veritatis esse nesciunt tempora placeat

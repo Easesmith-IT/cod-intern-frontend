@@ -10,6 +10,7 @@ import { useState } from "react";
 import { ApplyNowModal } from "./apply-now-modal";
 import { ShareLink } from "./share-link";
 import { format } from "date-fns";
+import { Skeleton } from "../ui/skeleton";
 
 export const JobDetailCard = ({ job }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -170,6 +171,61 @@ export const JobDetailCard = ({ job }) => {
         {isModalOpen && (
           <ApplyNowModal open={isModalOpen} setOpen={setIsModalOpen} />
         )}
+      </CardFooter>
+    </Card>
+  );
+};
+
+JobDetailCard.Skeleton = function JobDetailCardSkeleton() {
+  return (
+    <Card className="border-none rounded-md w-full md:w-[700px] shadow-[0px_0px_10px_0px_#00000026] mt-8">
+      <CardContent>
+        {/* Title & ID */}
+        <div className="flex gap-4 justify-between">
+          <div>
+            <Skeleton className="h-5 w-48 rounded" />
+            <Skeleton className="h-4 w-24 mt-2 rounded" />
+          </div>
+          {/* Placeholder for logo */}
+          <Skeleton className="h-14 w-14 rounded-md" />
+        </div>
+
+        {/* Location */}
+        <div className="mt-5 flex gap-2 items-center">
+          <Skeleton className="h-4 w-4 rounded-full" />
+          <Skeleton className="h-4 w-40 rounded" />
+        </div>
+
+        <Separator className="my-3" />
+
+        {/* Info section */}
+        <div className="flex flex-wrap gap-10 md:gap-20">
+          <div>
+            <Skeleton className="h-4 w-32 rounded" />
+            <Skeleton className="h-4 w-24 mt-2 rounded" />
+          </div>
+          <div>
+            <Skeleton className="h-4 w-32 rounded" />
+            <Skeleton className="h-4 w-24 mt-2 rounded" />
+          </div>
+        </div>
+      </CardContent>
+
+      <CardFooter className="flex justify-between flex-wrap gap-5 items-center mt-6">
+        {/* Share buttons */}
+        <div className="flex gap-1 items-center">
+          <Skeleton className="h-4 w-10 rounded" />
+          <div className="flex gap-2 items-center">
+            <Skeleton className="size-7 rounded" />
+            <Skeleton className="size-7 rounded" />
+            <Skeleton className="size-7 rounded" />
+            <Skeleton className="size-7 rounded" />
+            <Skeleton className="size-7 rounded" />
+          </div>
+        </div>
+
+        {/* Apply button */}
+        <Skeleton className="h-9 md:h-10 w-24 rounded-md" />
       </CardFooter>
     </Card>
   );
