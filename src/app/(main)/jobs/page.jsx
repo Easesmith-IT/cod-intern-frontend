@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 
 const Jobs = () => {
   const [page, setPage] = useState(1);
-  const [pageCount, setPageCount] = useState(2);
+  const [pageCount, setPageCount] = useState(0);
   const [limit, setLimit] = useState(10);
 
   const { data, isLoading, error } = useApiQuery({
@@ -17,11 +17,9 @@ const Jobs = () => {
     queryKeys: ["job", page, limit],
   });
 
-  console.log("data", data);
-
   useEffect(() => {
     if (data?.pagination) {
-      // setPageCount(() => data?.pagination?.totalPages);
+      setPageCount(() => data?.pagination?.totalPages);
     }
   }, [data]);
 
