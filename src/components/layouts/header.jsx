@@ -250,7 +250,7 @@ export const Header = () => {
                 className="font-medium hover:underline"
                 onSelect={() => router.push("/workshop/registration")}
               >
-                Feedback Registration
+                Workshop Registration
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="lg:hidden font-medium hover:underline"
