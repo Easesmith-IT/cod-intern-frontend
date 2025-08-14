@@ -74,8 +74,6 @@ const Profile = () => {
     queryKeys: ["profile", userInfo?.id],
   });
 
-  console.log("data", data);
-  console.log("getValues", getValues());
 
   useEffect(() => {
     if (data?.student) {
@@ -114,7 +112,7 @@ const Profile = () => {
     formData.append("bio", data.bio);
     formData.append("studentId", userInfo.id);
     formData.append("profileVisibility", data.profileVisibility);
-    formData.append("image", data.profileImg[0]);
+    formData.append("image", data.profileImg?.[0]);
 
     await submitForm(formData);
   };
@@ -240,6 +238,7 @@ const Profile = () => {
                       <FormLabel></FormLabel>
                       <FormControl>
                         <Select
+                          key={field.value}
                           value={field.value}
                           onValueChange={field.onChange}
                         >
