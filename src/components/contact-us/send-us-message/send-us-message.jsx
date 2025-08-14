@@ -44,6 +44,7 @@ export const SendUsMessage = () => {
           src="/contact-us/contact-icon.svg"
           width={51}
           height={49}
+          alt="contact-icon"
         />
       </div>
     </section>

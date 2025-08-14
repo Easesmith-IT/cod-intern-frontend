@@ -4,8 +4,6 @@ import { axiosInstance } from "./lib/axiosInstance";
 export async function middleware(request) {
   const url = request.nextUrl.clone();
   const isAuthenticated = request.cookies.get("isAuthenticated")?.value;
-  console.log("in middleware", url);
-  console.log("isAuthenticated", isAuthenticated);
 
   // Skip API routes or static assets
   if (url.pathname.startsWith("/_next") || url.pathname.startsWith("/api")) {

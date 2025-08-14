@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Cod [Intern]",
+  title: "Cod Intern",
   description: "For Fresher Jobs, Internships and courses",
   icons: {
     icon: [
@@ -22,6 +22,26 @@ export const metadata = {
         href: "/logo.svg",
       },
     ],
+  },
+  robots: { index: true, follow: true },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_FRONTEND_URL),
+  openGraph: {
+    title: "Cod [Intern]",
+    description: "For Fresher Jobs, Internships and courses",
+    url: process.env.NEXT_PUBLIC_FRONTEND_URL,
+    siteName: "Cod Intern",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/logo.svg`,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_FRONTEND_URL,
   },
 };
 

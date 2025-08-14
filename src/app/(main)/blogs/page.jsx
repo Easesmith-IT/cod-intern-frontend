@@ -1,6 +1,12 @@
 import { BlogsComp } from "@/components/blogs/blogs";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 
+export const metadata = {
+  title: "Blogs - Cod Intern",
+  description:
+    "Read the latest blogs from Cod Intern on career tips, internships, fresher jobs, and skill development.",
+};
+
 const Blogs = () => {
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">

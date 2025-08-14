@@ -22,7 +22,7 @@ export const AchieveYourGoals = () => {
           </div>
           <div className="flex items-center flex-col sm:flex-row gap-4 mt-5">
             <div className="sm:w-[150px]">
-              <h3 class="bg-gradient-to-r text-center font-stolzl font-bold text-3xl from-main to-para-3 bg-clip-text text-transparent">
+              <h3 className="bg-gradient-to-r text-center font-stolzl font-bold text-3xl from-main to-para-3 bg-clip-text text-transparent">
                 89%
               </h3>
               <p className="text-center text-para font-stolzl text-sm">
