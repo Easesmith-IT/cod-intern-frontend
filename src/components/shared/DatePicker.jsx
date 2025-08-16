@@ -53,6 +53,7 @@ export default function DatePicker({
           selected={value}
           onSelect={handleDateSelect}
           initialFocus
+          captionLayout="dropdown"
         />
       </PopoverContent>
     </Popover>

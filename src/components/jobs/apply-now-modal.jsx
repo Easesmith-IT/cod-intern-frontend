@@ -33,9 +33,13 @@ import { useParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import Spinner from "../Spinner";
 import { useEffect } from "react";
+import { readCookie } from "@/lib/readCookie";
 
 export const ApplyNowModal = ({ open, setOpen, externalLink }) => {
   const params = useParams();
+  const userInfo = readCookie("userInfo")
+  console.log("userInfo", userInfo);
+  
 
   const form = useForm({
     resolver: zodResolver(JobApplySchema),
@@ -68,6 +72,7 @@ export const ApplyNowModal = ({ open, setOpen, externalLink }) => {
       email: data.emailAddress,
       phoneNumber: data.phoneNumber,
       jobId: params.jobId,
+      userId: params.jobId,
     };
 
     await submitForm(apiData);
