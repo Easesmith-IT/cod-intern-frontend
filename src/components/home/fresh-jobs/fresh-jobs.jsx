@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Carousel,
   CarouselContent,
@@ -7,8 +9,17 @@ import {
 import Image from "next/image";
 import { Job } from "./job";
 import { cn } from "@/lib/utils";
+import { useApiQuery } from "@/hooks/useApiQuery";
+import { useState } from "react";
 
 export const FreshJobs = ({ className }) => {
+  const [limit, setLimit] = useState(10);
+
+  const { data, isLoading, error } = useApiQuery({
+    url: `/admin/jobs/get?limit=${limit}`,
+    queryKeys: ["job", limit],
+  });
+
   return (
     <section className={cn("section-container", className)}>
       <Carousel className="w-full">
@@ -33,8 +44,12 @@ export const FreshJobs = ({ className }) => {
         </div>
 
         <CarouselContent className="mt-10">
-          {Array.from({ length: 7 }).map((_, index) => (
-            <Job key={index} />
+          {isLoading &&
+            Array.from({ length: 4 }).map((_, index) => (
+              <Job.Skeleton key={index} />
+            ))}
+          {data?.jobs?.map((job) => (
+            <Job key={job._id} job={job} />
           ))}
         </CarouselContent>
       </Carousel>
