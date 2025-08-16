@@ -16,7 +16,7 @@ export const FreshJobs = ({ className }) => {
   const [limit, setLimit] = useState(10);
 
   const { data, isLoading, error } = useApiQuery({
-    url: `/admin/jobs/get?limit=${limit}`,
+    url: `/student/jobs/get?limit=${limit}`,
     queryKeys: ["job", limit],
   });
 

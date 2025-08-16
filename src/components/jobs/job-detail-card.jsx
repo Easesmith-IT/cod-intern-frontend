@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Instagram, Share2Icon } from "lucide-react";
+import { GraduationCap, Instagram, Share2Icon } from "lucide-react";
 import Image from "next/image";
 import { Info } from "./info";
 import { useState } from "react";
@@ -26,6 +26,7 @@ export const JobDetailCard = ({ job }) => {
     state,
     country,
     education,
+    externalLink,
     _id,
   } = job || {};
 
@@ -72,6 +73,12 @@ export const JobDetailCard = ({ job }) => {
           <Image src="/map-pin.svg" width={16} height={16} alt="map-pin" />
           <p className="font-stolzl capitalize font-book text-para text-xs sm:text-sm">
             {city}, {state}, {country}
+          </p>
+        </div>
+        <div className="mt-1 flex gap-2 items-start">
+          <GraduationCap className="size-4 text-main/90 shrink-0" />
+          <p className="font-stolzl font-book text-para line-clamp-1 text-xs sm:text-sm">
+            {education.join(", ")}
           </p>
         </div>
 
@@ -169,7 +176,11 @@ export const JobDetailCard = ({ job }) => {
         </div>
 
         {isModalOpen && (
-          <ApplyNowModal open={isModalOpen} setOpen={setIsModalOpen} />
+          <ApplyNowModal
+            externalLink={externalLink}
+            open={isModalOpen}
+            setOpen={setIsModalOpen}
+          />
         )}
       </CardFooter>
     </Card>

@@ -9,13 +9,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { POST } from "@/constants/apiMethods";
 import { useApiMutation } from "@/hooks/useApiMutation";
+import { useSetLogin } from "@/hooks/useAuth";
+import { readCookie } from "@/lib/readCookie";
 import { ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AlertModal from "../modals/AlertModal";
-import { readCookie } from "@/lib/readCookie";
-import { previewImage } from "@/lib/utils";
-import { useSetLogin } from "@/hooks/useAuth";
 
 export const ProfileAvatar = () => {
   const router = useRouter();

@@ -10,10 +10,10 @@ import React, { useEffect, useState } from "react";
 export const JobsClient = () => {
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(12);
 
   const { data, isLoading, error } = useApiQuery({
-    url: `/admin/jobs/get?page=${page}&limit=${limit}`,
+    url: `/student/jobs/get?page=${page}&limit=${limit}`,
     queryKeys: ["job", page, limit],
   });
 

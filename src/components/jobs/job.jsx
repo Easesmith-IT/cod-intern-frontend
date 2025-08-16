@@ -87,14 +87,14 @@ export const Job = ({ job }) => {
             alt="map-pin"
             className="shrink-0"
           />
-          <p className="font-stolzl font-book text-para capitalize text-xs sm:text-sm">
+          <p className="font-stolzl font-book text-para line-clamp-1 capitalize text-xs sm:text-sm">
             {city}, {state}, {country}
           </p>
         </div>
 
         <div className="mt-1 flex gap-2 items-start">
           <GraduationCap className="size-4 text-main/90 shrink-0" />
-          <p className="font-stolzl font-book text-para text-xs sm:text-sm">
+          <p className="font-stolzl font-book text-para line-clamp-1 text-xs sm:text-sm">
             {education.join(", ")}
           </p>
         </div>

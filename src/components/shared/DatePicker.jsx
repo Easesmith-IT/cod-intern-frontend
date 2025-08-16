@@ -32,7 +32,7 @@ export default function DatePicker({
         <Button
           variant="outline"
           className={cn(
-            "w-full flex h-10 px-2.5 gap-2 border-[#9237E347] justify-between text-[#00000066] hover:bg-transparent text-sm font-normal rounded",
+            "w-full flex h-10 px-2.5 gap-2 border-[#9237E347] justify-between text-black/80 hover:text-black/80 hover:bg-transparent text-sm font-normal rounded",
             !value && "text-muted-foreground"
           )}
         >
