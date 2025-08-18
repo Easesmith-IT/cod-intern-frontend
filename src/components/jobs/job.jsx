@@ -24,6 +24,7 @@ export const Job = ({ job }) => {
     education,
     externalLink,
     _id,
+    jobId,
   } = job || {};
 
   return (
@@ -43,11 +44,11 @@ export const Job = ({ job }) => {
                 <p className="text-para">Closed</p>
               </div>
             )}
-            <h3 className="font-stolzl capitalize line-clamp-2 font-medium text-lg md:text-xl mt-4">
+            <h3 className="font-stolzl capitalize line-clamp-2 h-14 font-medium text-lg md:text-xl mt-4">
               {title}
             </h3>
             <p className="font-stolzl text-para font-book text-xs sm:text-sm mt-1">
-              {customId}
+              {jobId || "NA"}
             </p>
           </div>
           <Image src={jobImage} width={60} height={60} alt="job" />

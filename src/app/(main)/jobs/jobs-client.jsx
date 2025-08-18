@@ -4,6 +4,7 @@ import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 import { Job } from "@/components/jobs/job";
 import { PaginationComp } from "@/components/PaginationComp";
 import DataNotFound from "@/components/shared/DataNotFound";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 import { useApiQuery } from "@/hooks/useApiQuery";
 import React, { useEffect, useState } from "react";
 
@@ -22,6 +23,9 @@ export const JobsClient = () => {
       setPageCount(() => data?.pagination?.totalPages);
     }
   }, [data]);
+
+  useScrollToTop(page);
+
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">
       <CustomBreadCrumb
@@ -50,6 +54,7 @@ export const JobsClient = () => {
         page={page}
         pageCount={pageCount}
         setPage={setPage}
+        href="/jobs"
         className="mt-10"
       />
     </section>
