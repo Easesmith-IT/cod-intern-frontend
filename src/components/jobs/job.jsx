@@ -1,13 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { formatDistanceToNowStrict } from "date-fns";
-import { ChevronRight, GraduationCap } from "lucide-react";
+import { ChevronRight, GraduationCap, Lock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "../ui/separator";
 import { Skeleton } from "../ui/skeleton";
+import { useState } from "react";
+import { ApplyNowModal } from "./apply-now-modal";
 
 export const Job = ({ job }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const {
     title,
     status,
@@ -19,6 +22,7 @@ export const Job = ({ job }) => {
     state,
     country,
     education,
+    externalLink,
     _id,
   } = job || {};
 
@@ -31,6 +35,12 @@ export const Job = ({ job }) => {
               <div className="border-2 border-[#9237E333] flex gap-2 w-[135px] items-center rounded px-2 py-1 text-[10px] sm:text-xs font-stolzl font-normal">
                 <Image src="/Icon.svg" width={16} height={16} alt="icon" />
                 <p className="text-para">Actively hiring</p>
+              </div>
+            )}
+            {status !== "active" && (
+              <div className="border-2 border-[#9237E333] flex gap-2 items-centern w-[85px] rounded px-2 py-1 text-[10px] sm:text-xs font-stolzl font-normal">
+                <Lock className="text-main size-4" />
+                <p className="text-para">Closed</p>
               </div>
             )}
             <h3 className="font-stolzl capitalize line-clamp-2 font-medium text-lg md:text-xl mt-4">
@@ -61,6 +71,11 @@ export const Job = ({ job }) => {
           {status === "active" && (
             <div className="border border-border-1 rounded-full px-3 py-1.5 font-stolzl text-xs flex items-center font-book text-main">
               Actively Hiring
+            </div>
+          )}
+          {status !== "active" && (
+            <div className="border border-border-1 rounded-full px-3 py-1.5 font-stolzl text-xs flex items-center font-book text-main">
+              Closed
             </div>
           )}
         </div>
@@ -103,6 +118,8 @@ export const Job = ({ job }) => {
         <Button
           variant="linearGradient"
           className="text-xs sm:text-sm gap-1 h-9 md:h-10"
+          onClick={() => setIsModalOpen(true)}
+          disabled={status !== "active"}
         >
           Apply Now
         </Button>
@@ -117,6 +134,14 @@ export const Job = ({ job }) => {
           </Link>
         </Button>
       </CardFooter>
+      {isModalOpen && (
+        <ApplyNowModal
+          open={isModalOpen}
+          setOpen={setIsModalOpen}
+          externalLink={externalLink}
+          jobId={_id}
+        />
+      )}
     </Card>
   );
 };

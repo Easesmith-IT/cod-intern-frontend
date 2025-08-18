@@ -120,15 +120,13 @@ export const JobDetailCard = ({ job }) => {
             <ShareLink
               src="/social-1.svg"
               href={`https://www.facebook.com/sharer/sharer.php?u=${url(
-                "JOB-ID-2345-3498"
+                job._id
               )}`}
               className="bg-main size-7 p-2.5"
             />
             <ShareLink
               src="/social-1.svg"
-              href={`https://twitter.com/intent/tweet?url=${url(
-                "JOB-ID-2345-3498"
-              )}`}
+              href={"#"}
               className="bg-main size-7 p-1.5"
             >
               <Instagram className="text-white size-4" />
@@ -137,7 +135,7 @@ export const JobDetailCard = ({ job }) => {
             <ShareLink
               src="/social-3.svg"
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${url(
-                "JOB-ID-2345-3498"
+                job._id
               )}`}
               className="bg-main size-7 p-1.5"
               width={16}
@@ -154,9 +152,7 @@ export const JobDetailCard = ({ job }) => {
 
             <ShareLink
               src="/social-2.svg"
-              href={`https://twitter.com/intent/tweet?url=${url(
-                "JOB-ID-2345-3498"
-              )}`}
+              href={`https://twitter.com/intent/tweet?url=${url(job._id)}`}
               className="bg-main size-7 p-1"
               width={16}
               height={16}
@@ -170,6 +166,7 @@ export const JobDetailCard = ({ job }) => {
             variant="linearGradient"
             className="text-xs sm:text-sm gap-1 h-9 md:h-10"
             onClick={() => setIsModalOpen(true)}
+            disabled={status !== "active"}
           >
             Apply Now
           </Button>

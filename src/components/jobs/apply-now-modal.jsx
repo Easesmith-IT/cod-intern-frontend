@@ -34,12 +34,11 @@ import { useForm } from "react-hook-form";
 import Spinner from "../Spinner";
 import { useEffect } from "react";
 import { readCookie } from "@/lib/readCookie";
+import { toast } from "sonner";
 
-export const ApplyNowModal = ({ open, setOpen, externalLink }) => {
+export const ApplyNowModal = ({ open, setOpen, externalLink,jobId="" }) => {
   const params = useParams();
-  const userInfo = readCookie("userInfo")
-  console.log("userInfo", userInfo);
-  
+  const userInfo = readCookie("userInfo");
 
   const form = useForm({
     resolver: zodResolver(JobApplySchema),
@@ -65,14 +64,17 @@ export const ApplyNowModal = ({ open, setOpen, externalLink }) => {
 
   const onSubmit = async (data) => {
     console.log("data :", data);
+    if(!userInfo){
+      return toast.error("Please login first to apply job")
+    }
     const apiData = {
       fullName: data.fullName,
       dateOfBirth: data.dateOfBirth,
       gender: data.gender,
       email: data.emailAddress,
       phoneNumber: data.phoneNumber,
-      jobId: params.jobId,
-      userId: params.jobId,
+      jobId: jobId || params.jobId,
+      userId: userInfo.id,
     };
 
     await submitForm(apiData);
@@ -81,8 +83,10 @@ export const ApplyNowModal = ({ open, setOpen, externalLink }) => {
   };
 
   useEffect(() => {
-    if (result && externalLink) {
-      window.open(externalLink, "_blank");
+    if (result) {
+      if (externalLink) {
+        window.open(externalLink, "_blank");
+      }
       setOpen(false);
     }
   }, [result]);

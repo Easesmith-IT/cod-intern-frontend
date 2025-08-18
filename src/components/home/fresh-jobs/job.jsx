@@ -4,7 +4,7 @@ import { CarouselItem } from "@/components/ui/carousel";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { formatDistanceToNowStrict } from "date-fns";
-import { ChevronRight, GraduationCap } from "lucide-react";
+import { ChevronRight, GraduationCap, Lock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -86,6 +86,12 @@ export const Job = ({ job }) => {
                     <p className="text-para">Actively hiring</p>
                   </div>
                 )}
+                {status !== "active" && (
+                  <div className="border-2 border-[#9237E333] flex gap-2 items-centern w-[85px] rounded px-2 py-1 text-[10px] sm:text-xs font-stolzl font-normal">
+                    <Lock className="text-main size-4" />
+                    <p className="text-para">Closed</p>
+                  </div>
+                )}
                 <h3 className="font-stolzl capitalize line-clamp-2 font-medium text-lg md:text-xl mt-4">
                   {title}
                 </h3>
@@ -114,6 +120,11 @@ export const Job = ({ job }) => {
               {status === "active" && (
                 <div className="border border-border-1 rounded-full px-3 py-1.5 font-stolzl text-xs flex items-center font-book text-main">
                   Actively Hiring
+                </div>
+              )}
+              {status !== "active" && (
+                <div className="border border-border-1 rounded-full px-3 py-1.5 font-stolzl text-xs flex items-center font-book text-main">
+                  Closed
                 </div>
               )}
             </div>

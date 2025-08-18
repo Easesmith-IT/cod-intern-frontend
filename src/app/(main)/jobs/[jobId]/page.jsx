@@ -97,6 +97,43 @@ const salaryBreakDown = [
   "Variable pay: ₹ 1,20,000 - 1,25,000 /year",
 ];
 
+// import { Metadata } from "next";
+// import { axiosInstance } from "@/lib/axiosInstance";
+
+// export async function generateMetadata({ params }) {
+//   const jobId = params.jobId;
+//   const { data } = await axiosInstance.get(`/student/jobs/${jobId}`); // your API/db call
+//   const job = data.job;
+
+//   const jobUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/job/${jobId}`;
+
+//   return {
+//     title: job.title,
+//     description: job.description.slice(0, 150), // short desc
+//     openGraph: {
+//       title: job.title,
+//       description: job.description.slice(0, 150),
+//       url: jobUrl,
+//       siteName: "YourSiteName",
+//       images: [
+//         {
+//           url: job.image || "/default-job.png",
+//           width: 1200,
+//           height: 630,
+//           alt: job.title,
+//         },
+//       ],
+//       type: "website",
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title: job.title,
+//       description: job.description.slice(0, 150),
+//       images: [job.image || "/default-job.png"],
+//     },
+//   };
+// }
+
 const JobDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const params = useParams();
@@ -190,6 +227,7 @@ const JobDetails = () => {
         variant="linearGradient"
         className="text-xs sm:text-sm gap-1 rounded-sm h-9 px-9 md:h-11 mt-10"
         onClick={() => setIsModalOpen(true)}
+        disabled={status !== "active"}
       >
         Apply Now
       </Button>
