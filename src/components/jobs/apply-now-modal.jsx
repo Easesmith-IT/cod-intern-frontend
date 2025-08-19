@@ -30,15 +30,12 @@ import { useApiMutation } from "@/hooks/useApiMutation";
 import { JobApplySchema } from "@/schemas/JobApplySchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useParams } from "next/navigation";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Spinner from "../Spinner";
-import { useEffect } from "react";
-import { readCookie } from "@/lib/readCookie";
-import { toast } from "sonner";
 
 export const ApplyNowModal = ({ open, setOpen, externalLink,jobId="" }) => {
   const params = useParams();
-  const userInfo = readCookie("userInfo");
 
   const form = useForm({
     resolver: zodResolver(JobApplySchema),
@@ -74,7 +71,6 @@ export const ApplyNowModal = ({ open, setOpen, externalLink,jobId="" }) => {
       email: data.emailAddress,
       phoneNumber: data.phoneNumber,
       jobId: jobId || params.jobId,
-      userId: userInfo?.id || "",
     };
 
     await submitForm(apiData);
