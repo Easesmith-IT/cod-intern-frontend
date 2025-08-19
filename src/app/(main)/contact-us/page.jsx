@@ -5,9 +5,9 @@ import { SendUsMessage } from "@/components/contact-us/send-us-message/send-us-m
 import React from "react";
 
 export const metadata = {
-  title: "Contact Us - Cod Intern",
+  title: "Contact Us - Codintern",
   description:
-    "Get in touch with Cod Intern for inquiries, support, or collaborations.",
+    "Get in touch with Codintern for inquiries, support, or collaborations.",
 };
 
 const ContactUs = () => {

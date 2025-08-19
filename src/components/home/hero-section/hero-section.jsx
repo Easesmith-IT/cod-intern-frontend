@@ -1,20 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { Mail } from "lucide-react";
-import Link from "next/link";
-import { Info } from "./info";
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  CarouselItem
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
   const [api, setApi] = useState();

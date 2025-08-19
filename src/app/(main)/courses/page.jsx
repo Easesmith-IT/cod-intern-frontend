@@ -1,9 +1,9 @@
 import { CoursesClient } from "./courses-client";
 
 export const metadata = {
-  title: "Courses & Skill Development - Cod Intern",
+  title: "Courses & Skill Development - Codintern",
   description:
-    "Browse Cod Intern's curated courses to enhance your skills, learn from experts, and boost your career prospects.",
+    "Browse Codintern's curated courses to enhance your skills, learn from experts, and boost your career prospects.",
 };
 
 const Courses = () => {

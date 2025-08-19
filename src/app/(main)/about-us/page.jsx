@@ -8,9 +8,9 @@ import { LearnersStories } from "@/components/home/learners-stories/learners-sto
 import { LearningToCareer } from "@/components/home/learning-to-career/learning-to-career";
 
 export const metadata = {
-  title: "About Us - Cod Intern",
+  title: "About Us - Codintern",
   description:
-    "Learn more about Cod Intern, our mission, and the team behind it.",
+    "Learn more about Codintern, our mission, and the team behind it.",
 };
 
 const AboutUs = () => {

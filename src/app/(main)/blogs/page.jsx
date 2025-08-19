@@ -2,9 +2,9 @@ import { BlogsComp } from "@/components/blogs/blogs";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 
 export const metadata = {
-  title: "Blogs - Cod Intern",
+  title: "Blogs - Codintern",
   description:
-    "Read the latest blogs from Cod Intern on career tips, internships, fresher jobs, and skill development.",
+    "Read the latest blogs from Codintern on career tips, internships, fresher jobs, and skill development.",
 };
 
 const Blogs = () => {

@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Cod Intern",
+  title: "Codintern",
   description: "For Fresher Jobs, Internships and courses",
   icons: {
     icon: [
@@ -26,10 +26,10 @@ export const metadata = {
   robots: { index: true, follow: true },
   metadataBase: new URL(process.env.NEXT_PUBLIC_FRONTEND_URL),
   openGraph: {
-    title: "Cod [Intern]",
+    title: "Codintern",
     description: "For Fresher Jobs, Internships and courses",
     url: process.env.NEXT_PUBLIC_FRONTEND_URL,
-    siteName: "Cod Intern",
+    siteName: "Codintern",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/logo.svg`,
