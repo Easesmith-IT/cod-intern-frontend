@@ -64,9 +64,9 @@ export const ApplyNowModal = ({ open, setOpen, externalLink,jobId="" }) => {
 
   const onSubmit = async (data) => {
     console.log("data :", data);
-    if(!userInfo){
-      return toast.error("Please login first to apply job")
-    }
+    // if(!userInfo){
+    //   return toast.error("Please login first to apply job")
+    // }
     const apiData = {
       fullName: data.fullName,
       dateOfBirth: data.dateOfBirth,
