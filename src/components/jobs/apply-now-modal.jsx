@@ -74,7 +74,7 @@ export const ApplyNowModal = ({ open, setOpen, externalLink,jobId="" }) => {
       email: data.emailAddress,
       phoneNumber: data.phoneNumber,
       jobId: jobId || params.jobId,
-      userId: userInfo.id,
+      userId: userInfo?.id || "",
     };
 
     await submitForm(apiData);
