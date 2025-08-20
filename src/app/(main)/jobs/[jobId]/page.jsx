@@ -162,6 +162,7 @@ const JobDetails = () => {
     aboutJob,
     rolesAndReponsibilities,
     goodToHave,
+    externalLink
   } = data?.job || {};
 
   return (
@@ -234,7 +235,11 @@ const JobDetails = () => {
       </Button>
 
       {isModalOpen && (
-        <ApplyNowModal open={isModalOpen} setOpen={setIsModalOpen} />
+        <ApplyNowModal
+          externalLink={externalLink}
+          open={isModalOpen}
+          setOpen={setIsModalOpen}
+        />
       )}
 
       {/* <div className="flex flex-wrap justify-center items-center gap-10 mt-10 lg:mt-20">
