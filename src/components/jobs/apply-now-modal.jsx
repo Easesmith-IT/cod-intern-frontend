@@ -34,7 +34,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Spinner from "../Spinner";
 
-export const ApplyNowModal = ({ open, setOpen, externalLink,jobId="" }) => {
+export const ApplyNowModal = ({ open, setOpen, externalLink, jobId = "" }) => {
   const params = useParams();
 
   const form = useForm({

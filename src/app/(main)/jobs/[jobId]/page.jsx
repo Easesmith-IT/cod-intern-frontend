@@ -157,6 +157,7 @@ const JobDetails = () => {
     country,
     education,
     _id,
+    jobId,
     aboutCompany,
     aboutJob,
     rolesAndReponsibilities,

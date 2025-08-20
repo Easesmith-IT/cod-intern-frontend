@@ -28,6 +28,7 @@ export const JobDetailCard = ({ job }) => {
     education,
     externalLink,
     _id,
+    jobId,
   } = job || {};
 
   const url = (id) => {
@@ -63,7 +64,7 @@ export const JobDetailCard = ({ job }) => {
               {title}
             </h3>
             <p className="font-stolzl text-para font-book text-xs sm:text-sm mt-1">
-              {customId}
+              {jobId}
             </p>
           </div>
           {/* <Image src="/job-logo.svg" width={115} height={144} alt="job" /> */}
