@@ -54,7 +54,7 @@ export const WorkShopRegistrationClient = () => {
     url: "/student/workshop/register",
     method: POST,
     invalidateKey: ["workshop-register"],
-    // isToast: false,
+    isToast: false,
   });
 
   // console.log("isSubmitFormLoading :", isSubmitFormLoading);
