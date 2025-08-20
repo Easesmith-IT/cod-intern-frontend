@@ -11,7 +11,12 @@ import {
 } from "@/components/ui/dialog";
 import { CheckCircle } from "lucide-react";
 
-export const SuccessModal = ({open,setOpen}) => {
+export const SuccessModal = ({
+  open,
+  setOpen,
+  title = "Success",
+  desc = "Feedback submitted successfully.",
+}) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-md">
@@ -20,10 +25,10 @@ export const SuccessModal = ({open,setOpen}) => {
             <CheckCircle className="h-8 w-8 text-green-600" />
           </div>
           <DialogTitle className="text-xl text-center font-semibold text-gray-900">
-            Success!
+            {title}!
           </DialogTitle>
           <DialogDescription className="text-gray-600 text-center">
-            Feedback submitted successfully.
+            {desc}
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="sm:justify-center">

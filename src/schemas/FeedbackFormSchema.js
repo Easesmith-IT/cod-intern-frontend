@@ -85,7 +85,7 @@ export const WorkshopRegistrationFormSchema = z.object({
     .min(2, "Branch is required")
     .max(100, "Branch is too long"),
 
-  year: z.number().int().min(1).max(6),
+  year: z.string().min(1, { message: "Year is required" }),
 
   universityRollNo: z
     .string()
