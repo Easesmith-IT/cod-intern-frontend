@@ -74,6 +74,12 @@ export const ProfileAvatar = () => {
             Profile
           </DropdownMenuItem>
           <DropdownMenuItem
+            onSelect={() => router.push("/user/job-applications")}
+            className="font-medium hover:underline px-2"
+          >
+            Job Applications
+          </DropdownMenuItem>
+          <DropdownMenuItem
             onSelect={() => router.push("/user/settings/account-settings")}
             className="font-medium hover:underline px-2"
           >

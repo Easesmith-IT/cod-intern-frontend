@@ -111,7 +111,7 @@ export const ApplyNowModal = ({ open, setOpen, externalLink, jobId = "" }) => {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="First Name"
+                          placeholder="Full Name"
                           className={`placeholder:text-[#00000066] border-[#9237E347] font-stolzl rounded py-5`}
                           {...field}
                         />
