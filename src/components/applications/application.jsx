@@ -1,13 +1,12 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { format } from "date-fns";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Clock } from "lucide-react";
 
 export const Application = ({ application }) => {
   const {
     customId,
-    jobId,
+    job,
     fullName,
     email,
     gender,
@@ -15,35 +14,30 @@ export const Application = ({ application }) => {
     phoneNumber,
     _id,
   } = application || {};
-  const router = useRouter();
-  const [status, setStatus] = useState(application.status || "");
-  const onDelete = () => {};
-  const onView = () => {};
-
-  const onEdit = () => {};
-
-  const handleStatus = async (value) => {};
 
   return (
     <TableRow>
       <TableCell className="font-medium">{customId}</TableCell>
-      {/* <TableCell className="font-medium">
+      <TableCell className="font-medium">
         <div className="flex items-center space-x-3">
           <div>
-            <div className="font-medium truncate w-60">{jobId.title}</div>
+            <div className="font-medium whitespace-pre-wrap w-60">
+              {job.title}
+            </div>
             <div className="text-sm text-muted-foreground flex items-center">
               <Clock className="h-3 w-3 mr-1" />
               Posted{" "}
-              {jobId.postingDate &&
-                format(new Date(jobId.postingDate), "dd-MM-yyyy")}
+              {job.postingDate &&
+                format(new Date(job.postingDate), "dd-MM-yyyy")}
             </div>
           </div>
         </div>
-      </TableCell> */}
-      {/* <TableCell>{jobId.company}</TableCell> */}
-      <TableCell>{fullName}</TableCell>
+      </TableCell>
+      <TableCell className="capitalize">{job.company}</TableCell>
+      <TableCell className="capitalize">{job.category}</TableCell>
+      <TableCell className="capitalize">{fullName}</TableCell>
       <TableCell>{email}</TableCell>
-      <TableCell>{gender}</TableCell>
+      <TableCell className="capitalize">{gender}</TableCell>
       <TableCell>
         {dateOfBirth && format(new Date(dateOfBirth), "dd/MM/yyyy")}
       </TableCell>
@@ -69,6 +63,15 @@ Application.Skeleton = function ApplicationSkeleton() {
     <TableRow>
       <TableCell>
         <Skeleton className="h-4 w-24" />
+      </TableCell>
+      <TableCell>
+        <Skeleton className="h-4" />
+      </TableCell>
+      <TableCell>
+        <Skeleton className="h-4" />
+      </TableCell>
+      <TableCell>
+        <Skeleton className="h-4" />
       </TableCell>
       <TableCell>
         <Skeleton className="h-4" />

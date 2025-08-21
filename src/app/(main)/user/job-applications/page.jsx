@@ -1,12 +1,9 @@
 "use client";
 
+import { Application } from "@/components/applications/application";
 import { PaginationComp } from "@/components/PaginationComp";
 import DataNotFound from "@/components/shared/DataNotFound";
 import { Input } from "@/components/ui/input";
-import { useApiQuery } from "@/hooks/useApiQuery";
-import { readCookie } from "@/lib/readCookie";
-import { ArrowLeft, Search } from "lucide-react";
-import React, { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -14,9 +11,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useApiQuery } from "@/hooks/useApiQuery";
+import { readCookie } from "@/lib/readCookie";
+import { ArrowLeft, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Application } from "@/components/applications/application";
-import { TypographyH2 } from "@/components/typography/typography-h2";
+import { useEffect, useState } from "react";
 
 const JobApplications = () => {
   const [page, setPage] = useState(1);
@@ -28,8 +27,8 @@ const JobApplications = () => {
 
   const { data, isLoading, error } = useApiQuery({
     url: `/student/jobs/job-applications/get?email=${
-      //   userInfo?.email
-      "agrawalsweksha@gmail.com"
+      userInfo?.email
+      // "agrawalsweksha@gmail.com"
     }&page=${page}&limit=${10}&search=${searchTerm}`,
     queryKeys: ["job-application", page, searchTerm, userInfo?.email],
   });
@@ -73,8 +72,9 @@ const JobApplications = () => {
           <TableHeader>
             <TableRow>
               <TableHead>Application ID</TableHead>
-              {/* <TableHead className="w-60">Job</TableHead> */}
-              {/* <TableHead>Company</TableHead> */}
+              <TableHead className="w-60">Job</TableHead>
+              <TableHead>Company</TableHead>
+              <TableHead>Category</TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Email</TableHead>
               <TableHead>Gender</TableHead>
