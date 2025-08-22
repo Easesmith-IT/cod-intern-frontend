@@ -249,3 +249,13 @@
     }
   }
 }
+
+.my-editor ol,
+.my-editor ul {
+  list-style: revert;
+  margin-left: 20px;
+}
+
+.my-editor pre {
+  background: transparent !important;
+}

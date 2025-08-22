@@ -23,7 +23,7 @@ export const ParsedHtml = ({ data, isLoading }) => {
           <Skeleton className="w-full h-4" />
         </div>
       ) : (
-        <div className="my-3 text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
+        <div className="my-3 my-editor prose text-xs sm:text-sm md:text-base font-stolzl text-para font-book">
           {data && parse(data, options)}
         </div>
       )}
