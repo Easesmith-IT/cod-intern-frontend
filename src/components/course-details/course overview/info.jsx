@@ -8,7 +8,7 @@ export const Info = ({ src, alt, title, desc }) => {
         <Image src={src} width={14} height={14} alt={alt} />
         <p className="text-xs sm:text-sm font-stolzl">{title} :</p>
       </div>
-      <span className="text-[#9D9D9D] text-xs sm:text-sm font-medium">{desc}</span>
+      <span className="text-[#9D9D9D] text-xs sm:text-sm font-medium capitalize">{desc}</span>
     </div>
   );
 };

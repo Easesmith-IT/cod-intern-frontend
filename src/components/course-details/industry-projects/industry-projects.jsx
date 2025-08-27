@@ -8,7 +8,7 @@ import Image from "next/image";
 import React from "react";
 import { Project } from "./project";
 
-export const IndustryProjects = () => {
+export const IndustryProjects = ({ projects }) => {
   return (
     <section className="py-12 md:py-24 section-container">
       <div className="flex justify-center text-center section-container max-w-5xl">
@@ -31,8 +31,11 @@ export const IndustryProjects = () => {
 
       <Carousel className="w-full">
         <CarouselContent className="mt-10">
-          {Array.from({ length: 7 }).map((_, index) => (
+          {/* {Array.from({ length: 7 }).map((_, index) => (
             <Project key={index} />
+          ))} */}
+          {projects.map((project, index) => (
+            <Project key={index} project={project} />
           ))}
         </CarouselContent>
         <CarouselPrevious className="-left-3" variant="default" />

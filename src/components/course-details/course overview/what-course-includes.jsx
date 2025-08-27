@@ -16,9 +16,9 @@ const list = [
   "Introduction to Excel",
 ];
 
-export const WhatCourseIncludes = () => {
+export const WhatCourseIncludes = ({ modules }) => {
   return (
-    <div className="mt-28">
+    <div id="syllabus" className="mt-28 scroll-mt-52">
       <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium">
         <span className="text-main">What This Course</span> Offers
         <Image
@@ -31,11 +31,18 @@ export const WhatCourseIncludes = () => {
       </h2>
 
       <div className="flex flex-col gap-5 mt-10">
-        <Module title="Module 1" duration="3 Weeks" list={list} />
-        <Module title="Module 2" duration="3 Weeks" list={list} />
+        {modules.map((item, index) => (
+          <Module
+            key={index}
+            title={item.title}
+            duration="3 Weeks"
+            list={item.lessons}
+          />
+        ))}
+        {/* <Module title="Module 2" duration="3 Weeks" list={list} />
         <Module title="Module 3" duration="3 Weeks" list={list} />
         <Module title="Module 4" duration="3 Weeks" list={list} />
-        <Module title="Module 5" duration="3 Weeks" list={list} />
+        <Module title="Module 5" duration="3 Weeks" list={list} /> */}
       </div>
       <Button size="xl" variant="codIntern" className="mt-10 rounded">
         <span>Download Syllabus</span>

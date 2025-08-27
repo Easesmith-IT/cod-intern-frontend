@@ -5,15 +5,15 @@ import { CourseOverviewSection } from "./course-overview-section";
 import { WhatCourseIncludes } from "./what-course-includes";
 import { CourseCard } from "./course-card";
 
-export const CourseOverview = () => {
+export const CourseOverview = ({ course }) => {
   return (
     <section className="section-container grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 pt-12 md:pt-24">
       <div className="w-full">
-        <CourseOverviewSection />
-        <WhatCourseIncludes />
+        <CourseOverviewSection course={course} />
+        <WhatCourseIncludes modules={course.modules} />
       </div>
       <div>
-        <CourseCard />
+        <CourseCard course={course} />
       </div>
     </section>
   );

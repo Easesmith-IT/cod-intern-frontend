@@ -4,7 +4,10 @@ import React from "react";
 
 export const GloballyRecognized = () => {
   return (
-    <section className="section-container pb-12 md:pb-24">
+    <section
+      id="certifications"
+      className="section-container pb-12 md:pb-24 scroll-mt-52"
+    >
       <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium text-center">
         <span className="text-main">Globally Acclaimed</span> Credentials
         <Image
@@ -31,14 +34,14 @@ export const GloballyRecognized = () => {
           variant="codIntern"
           className="rounded font-book text-xs md:text-sm"
         >
-          Codintern Certification
+          Training Certifications
         </Button>
-        <Button
+        {/* <Button
           variant="outline"
           className="rounded font-book text-xs md:text-sm"
         >
           Skill India Certification
-        </Button>
+        </Button> */}
       </div>
 
       <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-10 mt-12">

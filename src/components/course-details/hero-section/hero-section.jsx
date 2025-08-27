@@ -3,14 +3,14 @@ import { HeroSectionContent } from "./hero-section-content";
 import { ApplyNowForm } from "./apply-now-form";
 import Image from "next/image";
 
-export const HeroSection = () => {
+export const HeroSection = ({ course }) => {
   return (
     <section
       style={{ backgroundImage: "url(/hero-bg.svg)" }}
       // className="h-[600px]"
     >
       <div className="section-container relative flex flex-col lg:flex-row items-center lg:items-center gap-10 lg:gap-5 py-10">
-        <HeroSectionContent />
+        <HeroSectionContent course={course} />
         <ApplyNowForm />
         <Image
           width={117}

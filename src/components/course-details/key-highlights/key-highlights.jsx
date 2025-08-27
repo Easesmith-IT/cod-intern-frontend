@@ -13,7 +13,10 @@ import highlights from "@/data/highlights.json";
 
 export const KeyHighlights = () => {
   return (
-    <section className="section-container pb-12 md:pb-24">
+    <section
+      id="key-highlights"
+      className="section-container pb-12 md:pb-24 scroll-mt-52"
+    >
       <Carousel className="w-full">
         <div className="flex justify-between items-center gap-5">
           <div>

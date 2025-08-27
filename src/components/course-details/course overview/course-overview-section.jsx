@@ -5,13 +5,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Tab } from "./tab";
 
-export const CourseOverviewSection = () => {
+export const CourseOverviewSection = ({ course }) => {
   const [selectedTab, setSelectedTab] = useState("course-overview");
+
+  const { overview } = course;
 
   return (
     <div>
       <div className="flex md:grid grid-cols-4 overflow-x-auto">
         <Tab
+          id="course-overview"
           active={selectedTab === "course-overview"}
           alt="Homework"
           onClick={() => setSelectedTab("course-overview")}
@@ -20,6 +23,7 @@ export const CourseOverviewSection = () => {
           title="Course Overview"
         />
         <Tab
+          id="syllabus"
           active={selectedTab === "syllabus"}
           alt="Syllabus"
           onClick={() => setSelectedTab("syllabus")}
@@ -28,6 +32,7 @@ export const CourseOverviewSection = () => {
           title="Syllabus"
         />
         <Tab
+          id="key-highlights"
           active={selectedTab === "key-highlights"}
           alt="Key Highlights"
           onClick={() => setSelectedTab("key-highlights")}
@@ -36,6 +41,7 @@ export const CourseOverviewSection = () => {
           title="Key Highlights"
         />
         <Tab
+          id="certifications"
           active={selectedTab === "certifications"}
           alt="Certifications"
           onClick={() => setSelectedTab("certifications")}
@@ -45,18 +51,21 @@ export const CourseOverviewSection = () => {
         />
       </div>
 
-      <h2 className="text-xl md:text-2xl font-bold font-stolzl mt-7 text-para-3">
-        Course Overview
-      </h2>
-      <p className="mt-3 font-stolzl text-xs md:text-base font-book text-para">
-        Immerse yourself in the heart of our AI-powered programs. This overview
-        gives you a complete glance at what you'll study, the skills you'll
-        develop, and how our experiential learning approach gets you ready to
-        tackle real-world industry challenges. Learn the revolutionary
-        experience awaiting you with CodIntern's professionally crafted
-        curriculum and cutting-edge tools
-        {/* <button className="font-medium text-main">Read More</button> */}
-      </p>
+      <div id="course-overview" className="scroll-mt-52">
+        <h2 className="text-xl md:text-2xl font-bold font-stolzl mt-7 text-para-3">
+          Course Overview
+        </h2>
+        <p className="mt-3 font-stolzl text-xs md:text-base font-book text-para">
+          {overview}
+          {/* Immerse yourself in the heart of our AI-powered programs. This
+          overview gives you a complete glance at what you'll study, the skills
+          you'll develop, and how our experiential learning approach gets you
+          ready to tackle real-world industry challenges. Learn the
+          revolutionary experience awaiting you with CodIntern's professionally
+          crafted curriculum and cutting-edge tools */}
+          {/* <button className="font-medium text-main">Read More</button> */}
+        </p>
+      </div>
     </div>
   );
 };

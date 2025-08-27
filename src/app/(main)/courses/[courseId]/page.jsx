@@ -15,26 +15,47 @@ import { LearningToCareer } from "@/components/home/learning-to-career/learning-
 import { Mentors } from "@/components/home/mentors/mentors";
 import { PopularCourses } from "@/components/home/popular-courses/popular-courses";
 import { ThreeStepApproach } from "@/components/home/three-step-approach/three-step-approach";
+import { useApiQuery } from "@/hooks/useApiQuery";
+import { useParams } from "next/navigation";
 import React from "react";
 
 const CourseDetails = () => {
+  const params = useParams();
+
+  const { data, isLoading, error } = useApiQuery({
+    url: `/student/courses/${params.courseId}`,
+    queryKeys: ["courses", params.courseId],
+  });
+
+  const course = data?.course || ""
+
+  console.log("course", data?.course);
+
   return (
     <main>
-      <HeroSection />
-      <CourseOverview />
-      {/* <TopCompanies /> comment this */}
-      <IndustryProjects />
-      <KeyHighlights />
-      <GloballyRecognized />
-      <LearningToCareer />
-      <UpcomingBatch />
-      <PopularCourses />
-      <BecomeProjectManager />
-      <ThreeStepApproach />
-      <BenifitsOfCourse />
-      <LearnersStories />
-      <Mentors />
-      <FAQs />
+      {isLoading ? (
+        <div className="flex justify-center items-center h-[calc(100vh-140px)]">
+          <p className="text-muted-foreground">Loading Course Content...</p>
+        </div>
+      ) : (
+        <>
+          <HeroSection course={course} />
+          <CourseOverview course={course} />
+          {/* <TopCompanies /> comment this */}
+          <IndustryProjects projects={course.projects} />
+          <KeyHighlights />
+          <GloballyRecognized />
+          <LearningToCareer />
+          <UpcomingBatch />
+          <PopularCourses />
+          <BecomeProjectManager />
+          <ThreeStepApproach />
+          <BenifitsOfCourse />
+          <LearnersStories />
+          <Mentors />
+          <FAQs />
+        </>
+      )}
     </main>
   );
 };

@@ -12,9 +12,17 @@ import { CourseCard } from "./course-card";
 import { CourseCategory } from "./course-category";
 import { useState } from "react";
 import courseCategory from "@/data/courseCategory.json";
+import { useApiQuery } from "@/hooks/useApiQuery";
+import DataNotFound from "@/components/shared/DataNotFound";
+import Link from "next/link";
 
 export const PopularCourses = () => {
-  const [selectedCategory, setSelectedCategory] = useState("web_development");
+  const [selectedCategory, setSelectedCategory] = useState("Web Development");
+
+  const { data, isLoading, error } = useApiQuery({
+    url: `/student/courses?page=${1}&limit=${4}&category=${selectedCategory}`,
+    queryKeys: ["courses"],
+  });
 
   return (
     <section className="section-container">
@@ -64,23 +72,25 @@ export const PopularCourses = () => {
       </Carousel>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
-        <CourseCard
-          src="/course/Data Analysis using Python.png"
-          name="Data Analysis using Python"
-        />
-        <CourseCard
-          src="/course/Data Visualization using Power BI.png"
-          name="Data Visualization using Power BI"
-        />
-        <CourseCard
-          src="/course/Data Visualization using Tableau.png"
-          name="Data Visualization using Tableau"
-        />
-        <CourseCard
-          src="/course/Machine Learning and Artificial Intelligence with Python.png"
-          name="Machine Learning and Artificial Intelligence with Python"
-        />
+        {data?.courses.map((course) => (
+          <CourseCard
+            key={course._id}
+            id={course._id}
+            src={course.thumbnail}
+            name={course.title}
+            rating={course.averageRating}
+            duration={course.courseDuration}
+          />
+        ))}
+
+        {isLoading &&
+          Array.from({ length: 4 }).map((_, index) => (
+            <CourseCard.Skeleton key={index} />
+          ))}
       </div>
+      {data?.courses?.length === 0 && !isLoading && (
+        <DataNotFound name="Courses" />
+      )}
 
       <div className="flex justify-center mt-8">
         <Button
@@ -88,7 +98,7 @@ export const PopularCourses = () => {
           variant="linearGradient"
           className="rounded-sm px-3 h-10 md:px-5 md:h-12 text-xs sm:text-sm"
         >
-          View More
+          <Link href="/courses">View More</Link>
         </Button>
       </div>
     </section>

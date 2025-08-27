@@ -212,11 +212,15 @@
     @apply border-border outline-ring/50 box-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
 
-  .animate-btn{
+  .animate-btn {
     @apply hover:scale-105 transition-all active:scale-95;
   }
 

@@ -4,11 +4,26 @@ import { Info } from "./info";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-export const CourseCard = () => {
+export const CourseCard = ({ course }) => {
+  const {
+    thumbnail,
+    instructors,
+    venue,
+    studentBenefits,
+    courseHighlights,
+    batches,
+    pricing,
+    savedAmount,
+  } = course;
+
+  const instructorsNames = instructors.map(
+    (instructor) => `${instructor.firstName} ${instructor.lastName}`
+  );
+
   return (
     <div className="shadow-[0px_8px_25px_0px_#0000001A] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 lg:gap-0 p-3 rounded-md">
       <Image
-        src="/course-img.jpg"
+        src={thumbnail}
         className="w-full rounded-md"
         width={453}
         height={127}
@@ -21,9 +36,11 @@ export const CourseCard = () => {
           </h3>
           <p className="font-stolzl flex gap-1 items-center">
             <span className="text-[#9D9D9D] text-xs sm:text-sm">Costs:</span>
-            <span className="text-main font-bold text-sm sm:text-base">Rs.1995</span>
+            <span className="text-main font-bold text-sm sm:text-base">
+              Rs.{pricing.discountPrice}
+            </span>
             <span className="text-xs sm:text-sm line-through text-[#9D9D9D]">
-              Rs.2495
+              Rs.{pricing.price}
             </span>
           </p>
         </div>
@@ -31,7 +48,7 @@ export const CourseCard = () => {
           src="/instructor.svg"
           alt="Instructor"
           title="Instructor"
-          desc="Barry Tone"
+          desc={instructorsNames.join(", ")}
         />
         <Info src="/lessons.svg" alt="Lessons" title="Lessons" desc="35" />
         <Info
@@ -46,9 +63,9 @@ export const CourseCard = () => {
           title="Enrolled"
           desc="50 Students"
         />
-        <Info src="/venue.svg" alt="Venue" title="Venue" desc="Online" />
+        <Info src="/venue.svg" alt="Venue" title="Venue" desc={venue} />
       </div>
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <p className="font-stolzl text-base sm:text-lg font-medium">Payment:</p>
         <div className="flex gap-1 items-center mt-2">
           <Image src="/visa.svg" width={36} height={23} alt="Visa" />
@@ -66,13 +83,13 @@ export const CourseCard = () => {
             alt="American Express"
           />
         </div>
-      </div>
+      </div> */}
       <Button
         className="mt-4 rounded w-full"
         size="xl"
         variant="linearGradient"
       >
-        <span>View Cart</span>
+        <span>Talk to Your Adviser</span>
         <ArrowRight />
       </Button>
     </div>

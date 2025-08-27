@@ -1,9 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import React, { act } from "react";
 
-export const Tab = ({ onClick, active, className, title, src, src1, alt }) => {
+export const Tab = ({
+  onClick,
+  active,
+  className,
+  title,
+  src,
+  src1,
+  alt,
+  id,
+}) => {
   return (
     <Button
       onClick={onClick}
@@ -13,17 +23,20 @@ export const Tab = ({ onClick, active, className, title, src, src1, alt }) => {
         "flex gap-2 items-center rounded px-5 h-12 md:h-14 w-[170px] md:w-auto rounded-r-none",
         active && "rounded-r"
       )}
+      asChild
     >
-      <Image src={active ? src : src1} width={17} height={17} alt={alt} />
-      <span
-        className={cn(
-          "font-stolzl text-xs md:text-base font-medium",
-          active && "text-white",
-          !active && "text-black"
-        )}
-      >
-        {title}
-      </span>
+      <Link href={`#${id}`}>
+        <Image src={active ? src : src1} width={17} height={17} alt={alt} />
+        <span
+          className={cn(
+            "font-stolzl text-xs md:text-base font-medium",
+            active && "text-white",
+            !active && "text-black"
+          )}
+        >
+          {title}
+        </span>
+      </Link>
     </Button>
   );
 };

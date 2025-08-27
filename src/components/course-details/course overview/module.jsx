@@ -54,7 +54,7 @@ export const Module = ({ title, duration, list }) => {
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 list-disc ml-4">
               {list.map((item, i) => (
                 <li className="text-xs sm:text-sm font-stolzl font-book" key={i}>
-                  {item}
+                  {item.title}
                 </li>
               ))}
             </ul>

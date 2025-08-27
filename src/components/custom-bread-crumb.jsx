@@ -29,7 +29,7 @@ export const CustomBreadCrumb = ({
               <>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="text-main font-medium text-sm md:text-base">
+                  <BreadcrumbPage className="text-main font-medium text-sm md:text-base line-clamp-1 sm:w-[80%]">
                     {label}
                   </BreadcrumbPage>
                 </BreadcrumbItem>

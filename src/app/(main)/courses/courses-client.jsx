@@ -4,6 +4,7 @@ import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 import { CourseCard } from "@/components/home/popular-courses/course-card";
 import { Search } from "@/components/login-signup/signup-steps/search";
 import { PaginationComp } from "@/components/PaginationComp";
+import DataNotFound from "@/components/shared/DataNotFound";
 import {
   Select,
   SelectContent,
@@ -11,13 +12,30 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
+import { useApiQuery } from "@/hooks/useApiQuery";
+import { useEffect, useState } from "react";
 
 export const CoursesClient = () => {
   const [searchQyery, setSearchQyery] = useState("");
-  const [sort, setSort] = useState("new");
+  const [sort, setSort] = useState("desc");
   const [page, setPage] = useState(1);
-  const [pageCount, setPageCount] = useState(2);
+  const [pageCount, setPageCount] = useState(0);
+  const [limit, setLimit] = useState(12);
+
+  const { data, isLoading, error } = useApiQuery({
+    url: `/student/courses?page=${page}&limit=${limit}&search=${searchQyery}&sortOrder=${sort}`,
+    queryKeys: ["courses", page, limit, searchQyery, sort],
+  });
+
+  useEffect(() => {
+    if (data?.pagination) {
+      setPageCount(() => data?.pagination?.totalPages);
+    }
+  }, [data]);
+
+  useScrollToTop(page);
+
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">
       <CustomBreadCrumb
@@ -32,7 +50,11 @@ export const CoursesClient = () => {
           All courses
         </h2>
         <div className="md:hidden">
-          <Select value={sort} onValueChange={(value) => setSort(value)}>
+          <Select
+            key={sort}
+            value={sort}
+            onValueChange={(value) => setSort(value)}
+          >
             <SelectTrigger
               iconClassName="text-white"
               className="py-5 bg-para-3 text-white font-stolzl rounded"
@@ -40,8 +62,8 @@ export const CoursesClient = () => {
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="new">Newly published</SelectItem>
-              <SelectItem value="old">Previously published</SelectItem>
+              <SelectItem value="desc">Newly published</SelectItem>
+              <SelectItem value="asc">Previously published</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -58,7 +80,11 @@ export const CoursesClient = () => {
         />
 
         <div className="hidden md:block">
-          <Select value={sort} onValueChange={(value) => setSort(value)}>
+          <Select
+            key={sort}
+            value={sort}
+            onValueChange={(value) => setSort(value)}
+          >
             <SelectTrigger
               iconClassName="text-white"
               className="py-5 bg-para-3 text-white font-stolzl rounded"
@@ -66,63 +92,33 @@ export const CoursesClient = () => {
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="new">Newly published</SelectItem>
-              <SelectItem value="old">Previously published</SelectItem>
+              <SelectItem value="desc">Newly published</SelectItem>
+              <SelectItem value="asc">Previously published</SelectItem>
             </SelectContent>
           </Select>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
-        <CourseCard
-          src="/course/Data Analysis using Python.png"
-          name="Data Analysis using Python"
-        />
-        <CourseCard
-          src="/course/Data Visualization using Power BI.png"
-          name="Data Visualization using Power BI"
-        />
-        <CourseCard
-          src="/course/Data Visualization using Tableau.png"
-          name="Data Visualization using Tableau"
-        />
-        <CourseCard
-          src="/course/Machine Learning and Artificial Intelligence with Python.png"
-          name="Machine Learning and Artificial Intelligence with Python"
-        />
-        <CourseCard
-          src="/course/Data Analysis using Python.png"
-          name="Data Analysis using Python"
-        />
-        <CourseCard
-          src="/course/Data Visualization using Power BI.png"
-          name="Data Visualization using Power BI"
-        />
-        <CourseCard
-          src="/course/Data Visualization using Tableau.png"
-          name="Data Visualization using Tableau"
-        />
-        <CourseCard
-          src="/course/Machine Learning and Artificial Intelligence with Python.png"
-          name="Machine Learning and Artificial Intelligence with Python"
-        />
-        <CourseCard
-          src="/course/Data Analysis using Python.png"
-          name="Data Analysis using Python"
-        />
-        <CourseCard
-          src="/course/Data Visualization using Power BI.png"
-          name="Data Visualization using Power BI"
-        />
-        <CourseCard
-          src="/course/Data Visualization using Tableau.png"
-          name="Data Visualization using Tableau"
-        />
-        <CourseCard
-          src="/course/Machine Learning and Artificial Intelligence with Python.png"
-          name="Machine Learning and Artificial Intelligence with Python"
-        />
+        {data?.courses.map((course) => (
+          <CourseCard
+            key={course._id}
+            id={course._id}
+            src={course.thumbnail}
+            name={course.title}
+            rating={course.averageRating}
+            duration={course.courseDuration}
+          />
+        ))}
+
+        {isLoading &&
+          Array.from({ length: 4 }).map((_, index) => (
+            <CourseCard.Skeleton key={index} />
+          ))}
       </div>
+      {data?.courses?.length === 0 && !isLoading && (
+        <DataNotFound name="Courses" />
+      )}
 
       <PaginationComp
         page={page}
