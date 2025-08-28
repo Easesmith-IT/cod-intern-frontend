@@ -36,3 +36,11 @@ export function formatMinutes(minutes) {
 export function secondsBetween(date1, date2) {
   return Math.max(Math.floor((new Date(date2) - new Date(date1)) / 1000), 0);
 }
+
+export function getYears(start, end = new Date().getFullYear() + 5) {
+  const years = [];
+  for (let year = start; year <= end; year++) {
+    years.push(year.toString());
+  }
+  return years;
+}

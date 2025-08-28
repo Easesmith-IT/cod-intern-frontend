@@ -1,5 +1,7 @@
 "use client";
 
+import Spinner from "@/components/Spinner";
+import { SuccessModal } from "@/components/success-modal";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,11 +19,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { POST } from "@/constants/apiMethods";
+import { useApiMutation } from "@/hooks/useApiMutation";
+import { readCookie } from "@/lib/readCookie";
+import { getYears } from "@/lib/utils";
 import { ApplyNowSchema } from "@/schemas/ApplyNowSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const ApplyNowForm = () => {
+  const params = useParams();
+  const userInfo = readCookie("userInfo");
+  const years = getYears(2000);
+  const [open, setOpen] = useState(false);
+
   const form = useForm({
     resolver: zodResolver(ApplyNowSchema),
     defaultValues: {
@@ -34,20 +47,56 @@ export const ApplyNowForm = () => {
     },
   });
 
-  const onSubmit = (data) => {
+  const { reset, handleSubmit, control } = form;
+
+  const {
+    mutateAsync: submitForm,
+    isPending: isSubmitFormLoading,
+    data: result,
+  } = useApiMutation({
+    url: "/student/course-applications/create",
+    method: POST,
+    invalidateKey: ["workshop-register"],
+    isToast: false,
+  });
+
+  // console.log("isSubmitFormLoading :", isSubmitFormLoading);
+
+  const onSubmit = async (data) => {
     console.log("data :", data);
+    const apiData = {
+      student: userInfo.id,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      phone: data.phone,
+      email: data.email,
+      education: data.education,
+      graduationYear: data.graduationYear,
+      course: params.courseId,
+    };
+
+    await submitForm(apiData);
   };
+
+  console.log("result", result);
+  useEffect(() => {
+    if (result) {
+      reset();
+      setOpen(true);
+    }
+  }, [result]);
 
   return (
     <div className="max-w-[550px] mx-auto lg:mx-0 rounded-md w-full bg-white relative z-10 p-5">
       <h2 className="font-stolzl text-xl md:text-2xl font-medium">
         Interested? Apply Now
       </h2>
+
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 mt-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 mt-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <FormField
-              control={form.control}
+              control={control}
               name="firstName"
               render={({ field }) => (
                 <FormItem>
@@ -64,7 +113,7 @@ export const ApplyNowForm = () => {
               )}
             />
             <FormField
-              control={form.control}
+              control={control}
               name="lastName"
               render={({ field }) => (
                 <FormItem>
@@ -83,7 +132,7 @@ export const ApplyNowForm = () => {
           </div>
 
           <FormField
-            control={form.control}
+            control={control}
             name="phone"
             render={({ field }) => (
               <FormItem>
@@ -101,7 +150,7 @@ export const ApplyNowForm = () => {
             )}
           />
           <FormField
-            control={form.control}
+            control={control}
             name="email"
             render={({ field }) => (
               <FormItem>
@@ -121,42 +170,43 @@ export const ApplyNowForm = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <FormField
-              control={form.control}
+              control={control}
               name="education"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel></FormLabel>
                   <FormControl>
-                    <Select>
-                      <SelectTrigger className="w-full py-5 bg-[#FDFBFF] data-[placeholder]:text-[#00000066] font-medium border-[#9237E347] rounded">
-                        <SelectValue placeholder="Education" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="b-tech">B-Tech</SelectItem>
-                        <SelectItem value="b-ca">B-CA</SelectItem>
-                        <SelectItem value="b-cs">B-CS</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <Input
+                      placeholder="Education"
+                      className={`placeholder:text-[#00000066] bg-[#FDFBFF] border-[#9237E347] font-stolzl rounded py-5`}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
             <FormField
-              control={form.control}
+              control={control}
               name="graduationYear"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel></FormLabel>
                   <FormControl>
-                    <Select>
+                    <Select
+                      key={field.value}
+                      value={field.value}
+                      onValueChange={field.onChange}
+                    >
                       <SelectTrigger className="w-full py-5 bg-[#FDFBFF] border-[#9237E347] font-stolzl rounded">
                         <SelectValue placeholder="Graduation Year" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="2026">2026</SelectItem>
-                        <SelectItem value="2027">2027</SelectItem>
-                        <SelectItem value="2028">2028</SelectItem>
+                        {years.map((year) => (
+                          <SelectItem key={year} value={year}>
+                            {year}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </FormControl>
@@ -171,11 +221,20 @@ export const ApplyNowForm = () => {
             size="lg"
             type="submit"
             variant="linearGradient"
+            disabled={isSubmitFormLoading}
           >
-            Apply Now
+            {isSubmitFormLoading ? <Spinner /> : "Apply Now"}
           </Button>
         </form>
       </Form>
+
+      {open && (
+        <SuccessModal
+          open={open}
+          setOpen={setOpen}
+          desc={`Thank you, ${result?.application?.firstName} ${result?.application?.lastName}. Your course application has been submitted successfully.`}
+        />
+      )}
     </div>
   );
 };

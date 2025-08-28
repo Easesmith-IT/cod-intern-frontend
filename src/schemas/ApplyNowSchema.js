@@ -21,5 +21,5 @@ export const ApplyNowSchema = z.object({
 
   graduationYear: z
     .string()
-    .regex(/^\d{4}$/, { message: "Graduation year must be a 4-digit number" }),
+    .min(4, { message: "Graduation year must be a 4-digit number" }),
 });

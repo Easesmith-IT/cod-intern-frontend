@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const GloballyRecognized = () => {
@@ -64,7 +65,9 @@ export const GloballyRecognized = () => {
             variant="linearGradient"
             className="rounded-sm px-3 h-10 sm:px-5 sm:h-12 mt-10 text-xs md:text-sm"
           >
+            <Link href="#course-hero-section">
             Inquire Now
+            </Link>
           </Button>
         </div>
         <div className="flex gap-5">

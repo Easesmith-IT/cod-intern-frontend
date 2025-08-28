@@ -6,8 +6,10 @@ import Image from "next/image";
 export const HeroSection = ({ course }) => {
   return (
     <section
+    id="course-hero-section"
       style={{ backgroundImage: "url(/hero-bg.svg)" }}
       // className="h-[600px]"
+      className="scroll-mt-40"
     >
       <div className="section-container relative flex flex-col lg:flex-row items-center lg:items-center gap-10 lg:gap-5 py-10">
         <HeroSectionContent course={course} />

@@ -2,7 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { Info } from "./info";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 export const CourseCard = ({ course }) => {
   const {
@@ -22,13 +23,19 @@ export const CourseCard = ({ course }) => {
 
   return (
     <div className="shadow-[0px_8px_25px_0px_#0000001A] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 lg:gap-0 p-3 rounded-md">
-      <Image
-        src={thumbnail || "/course-img.jpg"}
-        className="w-full rounded-md"
-        width={453}
-        height={127}
-        alt="course-img"
-      />
+      {thumbnail ? (
+        <Image
+          src={thumbnail || "/course-img.jpg"}
+          className="w-full rounded-md"
+          width={453}
+          height={127}
+          alt="course-img"
+        />
+      ) : (
+        <div className="w-full max-w-[453px] bg-gray-100 rounded-lg flex items-center justify-center">
+          <BookOpen className="h-12 w-12 text-gray-400" />
+        </div>
+      )}
       <div className="mt-2 px-2">
         <div className="flex justify-between items-center gap-4 mb-4">
           <h3 className="font-stolzl text-sm sm:text-base font-medium">
@@ -93,9 +100,12 @@ export const CourseCard = ({ course }) => {
         className="mt-4 rounded w-full"
         size="xl"
         variant="linearGradient"
+        asChild
       >
-        <span>Talk to Your Adviser</span>
-        <ArrowRight />
+        <Link href="#course-hero-section">
+          <span>Talk to Your Adviser</span>
+          <ArrowRight />
+        </Link>
       </Button>
     </div>
   );
