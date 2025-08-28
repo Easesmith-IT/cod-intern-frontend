@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import {
@@ -7,8 +9,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { SingleCard } from "./single-card";
+import { useApiQuery } from "@/hooks/useApiQuery";
 
 export const AccelerateYourCareer = () => {
+  const { data, isLoading, error } = useApiQuery({
+    url: `/student/courses?page=${1}&limit=${6}&status=published`,
+    queryKeys: ["courses"],
+  });
+
+  console.log("courses", data?.courses);
+
   return (
     <section className="py-12 md:py-24 section-container md:px-20">
       <div className="flex justify-center text-center section-container px-0 max-w-[900px]">
@@ -27,7 +37,26 @@ export const AccelerateYourCareer = () => {
 
       <Carousel className="max-w-6xl mx-auto w-full">
         <CarouselContent className="mt-10">
-          <SingleCard
+          {data?.courses.map((course, index) => (
+            <SingleCard
+              index={index}
+              title={course.title}
+              desc={course.description}
+              id={course._id}
+              brochure={course.brochure}
+              // timing="8-10 Months Campus & Online Training"
+              timing={course.courseDuration}
+              thumbnail={course.thumbnail}
+              integratedInternship={course.integratedInternship}
+              interviews={course.interviews}
+            />
+          ))}
+
+          {isLoading &&
+            Array.from({ length: 4 }).map((_, index) => (
+              <SingleCard.Skeleton key={index} />
+            ))}
+          {/* <SingleCard
             index={0}
             title="Data Science & Analytics with AI"
             desc="Analyze data and build AI models using Python, SQL, and machine learning techniques."
@@ -62,20 +91,24 @@ export const AccelerateYourCareer = () => {
             title="Software Testing With AI"
             desc="Test software quality with manual methods and automation tools like Selenium and JIRA"
             timing="4-6 Months Campus & Online Training"
-          />
+          /> */}
         </CarouselContent>
-        <CarouselPrevious
-          className="hidden md:block [&_svg]:translate-x-1"
-          variant="default"
-        />
-        <CarouselNext
-          className="hidden md:block [&_svg]:translate-x-1"
-          variant="default"
-        />
-        <div className="md:hidden mt-10 max-w-[200px] mx-auto px-6 flex justify-between">
-          <CarouselPrevious className="static" variant="default" />
-          <CarouselNext className="static" variant="default" />
-        </div>
+        {data?.courses.length > 3 && (
+          <>
+            <CarouselPrevious
+              className="hidden md:block [&_svg]:translate-x-1"
+              variant="default"
+            />
+            <CarouselNext
+              className="hidden md:block [&_svg]:translate-x-1"
+              variant="default"
+            />
+            <div className="md:hidden mt-10 max-w-[200px] mx-auto px-6 flex justify-between">
+              <CarouselPrevious className="static" variant="default" />
+              <CarouselNext className="static" variant="default" />
+            </div>
+          </>
+        )}
       </Carousel>
     </section>
   );

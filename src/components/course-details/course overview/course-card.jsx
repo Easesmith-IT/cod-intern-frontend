@@ -9,8 +9,8 @@ export const CourseCard = ({ course }) => {
     thumbnail,
     instructors,
     venue,
-    studentBenefits,
-    courseHighlights,
+    courseDuration,
+    totalLessons,
     batches,
     pricing,
     savedAmount,
@@ -23,7 +23,7 @@ export const CourseCard = ({ course }) => {
   return (
     <div className="shadow-[0px_8px_25px_0px_#0000001A] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 lg:gap-0 p-3 rounded-md">
       <Image
-        src={thumbnail}
+        src={thumbnail || "/course-img.jpg"}
         className="w-full rounded-md"
         width={453}
         height={127}
@@ -48,20 +48,25 @@ export const CourseCard = ({ course }) => {
           src="/instructor.svg"
           alt="Instructor"
           title="Instructor"
-          desc={instructorsNames.join(", ")}
+          desc={instructorsNames.join(", ") || "NA"}
         />
-        <Info src="/lessons.svg" alt="Lessons" title="Lessons" desc="35" />
+        <Info
+          src="/lessons.svg"
+          alt="Lessons"
+          title="Lessons"
+          desc={totalLessons || "NA"}
+        />
         <Info
           src="/duration.svg"
           alt="Duration"
           title="Duration"
-          desc="5 Days"
+          desc={courseDuration || "NA"}
         />
         <Info
           src="/enrolled.svg"
           alt="Enrolled"
           title="Enrolled"
-          desc="50 Students"
+          desc="0 Students"
         />
         <Info src="/venue.svg" alt="Venue" title="Venue" desc={venue} />
       </div>

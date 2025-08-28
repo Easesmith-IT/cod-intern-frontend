@@ -10,7 +10,10 @@ export const CourseOverview = ({ course }) => {
     <section className="section-container grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 pt-12 md:pt-24">
       <div className="w-full">
         <CourseOverviewSection course={course} />
-        <WhatCourseIncludes modules={course.modules} />
+        <WhatCourseIncludes
+          modules={course.modules}
+          syllabusFile={course.syllabusFile}
+        />
       </div>
       <div>
         <CourseCard course={course} />

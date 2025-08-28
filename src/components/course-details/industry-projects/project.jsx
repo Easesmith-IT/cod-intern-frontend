@@ -14,7 +14,7 @@ export const Project = ({ project }) => {
         <Card className="border-border-1 rounded">
           <CardContent className="px-0">
             <div className="px-6 flex justify-center">
-              <Image src={icon} width={74} height={60} alt="icon" />
+              <Image src={icon} width={74} height={60} className="w-full" alt="icon" />
             </div>
             <Separator className="my-4 bg-border-1" />
             <div className="px-6">
@@ -33,14 +33,15 @@ export const Project = ({ project }) => {
             <Separator className="mt-4 bg-border-1" />
           </CardContent>
 
-          <CardFooter className="flex justify-center flex-wrap">
-            {tools.map((tool)=>(
-
-              <div className="px-3 py-0.5 text-xs sm:text-base font-medium rounded-md bg-[#9237E31A] text-main uppercase">
-              {tool}
-            </div>
-            ))
-            }
+          <CardFooter className="flex justify-center flex-wrap gap-2">
+            {tools.map((tool) => (
+              <div
+                key={tool}
+                className="px-3 py-0.5 text-xs sm:text-sm font-medium rounded-md bg-[#9237E31A] text-main uppercase"
+              >
+                {tool}
+              </div>
+            ))}
           </CardFooter>
         </Card>
       </div>

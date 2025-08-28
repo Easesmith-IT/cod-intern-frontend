@@ -20,8 +20,8 @@ export const PopularCourses = () => {
   const [selectedCategory, setSelectedCategory] = useState("Web Development");
 
   const { data, isLoading, error } = useApiQuery({
-    url: `/student/courses?page=${1}&limit=${4}&category=${selectedCategory}`,
-    queryKeys: ["courses"],
+    url: `/student/courses?page=${1}&limit=${4}&category=${selectedCategory}&status=published`,
+    queryKeys: ["courses", selectedCategory],
   });
 
   return (

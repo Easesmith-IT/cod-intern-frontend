@@ -4,11 +4,22 @@ import { CounterItem, CounterSeperator } from "@/components/counter/counter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
+import { Skeleton } from "@/components/ui/skeleton";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import Image from "next/image";
 import Link from "next/link";
 
-export const SingleCard = ({ index, title, desc, timing }) => {
+export const SingleCard = ({
+  index,
+  title,
+  desc,
+  timing,
+  id,
+  brochure,
+  thumbnail,
+  integratedInternship,
+  interviews,
+}) => {
   const { days, hours, minutes, seconds } = usePersistentCountdown();
 
   return (
@@ -16,50 +27,8 @@ export const SingleCard = ({ index, title, desc, timing }) => {
       <div className="p-1">
         <Card className="border-border-1 rounded-lg pt-0 h-[600px] sm:h-[650px] lg:h-[550px]">
           <CardContent className="px-0 relative">
-            {/* <div className="px-6">
-              <div className="flex gap-4 justify-between items-center">
-                <div>
-                  <p className="text-para-1 font-book font-stolzl text-xs">
-                    Next batch starts in
-                  </p>
-                  <div className="flex items-center font-stolzl font-normal mt-2">
-                    <div className="flex justify-center border w-7 h-7 text-sm rounded items-center p-2">
-                      6
-                    </div>
-                    <p className="px-2">:</p>
-                    <div className="flex justify-center border w-7 h-7 text-sm rounded items-center p-2">
-                      23
-                    </div>
-                    <p className="px-2">:</p>
-                    <div className="flex justify-center border w-7 h-7 text-sm rounded items-center p-2">
-                      59
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-2 text-main border-[#9237E333] flex gap-2 items-center rounded px-2 py-1 text-xs font-stolzl font-normal">
-                  2 seats left
-                </div>
-              </div>
-
-              <Image
-                className="my-6 mx-auto"
-                src="Frame.svg"
-                width={83}
-                height={83}
-                alt="frame"
-              />
-
-              <div className="flex gap-2">
-                <Tech title="Tesseract OCR" />
-                <Tech title="Tableau" />
-                <Tech title="NumPy" />
-                <Tech title="Tensorflow" />
-                <Tech title="Excel" />
-              </div>
-            </div> */}
             <Image
-              src={`/course/${index + 1}.png`}
+              src={thumbnail || `/course/${index + 1}.png`}
               width={360}
               height={400}
               className="w-full rounded-tl-[6px] rounded-tr-[6px]"
@@ -89,12 +58,16 @@ export const SingleCard = ({ index, title, desc, timing }) => {
             {/* <Separator className="my-4 bg-border-1" /> */}
             <div className="px-6 mt-4">
               <div className="flex gap-2 items-start">
-                <div className="border-2 bg-[#9237E305] text-[8px] sm:text-[10px] text-main uppercase border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 font-stolzl font-normal">
-                  Unlimited Interviews
-                </div>
-                <div className="border-2 bg-[#9237E305] text-[8px] sm:text-[10px] text-main border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 font-stolzl font-normal">
-                  INTEGRATED INTERNSHIP
-                </div>
+                {interviews && (
+                  <div className="border-2 bg-[#9237E305] text-[8px] sm:text-[10px] text-main uppercase border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 font-stolzl font-normal">
+                    {interviews} Interviews
+                  </div>
+                )}
+                {integratedInternship?.hasInternship && (
+                  <div className="border-2 bg-[#9237E305] text-[8px] sm:text-[10px] text-main border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 font-stolzl font-normal">
+                    INTEGRATED INTERNSHIP
+                  </div>
+                )}
               </div>
               <h3 className="text-lg font-stolzl font-medium mt-2">{title}</h3>
               <p className="text-para text-xs font-stolzl font-book mt-4">
@@ -131,8 +104,17 @@ export const SingleCard = ({ index, title, desc, timing }) => {
               size="lg"
               variant="outline"
               className="rounded-sm text-xs sm:text-sm break-all px-5 h-12"
+              asChild
             >
-              Download Brochure
+              <a
+                href={brochure} // replace with your syllabus file URL
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-auto"
+              >
+                Download Brochure
+              </a>
             </Button>
             <Button
               size="lg"
@@ -140,7 +122,7 @@ export const SingleCard = ({ index, title, desc, timing }) => {
               className="rounded-sm text-xs sm:text-sm px-5 h-12"
               asChild
             >
-              <Link href="/courses/123">
+              <Link href={`/courses/${id}`}>
                 <span>Know More</span>
               </Link>
             </Button>
@@ -152,6 +134,56 @@ export const SingleCard = ({ index, title, desc, timing }) => {
           height={800}
           alt="course"
         /> */}
+      </div>
+    </CarouselItem>
+  );
+};
+
+SingleCard.Skeleton = function SingleCardSkeleton() {
+  return (
+    <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+      <div className="p-1">
+        <Card className="border-border-1 rounded-lg pt-0 h-[600px] sm:h-[650px] lg:h-[550px]">
+          <CardContent className="px-0 relative">
+            {/* Banner image */}
+            <Skeleton className="w-full h-[200px] rounded-tl-[6px] rounded-tr-[6px]" />
+
+            {/* Countdown badge */}
+            <div className="absolute top-4 left-4 space-y-1">
+              <Skeleton className="h-3 w-24" />
+              <div className="flex gap-1">
+                <Skeleton className="h-4 w-6" />
+                <Skeleton className="h-4 w-6" />
+                <Skeleton className="h-4 w-6" />
+              </div>
+            </div>
+
+            {/* Content section */}
+            <div className="px-6 mt-4 space-y-3">
+              <div className="flex gap-2">
+                <Skeleton className="h-5 w-24 rounded-sm" />
+                <Skeleton className="h-5 w-32 rounded-sm" />
+              </div>
+              <Skeleton className="h-6 w-3/4" />
+              <Skeleton className="h-3 w-full" />
+              <Skeleton className="h-3 w-2/3" />
+
+              <div className="flex gap-2 items-center mt-4">
+                <Skeleton className="h-4 w-4 rounded-full" />
+                <Skeleton className="h-3 w-28" />
+              </div>
+              <div className="flex gap-2 items-center">
+                <Skeleton className="h-4 w-4 rounded-full" />
+                <Skeleton className="h-3 w-36" />
+              </div>
+            </div>
+          </CardContent>
+
+          <CardFooter className="grid max-[1024px]:grid-cols-2 max-[1024px]:gap-5 max-[376px]:grid-cols-1 max-[376px]:gap-3 min-[1024px]:grid-cols-1 min-[1024px]:gap-5 xl:grid-cols-[60%_38%] xl:gap-[2%] sm:grid-cols-1">
+            <Skeleton className="h-12 w-full rounded-sm" />
+            <Skeleton className="h-12 w-full rounded-sm" />
+          </CardFooter>
+        </Card>
       </div>
     </CarouselItem>
   );

@@ -15,7 +15,7 @@ export const Module = ({ title, duration, list }) => {
         onClick={() => setIsOpen(!isOpen)}
         variant="secondary"
         className={cn(
-          "h-12 rounded flex justify-between bg-transparent border w-full items-center gap-5",
+          "h-auto rounded flex flex-wrap justify-between bg-transparent border w-full items-center gap-5",
           isOpen && "bg-para-3 hover:bg-para-3 text-white"
         )}
       >
@@ -26,14 +26,14 @@ export const Module = ({ title, duration, list }) => {
             height={23}
             alt="Homework"
           />
-          <h3 className="font-stolzl font-medium">{title}</h3>
+          <h3 className="font-stolzl font-medium truncate">{title}</h3>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex gap-2 items-center">
             <Clock4 />
             <p className="font-stolzl font-normal text-xs sm:text-sm">{duration}</p>
           </div>
-          <div className="w-7 h-7">
+          <div className="w-7 h-7 flex justify-center items-center">
             {isOpen ? (
               <EyeOff className="text-white size-5 sm:size-6" />
             ) : (

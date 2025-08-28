@@ -77,7 +77,7 @@ export const HeroSectionContent = ({ course }) => {
       <h1 className="font-stolzl text-3xl leading-10 md:leading-14 md:text-5xl font-bold text-heading mt-8 max-w-[700px]">
         {title}
       </h1>
-      <p className="font-stolzl text-para font-normal mt-5 text-sm md:text-base">
+      <p className="font-stolzl text-para font-normal mt-5 text-sm md:text-base max-w-3xl">
         {description}
       </p>
 

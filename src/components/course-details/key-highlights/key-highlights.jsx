@@ -11,7 +11,7 @@ import Image from "next/image";
 import { KeyHighlight } from "./key-highlight";
 import highlights from "@/data/highlights.json";
 
-export const KeyHighlights = () => {
+export const KeyHighlights = ({title}) => {
   return (
     <section
       id="key-highlights"
@@ -21,8 +21,8 @@ export const KeyHighlights = () => {
         <div className="flex justify-between items-center gap-5">
           <div>
             <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium max-w-[788px]">
-              <span className="text-main">What Makes Our</span> Data Science &
-              AI Course Stand Out
+              <span className="text-main">What Makes Our</span> {title} Course
+              Stand Out
               <Image
                 src="/ellipse-group.svg"
                 className="inline-block ml-2"

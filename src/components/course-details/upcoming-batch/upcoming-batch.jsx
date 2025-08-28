@@ -1,10 +1,24 @@
 import { CounterItem, CounterSeperator } from "@/components/counter/counter";
 import { Button } from "@/components/ui/button";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
+import { secondsBetween } from "@/lib/utils";
 import Image from "next/image";
 
-export const UpcomingBatch = () => {
-  const { days, hours, minutes, seconds } = usePersistentCountdown();
+export const UpcomingBatch = ({ batches = [], title }) => {
+  const upcomingBatch = batches.find((batch) => batch.status === "upcoming");
+
+  if (!upcomingBatch) {
+    return null;
+  }
+
+  const { name, startDate } = upcomingBatch;
+
+  const durationInSeconds = secondsBetween(Date.now(), startDate);
+
+  const { days, hours, minutes, seconds } = usePersistentCountdown({
+    durationInSeconds,
+    expiryKey: "batchCountdown",
+  });
 
   return (
     <section className="section-container py-12 md:py-24">
@@ -36,7 +50,7 @@ export const UpcomingBatch = () => {
             className="absolute -bottom-4 -left-4 z-0"
           />
           <div className="bg-white text-para-3 rounded-2xl px-4 py-1 absolute top-3 left-3 z-[3] text-xs sm:text-sm font-stolzl">
-            Data Science and AI Course
+            {title} Course
           </div>
         </div>
         <div className="">

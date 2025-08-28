@@ -24,7 +24,7 @@ export const CoursesClient = () => {
   const [limit, setLimit] = useState(12);
 
   const { data, isLoading, error } = useApiQuery({
-    url: `/student/courses?page=${page}&limit=${limit}&search=${searchQyery}&sortOrder=${sort}`,
+    url: `/student/courses?page=${page}&limit=${limit}&search=${searchQyery}&sortOrder=${sort}&status=published`,
     queryKeys: ["courses", page, limit, searchQyery, sort],
   });
 

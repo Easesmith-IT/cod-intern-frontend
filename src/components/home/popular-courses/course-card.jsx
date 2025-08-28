@@ -11,7 +11,7 @@ export const CourseCard = ({
   name,
   src,
   rating = 0,
-  students = 60,
+  students = 0,
   id,
   duration,
 }) => {
@@ -51,13 +51,13 @@ export const CourseCard = ({
             <div className="flex gap-1.5 items-center">
               <Image src="/file.svg" width={10} height={10} alt="file" />
               <p className="text-para-2 font-normal font-stolzl text-xs">
-                {duration}
+                {duration || "NA"}
               </p>
             </div>
             <div className="flex gap-1.5 items-center">
               <Image src="/user.svg" width={10} height={10} alt="file" />
               <p className="text-para-2 font-normal font-stolzl text-xs">
-                Students {students}+
+                Students {students}{students.length > 0 && "+"}
               </p>
             </div>
           </div>

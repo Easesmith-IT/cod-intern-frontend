@@ -27,7 +27,7 @@ const CourseDetails = () => {
     queryKeys: ["courses", params.courseId],
   });
 
-  const course = data?.course || ""
+  const course = data?.course || "";
 
   console.log("course", data?.course);
 
@@ -43,10 +43,10 @@ const CourseDetails = () => {
           <CourseOverview course={course} />
           {/* <TopCompanies /> comment this */}
           <IndustryProjects projects={course.projects} />
-          <KeyHighlights />
+          <KeyHighlights title={course.title} />
           <GloballyRecognized />
           <LearningToCareer />
-          <UpcomingBatch />
+          <UpcomingBatch batches={course.batches} title={course.title} />
           <PopularCourses />
           <BecomeProjectManager />
           <ThreeStepApproach />
