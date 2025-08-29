@@ -53,7 +53,7 @@ const CourseDetails = () => {
           <BenifitsOfCourse />
           <LearnersStories />
           <Mentors />
-          <FAQs />
+          <FAQs category="Courses" courseId={course._id} />
         </>
       )}
     </main>
