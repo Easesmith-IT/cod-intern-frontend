@@ -6,8 +6,11 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
+import { readCookie } from "@/lib/readCookie";
+import { secondsBetween } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { toast } from "sonner";
 
 export const SingleCard = ({
   index,
@@ -19,8 +22,42 @@ export const SingleCard = ({
   thumbnail,
   integratedInternship,
   interviews,
+  batches
 }) => {
-  const { days, hours, minutes, seconds } = usePersistentCountdown();
+  const upcomingBatch = batches.find((batch) => batch.status === "upcoming");
+
+  if (!upcomingBatch) {
+    return null;
+  }
+
+  const { name, startDate } = upcomingBatch;
+  const durationInSeconds = secondsBetween(Date.now(), startDate);
+
+  const { days, hours, minutes, seconds } = usePersistentCountdown({
+    durationInSeconds,
+    expiryKey: "batchCountdown",
+  });
+
+  const handleDownload = (e) => {
+    e.preventDefault();
+
+    const userInfo = readCookie("userInfo");
+    const isLoggedIn = userInfo.id;
+
+    if (!isLoggedIn) {
+      toast.error("Please log in to download the brochure.");
+      // Or redirect to login page
+      return;
+    }
+
+    // If logged in, trigger download
+    const link = document.createElement("a");
+    link.href = brochure;
+    link.setAttribute("download", "brochure.pdf"); // file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
@@ -39,6 +76,11 @@ export const SingleCard = ({
                 Next batch started in:
               </p>
               <div className="flex items-center font-stolzl text-xs md:text-base -mt-0.5">
+                <CounterItem
+                  value={`${days} days`}
+                  className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
+                />
+                <CounterSeperator className="text-white px-1" />
                 <CounterItem
                   value={`${hours} hrs`}
                   className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
@@ -69,8 +111,10 @@ export const SingleCard = ({
                   </div>
                 )}
               </div>
-              <h3 className="text-lg font-stolzl font-medium mt-2">{title}</h3>
-              <p className="text-para text-xs font-stolzl font-book mt-4">
+              <h3 className="text-lg font-stolzl font-medium mt-2 line-clamp-1">
+                {title}
+              </h3>
+              <p className="text-para text-xs font-stolzl font-book mt-4 line-clamp-2">
                 {desc}
               </p>
 
@@ -104,17 +148,18 @@ export const SingleCard = ({
               size="lg"
               variant="outline"
               className="rounded-sm text-xs sm:text-sm break-all px-5 h-12"
-              asChild
+              // asChild
+              onClick={handleDownload}
             >
-              <a
+              Download Brochure
+              {/* <a
                 href={brochure} // replace with your syllabus file URL
                 download
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-auto"
-              >
-                Download Brochure
-              </a>
+              > */}
+              {/* </a> */}
             </Button>
             <Button
               size="lg"

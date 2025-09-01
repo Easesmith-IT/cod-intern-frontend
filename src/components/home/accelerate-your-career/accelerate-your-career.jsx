@@ -49,6 +49,7 @@ export const AccelerateYourCareer = () => {
               thumbnail={course.thumbnail}
               integratedInternship={course.integratedInternship}
               interviews={course.interviews}
+              batches={course.batches}
             />
           ))}
 
