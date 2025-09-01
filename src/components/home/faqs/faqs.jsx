@@ -12,6 +12,7 @@ import {
 import { Faq } from "./faq";
 import faqs from "@/data/faqs.json";
 import { useApiQuery } from "@/hooks/useApiQuery";
+import CustomMessage from "@/components/shared/custom-message";
 
 export const FAQs = ({ courseId = "", category = "General" }) => {
   const { data, isLoading, error } = useApiQuery({
@@ -46,6 +47,8 @@ export const FAQs = ({ courseId = "", category = "General" }) => {
                   ans={faq.answer}
                 />
               ))}
+
+              {data?.faqs.length === 0 && !isLoading && <CustomMessage message="Faqs not added yet." />}
               {/* <AccordionItem
                 className="max-w-[900px] shadow-[0px_0px_10px_0px_#00000016] rounded-xl"
                 value={`item-${faqs.length}`}
