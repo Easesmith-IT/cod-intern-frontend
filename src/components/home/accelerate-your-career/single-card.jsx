@@ -26,15 +26,15 @@ export const SingleCard = ({
 }) => {
   const upcomingBatch = batches.find((batch) => batch.status === "upcoming");
 
-  if (!upcomingBatch) {
-    return null;
-  }
+  // if (!upcomingBatch) {
+  //   return null;
+  // }
 
-  const { name, startDate } = upcomingBatch;
+  const { name, startDate } = upcomingBatch || {};
   const durationInSeconds = secondsBetween(Date.now(), startDate);
 
   const { days, hours, minutes, seconds } = usePersistentCountdown({
-    durationInSeconds,
+    durationInSeconds:durationInSeconds|| 2000,
     expiryKey: "batchCountdown",
   });
 
@@ -71,7 +71,7 @@ export const SingleCard = ({
               className="w-full rounded-tl-[6px] rounded-tr-[6px]"
               alt="course"
             />
-            <div className="absolute top-4 left-4">
+            {upcomingBatch && <div className="absolute top-4 left-4">
               <p className="font-stolzl text-xs text-white font-book">
                 Next batch started in:
               </p>
@@ -96,7 +96,7 @@ export const SingleCard = ({
                   className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
                 />
               </div>
-            </div>
+            </div>}
             {/* <Separator className="my-4 bg-border-1" /> */}
             <div className="px-6 mt-4">
               <div className="flex gap-2 items-start">

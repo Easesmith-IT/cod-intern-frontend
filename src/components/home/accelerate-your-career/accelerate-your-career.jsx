@@ -10,14 +10,15 @@ import {
 } from "@/components/ui/carousel";
 import { SingleCard } from "./single-card";
 import { useApiQuery } from "@/hooks/useApiQuery";
+import CustomMessage from "@/components/shared/custom-message";
 
 export const AccelerateYourCareer = () => {
   const { data, isLoading, error } = useApiQuery({
-    url: `/student/courses?page=${1}&limit=${6}&status=published`,
+    url: `/student/courses?page=${1}&limit=${6}&status=published&isFastTrack=true`,
     queryKeys: ["courses"],
   });
 
-  console.log("courses", data?.courses);
+  console.log("courses AccelerateYourCareer", data);
 
   return (
     <section className="py-12 md:py-24 section-container md:px-20">
@@ -37,8 +38,9 @@ export const AccelerateYourCareer = () => {
 
       <Carousel className="max-w-6xl mx-auto w-full">
         <CarouselContent className="mt-10">
-          {data?.courses.map((course, index) => (
+          {data?.courses?.map((course, index) => (
             <SingleCard
+              key={index}
               index={index}
               title={course.title}
               desc={course.description}
@@ -111,6 +113,10 @@ export const AccelerateYourCareer = () => {
           </>
         )}
       </Carousel>
+
+      {data?.courses.length === 0 && !isLoading && (
+        <CustomMessage message="Courses not found" />
+      )}
     </section>
   );
 };
