@@ -46,8 +46,8 @@ export const AccelerateYourCareer = () => {
               desc={course.description}
               id={course._id}
               brochure={course.brochure}
-              // timing="8-10 Months Campus & Online Training"
-              timing={course.courseDuration}
+              timing={course.classTiming}
+              courseDuration={course.courseDuration}
               thumbnail={course.thumbnail}
               integratedInternship={course.integratedInternship}
               interviews={course.interviews}

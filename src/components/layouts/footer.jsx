@@ -166,7 +166,7 @@ export const Footer = () => {
           </div>
           <div className="flex gap-4">
             <Link
-              href="#"
+              href="/privacy-policy"
               className="font-stolzl hover:underline font-book text-sm text-white"
             >
               Privacy Policy

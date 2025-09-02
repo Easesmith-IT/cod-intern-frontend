@@ -15,6 +15,7 @@ export const CourseCard = ({ course }) => {
     batches,
     pricing,
     savedAmount,
+    studentCount,
   } = course;
 
   const instructorsNames = instructors.map(
@@ -73,7 +74,7 @@ export const CourseCard = ({ course }) => {
           src="/enrolled.svg"
           alt="Enrolled"
           title="Enrolled"
-          desc="0 Students"
+          desc={`${studentCount} Students`}
         />
         <Info src="/venue.svg" alt="Venue" title="Venue" desc={venue} />
       </div>

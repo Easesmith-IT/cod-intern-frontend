@@ -80,6 +80,7 @@ export const PopularCourses = () => {
             name={course.title}
             rating={course.averageRating}
             duration={course.courseDuration}
+            students={course.studentCount}
           />
         ))}
 

@@ -17,12 +17,13 @@ export const SingleCard = ({
   title,
   desc,
   timing,
+  courseDuration,
   id,
   brochure,
   thumbnail,
   integratedInternship,
   interviews,
-  batches
+  batches,
 }) => {
   const upcomingBatch = batches.find((batch) => batch.status === "upcoming");
 
@@ -34,7 +35,7 @@ export const SingleCard = ({
   const durationInSeconds = secondsBetween(Date.now(), startDate);
 
   const { days, hours, minutes, seconds } = usePersistentCountdown({
-    durationInSeconds:durationInSeconds|| 2000,
+    durationInSeconds: durationInSeconds || 2000,
     expiryKey: "batchCountdown",
   });
 
@@ -71,32 +72,34 @@ export const SingleCard = ({
               className="w-full rounded-tl-[6px] rounded-tr-[6px]"
               alt="course"
             />
-            {upcomingBatch && <div className="absolute top-4 left-4">
-              <p className="font-stolzl text-xs text-white font-book">
-                Next batch started in:
-              </p>
-              <div className="flex items-center font-stolzl text-xs md:text-base -mt-0.5">
-                <CounterItem
-                  value={`${days} days`}
-                  className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
-                />
-                <CounterSeperator className="text-white px-1" />
-                <CounterItem
-                  value={`${hours} hrs`}
-                  className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
-                />
-                <CounterSeperator className="text-white px-1" />
-                <CounterItem
-                  value={`${minutes} mins`}
-                  className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
-                />
-                <CounterSeperator className="text-white px-1" />
-                <CounterItem
-                  value={`${seconds} sec`}
-                  className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
-                />
+            {upcomingBatch && (
+              <div className="absolute top-4 left-4">
+                <p className="font-stolzl text-xs text-white font-book">
+                  Next batch started in:
+                </p>
+                <div className="flex items-center font-stolzl text-xs md:text-base -mt-0.5">
+                  <CounterItem
+                    value={`${days} days`}
+                    className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
+                  />
+                  <CounterSeperator className="text-white px-1" />
+                  <CounterItem
+                    value={`${hours} hrs`}
+                    className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
+                  />
+                  <CounterSeperator className="text-white px-1" />
+                  <CounterItem
+                    value={`${minutes} mins`}
+                    className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
+                  />
+                  <CounterSeperator className="text-white px-1" />
+                  <CounterItem
+                    value={`${seconds} sec`}
+                    className="border-none text-white md:w-auto md:h-auto p-0 text-xs"
+                  />
+                </div>
               </div>
-            </div>}
+            )}
             {/* <Separator className="my-4 bg-border-1" /> */}
             <div className="px-6 mt-4">
               <div className="flex gap-2 items-start">
@@ -126,7 +129,7 @@ export const SingleCard = ({
                   alt="map-pin"
                 />
                 <p className="font-stolzl font-book text-para text-xs sm:text-sm">
-                  {timing}
+                  {courseDuration}
                 </p>
               </div>
               <div className="mt-2 flex gap-2 items-center">
@@ -137,7 +140,7 @@ export const SingleCard = ({
                   alt="map-pin"
                 />
                 <p className="font-stolzl font-book text-para text-xs sm:text-sm">
-                  Weekday and Weekend Batches
+                  {timing}
                 </p>
               </div>
             </div>

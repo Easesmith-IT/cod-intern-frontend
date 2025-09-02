@@ -1,3 +1,4 @@
+import { Rating } from "@/components/rating";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -6,6 +7,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ReactStars from "react-stars";
 
 export const CourseCard = ({
   name,
@@ -27,7 +29,7 @@ export const CourseCard = ({
         />
         <div className="px-3 mt-3">
           <div className="flex gap-1 items-center">
-            <div className="flex items-center gap-0.5">
+            {/* <div className="flex items-center gap-0.5">
               {Array.from({ length: 5 }).map((_, index) => (
                 <Image
                   key={index}
@@ -38,7 +40,15 @@ export const CourseCard = ({
                   alt="star"
                 />
               ))}
-            </div>
+            </div> */}
+            {/* <Rating rating={rating} size={20} /> */}
+            <ReactStars
+              count={5}
+              size={24}
+              color2={"#ffd700"}
+              edit={false}
+              value={rating}
+            />
             <p className="text-para-2 font-book font-stolzl text-xs">
               ({rating})
             </p>
@@ -57,7 +67,8 @@ export const CourseCard = ({
             <div className="flex gap-1.5 items-center">
               <Image src="/user.svg" width={10} height={10} alt="file" />
               <p className="text-para-2 font-normal font-stolzl text-xs">
-                Students {students}{students.length > 0 && "+"}
+                Students {students}
+                {/* {students.length > 0 && "+"} */}
               </p>
             </div>
           </div>
