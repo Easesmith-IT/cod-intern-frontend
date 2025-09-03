@@ -33,7 +33,7 @@ export const CourseCard = ({ course }) => {
           alt="course-img"
         />
       ) : (
-        <div className="w-full max-w-[453px] bg-gray-100 rounded-lg flex items-center justify-center">
+        <div className="w-full max-w-[453px] h-full md:h-60 bg-gray-100 rounded-lg flex items-center justify-center">
           <BookOpen className="h-12 w-12 text-gray-400" />
         </div>
       )}

@@ -1,10 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn, formatMinutes } from "@/lib/utils";
 import { Clock4, Eye, EyeClosed, EyeOff } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { Lesson } from "./lesson";
 
 export const Module = ({ title, duration, list }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,9 @@ export const Module = ({ title, duration, list }) => {
         <div className="flex items-center gap-3">
           <div className="flex gap-2 items-center">
             <Clock4 />
-            <p className="font-stolzl font-normal text-xs sm:text-sm">{duration}</p>
+            <p className="font-stolzl font-normal text-xs sm:text-sm">
+              {duration}
+            </p>
           </div>
           <div className="w-7 h-7 flex justify-center items-center">
             {isOpen ? (
@@ -51,11 +54,9 @@ export const Module = ({ title, duration, list }) => {
           }}
         >
           <div className="border-l-2 border-main pl-5">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 list-disc ml-4">
+            <ul className="grid grid-cols-1  gap-5 list-disc ml-4">
               {list.map((item, i) => (
-                <li className="text-xs sm:text-sm font-stolzl font-book" key={i}>
-                  {item.title}
-                </li>
+                <Lesson key={i} lesson={item} />
               ))}
             </ul>
           </div>

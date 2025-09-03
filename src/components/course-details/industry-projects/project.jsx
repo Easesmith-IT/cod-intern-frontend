@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
 import { Separator } from "@/components/ui/separator";
+import { FolderIcon } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -14,7 +15,19 @@ export const Project = ({ project }) => {
         <Card className="border-border-1 rounded">
           <CardContent className="px-0">
             <div className="px-6 flex justify-center">
-              <Image src={icon} width={74} height={60} className="w-full" alt="icon" />
+              {icon ? (
+                <Image
+                  src={icon}
+                  width={74}
+                  height={60}
+                  className="w-full"
+                  alt="icon"
+                />
+              ) : (
+                <div className="w-full max-w-[453px] h-60 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <FolderIcon className="h-12 w-12 text-gray-400" />
+                </div>
+              )}
             </div>
             <Separator className="my-4 bg-border-1" />
             <div className="px-6">

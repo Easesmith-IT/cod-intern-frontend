@@ -43,8 +43,8 @@ const CourseDetails = () => {
           <CourseOverview course={course} />
           {/* <TopCompanies /> comment this */}
           <IndustryProjects projects={course.projects} />
-          <KeyHighlights title={course.title} />
-          <GloballyRecognized />
+          <KeyHighlights title={course.title} features={course.features} />
+          <GloballyRecognized certificate={course.certificate} />
           <LearningToCareer />
           <UpcomingBatch batches={course.batches} title={course.title} />
           <PopularCourses />

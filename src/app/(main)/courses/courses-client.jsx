@@ -28,6 +28,9 @@ export const CoursesClient = () => {
     queryKeys: ["courses", page, limit, searchQyery, sort],
   });
 
+  console.log("data", data);
+  
+
   useEffect(() => {
     if (data?.pagination) {
       setPageCount(() => data?.pagination?.totalPages);
@@ -108,6 +111,7 @@ export const CoursesClient = () => {
             name={course.title}
             rating={course.averageRating}
             duration={course.courseDuration}
+            students={course.studentCount}
           />
         ))}
 

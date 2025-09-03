@@ -103,11 +103,9 @@ export const SingleCard = ({
             {/* <Separator className="my-4 bg-border-1" /> */}
             <div className="px-6 mt-4">
               <div className="flex gap-2 items-start">
-                {interviews && (
                   <div className="border-2 bg-[#9237E305] text-[8px] sm:text-[10px] text-main uppercase border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 font-stolzl font-normal">
-                    {interviews} Interviews
+                    {interviews || 0} Interviews
                   </div>
-                )}
                 {integratedInternship?.hasInternship && (
                   <div className="border-2 bg-[#9237E305] text-[8px] sm:text-[10px] text-main border-[#9237E324] flex gap-2 items-center rounded px-2 py-0.5 font-stolzl font-normal">
                     INTEGRATED INTERNSHIP

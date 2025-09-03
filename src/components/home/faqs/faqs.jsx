@@ -20,8 +20,6 @@ export const FAQs = ({ courseId = "", category = "General" }) => {
     queryKeys: ["faq", courseId, category],
   });
 
-  console.log("data", data);
-
   return (
     <section className="section-container grid justify-center md:grid-cols-[auto_1fr_auto] gap-10 py-12 md:py-24">
       <div className="flex flex-col items-center md:items-start">

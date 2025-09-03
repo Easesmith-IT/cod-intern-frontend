@@ -10,8 +10,9 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { KeyHighlight } from "./key-highlight";
 import highlights from "@/data/highlights.json";
+import CustomMessage from "@/components/shared/custom-message";
 
-export const KeyHighlights = ({title}) => {
+export const KeyHighlights = ({ title, features }) => {
   return (
     <section
       id="key-highlights"
@@ -50,11 +51,14 @@ export const KeyHighlights = ({title}) => {
           </div>
         </div>
 
-        <CarouselContent className="mt-10">
-          {highlights.map((highlight, index) => (
+        {features.length > 0 && <CarouselContent className="mt-10">
+          {features.map((highlight, index) => (
             <KeyHighlight key={index} highlight={highlight} />
           ))}
-        </CarouselContent>
+          {/* {highlights.map((highlight, index) => (
+            <KeyHighlight key={index} highlight={highlight} />
+          ))} */}
+        </CarouselContent>}
         <div className="md:hidden flex justify-center mt-6 gap-4">
           <CarouselPrevious
             //   className="static translate-0 disabled:bg-[#ababab75]"
@@ -69,6 +73,7 @@ export const KeyHighlights = ({title}) => {
           />
         </div>
       </Carousel>
+      {features.length === 0 && (<CustomMessage message="No features added yet." />)}
     </section>
   );
 };

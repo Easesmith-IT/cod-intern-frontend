@@ -1,4 +1,5 @@
 import { CounterItem, CounterSeperator } from "@/components/counter/counter";
+import CustomMessage from "@/components/shared/custom-message";
 import { Button } from "@/components/ui/button";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import { secondsBetween } from "@/lib/utils";
@@ -11,7 +12,8 @@ export const UpcomingBatch = ({ batches = [], title }) => {
     return null;
   }
 
-  const { name, startDate } = upcomingBatch;
+  const { name, startDate, batchHighlights, image, offerPrice, price } =
+    upcomingBatch;
 
   const durationInSeconds = secondsBetween(Date.now(), startDate);
 
@@ -22,7 +24,7 @@ export const UpcomingBatch = ({ batches = [], title }) => {
 
   return (
     <section className="section-container py-12 md:py-24">
-      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium text-center">
+      <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl font-medium text-center">
         <span className="text-main">Next Batch</span> Enrollment
         <Image
           src="/ellipse-group.svg"
@@ -33,10 +35,10 @@ export const UpcomingBatch = ({ batches = [], title }) => {
         />
       </h2>
 
-      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-10 mt-12">
+      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-center gap-10 mt-12">
         <div className="flex gap-5 relative">
           <Image
-            src="/upcoming-batch-img.jpg"
+            src={image || "/upcoming-batch-img.jpg"}
             width={543}
             height={388}
             alt="upcoming-batch-img"
@@ -55,10 +57,11 @@ export const UpcomingBatch = ({ batches = [], title }) => {
         </div>
         <div className="">
           <h3 className="font-stolzl font-medium text-para-3 max-w-[667px] text-lg sm:text-2xl lg:text-4xl leading-9 sm:leading-10 lg:leading-11">
-            Launch Your Tech Career with CodIntern
+            {/* Launch Your Tech Career with CodIntern */}
+            {name}
           </h3>
           <ul className="mt-5 space-y-4 list-disc ml-5">
-            <li className="font-stolzl text-xs sm:text-sm text-para">
+            {/* <li className="font-stolzl text-xs sm:text-sm text-para">
               Comprehensive Course Access
             </li>
             <li className="font-stolzl text-xs sm:text-sm text-para">
@@ -72,8 +75,33 @@ export const UpcomingBatch = ({ batches = [], title }) => {
             </li>
             <li className="font-stolzl text-xs sm:text-sm text-para">
               Industry Exposure & Support
-            </li>
+            </li> */}
+
+            {batchHighlights.map((highlight, index) => (
+              <li
+                key={index}
+                className="font-stolzl text-xs sm:text-sm text-para"
+              >
+                {highlight}
+              </li>
+            ))}
+
+            {batchHighlights.length === 0 && (
+              <CustomMessage message="No highlights available." />
+            )}
           </ul>
+
+          <div className="flex gap-4 items-center mt-4">
+            <p className="font-stolzl text-base md:text-xl font-medium">
+              ₹{offerPrice}
+            </p>
+            <p className="font-stolzl text-sm md:text-base line-through text-[#626066] font-normal">
+              ₹{price}
+            </p>
+            {/* <p className="font-stolzl text-[10px] md:text-xs text-[#62606699] font-book">
+              Save {savedAmount}/-
+            </p> */}
+          </div>
 
           <div className="flex gap-5 justify-between items-center mt-10">
             <div>

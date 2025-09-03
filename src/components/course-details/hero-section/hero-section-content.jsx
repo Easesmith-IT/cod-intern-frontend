@@ -121,9 +121,9 @@ export const HeroSectionContent = ({ course }) => {
             <p className="font-stolzl text-sm md:text-base font-book uppercase">
               course fee
             </p>
-            <div className="bg-[#9237E31A] capitalize text-main px-2 py-1.5 rounded-md font-stolzl text-[10px] md:text-xs">
+            {/* <div className="bg-[#9237E31A] capitalize text-main px-2 py-1.5 rounded-md font-stolzl text-[10px] md:text-xs">
               Valid for Today
-            </div>
+            </div> */}
           </div>
           <div className="flex gap-4 items-center mt-4">
             <p className="font-stolzl text-base md:text-xl font-medium">

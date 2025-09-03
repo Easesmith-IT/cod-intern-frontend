@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export const GloballyRecognized = () => {
+export const GloballyRecognized = ({ certificate }) => {
   return (
     <section
       id="certifications"
@@ -48,26 +48,26 @@ export const GloballyRecognized = () => {
       <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-10 mt-12">
         <div className="">
           <h3 className="font-stolzl font-medium text-para-3 text-xl sm:text-2xl lg:text-4xl max-w-[543px] leading-9 sm:leading-10 lg:leading-11">
-            Master Certification in Data Science & Analytics with AI
+            {/* Master Certification in Data Science & Analytics with AI */}
+            {certificate.title || "Untitled"}
           </h3>
           <p className="font-stolzl font-book text-para max-w-[590px] text-xs sm:text-sm lg:text-base mt-5">
-            Our detailed Master Data Science & Analytics with AI Certification
+            {/* Our detailed Master Data Science & Analytics with AI Certification
             Course is carefully crafted to give you a deep knowledge of
             analytics and advanced AI, making you ready for the illustrious
             career of a Data Scientist. Additionally, with our expert coaching,
             you'll be adequately prepared to pass the Microsoft Certification
             Exam confidently, adding another strong credential to your resume.
             Ask now to learn more about our Data Science & Analytics with AI
-            Certification Course and begin your higher-level career
+            Certification Course and begin your higher-level career */}
+            {certificate.description || "No description available."}
           </p>
           <Button
             size="lg"
             variant="linearGradient"
             className="rounded-sm px-3 h-10 sm:px-5 sm:h-12 mt-10 text-xs md:text-sm"
           >
-            <Link href="#course-hero-section">
-            Inquire Now
-            </Link>
+            <Link href="#course-hero-section">Inquire Now</Link>
           </Button>
         </div>
         <div className="flex gap-5">
