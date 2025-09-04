@@ -18,8 +18,6 @@ export const AccelerateYourCareer = () => {
     queryKeys: ["courses"],
   });
 
-  console.log("courses AccelerateYourCareer", data);
-
   return (
     <section className="py-12 md:py-24 section-container md:px-20">
       <div className="flex justify-center text-center section-container px-0 max-w-[900px]">

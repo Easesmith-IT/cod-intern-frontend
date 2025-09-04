@@ -1,12 +1,16 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem
+  CarouselItem,
 } from "@/components/ui/carousel";
+import { useApiQuery } from "@/hooks/useApiQuery";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
+import { ChevronRightIcon } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
@@ -25,108 +29,23 @@ export const HeroSection = () => {
     });
   }, [api]);
 
+  const { data: heroSectionData, isLoading } = useApiQuery({
+    url: "/student/content/hero-section",
+    queryKeys: ["hero-section"],
+  });
+  console.log("heroSectionData", heroSectionData);
+
+  const { image1, image2, image3, banner1, banner2, banner3 } =
+    heroSectionData?.data || {};
+
   return (
     <>
-      {/* <section
-        className="relative h-[550px] hidden"
-        style={{ backgroundImage: "url(/hero-bg.svg)" }}
-      >
-        <div className="section-container h-full relative flex gap-4 justify-between">
-          <div className="flex flex-col justify-center">
-            <h1 className="text-7xl font-bold font-stolzl whitespace-nowrap">
-              India’s <span className="text-main">#1</span> Platform
-            </h1>
-            <p className="font-stolzl text-2xl text-para mt-4">
-              For Fresher Jobs, Internships and courses
-            </p>
-            <div className="flex items-center gap-5 mt-10 mb-2">
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-sm px-5 h-12"
-              >
-                <Image src="/google.svg" width={25} height={25} alt="email" />
-                Continue With Email
-              </Button>
-              <Button
-                size="lg"
-                variant="linearGradient"
-                className="rounded-sm px-5 h-12"
-              >
-                <Mail />
-                Continue With Email
-              </Button>
-            </div>
-            <Link
-              href="#"
-              className="text-sm font-stolzl underline text-[#41414199]"
-            >
-              By continuing, you agree to our T&C.
-            </Link>
-            <div className="w-[252px] absolute bottom-8 h-1.5 bg-[#D7C0F8] grid rounded-md grid-cols-3 mt-auto">
-              <div></div>
-              <div className="bg-para-3"></div>
-              <div></div>
-            </div>
-          </div>
-          <div className="relative flex justify-center items-end z-10">
-            <Image
-              width={647}
-              height={515}
-              src="/hero-img.svg"
-              alt="hero-img"
-            />
-            <Image
-              width={117}
-              height={172}
-              src="/hero-img-1.svg"
-              alt="hero-img-1"
-              className="absolute right-0 top-10"
-            />
-
-            <Info
-              title="Affordable & Industry-Ready Courses"
-              className="top-20 left-10 w-[216px]"
-            />
-            <Info
-              title="Improve your Personality"
-              className="top-40 left-16 w-[130px]"
-            />
-            <Info
-              title="Gain Career Confidence"
-              className="top-60 left-10 w-[139px]"
-            />
-            <Info
-              title="Guaranteed Placement Support"
-              className="top-80 -left-10 w-[203px]"
-            />
-
-            <div className="absolute bottom-32 right-20 w-[138px] h-[129px] shadow-lg shadow-black/10 rounded-md bg-white px-3 py-4">
-              <Image width={39} height={36} src="/bars.svg" alt="bars" />
-              <h4 className="font-medium text-sm font-stolzl mt-2">
-                Students Enroll
-              </h4>
-              <p className="text-xs font-stolzl">
-                100% enroll rating per month
-              </p>
-            </div>
-          </div>
-        </div>
-        <Image
-          className="absolute right-0 -top-1/6"
-          width={562}
-          height={430}
-          src="/hero-bg-1.svg"
-          alt="hero-bg"
-        />
-      </section> */}
-
       <Carousel
-        plugins={[
-          Autoplay({
-            delay: 4000,
-          }),
-        ]}
+        // plugins={[
+        //   Autoplay({
+        //     delay: 4000,
+        //   }),
+        // ]}
         opts={{ loop: true }}
         setApi={setApi}
         className="w-full relative"
@@ -147,35 +66,128 @@ export const HeroSection = () => {
         </div>
 
         <CarouselContent>
-          <CarouselItem>
+          <CarouselItem className="relative">
             <img
               // className="h-[70vh] md:size-full"
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src="/home/banner-1.png"
+              src={image1 || "/home/banner-1.png"}
               alt="hero-banner"
             />
+
+            {!isLoading && (
+              <div className="hidden lg:flex gap-6 px-5 mx-auto absolute bottom-14.5 left-[8%]">
+                <div className="max-w-96 w-full px-5 py-3 bg-gradient-to-r from-[#9237E3] to-[#BC7AF6] rounded-md">
+                  <h2 className="text-white text-lg md:text-2xl uppercase font-semibold font-sans">
+                    {banner1?.card1?.title}
+                  </h2>
+                  <p className="text-white text-xs w-[60%] font-book mt-2">
+                    {banner1?.card1?.desc}
+                  </p>
+                  <Button
+                    asChild
+                    className="mt-4 text-xs text-gray-600 h-7 font-book rounded-sm has-[>svg]:px-2 bg-white hover:bg-white/80"
+                  >
+                    <Link
+                      href={banner1?.card1?.button?.link || ""}
+                      target="_blank"
+                    >
+                      <span>{banner1?.card1?.button?.text}</span>
+                      <div className="size-4 rounded-full bg-main flex justify-center items-center">
+                        <ChevronRightIcon className="text-white size-4" />
+                      </div>
+                    </Link>
+                  </Button>
+                </div>
+
+                <div className="max-w-96 w-full px-5 py-3 bg-gradient-to-r from-[#9237E3] to-[#BC7AF6] rounded-md">
+                  <h2 className="text-white text-lg md:text-2xl uppercase font-semibold font-sans">
+                    {banner1?.card2?.title}
+                  </h2>
+                  <p className="text-white text-xs w-[60%] font-book mt-2">
+                    {banner1?.card2?.desc}
+                  </p>
+                  <Button
+                    asChild
+                    className="mt-4 text-xs text-gray-600 h-7 font-book rounded-sm has-[>svg]:px-2 bg-white hover:bg-white/80"
+                  >
+                    <Link
+                      href={banner1?.card2?.button?.link || ""}
+                      target="_blank"
+                    >
+                      <span>{banner1?.card2?.button?.text}</span>
+                      <div className="size-4 rounded-full bg-main flex justify-center items-center">
+                        <ChevronRightIcon className="text-white size-4" />
+                      </div>
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            )}
           </CarouselItem>
-          <CarouselItem className="">
+          <CarouselItem className="relative bg-red-">
             <img
               // className="h-[70vh] md:size-full"
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src="/home/banner-2.png"
+              src={image2 || "/home/banner-2.png"}
               alt="hero-banner"
             />
+            {!isLoading && (
+              <>
+                <Button
+                  asChild
+                  variant="codIntern"
+                  className="absolute bottom-8 hidden lg:block left-[10%] rounded-none bg-gradient-to-r from-[#9237E3] to-[#BF7FF7] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
+                >
+                  <Link href={banner2?.button1.link || ""} target="_blank">
+                    {banner2?.button1.text}
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  className="absolute bottom-8 right-[9%] hidden lg:block rounded-none bg-gradient-to-r from-[#E37E36] to-[#FB6308] hover:bg-[#E37E36] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
+                >
+                  <Link href={banner2?.button2.link || ""} target="_blank">
+                    {banner2?.button2.text}
+                  </Link>
+                </Button>
+              </>
+            )}
           </CarouselItem>
-          <CarouselItem className="">
+          <CarouselItem className="relative">
             <img
               // className="h-[70vh] md:size-full"
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src="/home/banner-3.png"
+              src={image3 || "/home/banner-3.png"}
               alt="hero-banner"
             />
+            {!isLoading && (
+              <div className="hidden lg:flex items-center gap-10 px-5 absolute bottom-14.5 left-[9%]">
+                <Button
+                  asChild
+                  variant="codIntern"
+                  className="rounded-none bg-gradient-to-r from-[#9237E3] to-[#BF7FF7] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
+                >
+                  <Link href={banner3?.button1.link || ""} target="_blank">
+                    {banner3?.button1.text}
+                  </Link>
+                </Button>
+
+                <Button
+                  asChild
+                  className="rounded-none bg-gradient-to-r from-[#E37E36] to-[#FB6308] bg-[length:200%_200%] hover:bg-[#E37E36] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
+                >
+                  <Link href={banner3?.button2.link || ""} target="_blank">
+                    {banner3?.button2.text}
+                  </Link>
+                </Button>
+              </div>
+            )}
           </CarouselItem>
         </CarouselContent>
       </Carousel>
