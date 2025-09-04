@@ -77,7 +77,7 @@ export const HeroSection = () => {
             />
 
             {!isLoading && (
-              <div className="hidden lg:flex gap-6 px-5 mx-auto absolute bottom-14.5 left-[8%]">
+              <div className="hidden gap-6 px-5 mx-auto absolute bottom-14.5 left-[8%]">
                 <div className="max-w-96 w-full px-5 py-3 bg-gradient-to-r from-[#9237E3] to-[#BC7AF6] rounded-md">
                   <h2 className="text-white text-lg md:text-2xl uppercase font-semibold font-sans">
                     {banner1?.card1?.title}
@@ -140,7 +140,7 @@ export const HeroSection = () => {
                 <Button
                   asChild
                   variant="codIntern"
-                  className="absolute bottom-8 hidden lg:block left-[10%] rounded-none bg-gradient-to-r from-[#9237E3] to-[#BF7FF7] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
+                  className="absolute bottom-8 hidden left-[10%] rounded-none bg-gradient-to-r from-[#9237E3] to-[#BF7FF7] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
                 >
                   <Link href={banner2?.button1.link || ""} target="_blank">
                     {banner2?.button1.text}
@@ -148,7 +148,7 @@ export const HeroSection = () => {
                 </Button>
                 <Button
                   asChild
-                  className="absolute bottom-8 right-[9%] hidden lg:block rounded-none bg-gradient-to-r from-[#E37E36] to-[#FB6308] hover:bg-[#E37E36] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
+                  className="absolute bottom-8 right-[9%] hidden rounded-none bg-gradient-to-r from-[#E37E36] to-[#FB6308] hover:bg-[#E37E36] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
                 >
                   <Link href={banner2?.button2.link || ""} target="_blank">
                     {banner2?.button2.text}
@@ -167,7 +167,7 @@ export const HeroSection = () => {
               alt="hero-banner"
             />
             {!isLoading && (
-              <div className="hidden lg:flex items-center gap-10 px-5 absolute bottom-14.5 left-[9%]">
+              <div className="hidden items-center gap-10 px-5 absolute bottom-14.5 left-[9%]">
                 <Button
                   asChild
                   variant="codIntern"
