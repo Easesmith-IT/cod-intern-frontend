@@ -1,6 +1,7 @@
 const PrivacyPolicy = () => {
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">
+      {/* <div className="prose-lg my-editor"> */}
       <div className="reset-block">
         <h1>Privacy Policy</h1>
         <p>Last updated: September 02, 2025</p>
