@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { Skeleton } from "../ui/skeleton";
 import { format } from "date-fns/format";
+import { ImageOff } from "lucide-react";
 
 export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
   const { data, isLoading, error, refetch } = useWpApiQuery({
@@ -33,7 +34,7 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
         <div className="bg-white aspect-video">
           {isLoading ? (
             <Skeleton className="aspect-video w-full" />
-          ) : (
+          ) : data?.guid?.rendered ? (
             <Link href={href}>
               <Image
                 src={data?.guid?.rendered || src}
@@ -43,6 +44,10 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
                 alt="Blog"
               />
             </Link>
+          ) : (
+            <div className="w-full h-full flex justify-center items-center">
+              <ImageOff className="size-20 text-gray-500" />
+            </div>
           )}
         </div>
 
