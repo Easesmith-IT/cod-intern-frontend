@@ -1,5 +1,6 @@
 import { BlogsClient } from "@/components/blogs/blogs-client";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Blogs - Codintern",
@@ -17,7 +18,9 @@ const Blogs = ({ searchParams }) => {
         ]}
       />
 
-      <BlogsClient />
+      <Suspense fallback={<p>Loading...</p>}>
+        <BlogsClient />
+      </Suspense>
     </section>
   );
 };
