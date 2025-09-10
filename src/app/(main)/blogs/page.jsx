@@ -1,4 +1,4 @@
-import { BlogsComp } from "@/components/blogs/blogs";
+import { BlogsClient } from "@/components/blogs/blogs-client";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 
 export const metadata = {
@@ -7,7 +7,7 @@ export const metadata = {
     "Read the latest blogs from Codintern on career tips, internships, fresher jobs, and skill development.",
 };
 
-const Blogs = () => {
+const Blogs = ({ searchParams }) => {
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">
       <CustomBreadCrumb
@@ -17,21 +17,7 @@ const Blogs = () => {
         ]}
       />
 
-      <BlogsComp category="recent">
-        <span className="text-main">Our</span> Recent Blogs
-      </BlogsComp>
-
-      {/* <BlogsComp category="latest">
-        <span className="text-main">Latest</span> Articles
-      </BlogsComp>
-
-      <BlogsComp category="internship-tips">
-        <span className="text-main">Internship</span> Tips
-      </BlogsComp>
-
-      <BlogsComp category="career-advice">
-        <span className="text-main">Career</span> Advice
-      </BlogsComp> */}
+      <BlogsClient />
     </section>
   );
 };

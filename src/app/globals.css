@@ -331,4 +331,22 @@
     color: blue;
     text-decoration: underline;
   }
+
+  .prose input,
+  .prose textarea,
+  .prose select {
+    @apply border rounded-md p-2 w-full;
+  }
+
+  .prose input[type="radio"],
+  .prose input[type="checkbox"] {
+    @apply w-4 h-4 border-gray-400 text-blue-600 rounded;
+  }
+
+  .prose button,
+  .prose input[type="submit"],
+  .prose input[type="reset"],
+  .prose input[type="button"] {
+    @apply px-4 py-2 bg-blue-600 w-auto inline text-white rounded-md hover:bg-blue-700 cursor-pointer;
+  }
 }
