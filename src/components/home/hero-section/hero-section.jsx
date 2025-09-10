@@ -72,7 +72,7 @@ export const HeroSection = () => {
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src={image1 || "/home/banner-1.png"}
+              src={image1 || "/home/Banner 1.png"}
               alt="hero-banner"
             />
 
@@ -132,7 +132,7 @@ export const HeroSection = () => {
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src={image2 || "/home/banner-2.png"}
+              src={image2 || "/home/Banner 2.png"}
               alt="hero-banner"
             />
             {!isLoading && (
@@ -163,7 +163,7 @@ export const HeroSection = () => {
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src={image3 || "/home/banner-3.png"}
+              src={image3 || "/home/Banner 3.png"}
               alt="hero-banner"
             />
             {!isLoading && (
