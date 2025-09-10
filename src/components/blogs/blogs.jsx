@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import CustomMessage from "../shared/custom-message";
 import { Button } from "../ui/button";
 import { Blog } from "./blog";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 
 export const BlogsComp = ({
   children,
@@ -53,6 +54,8 @@ export const BlogsComp = ({
     params.set("categoryName", categoryName);
     router.push(`/blogs?${params.toString()}`);
   };
+
+  useScrollToTop(page);
 
   return (
     <div className={cn("mt-6 sm:mt-12", className)}>
