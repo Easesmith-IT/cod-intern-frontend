@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Skeleton } from "../ui/skeleton";
 import { format } from "date-fns/format";
 import { ImageOff } from "lucide-react";
+import he from "he";
 
 export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
   const { data, isLoading, error, refetch } = useWpApiQuery({
@@ -15,6 +16,7 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
     queryKeys: ["media", featured_media],
     options: { enabled: false },
   });
+  // const decodedTitle = he.decode(title);
   console.log("media", data);
 
   useEffect(() => {
@@ -61,7 +63,7 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
         </div>
         <Link className="inline-block mt-4" href={href}>
           <h3 className="font-stolzl font-medium text-para-3 hover:underline text-base sm:text-lg line-clamp-2">
-            {title}
+            {he.decode(title)}
           </h3>
         </Link>
         <div className="font-stolzl text-xs sm:text-sm text-para font-book line-clamp-3 mt-4">

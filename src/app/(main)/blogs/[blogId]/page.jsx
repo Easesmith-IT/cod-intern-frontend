@@ -17,6 +17,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { RelatedBlogs } from "@/components/blogs/related-blogs";
 import { BlogDetailSkeleton } from "@/components/blogs/blog-detail-skeleton";
 import { ImageOff } from "lucide-react";
+import he from "he";
 
 const BlogDetails = () => {
   const params = useParams();
@@ -106,7 +107,7 @@ const BlogDetails = () => {
           ) : (
             <>
               <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl font-medium mt-10">
-                {title?.rendered}
+                {title?.rendered && he.decode(title?.rendered)}
               </h2>
 
               <div
