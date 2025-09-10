@@ -69,10 +69,10 @@ export const HeroSection = () => {
           <CarouselItem className="relative">
             <img
               // className="h-[70vh] md:size-full"
+              src={"/home/Banner 3.png"}
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src={image1 || "/home/Banner 1.png"}
               alt="hero-banner"
             />
 
@@ -132,7 +132,7 @@ export const HeroSection = () => {
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src={image2 || "/home/Banner 2.png"}
+              src={"/home/Banner 1.png"}
               alt="hero-banner"
             />
             {!isLoading && (
@@ -140,7 +140,7 @@ export const HeroSection = () => {
                 <Button
                   asChild
                   variant="codIntern"
-                  className="absolute bottom-8 hidden left-[10%] rounded-none bg-gradient-to-r from-[#9237E3] to-[#BF7FF7] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
+                  className="absolute bottom-8 hidden md:flex left-[10%] rounded-none bg-gradient-to-r from-[#9237E3] to-[#BF7FF7] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
                 >
                   <Link href={banner2?.button1.link || ""} target="_blank">
                     {banner2?.button1.text}
@@ -148,7 +148,7 @@ export const HeroSection = () => {
                 </Button>
                 <Button
                   asChild
-                  className="absolute bottom-8 right-[9%] hidden rounded-none bg-gradient-to-r from-[#E37E36] to-[#FB6308] hover:bg-[#E37E36] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
+                  className="absolute bottom-8 right-[9%] hidden md:flex rounded-none bg-gradient-to-r from-[#E37E36] to-[#FB6308] hover:bg-[#E37E36] bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 ease-in-out md:w-40 text-sm font-book"
                 >
                   <Link href={banner2?.button2.link || ""} target="_blank">
                     {banner2?.button2.text}
@@ -160,14 +160,14 @@ export const HeroSection = () => {
           <CarouselItem className="relative">
             <img
               // className="h-[70vh] md:size-full"
+              src={"/home/Banner 2.png"}
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
-              src={image3 || "/home/Banner 3.png"}
               alt="hero-banner"
             />
             {!isLoading && (
-              <div className="hidden items-center gap-10 px-5 absolute bottom-14.5 left-[9%]">
+              <div className="hidden md:flex items-center gap-10 px-5 absolute bottom-14.5 left-[9%]">
                 <Button
                   asChild
                   variant="codIntern"
