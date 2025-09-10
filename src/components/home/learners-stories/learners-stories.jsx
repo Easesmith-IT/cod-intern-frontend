@@ -12,8 +12,17 @@ import { Story } from "./story";
 import Autoplay from "embla-carousel-autoplay";
 import stories from "@/data/stories.json";
 import { cn } from "@/lib/utils";
+import { useApiQuery } from "@/hooks/useApiQuery";
+import DataNotFound from "@/components/shared/DataNotFound";
 
 export const LearnersStories = ({ className }) => {
+  const { data, isLoading, error } = useApiQuery({
+    url: `/student/reviews/get?category=General&status=active&limit=${10}`,
+    queryKeys: ["review"],
+  });
+
+  console.log("data", data);
+
   return (
     <section className={cn("section-container py-12 md:py-24", className)}>
       <Carousel
@@ -55,16 +64,21 @@ export const LearnersStories = ({ className }) => {
         </div>
 
         <CarouselContent className="mt-10">
-          {stories.map((story, index) => (
+          {data?.reviews.map((story, index) => (
             <Story
               key={index}
-              desc={story.desc}
-              img={story.img}
-              name={story.name}
-              position={story.position}
+              desc={story.reviewText}
+              name={story.reviewerName}
+              platform={story.platform}
+              position={story.reviewerRole}
               rating={story.rating}
             />
           ))}
+
+          {isLoading &&
+            Array.from({ length: 5 }).map((_, index) => (
+              <Story.Skeleton key={index} />
+            ))}
         </CarouselContent>
         <div className="md:hidden flex justify-center gap-4 mt-10">
           <CarouselPrevious
@@ -80,6 +94,9 @@ export const LearnersStories = ({ className }) => {
           />
         </div>
       </Carousel>
+      {data?.reviews.length === 0 && !isLoading && (
+        <DataNotFound name="Reviews" />
+      )}
     </section>
   );
 };

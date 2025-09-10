@@ -44,3 +44,19 @@ export function getYears(start, end = new Date().getFullYear() + 5) {
   }
   return years;
 }
+
+export function getImageByPlatform(value) {
+  switch (value) {
+    case "LinkedIn":
+      return "/linkedin.svg";
+
+    case "Google":
+      return "/google.svg";
+
+    case "Website":
+      return "/logo.svg";
+
+    default:
+      return "/user-placeholder.png";
+  }
+}
