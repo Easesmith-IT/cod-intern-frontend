@@ -8,7 +8,7 @@ export const metadata = {
     "Read the latest blogs from Codintern on career tips, internships, fresher jobs, and skill development.",
 };
 
-const Blogs = ({ searchParams }) => {
+const Blogs = () => {
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">
       <CustomBreadCrumb

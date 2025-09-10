@@ -28,14 +28,16 @@ export const RelatedBlogs = ({ categoryId, postId }) => {
             src="/blog/blog1.png"
             title={post?.title.rendered}
             desc={post?.excerpt.rendered && parse(post?.excerpt.rendered)}
-            timeStamp={post?.modified}
+            timeStamp={post?.date}
             featured_media={post?.featured_media}
           />
         ))}
         {isLoading &&
           Array.from({ length: 4 }).map((_, i) => <Blog.Skeleton key={i} />)}
 
-          {!isLoading && data.length === 0 && <CustomMessage message="No Related blogs found" />}
+        {!isLoading && data.length === 0 && (
+          <CustomMessage message="No Related blogs found" />
+        )}
       </div>
     </div>
   );

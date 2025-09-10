@@ -49,7 +49,7 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
         <div className="text-xs mt-5 font-stolzl font-book flex gap-1 text-[#868686] items-center">
           <Image src="/clock-1.svg" width={13} height={13} alt="Clock" />
           {/* {formatted} */}
-          {timeStamp && format(timeStamp, "d MMMM yyyy")}
+          {timeStamp && format(timeStamp, "d MMMM yyyy 'at' hh:mm a")}
         </div>
         <Link className="inline-block mt-4" href={href}>
           <h3 className="font-stolzl font-medium text-para-3 hover:underline text-base sm:text-lg line-clamp-2">

@@ -1,16 +1,14 @@
 import { useWpApiQuery } from "@/hooks/useWpApiQuery";
 import { cn } from "@/lib/utils";
-import { format } from "date-fns/format";
 import parse from "html-react-parser";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import CustomMessage from "../shared/custom-message";
 import { Button } from "../ui/button";
 import { Blog } from "./blog";
-import { PaginationComp } from "../PaginationComp";
-import CustomMessage from "../shared/custom-message";
 
 export const BlogsComp = ({
   children,
@@ -97,7 +95,7 @@ export const BlogsComp = ({
             src="/blog/blog1.png"
             title={post?.title.rendered}
             desc={post?.excerpt.rendered && parse(post?.excerpt.rendered)}
-            timeStamp={post?.modified}
+            timeStamp={post?.date}
             featured_media={post?.featured_media}
           />
         ))}
