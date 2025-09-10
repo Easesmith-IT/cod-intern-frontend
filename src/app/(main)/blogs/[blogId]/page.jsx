@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { RelatedBlogs } from "@/components/blogs/related-blogs";
 import { BlogDetailSkeleton } from "@/components/blogs/blog-detail-skeleton";
+import { ImageOff } from "lucide-react";
 
 const BlogDetails = () => {
   const params = useParams();
@@ -68,7 +69,7 @@ const BlogDetails = () => {
           <div className="relative">
             {isLoading || isImageLoading ? (
               <Skeleton className="aspect-video w-full" />
-            ) : (
+            ) : imageData?.guid?.rendered ? (
               <Image
                 src={imageData?.guid?.rendered || "/blog/1.png"}
                 className="aspect-video w-full sm:h-full"
@@ -76,6 +77,10 @@ const BlogDetails = () => {
                 height={166}
                 alt="Blog"
               />
+            ) : (
+              <div className="aspect-video shadow rounded-2xl w-full h-full flex justify-center items-center">
+                <ImageOff className="size-32 text-gray-500" />
+              </div>
             )}
             {/* <div
                   style={{ backdropFilter: "blur(10px)" }}

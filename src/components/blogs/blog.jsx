@@ -45,9 +45,12 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
               />
             </Link>
           ) : (
-            <div className="w-full h-full flex justify-center items-center">
+            <Link
+              href={href}
+              className="w-full h-full flex justify-center items-center"
+            >
               <ImageOff className="size-20 text-gray-500" />
-            </div>
+            </Link>
           )}
         </div>
 
