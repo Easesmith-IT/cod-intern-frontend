@@ -23,13 +23,6 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
     featured_media && refetch();
   }, [featured_media]);
 
-  const utcIso = timeStamp.endsWith("Z") ? timeStamp : `${timeStamp}Z`;
-  const formatted = formatInTimeZone(
-    utcIso,
-    "Asia/Kolkata",
-    "d MMMM yyyy 'at' hh:mm a"
-  );
-
   return (
     <div className="shadow-[0px_0px_8.24px_0px_#65656517] rounded-md bg-[#F6F6F6]">
       <div className="p-4 bg-[#F6F6F6] rounded-md">
@@ -58,12 +51,11 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
 
         <div className="text-xs mt-5 font-stolzl font-book flex gap-1 text-[#868686] items-center">
           <Image src="/clock-1.svg" width={13} height={13} alt="Clock" />
-          {/* {formatted} */}
           {timeStamp && format(timeStamp, "d MMMM yyyy 'at' hh:mm a")}
         </div>
         <Link className="inline-block mt-4" href={href}>
           <h3 className="font-stolzl font-medium text-para-3 hover:underline text-base sm:text-lg line-clamp-2">
-            {he.decode(title)}
+            {title && he.decode(title)}
           </h3>
         </Link>
         <div className="font-stolzl text-xs sm:text-sm text-para font-book line-clamp-3 mt-4">
