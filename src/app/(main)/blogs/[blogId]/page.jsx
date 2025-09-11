@@ -74,6 +74,9 @@ const BlogDetails = () => {
                 className="aspect-video w-full sm:h-full"
                 width={900}
                 height={166}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL={imageData?.guid?.rendered || "/blog/1.png"}
                 alt="Blog"
               />
             ) : (

@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "coral-hyena-467754.hostingersite.com",
       },
+      {
+        protocol: "https",
+        hostname: "hubble.cdn.chittiapp.com",
+      },
     ],
   },
 };

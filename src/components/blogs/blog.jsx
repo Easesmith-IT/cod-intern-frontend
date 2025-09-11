@@ -36,6 +36,9 @@ export const Blog = ({ title, desc, timeStamp, href, src, featured_media }) => {
                 className="rounded-t-md aspect-video"
                 width={384}
                 height={226}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL={data?.guid?.rendered || "/blog/1.png"}
                 alt="Blog"
               />
             </Link>

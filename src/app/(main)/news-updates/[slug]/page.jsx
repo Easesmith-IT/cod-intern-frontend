@@ -57,13 +57,16 @@ const DetailPage = () => {
       <div className="max-w-5xl mx-auto px-5 mt-6 sm:mt-12">
         <div className="relative">
           {isLoading || isImageLoading ? (
-            <Skeleton className="aspect-video w-full" />
+            <Skeleton className="aspect-video w-full h-full" />
           ) : imageData?.guid?.rendered ? (
             <Image
               src={imageData?.guid?.rendered || "/blog/1.png"}
               className="aspect-video w-full sm:h-full"
               width={900}
               height={166}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL={imageData?.guid?.rendered}
               alt="Blog"
             />
           ) : (
