@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const StickyCTA = () => {
   return (
-    <div className="sticky bottom-0 z-50 w-full">
+    <div className="sticky bottom-0 z-10 w-full">
       <div className="z-50 w-full lg:px-10 lg:py-5">
         <div className="xl:mx-auto xl:max-w-[1180px] lg:rounded-2xl">
           <div
