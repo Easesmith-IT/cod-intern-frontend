@@ -55,7 +55,7 @@ export const BonusesSection = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative mt-9 lg:mt-14 xl:mt-16 pb-28 lg:pb-0">
+        <div className="relative mt-9 lg:mt-14 xl:mt-16 lg:pb-0">
           <Carousel
             opts={{
               align: "start",
