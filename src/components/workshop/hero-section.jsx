@@ -99,7 +99,7 @@ export const HeroScection = () => {
             {Array.from({ length: 5 }).map((_, i) => (
               <Image
                 key={i}
-                src="https://hubble.cdn.chittiapp.com/cdn_uploads/a0605aa0-6b6a-11f0-bf6c-e151f03705cf_star-emerald-600.svg"
+                src="/workshop/star.svg"
                 alt="star"
                 width={16}
                 height={16}
