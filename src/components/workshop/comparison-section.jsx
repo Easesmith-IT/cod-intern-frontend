@@ -10,7 +10,7 @@ const cards = [
       "https://hubble.cdn.chittiapp.com/cdn/2025/7/551e8aa0-6df7-11f0-87e3-c3cec9b31d15_burger_min.webp",
     bg: "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0) 100%)",
     tickIcon:
-      "https://hubble.cdn.chittiapp.com/cdn_uploads/a05d2650-6b6a-11f0-bf6c-e151f03705cf_tick-50percent.svg",
+      "/workshop/tick.svg",
     features: [
       'One bite → "Wow!"',
       "But adds calories, not skills",
