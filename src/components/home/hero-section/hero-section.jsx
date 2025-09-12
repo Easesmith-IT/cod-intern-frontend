@@ -69,7 +69,7 @@ export const HeroSection = () => {
           <CarouselItem className="relative">
             <img
               // className="h-[70vh] md:size-full"
-              src={"/home/Banner 3.png"}
+              src={"/home/Banner 5.png"}
               className="h-[30vh] w-full md:h-[80vh]"
               width={562}
               height={430}
@@ -77,7 +77,7 @@ export const HeroSection = () => {
             />
 
             {!isLoading && (
-              <div className="hidden gap-6 px-5 mx-auto absolute bottom-14.5 left-[8%]">
+              <div className="hidden md:flex gap-6 px-5 mx-auto absolute bottom-14.5 left-[8%]">
                 <div className="max-w-96 w-full px-5 py-3 bg-gradient-to-r from-[#9237E3] to-[#BC7AF6] rounded-md">
                   <h2 className="text-white text-lg md:text-2xl uppercase font-semibold font-sans">
                     {banner1?.card1?.title}

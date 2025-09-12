@@ -1,6 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const tools = [
   {
@@ -44,58 +46,98 @@ export const ToolsSection = () => {
       </h2>
 
       <div className="flex flex-col items-center gap-4">
-        {/* First scrolling row */}
-        <div className="flex gap-4 w-max overflow-x-auto scrolling-slider">
-          {tools.slice(0, 4).map((tool) => (
-            <div
-              key={tool.name}
-              className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4"
-              style={{
-                background:
-                  "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0) 100%)",
-                boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
-              }}
-            >
-              <Image
-                src={tool.src}
-                alt={tool.name}
-                width={60}
-                height={60}
-                className="h-12 lg:h-[60px]"
-              />
-              <div className="text-base font-book text-neutral-200">
-                {tool.name}
-              </div>
-            </div>
-          ))}
+        {/* First scrolling row (mobile) */}
+        <div className="block md:hidden w-full">
+          <Marquee autoFill gradient={false} speed={10}>
+            <FirstScrollingRow />
+          </Marquee>
         </div>
 
-        {/* Second scrolling row (reverse) */}
-        <div className="flex gap-4 w-max overflow-x-auto scrolling-slider-reverse mt-4">
-          {tools.slice(4).map((tool) => (
-            <div
-              key={tool.name}
-              className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4"
-              style={{
-                background:
-                  "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0) 100%)",
-                boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
-              }}
-            >
-              <Image
-                src={tool.src}
-                alt={tool.name}
-                width={60}
-                height={60}
-                className="h-12 lg:h-[60px]"
-              />
-              <div className="text-base font-book text-neutral-200">
-                {tool.name}
-              </div>
-            </div>
-          ))}
+        {/* First scrolling row (desktop) */}
+        <div className="hidden md:block">
+          <FirstScrollingRow />
+        </div>
+
+        {/* Second scrolling row (mobile) */}
+        <div className="block md:hidden w-full">
+          <Marquee autoFill gradient={false} speed={10} direction="right">
+            <SecondScrollingRow />
+          </Marquee>
+        </div>
+
+        {/* Second scrolling row (desktop) */}
+        <div className="hidden md:block">
+          <SecondScrollingRow />
         </div>
       </div>
     </section>
+  );
+};
+
+const FirstScrollingRow = ({ className }) => {
+  return (
+    <div
+      className={cn(
+        "flex gap-4 w-max overflow-x-auto scrolling-slider mx-2",
+        className
+      )}
+    >
+      {tools.slice(0, 4).map((tool) => (
+        <div
+          key={tool.name}
+          className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4"
+          style={{
+            background:
+              "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0) 100%)",
+            boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+          }}
+        >
+          <Image
+            src={tool.src}
+            alt={tool.name}
+            width={60}
+            height={60}
+            className="h-12 lg:h-[60px] object-contain"
+          />
+          <div className="text-base font-book text-neutral-200">
+            {tool.name}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const SecondScrollingRow = ({ className }) => {
+  return (
+    <div
+      className={cn(
+        "flex gap-4 w-max overflow-x-auto scrolling-slider-reverse mt-4 mx-2",
+        className
+      )}
+    >
+      {tools.slice(4).map((tool) => (
+        <div
+          key={tool.name}
+          className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4"
+          style={{
+            background:
+              "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0) 100%)",
+            boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+          }}
+        >
+          <Image
+            src={tool.src}
+            alt={tool.name}
+            width={60}
+            height={60}
+            className="h-12 lg:h-[60px]"
+          />
+          <div className="text-base font-book text-neutral-200">
+            {tool.name}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
