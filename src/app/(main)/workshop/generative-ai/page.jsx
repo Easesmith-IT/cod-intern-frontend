@@ -15,14 +15,15 @@ import { WhatStopingYou } from "@/components/workshop/what-stoping-you/what-stop
 
 const Workshop = () => {
   return (
-    <section className="!font-stolzl bg-[#03120D]">
+    <section className="!font-stolzl">
       <HeroScection />
+      {/* making color theme to CodIntern */}
       <WhatStopingYou />
       <ThreeHourChanges />
       <StatsGrid />
       <ToolsSection />
       <ComparisonSection />
-      {/* Local Images */}
+      {/* Adding Local Images */}
       <BonusesSection />
       <BeforeAfter />
       <CertificationSection />

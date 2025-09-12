@@ -248,7 +248,7 @@ export const Header = () => {
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="font-medium hover:underline"
-                onSelect={() => router.push("/workshop")}
+                onSelect={() => router.push("/workshop/generative-ai")}
               >
                 Workshop
               </DropdownMenuItem>

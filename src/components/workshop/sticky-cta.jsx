@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export const StickyCTA = () => {
   return (
@@ -47,11 +49,20 @@ export const StickyCTA = () => {
 
             {/* CTA Button + Timer */}
             <div className="flex w-full flex-col items-center justify-center gap-2.5 md:w-fit">
-              <button className="flex w-full items-center justify-center gap-1 whitespace-nowrap rounded-[10px] bg-emerald-700 px-6 py-3 font-normal text-white md:w-fit">
-                <span className="text-base lg:text-lg">Register Now for</span>
-                <span className="line-through">₹99</span>
-                <span className="text-xl lg:text-2xl">₹9</span>
-              </button>
+              <Button
+                asChild
+                variant="codIntern"
+                className="h-12 w-full mt-6"
+                // className="bg-emerald-700 h-12 rounded-[10px] w-full px-6 py-3 mt-6 lg:mt-12 flex justify-center"
+              >
+                <Link href="/workshop/generative-ai/registration">
+                  <div className="flex items-center gap-1 text-base !font-normal leading-6 text-white">
+                    <span>Register Now for</span>
+                    <span className="line-through">₹99</span>
+                    <span className="text-xl">₹9</span>
+                  </div>
+                </Link>
+              </Button>
               <div className="flex items-center justify-center gap-2 text-center text-sm font-book leading-5 text-white/80">
                 <span>Offer ends in</span>
                 <span>00:42</span>

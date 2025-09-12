@@ -27,7 +27,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Spinner from "../Spinner";
 
-export const WorkShopRegistrationClient = () => {
+export const WorkShopRegistrationClient = ({ title, type }) => {
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(WorkshopRegistrationFormSchema),
@@ -71,6 +71,7 @@ export const WorkShopRegistrationClient = () => {
       branch: data.branch,
       year: data.year,
       universityRollNo: data.universityRollNo,
+      type,
     };
 
     await submitForm(apiData);
@@ -97,7 +98,7 @@ export const WorkShopRegistrationClient = () => {
       )}
       <div className="max-w-5xl mx-auto  p-5 rounded-md border">
         <h1 className="text-2xl font-medium font-stolzl text-center">
-          WorkShop Registration Form
+          {title || "Workshop Registration Form"}
         </h1>
         <Form {...form}>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-8">

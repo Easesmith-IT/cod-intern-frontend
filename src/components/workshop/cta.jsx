@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
-export const CTASection=()=> {
+export const CTASection = () => {
   return (
     <section className="relative w-full bg-[#03120D] px-5 py-11 md:px-10 lg:py-20">
       <div
@@ -20,11 +22,16 @@ export const CTASection=()=> {
         </h2>
 
         {/* Button */}
-        <button className="mt-3 w-full rounded-[10px] bg-emerald-700 px-5 py-2.5 lg:mt-8 md:w-fit lg:px-6 lg:py-3">
-          <span className="text-lg font-normal leading-7 text-white lg:text-xl lg:leading-8">
-            Book Your Spot Now
-          </span>
-        </button>
+        <Button
+          asChild
+          variant="codIntern"
+          className="h-12 mt-6"
+          // className="bg-emerald-700 h-12 rounded-[10px] w-full px-6 py-3 mt-6 lg:mt-12 flex justify-center"
+        >
+          <Link href="/workshop/generative-ai/registration">
+            <span className="!font-normal text-base">Book Your Spot Now</span>
+          </Link>
+        </Button>
 
         {/* Reviews */}
         <div className="mt-3 flex items-center justify-center gap-2">
@@ -47,4 +54,4 @@ export const CTASection=()=> {
       </div>
     </section>
   );
-}
+};
