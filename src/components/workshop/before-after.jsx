@@ -4,11 +4,11 @@ import Image from "next/image";
 
 export const BeforeAfter = () => {
   return (
-    <section className="relative w-full bg-[#03120D]">
+    <section className="relative w-full">
       <div className="px-5 py-11 mx-auto md:px-10 lg:py-20 xl:max-w-[1180px] xl:px-0">
         {/* Title */}
         <h2
-          className="text-3xl font-bold leading-9 text-center text-white lg:text-[48px] lg:leading-[49px] xl:text-[52px] xl:leading-[60px]"
+          className="text-3xl font-bold leading-9 text-center text-black lg:text-[48px] lg:leading-[49px] xl:text-[52px] xl:leading-[60px]"
           style={{ fontFamily: "Sora, sans-serif" }}
         >
           Before and After
@@ -18,7 +18,7 @@ export const BeforeAfter = () => {
         <div className="flex flex-col gap-6 mt-9 md:flex-row lg:mt-14">
           {/* Before Card */}
           <div
-            className="w-full overflow-hidden rounded-2xl"
+            className="w-full overflow-hidden rounded-2xl border"
             style={{
               boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
               background:
@@ -37,7 +37,7 @@ export const BeforeAfter = () => {
                   height={24}
                 />
               </div>
-              <span className="text-lg font-semibold leading-7 text-white">
+              <span className="text-lg font-semibold leading-7 text-black">
                 Frustration Before
               </span>
             </div>
@@ -58,7 +58,7 @@ export const BeforeAfter = () => {
                     width={22}
                     height={22}
                   />
-                  <span className="text-base font-book leading-6 text-white">
+                  <span className="text-base font-book leading-6 text-black">
                     {text}
                   </span>
                 </div>
@@ -68,7 +68,7 @@ export const BeforeAfter = () => {
 
           {/* After Card */}
           <div
-            className="w-full overflow-hidden rounded-2xl"
+            className="w-full overflow-hidden rounded-2xl border"
             style={{
               boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
               background:
@@ -87,7 +87,7 @@ export const BeforeAfter = () => {
                   height={24}
                 />
               </div>
-              <span className="text-lg font-semibold leading-7 text-white">
+              <span className="text-lg font-semibold leading-7 text-black">
                 Freedom After
               </span>
             </div>
@@ -108,7 +108,7 @@ export const BeforeAfter = () => {
                     width={22}
                     height={22}
                   />
-                  <span className="text-base font-book leading-6 text-white">
+                  <span className="text-base font-book leading-6 text-black">
                     {text}
                   </span>
                 </div>

@@ -37,9 +37,9 @@ const tools = [
 
 export const ToolsSection = () => {
   return (
-    <section className="relative w-full mx-auto overflow-hidden py-11 lg:py-20 xl:py-24 bg-[#03120D]">
+    <section className="relative w-full mx-auto overflow-hidden py-11 lg:py-20 xl:py-24">
       <h2
-        className="text-2xl font-bold text-center text-white lg:text-[40px] lg:leading-[48px] mb-9 lg:mb-14 xl:mb-12"
+        className="text-2xl font-bold text-center text-black lg:text-[40px] lg:leading-[48px] mb-9 lg:mb-14 xl:mb-12"
         style={{ fontFamily: "Sora, sans-serif" }}
       >
         Tools You Will Learn
@@ -85,12 +85,7 @@ const FirstScrollingRow = ({ className }) => {
       {tools.slice(0, 4).map((tool) => (
         <div
           key={tool.name}
-          className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4"
-          style={{
-            background:
-              "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0) 100%)",
-            boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
-          }}
+          className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4 bg-gradient-to-b from-main/40 to-main/10 border"
         >
           <Image
             src={tool.src}
@@ -99,7 +94,7 @@ const FirstScrollingRow = ({ className }) => {
             height={60}
             className="h-12 lg:h-[60px] object-contain"
           />
-          <div className="text-base font-book text-neutral-200">
+          <div className="text-base font-book text-black">
             {tool.name}
           </div>
         </div>
@@ -119,12 +114,7 @@ const SecondScrollingRow = ({ className }) => {
       {tools.slice(4).map((tool) => (
         <div
           key={tool.name}
-          className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4"
-          style={{
-            background:
-              "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0) 100%)",
-            boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
-          }}
+          className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4 bg-gradient-to-b from-main/40 to-main/10 border"
         >
           <Image
             src={tool.src}
@@ -133,7 +123,7 @@ const SecondScrollingRow = ({ className }) => {
             height={60}
             className="h-12 lg:h-[60px]"
           />
-          <div className="text-base font-book text-neutral-200">
+          <div className="text-base font-book text-black">
             {tool.name}
           </div>
         </div>

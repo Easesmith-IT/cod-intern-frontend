@@ -17,7 +17,6 @@ const Workshop = () => {
   return (
     <section className="!font-stolzl">
       <HeroScection />
-      {/* making color theme to CodIntern */}
       <WhatStopingYou />
       <ThreeHourChanges />
       <StatsGrid />
@@ -32,6 +31,7 @@ const Workshop = () => {
       <FAQ />
       <CTASection />
       <StickyCTA />
+      {/* making color theme to CodIntern */}
     </section>
   );
 };

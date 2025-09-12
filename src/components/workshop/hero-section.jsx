@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export const HeroScection = () => {
   const { days, hours, minutes, seconds } = usePersistentCountdown({
-    durationInSeconds: 20,
+    durationInSeconds: 200,
     expiryKey: "offer-end",
   });
 
@@ -98,7 +98,7 @@ export const HeroScection = () => {
         <div className="rounded-lg px-3.5 py-2 lg:px-4 flex gap-2 items-center bg-main/10 mx-auto">
           <div className="flex gap-1">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star className="fill-main/90 text-main/90 size-4" />
+              <Star key={i} className="fill-main/90 text-main/90 size-4" />
             ))}
           </div>
           <p className="text-sm font-normal leading-5  lg:text-base lg:leading-6">
@@ -202,7 +202,7 @@ export const HeroScection = () => {
                 </Link>
               </Button>
               <div className="text-sm flex items-center gap-2 justify-center font-medium leading-5 text-center mt-2.5 lg:mt-4 /80">
-                <span>Offer ends in</span> 00:04
+                <span>Offer ends in</span> {minutes}:{seconds}
               </div>
             </div>
           </div>

@@ -50,16 +50,16 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="relative w-full bg-[#03120D] px-5 py-11 md:px-10 lg:py-20 xl:px-0">
+    <section className="relative w-full px-5 py-11 md:px-10 lg:py-20 xl:px-0">
       <div className="mx-auto flex max-w-[1200px] flex-col justify-center text-center gap-3">
         <h2
-          className="text-3xl font-bold leading-9 text-white lg:text-5xl lg:leading-[48px] xl:text-[52px] xl:leading-[60px]"
+          className="text-3xl font-bold leading-9 text-black lg:text-5xl lg:leading-[48px] xl:text-[52px] xl:leading-[60px]"
           style={{ fontFamily: "Sora, sans-serif" }}
         >
           Frequently Asked{" "}
-          <mark className="bg-transparent text-emerald-400">Questions</mark>
+          <mark className="bg-transparent text-main">Questions</mark>
         </h2>
-        <p className="text-lg leading-7 text-white/80 lg:text-xl lg:tracking-[0.4px]">
+        <p className="text-lg leading-7 text-muted-foreground lg:text-xl lg:tracking-[0.4px]">
           Anything you need to know?
         </p>
       </div>
@@ -70,12 +70,7 @@ export const FAQ = () => {
           <div
             key={index}
             onClick={() => toggleFAQ(index)}
-            className="faq-item cursor-pointer flex flex-col w-full p-4 rounded-xl lg:p-5 transition-all duration-300"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(5,150,105,0.5) 0%, rgba(3,18,13,0) 100%)",
-              boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
-            }}
+            className="faq-item cursor-pointer flex flex-col w-full p-4 rounded-xl lg:p-5 transition-all duration-300 bg-gradient-to-r from-main to-para-3"
           >
             {/* Question */}
             <div className="flex items-center justify-between w-full gap-3">

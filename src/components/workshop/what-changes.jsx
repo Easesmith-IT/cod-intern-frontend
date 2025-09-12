@@ -62,10 +62,6 @@ export const ThreeHourChanges = () => {
                     item.side === "left"
                       ? "ml-10 md:ml-0 md:mr-auto"
                       : "ml-10 md:ml-auto"
-                  }  ${
-                    item.side === "lft"
-                      ? "bg-[linear-gradient(121deg,rgba(5,150,105,0.5)_0%,rgba(3,18,13,0)_100%)] md:bg-[linear-gradient(80deg,rgba(3,18,13,0)_0%,rgba(5,150,105,0.5)_100%)]"
-                      : "bg-[linear-gradient(121deg,rgba(5,150,105,0.5)_0%,rgba(3,18,13,0)_100%)]"
                   }`}
                 >
                   <h3 className="text-xl font-bold leading-7 text-white">

@@ -1,5 +1,7 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+import { Check } from "lucide-react";
 import Image from "next/image";
 
 const cards = [
@@ -8,7 +10,7 @@ const cards = [
     price: "₹99.00",
     image:
       "https://hubble.cdn.chittiapp.com/cdn/2025/7/551e8aa0-6df7-11f0-87e3-c3cec9b31d15_burger_min.webp",
-    bg: "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0) 100%)",
+    bg: "bg-gradient-to-b from-main/40 to-main/10",
     tickIcon: "/workshop/tick.svg",
     features: [
       'One bite → "Wow!"',
@@ -22,7 +24,7 @@ const cards = [
     price: "₹9.00",
     image:
       "https://hubble.cdn.chittiapp.com/cdn/2025/7/62090bd0-6c32-11f0-8d34-07754ad9d03a_workshop_min.webp",
-    bg: "linear-gradient(rgb(5, 150, 105) 0%, rgba(3, 18, 13, 0) 100%)",
+    bg: "bg-gradient-to-b from-main to-para-3",
     tickIcon: "/workshop/tick.svg",
     features: [
       "Automate Tedious Tasks",
@@ -35,25 +37,24 @@ const cards = [
 
 export const ComparisonSection = () => {
   return (
-    <section className="bg-[#03120D]">
-      <div className="relative w-full bg-[#03120D] px-5 py-11 md:px-10 lg:py-20 xl:max-w-[1180px] xl:px-0 mx-auto">
+    <section className="">
+      <div className="relative w-full px-5 py-11 md:px-10 lg:py-20 xl:max-w-[1180px] xl:px-0 mx-auto">
         <h2
-          className="text-2xl font-bold leading-8 text-white lg:text-[40px] lg:leading-[48px] text-center mb-5"
+          className="text-2xl font-bold leading-8 text-black lg:text-[40px] lg:leading-[48px] text-center mb-5"
           style={{ fontFamily: "Sora, sans-serif" }}
         >
           Spend ₹99 on Burger.. or ₹9 on your Future?
         </h2>
-        <p className="mt-5 text-xl font-semibold leading-7 text-center text-white"></p>
+        <p className="mt-5 text-xl font-semibold leading-7 text-center text-black"></p>
 
         <div className="flex flex-col gap-6 mt-9 md:flex-row lg:mt-14">
-          {cards.map((card) => (
+          {cards.map((card, index) => (
             <div
               key={card.title}
-              className="flex flex-col w-full gap-5 p-5 rounded-2xl lg:p-6 lg:flex-row lg:items-center relative"
-              style={{
-                background: card.bg,
-                boxShadow: "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
-              }}
+              className={cn(
+                "flex flex-col w-full gap-5 p-5 rounded-2xl lg:p-6 lg:flex-row lg:items-center relative",
+                card.bg
+              )}
             >
               {/* Image + Price */}
               <div className="flex flex-col items-center">
@@ -65,7 +66,12 @@ export const ComparisonSection = () => {
                     className="object-contain"
                   />
                 </div>
-                <div className="text-3xl font-extrabold leading-9 text-white mt-2">
+                <div
+                  className={cn(
+                    "text-3xl font-extrabold leading-9 text-white mt-2",
+                    index === 0 && "text-black"
+                  )}
+                >
                   {card.price}
                 </div>
               </div>
@@ -74,14 +80,15 @@ export const ComparisonSection = () => {
               <ul className="flex flex-col gap-2.5 mt-4 lg:mt-0 lg:ml-6">
                 {card.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <Image
-                      src={card.tickIcon}
-                      alt="tick"
-                      width={20}
-                      height={20}
-                      className="flex-shrink-0"
+                    <Check
+                      className={cn("size-4 shrink-0 mt-1.5", index === 1 && "text-white")}
                     />
-                    <span className="text-base font-book leading-7 text-[rgba(255,255,255,0.8)]">
+                    <span
+                      className={cn(
+                        "text-base font-book leading-7 text-[rgba(255,255,255,0.8)]",
+                        index === 0 && "text-black"
+                      )}
+                    >
                       {feature}
                     </span>
                   </li>

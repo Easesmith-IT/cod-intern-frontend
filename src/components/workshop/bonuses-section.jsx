@@ -38,18 +38,18 @@ const bonuses = [
 
 export const BonusesSection = () => {
   return (
-    <section className="bg-[#03120D]">
-      <div className="relative w-full bg-[#03120D] py-11 lg:py-20 xl:max-w-[1180px] mx-auto px-5 md:px-10 xl:px-0">
+    <section>
+      <div className="relative w-full py-11 lg:py-20 xl:max-w-[1180px] mx-auto px-5 md:px-10 xl:px-0">
         {/* Heading */}
         <div className="flex flex-col justify-center gap-2 text-center lg:gap-3">
           <h2
-            className="text-3xl font-bold leading-9 text-white lg:text-5xl lg:leading-[48px] xl:text-[52px] xl:leading-[60px]"
+            className="text-3xl font-bold leading-9 text-black lg:text-5xl lg:leading-[48px] xl:text-[52px] xl:leading-[60px]"
             style={{ fontFamily: "Sora, sans-serif" }}
           >
             Unlock bonuses worth{" "}
-            <mark className="bg-transparent text-emerald-500">₹5,000</mark>
+            <mark className="bg-transparent text-main">₹5,000</mark>
           </h2>
-          <p className="text-lg font-book leading-7 text-white/80 lg:text-xl lg:leading-7 lg:tracking-[0.4px]">
+          <p className="text-lg font-book leading-7 text-black/80 lg:text-xl lg:leading-7 lg:tracking-[0.4px]">
             Attend the workshop to receive exclusive access to our bonuses.
           </p>
         </div>
@@ -69,18 +69,18 @@ export const BonusesSection = () => {
                   key={bonus.id}
                   className="pl-4 md:basis-1/2 lg:basis-1/3"
                 >
-                  <div className="flex flex-col h-full border border-white/10 rounded-2xl overflow-hidden">
+                  <div className="flex flex-col h-full border rounded-2xl overflow-hidden">
                     {/* Top Tag */}
-                    <div className="bg-emerald-600 px-6 py-2.5 text-center text-base font-book leading-6 text-white lg:text-lg lg:leading-7">
+                    <div className="bg-main px-6 py-2.5 text-center text-base font-book leading-6 text-white lg:text-lg lg:leading-7">
                       {bonus.tag}
                     </div>
 
                     {/* Content */}
                     <div className="p-5 flex flex-col gap-2.5 items-center text-center lg:px-5 lg:py-6 lg:gap-3 flex-grow">
-                      <h3 className="text-xl font-medium leading-7 text-white lg:text-3xl lg:leading-9">
+                      <h3 className="text-xl font-medium leading-7 text-black lg:text-3xl lg:leading-9">
                         {bonus.title}
                       </h3>
-                      <p className="text-base font-bold leading-6 tracking-[0.64px] text-emerald-600 uppercase">
+                      <p className="text-base font-bold leading-6 tracking-[0.64px] text-main uppercase">
                         {bonus.type}
                       </p>
                       <Image
@@ -93,8 +93,8 @@ export const BonusesSection = () => {
                     </div>
 
                     {/* Footer */}
-                    <div className="flex items-center justify-between px-6 py-2 bg-white/20 mt-auto">
-                      <p className="text-2xl font-medium leading-8 text-white lg:text-3xl lg:leading-9">
+                    <div className="flex items-center justify-between px-6 py-2 bg-black/20 mt-auto">
+                      <p className="text-2xl font-medium leading-8 text-black lg:text-3xl lg:leading-9">
                         <s>{bonus.price}</s>
                       </p>
                       <Image
@@ -112,8 +112,8 @@ export const BonusesSection = () => {
 
             {/* Controls */}
             <div className="flex gap-6 items-center mt-10 justify-center">
-              <CarouselPrevious className="size-12 bg-[#012b1d] bg-gradient-to-b from-[#012b1d] to-[#03120D] disabled:bg-[#03120D] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] text-white border-[#03120D] static rounded-lg hover:bg-[#03120D]/80" />
-              <CarouselNext className="size-12 bg-[#012b1d] bg-gradient-to-b from-[#012b1d] to-[#03120D] disabled:bg-[#03120D] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] text-white border-[#03120D] static rounded-lg hover:bg-[#03120D]/80" />
+              <CarouselPrevious className="size-12 bg-main text-white static rounded-lg" />
+              <CarouselNext className="size-12 bg-main text-white static rounded-lg" />
             </div>
           </Carousel>
         </div>

@@ -1,14 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 
 export const StickyCTA = () => {
+  const { days, hours, minutes, seconds } = usePersistentCountdown({
+    durationInSeconds: 200,
+    expiryKey: "offer-end",
+  });
+
   return (
     <div className="sticky bottom-0 z-10 w-full">
       <div className="z-50 w-full lg:px-10 lg:py-5">
         <div className="xl:mx-auto xl:max-w-[1180px] lg:rounded-2xl">
           <div
-            className="flex w-full flex-col items-center justify-between gap-3 px-5 py-4 md:flex-row md:px-10 lg:rounded-2xl lg:px-5 lg:py-5 xl:mx-auto xl:max-w-[1180px] backdrop-blur-md"
+            className="flex border w-full flex-col items-center justify-between gap-3 px-5 py-4 md:flex-row md:px-10 lg:rounded-2xl lg:px-5 lg:py-5 xl:mx-auto xl:max-w-[1180px] backdrop-blur-md"
             style={{
               background:
                 "linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(3, 18, 13, 0.1) 100%)",
@@ -17,7 +25,7 @@ export const StickyCTA = () => {
           >
             {/* Mobile View Heading */}
             <div className="md:hidden">
-              <h3 className="text-center text-xl font-medium leading-7 text-white">
+              <h3 className="text-center text-xl font-medium leading-7 text-black">
                 Still confused? You're not alone — Let's fix it together
               </h3>
             </div>
@@ -25,7 +33,7 @@ export const StickyCTA = () => {
             {/* Desktop View */}
             <div className="hidden md:block">
               <div className="flex items-center gap-3 lg:gap-4">
-                <div className="rounded-full border border-emerald-600 p-2.5">
+                <div className="rounded-full border border-main p-2.5">
                   <div className="h-[50px] w-[50px] lg:h-[60px] lg:w-[60px]">
                     <Image
                       src="/workshop/mentor.webp"
@@ -37,10 +45,10 @@ export const StickyCTA = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-2xl font-medium leading-8 text-white">
+                  <h3 className="text-2xl font-medium leading-8 text-black">
                     Still confused? You're not alone — Let's fix it together
                   </h3>
-                  <p className="text-base font-book leading-6 text-white/80">
+                  <p className="text-base font-book leading-6 text-black/80">
                     20K+ Students Enrolled
                   </p>
                 </div>
@@ -63,9 +71,11 @@ export const StickyCTA = () => {
                   </div>
                 </Link>
               </Button>
-              <div className="flex items-center justify-center gap-2 text-center text-sm font-book leading-5 text-white/80">
+              <div className="flex items-center justify-center gap-2 text-center text-sm font-book leading-5 text-black/80">
                 <span>Offer ends in</span>
-                <span>00:42</span>
+                <span>
+                  {minutes}:{seconds}
+                </span>
               </div>
             </div>
           </div>

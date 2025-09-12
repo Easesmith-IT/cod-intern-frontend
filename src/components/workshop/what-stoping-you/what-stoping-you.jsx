@@ -25,106 +25,7 @@ export const WhatStopingYou = () => {
   ];
 
   return (
-    // <section className="py-12 md:py-24 section-container max-w-4xl">
-    //   <div className="mt-2 lg:mt-3 text-[28px] lg:text-5xl text-center lg:leading-[48px] font-bold text-black leading-9 mb-12">
-    //     <p>What’s Stopping You?</p>
-    //   </div>
-
-    //   <VerticalTimeline lineColor="black">
-    //     <VerticalTimelineElement
-    //       contentStyle={{
-    //         background: "linear-gradient(90deg, var(--para-3), rgb(139, 0, 0))",
-    //         color: "#fff",
-    //         borderRadius: "20px",
-    //       }}
-    //       contentArrowStyle={{ display: "none" }}
-    //       iconStyle={{
-    //         background: "#fff",
-    //         color: "#000",
-    //         width: "20px",
-    //         height: "20px",
-    //         marginLeft: "-10px", // recenter after resizing
-    //       }}
-    //     >
-    //       <h3 className="font-bold text-xl">IT Professionals</h3>
-    //       <p>
-    //         Future-proof your career. Upskill in AI, data science, and cloud
-    //         computing to stay ahead of the curve.
-    //       </p>
-    //     </VerticalTimelineElement>
-
-    //     <VerticalTimelineElement
-    //       contentStyle={{
-    //         background: "rgb(139, 0, 0)",
-    //         color: "#fff",
-    //         borderRadius: "20px",
-    //       }}
-    //       contentArrowStyle={{ display: "none" }}
-    //       iconStyle={{
-    //         background: "#fff",
-    //         color: "#000",
-    //         width: "20px",
-    //         height: "20px",
-    //         marginLeft: "-10px", // recenter after resizing
-    //       }}
-    //     >
-    //       <h3 className="font-bold text-xl">NON-IT Professionals</h3>
-    //       <p>
-    //         Think AI is too technical? Scared to switch careers? Want to break
-    //         into IT without coding fear?
-    //       </p>
-    //     </VerticalTimelineElement>
-    //     <VerticalTimelineElement
-    //       contentStyle={{
-    //         background: "rgb(139, 0, 0)",
-    //         color: "#fff",
-    //         borderRadius: "20px",
-    //       }}
-    //       contentArrowStyle={{ display: "none" }}
-    //       iconStyle={{
-    //         background: "#fff",
-    //         color: "#000",
-    //         width: "20px",
-    //         height: "20px",
-    //         marginLeft: "-10px", // recenter after resizing
-    //       }}
-    //     >
-    //       <h3 className="font-bold text-xl">Freelancers</h3>
-    //       <p>
-    //         Losing clients because you don’t know AI tools? Struggling to keep
-    //         up with demand
-    //       </p>
-    //     </VerticalTimelineElement>
-    //     <VerticalTimelineElement
-    //       contentStyle={{
-    //         background: "rgb(139, 0, 0)",
-    //         color: "#fff",
-    //         borderRadius: "20px",
-    //       }}
-    //       contentArrowStyle={{ display: "none" }}
-    //       iconStyle={{
-    //         background: "#fff",
-    //         color: "#000",
-    //         width: "20px",
-    //         height: "20px",
-    //         marginLeft: "-10px", // recenter after resizing
-    //       }}
-    //     >
-    //       <h3 className="font-bold text-xl">Students & Fresh Graduates</h3>
-    //       <p>
-    //         Just finished college? No job-ready skills? Want to impress
-    //         recruiters with AI projects?
-    //       </p>
-    //     </VerticalTimelineElement>
-    //   </VerticalTimeline>
-    // </section>
-    <section
-      className="relative w-full"
-      // style={{
-      //   background:
-      //     "linear-gradient(rgb(3,18,13) 0%, rgb(10,2,1) 50%, rgb(3,18,13) 100%)",
-      // }}
-    >
+    <section className="relative w-full">
       <div className="px-5 py-11 md:px-10 lg:py-20 xl:px-0 xl:max-w-[1180px] xl:mx-auto">
         {/* Heading */}
         <h2
@@ -154,14 +55,10 @@ export const WhatStopingYou = () => {
 
                 {/* Card */}
                 <div
-                  className={`flex flex-col bg-main gap-2 p-5 rounded-2xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] w-full md:w-[46%] ${
+                  className={`flex flex-col gap-2 p-5 rounded-2xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] w-full md:w-[46%] ${
                     item.side === "left"
-                      ? "ml-10 md:ml-0 md:mr-auto"
-                      : "ml-10 md:ml-auto"
-                  } ${
-                    item.side === ""
-                      ? "bg-[linear-gradient(121deg,rgba(220,38,38,0.5)_0%,rgba(3,18,13,0)_100%)] md:bg-[linear-gradient(80deg,rgba(3,18,13,0)_0%,rgba(220,38,38,0.5)_100%)]"
-                      : "bg-[linear-gradient(121deg,rgba(220,38,38,0.5)_0%,rgba(3,18,13,0)_100%)]"
+                      ? "ml-10 md:ml-0 md:mr-auto bg-gradient-to-r md:bg-gradient-to-l from-main to-para-3"
+                      : "ml-10 md:ml-auto bg-gradient-to-r from-main to-para-3"
                   }`}
                 >
                   <h3 className="text-xl font-bold leading-7 text-white">
