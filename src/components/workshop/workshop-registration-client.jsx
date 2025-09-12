@@ -88,7 +88,7 @@ export const WorkShopRegistrationClient = ({ title, type }) => {
   }, [result]);
 
   return (
-    <section className="px-5 py-20">
+    <section className="px-5 py-10 md:py-20">
       {open && (
         <SuccessModal
           open={open}
@@ -110,7 +110,7 @@ export const WorkShopRegistrationClient = ({ title, type }) => {
           {/* <TypographyH2 heading="All Pages" /> */}
         </Link>
       </div>
-      <div className="max-w-5xl mx-auto  p-5 rounded-md border">
+      <div className="max-w-5xl mx-auto p-5 rounded-md border">
         <h1 className="text-2xl font-medium font-stolzl text-center">
           {title || "Workshop Registration Form"}
         </h1>
