@@ -26,6 +26,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Spinner from "../Spinner";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export const WorkShopRegistrationClient = ({ title, type }) => {
   const [open, setOpen] = useState(false);
@@ -96,6 +98,18 @@ export const WorkShopRegistrationClient = ({ title, type }) => {
           }! Your workshop registration has been completed successfully.`}
         />
       )}
+
+      <div className="max-w-5xl mx-auto  p-5">
+        <Link
+          href={
+            type === "generative-ai" ? "/workshop/generative-ai" : "/"
+          }
+          className="flex gap-1 items-center mb-4"
+        >
+          <ArrowLeft className="text-3xl cursor-pointer" />
+          {/* <TypographyH2 heading="All Pages" /> */}
+        </Link>
+      </div>
       <div className="max-w-5xl mx-auto  p-5 rounded-md border">
         <h1 className="text-2xl font-medium font-stolzl text-center">
           {title || "Workshop Registration Form"}
