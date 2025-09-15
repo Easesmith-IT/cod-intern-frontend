@@ -6,32 +6,28 @@ import Marquee from "react-fast-marquee";
 
 const tools = [
   {
-    name: "ChatGPT",
-    src: "https://hubble.cdn.chittiapp.com/cdn/2025/8/704eeab0-83fd-11f0-862b-f36f91930bb2_Untitled-design-%284%29_min.webp",
+    name: "Github",
+    src: "/workshop/github.png",
   },
   {
-    name: "Midjourney",
-    src: "https://hubble.cdn.chittiapp.com/cdn/2025/8/42bef220-83fd-11f0-862b-f36f91930bb2_Untitled-design-%283%29_min.webp",
+    name: "Langchain",
+    src: "/workshop/langchain.png",
   },
   {
-    name: "Zapier",
-    src: "https://hubble.cdn.chittiapp.com/cdn/2025/8/320c63d0-83fe-11f0-862b-f36f91930bb2___min.webp",
+    name: "Hugging face",
+    src: "/workshop/hugging-face.png",
   },
   {
-    name: "Copilot",
-    src: "https://hubble.cdn.chittiapp.com/cdn/2025/8/74aa6020-83fe-11f0-b41c-3522ce6d7189__-%281%29_min.webp",
+    name: "Stable Diffusion",
+    src: "/workshop/stability.png",
   },
   {
-    name: "Claude",
-    src: "https://hubble.cdn.chittiapp.com/cdn/2025/8/618ac970-83ff-11f0-862b-f36f91930bb2__-%282%29_min.webp",
+    name: "Suno",
+    src: "/workshop/suno.png",
   },
   {
-    name: "Kaggle",
-    src: "https://hubble.cdn.chittiapp.com/cdn/2025/8/2c9843b0-8403-11f0-b41c-3522ce6d7189__-%285%29_min.webp",
-  },
-  {
-    name: "Vercel",
-    src: "https://hubble.cdn.chittiapp.com/cdn/2025/8/c7342610-8402-11f0-b41c-3522ce6d7189__-%284%29_min.webp",
+    name: "Stability AI",
+    src: "/workshop/stability-ai.png",
   },
 ];
 
@@ -82,7 +78,7 @@ const FirstScrollingRow = ({ className }) => {
         className
       )}
     >
-      {tools.slice(0, 4).map((tool) => (
+      {tools.slice(0, 3).map((tool) => (
         <div
           key={tool.name}
           className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4 bg-gradient-to-b from-main/40 to-main/10 border"
@@ -111,7 +107,7 @@ const SecondScrollingRow = ({ className }) => {
         className
       )}
     >
-      {tools.slice(4).map((tool) => (
+      {tools.slice(3).map((tool, i) => (
         <div
           key={tool.name}
           className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4 bg-gradient-to-b from-main/40 to-main/10 border"
@@ -121,11 +117,12 @@ const SecondScrollingRow = ({ className }) => {
             alt={tool.name}
             width={60}
             height={60}
-            className="h-12 lg:h-[60px]"
+            className={cn(
+              "h-12 lg:h-[60px] object-contain",
+              i === 2 && " lg:w-[80%]"
+            )}
           />
-          <div className="text-base font-book text-black">
-            {tool.name}
-          </div>
+          <div className="text-base font-book text-black">{tool.name}</div>
         </div>
       ))}
     </div>

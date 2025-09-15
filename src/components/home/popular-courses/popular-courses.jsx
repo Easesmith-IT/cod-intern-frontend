@@ -16,7 +16,7 @@ import { useApiQuery } from "@/hooks/useApiQuery";
 import DataNotFound from "@/components/shared/DataNotFound";
 import Link from "next/link";
 
-export const PopularCourses = () => {
+export const PopularCourses = ({ contentData }) => {
   const [selectedCategory, setSelectedCategory] = useState("Web Development");
 
   const { data, isLoading, error } = useApiQuery({
@@ -40,12 +40,13 @@ export const PopularCourses = () => {
       </div>
 
       <p className="max-w-5xl mx-auto text-center text-xs lg:text-base font-stolzl font-book text-para mt-4">
-        Provides a range of AI-powered courses created especially to prepare
+        {/* Provides a range of AI-powered courses created especially to prepare
         students for the demands of the tech-driven workforce. These programs
         use intelligent systems to offer individualized learning paths,
         guaranteeing that participants acquire state-of-the-art,
         industry-relevant AI skills and get ready for positions in a workplace
-        that is becoming more automated and data-driven.
+        that is becoming more automated and data-driven. */}
+        {contentData?.content?.desc}
       </p>
 
       <Carousel

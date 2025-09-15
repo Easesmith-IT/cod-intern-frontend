@@ -1,44 +1,43 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const faqs = [
   {
     question: "Is this a complete AI & ML course?",
     answer:
-      "No. This ₹9 workshop is your first step into Generative AI. You’ll learn what matters most, real-world applications, and how to think like an AI professional.",
+      "No, it covers essentials you need to confidently start your AI journey.",
   },
   {
-    question: "Will I become an AI expert here?",
+    question: "Will I become an AI expert through this program?",
     answer:
-      "Not instantly, but you’ll gain prompt skills, tool confidence & clarity on next steps.",
+      "This course builds a strong foundation; expertise comes with continued learning and practice.",
   },
   {
-    question: "Can I learn advanced AI after this?",
+    question: "Can I pursue advanced AI after this?",
     answer:
-      "Yes, we’ll guide you to Python ML, Deep Learning, automation & career programs.",
+      "Absolutely. The skills you gain here prepare you for higher-level AI concepts.",
   },
   {
     question: "Is coding knowledge required?",
     answer:
-      "No. It’s beginner-friendly, taught in simple Tamil with real-life use cases.",
+      "No. It’s fully beginner-friendly and taught in simple Hindi using real-life examples",
   },
   {
     question: "Is this a one-time or long-term course?",
     answer:
-      "It’s a 3-hour focused workshop for ₹9. Later, you can choose advanced training.",
+      "It’s a structured, guided program with lifetime access to recordings.",
   },
   {
     question: "Do I get access to more courses later?",
     answer:
-      "Yes! You’ll unlock our Generative AI, Python ML & advanced AI/ML programs.",
+      "Yes, you’ll receive opportunities to explore additional advanced programs.",
   },
   {
     question: "Who will conduct this session?",
     answer:
-      "Mr. Premanand Sethurajan, Founder of LMES Academy and UPTOR will lead this session. With over 10 years in leading technology Industry. He will share insights.",
+      "Experienced industry trainers with hands-on expertise in AI & ML.",
   },
 ];
 

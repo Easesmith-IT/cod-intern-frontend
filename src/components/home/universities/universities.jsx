@@ -2,7 +2,9 @@ import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 
-export const Universities = () => {
+export const Universities = ({ data }) => {
+  const { content, images } = data || {};
+
   return (
     <section className="bg-[#2C1D43] py-14 md:py-16 w-full">
       <div className="section-container text-white flex flex-col sm:flex-row items-center gap-4">
@@ -18,7 +20,17 @@ export const Universities = () => {
         />
 
         <Marquee autoFill gradient gradientColor="#2C1D43" gradientWidth={200}>
-          <Image
+          {images?.map((item, index) => (
+            <Image
+              key={index}
+              src={item.image}
+              className="px-5"
+              width={100}
+              height={30}
+              alt="entity"
+            />
+          ))}
+          {/* <Image
             src="/logitech.svg"
             className="px-5"
             width={100}
@@ -45,7 +57,7 @@ export const Universities = () => {
             width={100}
             height={30}
             alt="entity"
-          />
+          /> */}
         </Marquee>
       </div>
     </section>

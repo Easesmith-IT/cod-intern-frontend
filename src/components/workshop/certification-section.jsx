@@ -14,7 +14,8 @@ export const CertificationSection = () => {
               className="text-3xl font-bold leading-9 text-black lg:text-[52px] lg:leading-[60px]"
               style={{ fontFamily: "Sora, sans-serif" }}
             >
-              <span className="text-main">Certification</span> That Opens Doors
+              <span className="text-main">Certification</span> The Badge That
+              Accelerates Growth
             </h2>
           </div>
 
@@ -28,11 +29,12 @@ export const CertificationSection = () => {
                     className="text-3xl font-bold leading-9 text-black lg:text-[52px] lg:leading-[60px]"
                     style={{ fontFamily: "Sora, sans-serif" }}
                   >
-                    <span className="text-main">Certification</span> That Opens
-                    Doors
+                    <span className="text-main">Certification</span> The Badge
+                    That Accelerates Growth
                   </h2>
                   <p className="text-lg font-book leading-7 text-muted-foreground tracking-[0.36px] lg:text-xl lg:leading-8 lg:tracking-[0.36px]">
-                    Participation Certificate will be provided.
+                    Validate your expertise with a Generative AI certification
+                    and position yourself as an industry-ready professional.
                   </p>
                 </div>
               </div>
@@ -42,11 +44,11 @@ export const CertificationSection = () => {
                 {[
                   {
                     icon: BadgeCheck,
-                    text: "Prove your skills. Get certified in Generative AI and become an expert.",
+                    text: "Work on real-world AI projects and unlock exciting career opportunities.",
                   },
                   {
                     icon: Crown,
-                    text: "Build real-world AI projects and get new career opportunities.",
+                    text: "Your success is our promise. 100% Satisfaction Guaranteed — Join Today!",
                   },
                 ].map(({ text, icon: Icon }, idx) => (
                   <div key={idx} className="flex items-start gap-3">

@@ -2,10 +2,10 @@
 
 export const StatsGrid = () => {
   const stats = [
-    { value: "20k+", label: "Attendess" },
+    { value: "10k+", label: "Attendess" },
     { value: "100%", label: "Practical" },
-    { value: "3Hrs", label: "Learning" },
-    { value: "4.9/5", label: "Ratings" },
+    { value: "8Hrs", label: "Technical Training" },
+    { value: "4.5/5", label: "Ratings" },
   ];
 
   return (

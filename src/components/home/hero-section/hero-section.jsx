@@ -33,7 +33,7 @@ export const HeroSection = () => {
     url: "/student/content/hero-section",
     queryKeys: ["hero-section"],
   });
-  console.log("heroSectionData", heroSectionData);
+  // console.log("heroSectionData", heroSectionData);
 
   const { image1, image2, image3, banner1, banner2, banner3 } =
     heroSectionData?.data || {};

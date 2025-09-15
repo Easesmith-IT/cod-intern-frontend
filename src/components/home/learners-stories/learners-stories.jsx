@@ -21,7 +21,7 @@ export const LearnersStories = ({ className }) => {
     queryKeys: ["review"],
   });
 
-  console.log("data", data);
+  // console.log("data", data);
 
   return (
     <section className={cn("section-container py-12 md:py-24", className)}>

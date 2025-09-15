@@ -23,7 +23,7 @@ const Workshop = () => {
       <ToolsSection />
       <ComparisonSection />
       {/* Adding Local Images */}
-      <BonusesSection />
+      {/* <BonusesSection /> */}
       <BeforeAfter />
       <CertificationSection />
       <SatisfactionSection />

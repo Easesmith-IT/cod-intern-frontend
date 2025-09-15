@@ -2,7 +2,9 @@ import Image from "next/image";
 import { LearningStep } from "./learning-step";
 import { cn } from "@/lib/utils";
 
-export const LearningToCareer = ({ className }) => {
+export const LearningToCareer = ({ className, data }) => {
+  const { content } = data || {};
+
   return (
     <div className={cn("section-container", className)}>
       <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium text-center capitalize w-full">
@@ -18,14 +20,7 @@ export const LearningToCareer = ({ className }) => {
       </h2>
 
       <p className="max-w-5xl mx-auto text-center font-stolzl text-xs sm:text-base font-book text-para mt-4">
-        Our philosophy at CodIntern is straightforward: we give you the tools
-        you need to transform your love of learning into a career you can be
-        proud of. By offering state-of-the-art, AI-driven learning opportunities
-        and practical skill development, we close the knowledge gap between
-        education and employment. Our objective is to provide you with the
-        marketable abilities and self-assurance you need to succeed in the tech
-        sector, ensuring that your future work reflects your actual abilities
-        and goals.
+        {content?.desc}
       </p>
 
       <h3 className="mt-10 max-w-5xl mx-auto capitalize font-stolzl text-base sm:text-2xl font-medium text-center">
@@ -34,7 +29,17 @@ export const LearningToCareer = ({ className }) => {
       </h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center mt-6">
-        <LearningStep
+        {content?.steps?.map((step, index) => (
+          <LearningStep
+            key={index}
+            index={index + 1}
+            title={step.title}
+            title1={step.title1}
+            desc={step.description}
+            points={step.points || []}
+          />
+        ))}
+        {/* <LearningStep
           index={1}
           title="Sign Up & Get Assessed"
           title1="(AI-Driven Skill Mapping)"
@@ -64,10 +69,6 @@ export const LearningToCareer = ({ className }) => {
               Chapter-wise progress tracking for monitoring your progress.
             </li>
           </ul>
-          {/* <p>
-            Our AI constantly monitors your performance, dynamically adapting
-            content to maximize your learning experience.
-          </p> */}
         </LearningStep>
         <LearningStep index={3} title="Learn Through Live Classes & Projects">
           Get immersed in live, mentor-guided sessions and work on actual
@@ -95,10 +96,6 @@ export const LearningToCareer = ({ className }) => {
           documents that grab attention. Get constructive feedback on your
           GitHub projects, LinkedIn page, and even simulated interviews, all
           based on AI-facilitated tools.
-          {/* <p className="mt-4">
-            Outcome: You'll have a job-ready profile that strongly highlights
-            your experiential skills.
-          </p> */}
         </LearningStep>
         <LearningStep
           index={6}
@@ -110,7 +107,7 @@ export const LearningToCareer = ({ className }) => {
           set and interests—from fast-paced startup openings to jobs in top tech
           MNCs. Our expert guidance, complemented by AI assistance, guides you
           every step from application to preparation and final success.
-        </LearningStep>
+        </LearningStep> */}
       </div>
     </div>
   );

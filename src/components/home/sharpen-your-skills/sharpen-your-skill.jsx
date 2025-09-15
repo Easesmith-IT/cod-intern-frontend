@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import React from "react";
 import { Benifit } from "./benifit";
 
-export const SharpenYourSkill = () => {
+export const SharpenYourSkill = ({ data }) => {
+  const { content, images } = data || {};
+
   return (
     <section className="section-container py-12 md:py-24 flex flex-col lg:flex-row items-center sm:justify-between gap-10">
       <div className="">
@@ -21,14 +22,7 @@ export const SharpenYourSkill = () => {
           </h2>
         </div>
         <p className="font-stolzl font-book text-para max-w-[590px] text-xs sm:text-base mt-5">
-          Take advantage of our state-of-the-art online courses, which are
-          intended to give you the highly sought-after skills you need to
-          succeed in the fast-paced workplace of today. Our programs combine
-          real-world, hands-on learning with AI-driven insights to make sure you
-          not only understand theoretical ideas but also become an expert in
-          their practical application. From fundamental concepts to more complex
-          specializations, we enable you to gain employable skills and quicken
-          your professional path.
+          {content?.desc}
         </p>
         <Button
           size="lg"
@@ -40,7 +34,8 @@ export const SharpenYourSkill = () => {
       </div>
       <div className="flex flex-col sm:flex-row gap-5">
         <Image
-          src="/sharpen-your-skill-img.jpg"
+          // src="/sharpen-your-skill-img.jpg"
+          src={images?.[0]?.image || "/sharpen-your-skill-img.jpg"}
           width={353}
           height={404}
           alt="sharpen-your-skill-img"

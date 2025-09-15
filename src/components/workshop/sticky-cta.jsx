@@ -36,7 +36,7 @@ export const StickyCTA = () => {
                 <div className="rounded-full border border-main p-2.5">
                   <div className="h-[50px] w-[50px] lg:h-[60px] lg:w-[60px]">
                     <Image
-                      src="/workshop/mentor.webp"
+                      src="/workshop/mentor.jpg"
                       alt="Mentor"
                       width={60}
                       height={60}
@@ -45,11 +45,16 @@ export const StickyCTA = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-2xl font-medium leading-8 text-black">
-                    Still confused? You're not alone — Let's fix it together
-                  </h3>
+                  <div>
+                    <h3 className="text-2xl font-medium text-black">
+                      Step Up Your Skills — Enroll Today!
+                    </h3>
+                    <h4 className="text-lg font-medium text-black">
+                      Secure Your Seat Now
+                    </h4>
+                  </div>
                   <p className="text-base font-book leading-6 text-black/80">
-                    20K+ Students Enrolled
+                    Trusted by 10,000+ Learners | Rated 4.8/5
                   </p>
                 </div>
               </div>
@@ -66,8 +71,8 @@ export const StickyCTA = () => {
                 <Link href="/workshop/generative-ai/registration">
                   <div className="flex items-center gap-1 text-base !font-normal leading-6 text-white">
                     <span>Register Now for</span>
-                    <span className="line-through">₹99</span>
-                    <span className="text-xl">₹9</span>
+                    {/* <span className="line-through">₹99</span> */}
+                    <span className="text-xl">₹189</span>
                   </div>
                 </Link>
               </Button>

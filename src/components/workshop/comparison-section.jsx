@@ -6,31 +6,30 @@ import Image from "next/image";
 
 const cards = [
   {
-    title: "Burger",
-    price: "₹99.00",
-    image:
-      "https://hubble.cdn.chittiapp.com/cdn/2025/7/551e8aa0-6df7-11f0-87e3-c3cec9b31d15_burger_min.webp",
+    title: "Entertainment",
+    price: "₹499.00",
+    image: "/workshop/ticket.png",
     bg: "bg-gradient-to-b from-main/40 to-main/10",
     tickIcon: "/workshop/tick.svg",
     features: [
-      'One bite → "Wow!"',
-      "But adds calories, not skills",
-      "Instagram photo? Okay, Life impact? Zero!!!",
-      "Money gone, moment gone.",
+      '2 hours of entertainment → "Nice visuals!"',
+      "But when it ends, nothing really changes.",
+      "Memories fade, skills don’t grow.",
+      "Money spent, moment gone.",
     ],
   },
   {
     title: "Workshop",
-    price: "₹9.00",
+    price: "₹189.00",
     image:
       "https://hubble.cdn.chittiapp.com/cdn/2025/7/62090bd0-6c32-11f0-8d34-07754ad9d03a_workshop_min.webp",
     bg: "bg-gradient-to-b from-main to-para-3",
     tickIcon: "/workshop/tick.svg",
     features: [
-      "Automate Tedious Tasks",
-      "Automate Tedious Tasks",
-      "Hands-on practical knowledge",
-      "Boost Your Career opportunities",
+      "Learn to Automate Tedious Tasks",
+      "Get hands-on, practical knowledge",
+      "Boost your career opportunities",
+      "Make an impact that lasts",
     ],
   },
 ];
@@ -43,7 +42,7 @@ export const ComparisonSection = () => {
           className="text-2xl font-bold leading-8 text-black lg:text-[40px] lg:leading-[48px] text-center mb-5"
           style={{ fontFamily: "Sora, sans-serif" }}
         >
-          Spend ₹99 on Burger.. or ₹9 on your Future?
+          Spend ₹499 on a Movie Ticket… or ₹189 on Your Future?
         </h2>
         <p className="mt-5 text-xl font-semibold leading-7 text-center text-black"></p>
 
@@ -81,7 +80,10 @@ export const ComparisonSection = () => {
                 {card.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <Check
-                      className={cn("size-4 shrink-0 mt-1.5", index === 1 && "text-white")}
+                      className={cn(
+                        "size-4 shrink-0 mt-1.5",
+                        index === 1 && "text-white"
+                      )}
                     />
                     <span
                       className={cn(

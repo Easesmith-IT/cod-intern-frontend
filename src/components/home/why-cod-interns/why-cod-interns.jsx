@@ -6,9 +6,10 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { Feature } from "./feature";
-import features from "@/data/features.json";
 
-export const WhyCodInterns = () => {
+export const WhyCodInterns = ({ data }) => {
+  const { content } = data || {};
+
   return (
     <section className="section-container py-12 sm:py-24 flex flex-col lg:flex-row gap-16 overflow-x-hidden">
       <div className="">
@@ -25,13 +26,7 @@ export const WhyCodInterns = () => {
         </h2>
 
         <p className="mt-5 font-stolzl font-book text-xs sm:text-base text-para lg:w-[520px]">
-          Success is not just a goal at CodIntern; it is the unavoidable result
-          of our learner-centric, AI-powered ecosystem. We offer the unmatched
-          training, state-of-the-art support, and precise guidance required to
-          turn your untapped potential into extraordinary performance and a
-          career you're genuinely proud of, from clever skill mapping and
-          adaptive learning paths to individualized career matching and
-          professional mentoring.
+          {content?.desc}
         </p>
       </div>
       <Carousel
@@ -42,7 +37,7 @@ export const WhyCodInterns = () => {
         className="lg:max-w-3xl"
       >
         <CarouselContent className="-ml-3">
-          {features.map((feature, index) => (
+          {content?.features.map((feature, index) => (
             <Feature
               key={index}
               index={index}

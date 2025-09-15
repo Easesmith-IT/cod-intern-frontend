@@ -102,19 +102,19 @@ export const HeroScection = () => {
             ))}
           </div>
           <p className="text-sm font-normal leading-5  lg:text-base lg:leading-6">
-            14K+ reviews (4.9 of 5)
+            10K+ reviews (4.8 of 5)
           </p>
         </div>
 
         {/* Workshop title */}
         <div className="mt-3 lg:mt-5 text-base md:text-lg font-medium leading-7 tracking-[0.36px] uppercase text-main">
-          Generative AI workshop
+          PROMPT ENGINEERING WORKSHOP
         </div>
         <h1
           className="mt-2 lg:mt-3 text-[28px] lg:text-5xl lg:leading-[48px] font-bold  leading-9"
           style={{ fontFamily: "Sora, sans-serif" }}
         >
-          Learn Essential AI tools – In Tamil
+          Get Trained on AI Tools - In Hindi
         </h1>
 
         {/* Content */}
@@ -122,7 +122,7 @@ export const HeroScection = () => {
           {/* Speaker */}
           <div className="flex flex-col items-center md:w-[50%]">
             <Image
-              src="https://hubble.cdn.chittiapp.com/cdn/2025/7/56a899e0-6c32-11f0-91d2-b30b013b8f51_hero-illustration_min.webp"
+              src="/workshop/mentor.jpg"
               alt="Hero Image"
               width={280}
               height={280}
@@ -132,10 +132,10 @@ export const HeroScection = () => {
               10+ Years of Experience
             </p>
             <p className="mt-0.5 text-2xl font-semibold leading-9  lg:mt-1 lg:text-[22px] lg:leading-9">
-              Premanand Sethurajan
+              Mrs. Nidhi Grover Raheja
             </p>
             <p className="text-sm font-book text-muted-foreground mt-0.5">
-              Co Founder of LMES Academy
+              Technical Trainer & Book Author- Gen AI, Python, ML & NLP Domain
             </p>
           </div>
 
@@ -144,21 +144,21 @@ export const HeroScection = () => {
             <div className="grid w-full grid-cols-2 gap-3 lg:gap-5">
               {/* Date */}
               <div className="rounded-xl px-3 py-2.5 flex flex-col gap-0.5 col-span-2 lg:px-5 lg:py-4 bg-gradient-to-b from-white/40 to-white/20 border">
-                <div className="flex items-center gap-2">
-                  <div className="w-12 h-[50px] rounded-lg overflow-hidden border border-main bg-main flex flex-col items-center justify-center">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-[55px] rounded-lg overflow-hidden border border-main bg-main flex flex-col items-center justify-center">
                     <div className="py-0.5 text-xs font-semibold leading-4 text-white uppercase">
-                      Sun
+                      Sat, Sun
                     </div>
-                    <div className="w-full text-lg font-bold leading-7 text-center bg-white text-neutral-800">
-                      21
+                    <div className="w-full text-lg py-1 font-bold leading-7 text-center bg-white text-neutral-800">
+                      31, 1
                     </div>
                   </div>
                   <div className="flex flex-col text-left">
                     <p className="text-lg font-semibold leading-7 ">
-                      Sunday, 21 Sep 2025
+                      Saturday & Sunday 31 Oct- 1 Nov 2025
                     </p>
-                    <p className="text-base font-normal leading-6 /90">
-                      10:00 AM IST
+                    <p className="text-base font-normal leading-6">
+                      11:00 AM To 03:00 PM IST
                     </p>
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export const HeroScection = () => {
                   Language
                 </p>
                 <p className="text-lg font-semibold leading-7 tracking-[0.36px] ">
-                  Tamil
+                  Hindi
                 </p>
               </div>
             </div>
@@ -196,8 +196,8 @@ export const HeroScection = () => {
                 <Link href="/workshop/generative-ai/registration">
                   <div className="flex items-center gap-1 text-base font-normal">
                     <span>Register Now for</span>
-                    <span className="line-through">₹99</span>
-                    <span className="text-xl">₹9</span>
+                    {/* <span className="line-through">₹189</span> */}
+                    <span className="text-xl">₹189</span>
                   </div>
                 </Link>
               </Button>

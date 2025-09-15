@@ -41,7 +41,7 @@ export const CTASection = () => {
             ))}
           </div>
           <p className="text-sm font-book leading-5 text-black lg:text-base">
-            14K+ reviews (4.9 of 5)
+            10K+ reviews (4.8 of 5)
           </p>
         </div>
       </div>

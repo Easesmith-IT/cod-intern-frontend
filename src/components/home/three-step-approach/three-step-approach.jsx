@@ -2,7 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { Step } from "./step";
 
-export const ThreeStepApproach = () => {
+export const ThreeStepApproach = ({ data }) => {
+
   return (
     <section className="py-12 md:py-24 section-container">
       <div className="flex justify-center text-center section-container px-0 max-w-[900px]">
@@ -19,7 +20,15 @@ export const ThreeStepApproach = () => {
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-10">
-        <Step
+        {data?.content?.steps?.map((step, index) => (
+          <Step
+            key={index}
+            title={step.title}
+            className={index % 2 === 0 ? "text-main" : "text-black"}
+            arr={step.arr}
+          />
+        ))}
+        {/* <Step
           title="AI-Powered Profile Optimization"
           className="text-main"
           arr={[
@@ -45,7 +54,7 @@ export const ThreeStepApproach = () => {
             "Advanced Technical Proficiency Drills",
             "Tailored Enterprise Simulations",
           ]}
-        />
+        /> */}
       </div>
     </section>
   );
