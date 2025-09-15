@@ -1,6 +1,9 @@
 import React from "react";
+import { Skeleton } from "../ui/skeleton";
 
-export const HeroSection = () => {
+export const HeroSection = ({ data, isLoading }) => {
+  const { content } = data || {};
+
   return (
     <div
       style={{
@@ -14,10 +17,19 @@ export const HeroSection = () => {
           About <span className="text-main">Us</span>
         </h1>
         <p className="text-center text-para max-w-[970px] mx-auto font-stolzl text-xs sm:text-sm md:text-base lg:text-lg mt-2">
-          CodIntern, a DPIIT-approved EdTech platform and Skill India Training
+          {/* CodIntern, a DPIIT-approved EdTech platform and Skill India Training
           Partner, equips students with AI-facilitated learning, experiential
           learning, and career guidance—filling the gap between education and
-          employment for a technology-enabled workforce in India.
+          employment for a technology-enabled workforce in India. */}
+          {isLoading ? (
+            <div className="space-y-2">
+              <Skeleton className="w-[80%] mx-auto h-5" />
+              <Skeleton className="w-[70%] mx-auto h-5" />
+              <Skeleton className="w-[60%] mx-auto h-5" />
+            </div>
+          ) : (
+            content?.desc
+          )}
         </p>
       </div>
     </div>

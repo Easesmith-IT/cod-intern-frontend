@@ -23,7 +23,7 @@ export default function Home() {
     isLoading,
     isError,
   } = useApiQuery({
-    url: "/admin/content/home", // pageName = "home"
+    url: "/student/content/home", // pageName = "home"
     queryKeys: ["content", "home"],
   });
 

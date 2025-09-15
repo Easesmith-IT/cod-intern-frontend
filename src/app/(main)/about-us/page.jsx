@@ -1,3 +1,4 @@
+import { AboutUsClient } from "@/components/about-us/about-us-client";
 import { AchieveYourGoals } from "@/components/about-us/achieve-your-goals";
 import { ExpertInstructorLiveClasses } from "@/components/about-us/expert-instructor-live-classes/expert-instructor-live-classes";
 import { HeroSection } from "@/components/about-us/hero";
@@ -16,15 +17,7 @@ export const metadata = {
 const AboutUs = () => {
   return (
     <section>
-      <HeroSection />
-      <AchieveYourGoals />
-      <ShapingFutures />
-      {/* <EvolutionOFCodIntern /> comment this */}
-      <StartYourCourse />
-      <ExpertInstructorLiveClasses />
-      <Mentors />
-      <LearningToCareer className="py-12 sm:py-24" />
-      <LearnersStories className="!pt-0" />
+      <AboutUsClient />
     </section>
   );
 };

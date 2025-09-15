@@ -3,8 +3,11 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import Link from "next/link";
+import { Skeleton } from "../ui/skeleton";
 
-export const AchieveYourGoals = () => {
+export const AchieveYourGoals = ({ data, isLoading }) => {
+  const { content } = data || {};
+
   return (
     <div className="section-container py-12 md:py-24 flex flex-col-reverse xl:grid xl:grid-cols-[530px_1fr] items-center gap-14">
       <div>
@@ -86,73 +89,45 @@ export const AchieveYourGoals = () => {
           />
         </h2>
         <p className="font-stolzl text-xs sm:text-sm text-para mt-5 font-book">
-          We don't only educate at CodIntern — we evolve. Our enhanced courses
+          {/* We don't only educate at CodIntern — we evolve. Our enhanced courses
           are tailored to narrow the gap between what they learn and what the
           job market requires. Through practical projects, AI-driven learning
           engines, and immersive mentorship, we empower learners to take bold
-          strides towards their ideal jobs What You Can Achieve:
+          strides towards their ideal jobs What You Can Achieve: */}
+          {isLoading ? (
+            <div className="space-y-2">
+              <Skeleton className="w-full h-4" />
+              <Skeleton className="w-full h-4" />
+              <Skeleton className="w-[60%] h-4" />
+            </div>
+          ) : (
+            content?.desc
+          )}
         </p>
         <ul className="mt-5 space-y-5">
-          <li className="flex gap-2 items-center">
-            <Image
-              src="/about-us/list-item.svg"
-              width={21}
-              height={17}
-              alt="List Item"
-            />
-            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
-              Master In-Demand Skills From programming to AI, web development to
-              aptitude — know what employers are really looking for.
-            </span>
-          </li>
-          <li className="flex gap-2 items-center">
-            <Image
-              src="/about-us/list-item.svg"
-              width={21}
-              height={17}
-              alt="List Item"
-            />
-            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
-              Crack Internships & Job Interviews Practice with resume
-              assistance, mock interviews, and placement-ready training.
-            </span>
-          </li>
-          <li className="flex gap-2 items-center">
-            <Image
-              src="/about-us/list-item.svg"
-              width={21}
-              height={17}
-              alt="List Item"
-            />
-            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
-              Build Real-World Projects Practice in the real world. Practice
-              problems, develop apps, and present your portfolio to recruiters.
-            </span>
-          </li>
-          <li className="flex gap-2 items-center">
-            <Image
-              src="/about-us/list-item.svg"
-              width={21}
-              height={17}
-              alt="List Item"
-            />
-            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
-              Learn Smarter with AI Get personalized learning with AI-created
-              quizzes, progress monitoring, and adaptive difficulty levels.
-            </span>
-          </li>
-          <li className="flex gap-2 items-center">
-            <Image
-              src="/about-us/list-item.svg"
-              width={21}
-              height={17}
-              alt="List Item"
-            />
-            <span className="text-xs sm:text-sm font-stolzl font-book text-para">
-              Upskill Anytime, Anywhere With multilingual material, downloadable
-              content, and mobile-supported access — learning is within reach
-            </span>
-          </li>
+          {isLoading ? (
+            <div className="space-y-2">
+              <Skeleton className="w-full h-4" />
+              <Skeleton className="w-full h-4" />
+              <Skeleton className="w-full h-4" />
+              <Skeleton className="w-full h-4" />
+              <Skeleton className="w-full h-4" />
+            </div>
+          ) : (
+            content?.items.map((item, index) => (
+              <li key={index} className="flex gap-2 items-center">
+                <Image
+                  src="/about-us/list-item.svg"
+                  width={21}
+                  height={17}
+                  alt="List Item"
+                />
+                <span className="text-xs sm:text-sm font-stolzl font-book text-para">
+                  {item.text}
+                </span>
+              </li>
+            ))
+          )}
         </ul>
         <Button
           asChild
