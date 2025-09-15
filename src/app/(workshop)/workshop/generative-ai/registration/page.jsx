@@ -1,4 +1,4 @@
-import { WorkShopRegistrationClient } from "@/components/workshop/workshop-registration-client";
+import { GenerativeAIWorkShopRegistrationClient } from "@/components/workshop/generative-ai-workshop-registration-client";
 
 export const metadata = {
   title: "Workshop Registration - Codintern",
@@ -8,7 +8,7 @@ export const metadata = {
 
 const WorkShopRegistration = () => {
   return (
-    <WorkShopRegistrationClient
+    <GenerativeAIWorkShopRegistrationClient
       title="Generative AI Workshop Registration Form"
       type="generative-ai"
     />

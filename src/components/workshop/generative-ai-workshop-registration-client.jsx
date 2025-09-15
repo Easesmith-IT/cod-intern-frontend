@@ -28,9 +28,11 @@ import { useForm } from "react-hook-form";
 import Spinner from "../Spinner";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-export const WorkShopRegistrationClient = () => {
+export const GenerativeAIWorkShopRegistrationClient = () => {
   const [open, setOpen] = useState(false);
+
   const form = useForm({
     resolver: zodResolver(WorkshopRegistrationFormSchema),
     defaultValues: {
@@ -73,7 +75,7 @@ export const WorkShopRegistrationClient = () => {
       branch: data.branch,
       year: data.year,
       universityRollNo: data.universityRollNo,
-      type: "workshop",
+      type: "generative-ai",
     };
 
     await submitForm(apiData);
@@ -82,8 +84,16 @@ export const WorkShopRegistrationClient = () => {
   console.log("result", result);
   useEffect(() => {
     if (result) {
+      const { registration } = result || {};
       reset();
-      setOpen(true);
+
+      window.open(
+        `https://razorpay.com/payment-link/plink_RH5FyZVNafOWN4?notes[refId]=${registration._id}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+      // setOpen(true);
     }
   }, [result]);
 
@@ -99,15 +109,18 @@ export const WorkShopRegistrationClient = () => {
         />
       )}
 
-      <div className="max-w-5xl mx-auto  p-5">
-        <Link href="/" className="flex gap-1 items-center mb-4">
+      <div className="max-w-5xl mx-auto p-5">
+        <Link
+          href="/workshop/generative-ai"
+          className="mb-4 size-10 border flex justify-center items-center rounded-full"
+        >
           <ArrowLeft className="text-3xl cursor-pointer" />
           {/* <TypographyH2 heading="All Pages" /> */}
         </Link>
       </div>
       <div className="max-w-5xl mx-auto p-5 rounded-md border">
         <h1 className="text-2xl font-medium font-stolzl text-center">
-          Workshop Registration Form
+          Generative AI Workshop Registration Form
         </h1>
         <Form {...form}>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-8">

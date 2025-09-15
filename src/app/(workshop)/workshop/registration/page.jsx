@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const WorkShopRegistration = () => {
-  return <WorkShopRegistrationClient type="workshop" />;
+  return <WorkShopRegistrationClient />;
 };
 
 export default WorkShopRegistration;
