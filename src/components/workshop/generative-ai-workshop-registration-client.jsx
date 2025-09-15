@@ -112,7 +112,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
       <div className="max-w-5xl mx-auto p-5">
         <Link
           href="/workshop/generative-ai"
-          className="mb-4 size-10 border flex justify-center items-center rounded-full"
+          className="size-10 border flex justify-center items-center rounded-full"
         >
           <ArrowLeft className="text-3xl cursor-pointer" />
           {/* <TypographyH2 heading="All Pages" /> */}
