@@ -29,6 +29,14 @@ const tools = [
     name: "Stability AI",
     src: "/workshop/stability-ai.png",
   },
+  {
+    name: "ChatGPT",
+    src: "/workshop/chatGPT.webp",
+  },
+  {
+    name: "Midjourney",
+    src: "/workshop/midjourney.webp",
+  },
 ];
 
 export const ToolsSection = () => {
@@ -78,7 +86,7 @@ const FirstScrollingRow = ({ className }) => {
         className
       )}
     >
-      {tools.slice(0, 3).map((tool) => (
+      {tools.slice(0, 4).map((tool) => (
         <div
           key={tool.name}
           className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4 bg-gradient-to-b from-main/40 to-main/10 border"
@@ -90,9 +98,7 @@ const FirstScrollingRow = ({ className }) => {
             height={60}
             className="h-12 lg:h-[60px] object-contain"
           />
-          <div className="text-base font-book text-black">
-            {tool.name}
-          </div>
+          <div className="text-base font-book text-black">{tool.name}</div>
         </div>
       ))}
     </div>
@@ -107,7 +113,7 @@ const SecondScrollingRow = ({ className }) => {
         className
       )}
     >
-      {tools.slice(3).map((tool, i) => (
+      {tools.slice(4).map((tool, i) => (
         <div
           key={tool.name}
           className="rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-1 min-w-[164px] lg:w-[210px] lg:px-8 lg:py-4 bg-gradient-to-b from-main/40 to-main/10 border"
@@ -119,7 +125,7 @@ const SecondScrollingRow = ({ className }) => {
             height={60}
             className={cn(
               "h-12 lg:h-[60px] object-contain",
-              i === 2 && " lg:w-[80%]"
+              i === 2 && "w-[50%] mx-auto lg:w-[80%]"
             )}
           />
           <div className="text-base font-book text-black">{tool.name}</div>

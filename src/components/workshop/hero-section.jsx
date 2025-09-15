@@ -126,7 +126,7 @@ export const HeroScection = () => {
               alt="Hero Image"
               width={280}
               height={280}
-              className="w-[240px] h-[240px] md:w-[200px] md:h-[200px] lg:w-[280px] lg:h-[280px] rounded-full object-cover"
+              className="w-[240px] h-[240px] md:w-[200px] md:h-[200px] lg:w-[280px] lg:h-[280px] rounded-full object-cover object-top"
             />
             <p className="mt-2 text-sm font-semibold leading-5 text-main lg:mt-0">
               10+ Years of Experience

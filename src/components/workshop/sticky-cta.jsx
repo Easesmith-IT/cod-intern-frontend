@@ -40,7 +40,7 @@ export const StickyCTA = () => {
                       alt="Mentor"
                       width={60}
                       height={60}
-                      className="h-full w-full rounded-full object-cover"
+                      className="h-full w-full rounded-full object-cover object-top"
                     />
                   </div>
                 </div>

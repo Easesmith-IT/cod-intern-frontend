@@ -21,8 +21,7 @@ const cards = [
   {
     title: "Workshop",
     price: "₹189.00",
-    image:
-      "https://hubble.cdn.chittiapp.com/cdn/2025/7/62090bd0-6c32-11f0-8d34-07754ad9d03a_workshop_min.webp",
+    image: "/workshop/mentor.jpg",
     bg: "bg-gradient-to-b from-main to-para-3",
     tickIcon: "/workshop/tick.svg",
     features: [
