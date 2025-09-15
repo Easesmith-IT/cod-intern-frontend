@@ -25,9 +25,17 @@ export const StickyCTA = () => {
           >
             {/* Mobile View Heading */}
             <div className="md:hidden">
-              <h3 className="text-center text-xl font-medium leading-7 text-black">
-                Still confused? You're not alone — Let's fix it together
-              </h3>
+              <div>
+                <h3 className="text-xl font-medium text-black">
+                  Step Up Your Skills — Enroll Today!
+                </h3>
+                <h4 className="text-base font-medium text-black">
+                  Secure Your Seat Now
+                </h4>
+              </div>
+              <p className="text-sm font-book leading-6 text-black/80">
+                Trusted by 10,000+ Learners | Rated 4.8/5
+              </p>
             </div>
 
             {/* Desktop View */}
@@ -65,18 +73,18 @@ export const StickyCTA = () => {
               <Button
                 asChild
                 variant="codIntern"
-                className="h-12 w-full mt-6"
+                className="md:h-12 w-full md:mt-6"
                 // className="bg-emerald-700 h-12 rounded-[10px] w-full px-6 py-3 mt-6 lg:mt-12 flex justify-center"
               >
                 <Link href="/workshop/generative-ai/registration">
-                  <div className="flex items-center gap-1 text-base !font-normal leading-6 text-white">
+                  <div className="flex items-center gap-1 text-sm md:text-base !font-normal leading-6 text-white">
                     <span>Register Now for</span>
                     {/* <span className="line-through">₹99</span> */}
-                    <span className="text-xl">₹189</span>
+                    <span className="md:text-xl">₹189</span>
                   </div>
                 </Link>
               </Button>
-              <div className="flex items-center justify-center gap-2 text-center text-sm font-book leading-5 text-black/80">
+              <div className="flex items-center justify-center gap-2 text-center text-xs md:text-sm font-book leading-5 text-black/80">
                 <span>Offer ends in</span>
                 <span>
                   {minutes}:{seconds}

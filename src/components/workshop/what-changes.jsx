@@ -38,7 +38,7 @@ export const ThreeHourChanges = () => {
           className="text-3xl font-bold leading-9 lg:text-5xl text-center lg:leading-[48px] xl:text-[52px] xl:leading-[60px]"
           style={{ fontFamily: "Sora, sans-serif" }}
         >
-          What Changes in Just 3 Hours?
+          What Changes in Just 8 Hours?
         </h2>
 
         {/* Timeline */}

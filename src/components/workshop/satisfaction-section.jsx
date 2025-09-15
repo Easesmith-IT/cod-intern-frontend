@@ -20,7 +20,7 @@ export const SatisfactionSection = () => {
         </div>
 
         {/* Image */}
-        <div className="mx-auto w-[320px] h-[67px] lg:w-[600px] lg:h-[125px]">
+        {/* <div className="mx-auto w-[320px] h-[67px] lg:w-[600px] lg:h-[125px]">
           <Image
             src="/workshop/100.webp"
             alt="100% Satisfaction Guaranteed"
@@ -28,7 +28,7 @@ export const SatisfactionSection = () => {
             height={125}
             className="object-cover w-full h-full rounded-xl lg:rounded-[22px]"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );

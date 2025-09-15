@@ -145,17 +145,17 @@ export const HeroScection = () => {
               {/* Date */}
               <div className="rounded-xl px-3 py-2.5 flex flex-col gap-0.5 col-span-2 lg:px-5 lg:py-4 bg-gradient-to-b from-white/40 to-white/20 border">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-[55px] rounded-lg overflow-hidden border border-main bg-main flex flex-col items-center justify-center">
-                    <div className="py-0.5 text-xs font-semibold leading-4 text-white uppercase">
+                  <div className="w-16.5 rounded-lg overflow-hidden border border-main bg-main flex flex-col items-center justify-center">
+                    <div className="py-1 text-xs font-semibold leading-4 text-white uppercase">
                       Sat, Sun
                     </div>
-                    <div className="w-full text-lg py-1 font-bold leading-7 text-center bg-white text-neutral-800">
+                    <div className="w-full md:text-lg py-1 font-bold leading-7 text-center bg-white text-neutral-800">
                       31, 1
                     </div>
                   </div>
                   <div className="flex flex-col text-left">
                     <p className="text-lg font-semibold leading-7 ">
-                      Saturday & Sunday 31 Oct- 1 Nov 2025
+                      Saturday & Sunday <br /> 31 Oct- 1 Nov 2025
                     </p>
                     <p className="text-base font-normal leading-6">
                       11:00 AM To 03:00 PM IST
