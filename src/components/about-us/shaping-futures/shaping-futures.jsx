@@ -19,7 +19,7 @@ export const ShapingFutures = ({ className, data, isLoading }) => {
           alt="Ellipse"
         />
       </h2>
-      <p className="font-stolzl text-xs sm:text-sm text-para mt-2 font-book mx-auto text-center max-w-4xl">
+      <div className="font-stolzl text-xs sm:text-sm text-para mt-2 font-book mx-auto text-center max-w-4xl">
         {isLoading ? (
           <div className="space-y-2">
             <Skeleton className="w-full h-4" />
@@ -27,9 +27,9 @@ export const ShapingFutures = ({ className, data, isLoading }) => {
         ) : (
           content?.subheading
         )}
-      </p>
+      </div>
 
-      <p className="font-stolzl text-xs sm:text-sm text-para mt-4 font-book mx-auto text-center max-w-4xl">
+      <div className="font-stolzl text-xs sm:text-sm text-para mt-4 font-book mx-auto text-center max-w-4xl">
         {isLoading ? (
           <div className="space-y-2">
             <Skeleton className="w-full h-4" />
@@ -39,7 +39,7 @@ export const ShapingFutures = ({ className, data, isLoading }) => {
         ) : (
           content?.paragraph
         )}
-      </p>
+      </div>
 
       {isLoading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">

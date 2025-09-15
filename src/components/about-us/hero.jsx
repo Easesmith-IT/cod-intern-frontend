@@ -16,7 +16,7 @@ export const HeroSection = ({ data, isLoading }) => {
         <h1 className="text-2xl leading-9 lg:leading-14 md:text-4xl lg:text-5xl font-medium font-stolzl text-center text-para-3">
           About <span className="text-main">Us</span>
         </h1>
-        <p className="text-center text-para max-w-[970px] mx-auto font-stolzl text-xs sm:text-sm md:text-base lg:text-lg mt-2">
+        <div className="text-center text-para max-w-[970px] mx-auto font-stolzl text-xs sm:text-sm md:text-base lg:text-lg mt-2">
           {/* CodIntern, a DPIIT-approved EdTech platform and Skill India Training
           Partner, equips students with AI-facilitated learning, experiential
           learning, and career guidance—filling the gap between education and
@@ -30,7 +30,7 @@ export const HeroSection = ({ data, isLoading }) => {
           ) : (
             content?.desc
           )}
-        </p>
+        </div>
       </div>
     </div>
   );

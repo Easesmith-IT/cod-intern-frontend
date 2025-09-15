@@ -88,7 +88,7 @@ export const AchieveYourGoals = ({ data, isLoading }) => {
             alt="Ellipse"
           />
         </h2>
-        <p className="font-stolzl text-xs sm:text-sm text-para mt-5 font-book">
+        <div className="font-stolzl text-xs sm:text-sm text-para mt-5 font-book">
           {/* We don't only educate at CodIntern — we evolve. Our enhanced courses
           are tailored to narrow the gap between what they learn and what the
           job market requires. Through practical projects, AI-driven learning
@@ -103,7 +103,7 @@ export const AchieveYourGoals = ({ data, isLoading }) => {
           ) : (
             content?.desc
           )}
-        </p>
+        </div>
         <ul className="mt-5 space-y-5">
           {isLoading ? (
             <div className="space-y-2">
