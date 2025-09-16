@@ -1,5 +1,3 @@
-"use client";
-
 import { BadgeCheck, Crown } from "lucide-react";
 import Image from "next/image";
 
@@ -75,6 +73,7 @@ export const CertificationSection = () => {
                   alt="Certificate"
                   width={500}
                   height={375}
+                  priority
                   className="w-full h-full aspect-[7/5] rounded-lg"
                 />
               </div>
