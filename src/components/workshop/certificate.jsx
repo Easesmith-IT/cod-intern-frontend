@@ -62,7 +62,7 @@ export const Certification = () => {
 
           {/* Certificate Image */}
           <div className="bg-[rgba(255,255,255,0.1)] rounded-xl flex items-center justify-center w-fit mx-auto p-0 lg:p-8">
-            <div className="w-[280px] h-[200px] md:w-[300px] md:h-[214px] lg:w-[420px] lg:h-[300px] xl:w-[500px] xl:h-[375px]">
+            {/* <div className="w-[280px] h-[200px] md:w-[300px] md:h-[214px] lg:w-[420px] lg:h-[300px] xl:w-[500px] xl:h-[375px]">
               <Image
                 src="/workshop/certificate.png"
                 alt="Certificate"
@@ -71,7 +71,7 @@ export const Certification = () => {
                 priority
                 className="w-full h-full aspect-[7/5] rounded-lg"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
