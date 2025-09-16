@@ -12,7 +12,7 @@ const points = [
   },
 ];
 
-const PointItem = ({ Icon, text }: { Icon: any, text: string }) => (
+const PointItem = ({ Icon, text }) => (
   <div className="flex items-start gap-3">
     <div className="p-2.5 bg-main/10 rounded-lg lg:p-3">
       <div className="w-6 h-6">
