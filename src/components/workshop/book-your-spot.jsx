@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export const BookYourSpot = () => {
   return (
     <div className="relative w-full">
@@ -16,19 +18,13 @@ export const BookYourSpot = () => {
           {/* Video */}
           <div className="flex justify-center">
             <div className="col-span-2 rounded-2xl">
-              <video
-                autoPlay
-                loop
-                preload="none"
-                playsInline
-                muted
-                className="object-cover w-full h-full rounded-2xl"
-              >
-                <source
-                  src="/workshop/book-spot-video.mp4"
-                  type="video/mp4"
-                />
-              </video>
+              <Image
+                src="/workshop/book-spot.jpg"
+                width={500}
+                height={400}
+                className="w-full"
+                alt="Book Spot"
+              />
             </div>
           </div>
         </div>

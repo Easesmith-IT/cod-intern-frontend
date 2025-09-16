@@ -71,7 +71,7 @@ export const CertificationSection = () => {
             <div className="bg-[rgba(255,255,255,0.1)] rounded-xl p-0 flex items-center justify-center lg:p-8 w-fit mx-auto h-fit">
               <div className="w-[280px] h-[200px] md:w-[300px] md:h-[214px] lg:w-[420px] lg:h-[300px] xl:w-[500px] xl:h-[375px]">
                 <Image
-                  src="/workshop/certificate.webp"
+                  src="/workshop/certificate.png"
                   alt="Certificate"
                   width={500}
                   height={375}
