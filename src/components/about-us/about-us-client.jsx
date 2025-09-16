@@ -69,9 +69,15 @@ export const AboutUsClient = () => {
       <ShapingFutures data={shapingFuturesData} isLoading={isLoading} />
       {/* <EvolutionOFCodIntern /> comment this */}
       <StartYourCourse data={startYourCourseData} isLoading={isLoading} />
-      <ExpertInstructorLiveClasses />
-      <Mentors />
-      <LearningToCareer className="py-12 sm:py-24" />
+      <ExpertInstructorLiveClasses
+        data={expertInstructorLiveClassesData}
+        isLoading={isLoading}
+      />
+      <Mentors data={mentorsData} isLoading={isLoading} />
+      <LearningToCareer
+        data={learningToCareerData}
+        className="py-12 sm:py-24"
+      />
       <LearnersStories className="!pt-0" />
     </div>
   );

@@ -29,9 +29,11 @@ import Spinner from "../Spinner";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { OtpModal } from "./otp-modal";
 
 export const GenerativeAIWorkShopRegistrationClient = () => {
   const [open, setOpen] = useState(false);
+  const [isOtpModalOpen, setIsOtpModalOpen] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(WorkshopRegistrationFormSchema),
@@ -48,7 +50,39 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
     },
   });
 
-  const { reset, handleSubmit, control } = form;
+  const { reset, handleSubmit, control, getValues, watch } = form;
+
+  const { mutateAsync, isPending, data } = useApiMutation({
+    url: "/student/workshop/send-otp",
+    method: POST,
+    invalidateKey: ["workshop-send-otp"],
+    isToast: false,
+  });
+
+  useEffect(() => {
+    if (data) {
+      setIsOtpModalOpen(true);
+    }
+  }, [data]);
+
+  const {
+    mutateAsync: verifyOtp,
+    isPending: isLoading,
+    data: verifyOtpData,
+  } = useApiMutation({
+    url: "/student/workshop/verify-otp",
+    method: POST,
+    invalidateKey: ["workshop-verify-otp"],
+    isToast: false,
+  });
+
+  console.log("verifyOtpData", verifyOtpData);
+
+  useEffect(() => {
+    if (verifyOtpData) {
+      setIsOtpModalOpen(false);
+    }
+  }, [verifyOtpData]);
 
   const {
     mutateAsync: submitForm,
@@ -213,26 +247,47 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                 )}
               />
 
-              <FormField
-                control={control}
-                name="mobileNumber"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>
-                      Mobile Number <span className="text-destructive">*</span>
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        type="number"
-                        placeholder="Mobile Number  "
-                        className={`placeholder:text-[#00000066] border-[#9237E347] font-stolzl rounded py-5`}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
+              <div className="grid grid-cols-[1fr_auto]">
+                <FormField
+                  control={control}
+                  name="mobileNumber"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Mobile Number{" "}
+                        <span className="text-destructive">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          placeholder="Mobile Number  "
+                          className={`placeholder:text-[#00000066] border-[#9237E347] font-stolzl rounded py-5`}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {verifyOtpData ? (
+                  <Button variant="success" className="h-10 mt-6 ml-4 rounded w-24 cursor-default">
+                    Verified
+                  </Button>
+                ) : (
+                  <Button
+                    type="button"
+                    disabled={isPending || watch("mobileNumber")?.length !== 10}
+                    onClick={() =>
+                      mutateAsync({
+                        mobileNumber: getValues("mobileNumber"),
+                      })
+                    }
+                    className="h-10 mt-6 ml-4 rounded w-24"
+                  >
+                    {isPending ? <Spinner /> : "Send OTP"}
+                  </Button>
                 )}
-              />
+              </div>
 
               <FormField
                 control={control}
@@ -340,6 +395,17 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
           </form>
         </Form>
       </div>
+
+      {isOtpModalOpen && (
+        <OtpModal
+          open={isOtpModalOpen}
+          setOpen={setIsOtpModalOpen}
+          phoneNumber={getValues("mobileNumber")}
+          onResend={mutateAsync}
+          loading={isLoading}
+          onVerify={verifyOtp}
+        />
+      )}
     </section>
   );
 };

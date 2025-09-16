@@ -3,7 +3,6 @@ import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
 export const StartYourCourse = ({ data, isLoading }) => {
-  console.log("StartYourCourse data", data);
   const { content, images } = data || {};
 
   return (
@@ -19,14 +18,27 @@ export const StartYourCourse = ({ data, isLoading }) => {
         <h3 className="max-w-[400px] font-stolzl text-white text-2xl leading-10 lg:leading-14 md:text-4xl  text-center md:text-left font-medium">
           Lets Start Your Course With Us?
         </h3>
-        <div className="flex gap-4 sm:gap-10 md:gap-20 lg:gap-32">
-          {isLoading ? (
-            <div className="space-y-2">
-              <Skeleton className="w-full h-4" />
-            </div>
-          ) : (
-            content?.stats.map((stat, index) => (
-              <div className="text-white space-y-4 flex flex-col items-center">
+
+        {isLoading ? (
+          <div className="flex justify-between gap-4 md:gap-8 w-full md:w-[50%] ml-auto">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <div
+                key={index}
+                className="space-y-4 flex flex-col items-center w-full"
+              >
+                <Skeleton className="size-16" />
+                <Skeleton className="w-[90%] h-4" />
+                <Skeleton className="w-[70%] h-4" />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex gap-4 sm:gap-10 md:gap-20 lg:gap-32">
+            {content?.stats.map((stat, index) => (
+              <div
+                key={index}
+                className="text-white space-y-4 flex flex-col items-center"
+              >
                 <Image
                   src={images?.[index]?.image || "/about-us/reviews.svg"}
                   width={37}
@@ -40,9 +52,8 @@ export const StartYourCourse = ({ data, isLoading }) => {
                   {stat.label}
                 </p>
               </div>
-            ))
-          )}
-          {/* <div className="text-white space-y-4 flex flex-col items-center">
+            ))}
+            {/* <div className="text-white space-y-4 flex flex-col items-center">
             <Image
               src="/about-us/reviews.svg"
               width={37}
@@ -84,7 +95,8 @@ export const StartYourCourse = ({ data, isLoading }) => {
               Job Openings
             </p>
           </div> */}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

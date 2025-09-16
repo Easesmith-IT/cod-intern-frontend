@@ -10,6 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         codIntern: "bg-main text-primary-foreground shadow-xs hover:bg-main/90",
+        success:
+          "bg-green-500 text-primary-foreground shadow-xs hover:bg-green-500/90",
         default:
           "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
         destructive:

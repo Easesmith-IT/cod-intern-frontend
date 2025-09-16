@@ -1,27 +1,16 @@
 "use client";
 
-import { useWpApiQuery } from "@/hooks/useWpApiQuery";
-import { BlogsComp } from "./blogs";
 import { useSearchParams } from "next/navigation";
-import { Blog } from "./blog";
 import { Skeleton } from "../ui/skeleton";
+import { Blog } from "./blog";
+import { BlogsComp } from "./blogs";
 // import { BlogsComp } from "./blogs";
 
-export const BlogsClient = () => {
+export const BlogsClient = ({ categories }) => {
   const searchParams = useSearchParams();
   const categoryId = searchParams.get("category");
   const categoryName = searchParams.get("categoryName");
-
-  const {
-    data = [],
-    isLoading,
-    error,
-  } = useWpApiQuery({
-    url: `/categories`,
-    queryKeys: ["categories"],
-  });
-
-  console.log("data", data);
+  const isLoading = categories.length === 0;
 
   return (
     <>
@@ -34,7 +23,7 @@ export const BlogsClient = () => {
           {categoryName}
         </BlogsComp>
       ) : (
-        data?.map((category) =>
+        categories?.map((category) =>
           category.count > 0 ? (
             <BlogsComp
               key={category.id}

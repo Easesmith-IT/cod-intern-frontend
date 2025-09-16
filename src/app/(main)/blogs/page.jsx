@@ -8,7 +8,18 @@ export const metadata = {
     "Read the latest blogs from Codintern on career tips, internships, fresher jobs, and skill development.",
 };
 
-const Blogs = () => {
+async function getCategories() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_WP_API_URL}/categories`,
+    { next: { revalidate: 60 } } // ISR: refresh every 60s
+  );
+  if (!res.ok) return [];
+  return res.json();
+}
+
+const BlogsPage = async () => {
+  const categories = await getCategories();
+
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">
       <CustomBreadCrumb
@@ -19,10 +30,10 @@ const Blogs = () => {
       />
 
       <Suspense fallback={<p>Loading...</p>}>
-        <BlogsClient />
+        <BlogsClient categories={categories} />
       </Suspense>
     </section>
   );
 };
 
-export default Blogs;
+export default BlogsPage;

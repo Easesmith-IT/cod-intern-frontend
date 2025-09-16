@@ -7,12 +7,7 @@ export const metadata = {
 };
 
 const WorkShopRegistration = () => {
-  return (
-    <GenerativeAIWorkShopRegistrationClient
-      title="Generative AI Workshop Registration Form"
-      type="generative-ai"
-    />
-  );
+  return <GenerativeAIWorkShopRegistrationClient />;
 };
 
 export default WorkShopRegistration;

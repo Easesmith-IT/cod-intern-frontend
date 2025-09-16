@@ -2,7 +2,10 @@ import Image from "next/image";
 import React from "react";
 import { Mentor } from "./mentor";
 
-export const Mentors = () => {
+export const Mentors = ({ data, isLoading }) => {
+  const { content, images } = data || {};
+  console.log("Mentors data", data);
+
   return (
     <section className="section-container">
       <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium text-center">
@@ -21,7 +24,22 @@ export const Mentors = () => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-        <Mentor
+        {isLoading &&
+          Array.from({ length: 3 }).map((_, index) => (
+            <Mentor.Skeleton key={index} />
+          ))}
+          
+        {content?.mentors?.map((mentor, index) => (
+          <Mentor
+            key={index}
+            img={images?.[index]?.image || "/our-mentors/user-placeholder.png"}
+            name={mentor.name}
+            position={mentor.position}
+            experience={mentor.experience}
+            about={mentor.about}
+          />
+        ))}
+        {/* <Mentor
           img="/our-mentors/user-placeholder.png"
           name="Hisham Khan"
           position="Lead Career Mentor"
@@ -41,7 +59,7 @@ export const Mentors = () => {
           position="Data Science & AI Mentor"
           experience="Ex–Accenture | Present–AI Consultant"
           about="With a strong background in AI and data analytics, Ankur guides students through hands-on projects and industry-relevant tools."
-        />
+        /> */}
       </div>
     </section>
   );
