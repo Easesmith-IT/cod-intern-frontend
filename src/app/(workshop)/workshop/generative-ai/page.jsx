@@ -1,7 +1,6 @@
 import { BeforeAfter } from "@/components/workshop/before-after";
-import { BonusesSection } from "@/components/workshop/bonuses-section";
 import { BookYourSpot } from "@/components/workshop/book-your-spot";
-import { CertificationSection } from "@/components/workshop/certification-section";
+import { Certification } from "@/components/workshop/certificate";
 import { ComparisonSection } from "@/components/workshop/comparison-section";
 import { CTASection } from "@/components/workshop/cta";
 import { FAQ } from "@/components/workshop/faq";
@@ -25,7 +24,7 @@ const Workshop = () => {
       {/* Adding Local Images */}
       {/* <BonusesSection /> */}
       <BeforeAfter />
-      <CertificationSection />
+      <Certification />
       <SatisfactionSection />
       <BookYourSpot />
       <FAQ />
