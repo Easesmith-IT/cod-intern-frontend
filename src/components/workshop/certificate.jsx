@@ -37,7 +37,7 @@ export const Certification = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-14">
+        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-14 mt-4">
           {/* Left Column */}
           <div className="flex flex-col gap-14">
             {/* Heading for desktop */}
@@ -64,7 +64,8 @@ export const Certification = () => {
           <div className="bg-[rgba(255,255,255,0.1)] rounded-xl flex items-center justify-center w-fit mx-auto p-0 lg:p-8">
             <div className="w-[280px] h-[200px] md:w-[300px] md:h-[214px] lg:w-[420px] lg:h-[300px] xl:w-[500px] xl:h-[375px]">
               <Image
-                src="/workshop/certificate.png"
+                // src="/workshop/certificate.png"
+                src="/workshop/certificate hd.jpg"
                 alt="Certificate"
                 width={500}
                 height={375}
