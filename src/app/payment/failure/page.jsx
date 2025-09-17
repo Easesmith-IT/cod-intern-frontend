@@ -40,7 +40,7 @@ const FailurePage = () => {
 
         <div className="mt-6 flex sm:justify-center gap-3">
           <Button asChild className="bg-red-600 hover:bg-red-700 text-white">
-            <Link href="/workshop/generative-ai">Try Again</Link>
+            <Link href="/workshop/prompt-engineering">Try Again</Link>
           </Button>
           <Button asChild variant="outline">
             <Link href="/">Cancel</Link>
