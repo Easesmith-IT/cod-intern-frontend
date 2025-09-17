@@ -1,11 +1,24 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useCountdown, useCountdownTimer } from "@/hooks/use-countdown";
+import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const SuccessPage = () => {
+  const router = useRouter();
+
+  const { minutes, seconds, reset } = useCountdownTimer(
+    "success-timer",
+    10,
+    () => {
+      router.push("/");
+    }
+  );
+
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="sm:max-w-md border p-5 rounded-lg">
@@ -29,6 +42,9 @@ const SuccessPage = () => {
             <Link href="/">Continue</Link>
           </Button>
         </div>
+        <p className="text-center text-xs text-muted-foreground mt-2">
+          Redirecting to home page in {minutes}:{seconds} seconds.
+        </p>
       </div>
     </div>
   );

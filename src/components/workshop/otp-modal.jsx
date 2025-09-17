@@ -36,6 +36,7 @@ export const OtpModal = ({
   onVerify,
   onResend,
   loading = false,
+  isPending = false,
   title = "Verify your phone",
   description = "Enter the 6-digit code we sent to your phone.",
 }) => {
@@ -46,7 +47,7 @@ export const OtpModal = ({
 
   const onSubmit = async (data) => {
     console.log("OTP Submitted:", data);
-    await onVerify({ otp: data.otp, mobileNumber:phoneNumber });
+    await onVerify({ otp: data.otp, mobileNumber: phoneNumber });
     // Handle OTP verification logic here
   };
 
@@ -95,9 +96,9 @@ export const OtpModal = ({
                 <Button
                   type="button"
                   variant="ghost"
-                  onClick={() => onResend?.({ phoneNumber })}
+                  onClick={() => onResend?.({ mobileNumber: phoneNumber })}
                 >
-                  Resend code
+                  {isPending ? <Spinner /> : "Resend code"}
                 </Button>
               )}
             </DialogFooter>

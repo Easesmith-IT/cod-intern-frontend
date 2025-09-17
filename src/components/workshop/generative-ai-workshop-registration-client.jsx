@@ -116,7 +116,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
             router.push("/payment/failure");
           }
         },
-        theme: { color: "#3399cc" },
+        theme: { color: "#9237E3" },
       };
 
       const rzp = new window.Razorpay(options);
@@ -131,7 +131,6 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
     url: "/student/workshop/send-otp",
     method: POST,
     invalidateKey: ["workshop-send-otp"],
-    isToast: false,
   });
 
   useEffect(() => {
@@ -226,7 +225,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
   return (
     <section className="px-5 py-10 md:py-20">
       {(createOrderLoading || verifyPaymentLoading) && <Loading />}
-      
+
       {open && (
         <SuccessModal
           open={open}
@@ -501,6 +500,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
           onResend={mutateAsync}
           loading={isLoading}
           onVerify={verifyOtp}
+          isPending={isPending}
         />
       )}
     </section>

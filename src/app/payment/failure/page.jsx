@@ -4,8 +4,20 @@ import { XCircle } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button"; // make sure Button is imported
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useCountdownTimer } from "@/hooks/use-countdown";
 
 const FailurePage = () => {
+  const router = useRouter();
+
+  const { minutes, seconds, reset } = useCountdownTimer(
+    "failure-timer",
+    10,
+    () => {
+      router.push("/");
+    }
+  );
+
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="sm:max-w-md mx-auto border p-5 rounded-lg">
@@ -34,6 +46,9 @@ const FailurePage = () => {
             <Link href="/">Cancel</Link>
           </Button>
         </div>
+        <p className="text-center text-xs text-muted-foreground mt-2">
+          Redirecting to home page in {minutes}:{seconds} seconds.
+        </p>
       </div>
     </div>
   );
