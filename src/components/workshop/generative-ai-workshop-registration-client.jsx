@@ -30,10 +30,13 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { OtpModal } from "./otp-modal";
+import { toast } from "sonner";
+import { Loading } from "../loading";
 
 export const GenerativeAIWorkShopRegistrationClient = () => {
   const [open, setOpen] = useState(false);
   const [isOtpModalOpen, setIsOtpModalOpen] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(WorkshopRegistrationFormSchema),
@@ -51,6 +54,78 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
   });
 
   const { reset, handleSubmit, control, getValues, watch } = form;
+  const router = useRouter();
+
+  useEffect(() => {
+    if (watch("mobileNumber")) {
+      setIsVerified(false);
+    }
+  }, [watch("mobileNumber")]);
+
+  const {
+    mutateAsync: submitForm,
+    isPending: isSubmitFormLoading,
+    data: result,
+  } = useApiMutation({
+    url: "/student/workshop/register",
+    method: POST,
+    invalidateKey: ["workshop-register"],
+    isToast: false,
+  });
+
+  // console.log("result :", result);
+
+  // React Query mutation to create order
+  const {
+    mutateAsync: createOrder,
+    data: orderData,
+    isPending: createOrderLoading,
+  } = useApiMutation({
+    url: "/student/payments/make-payment",
+    method: POST,
+  });
+
+  // React Query mutation to verify payment
+  const {
+    mutateAsync: verifyPayment,
+    data: verifyPaymentData,
+    isPending: verifyPaymentLoading,
+  } = useApiMutation({
+    url: "/student/payments/verify-payment",
+    method: POST,
+  });
+
+  const handlePayment = async () => {
+    try {
+      // 2️⃣ Open Razorpay checkout
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        amount: orderData?.order?.amount,
+        currency: orderData?.order?.currency,
+        name: "Prompt Engineering Workshop",
+        description: "Prompt Engineering Workshop Payment",
+        order_id: orderData?.order?.id,
+        handler: async (response) => {
+          try {
+            // 3️⃣ Verify payment
+            await verifyPayment({
+              ...response,
+              registrationId: result?.registration?._id,
+            });
+          } catch (err) {
+            router.push("/payment/failure");
+          }
+        },
+        theme: { color: "#3399cc" },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (err) {
+      console.error(err);
+      // router.push("/payment/failure");
+    }
+  };
 
   const { mutateAsync, isPending, data } = useApiMutation({
     url: "/student/workshop/send-otp",
@@ -73,32 +148,28 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
     url: "/student/workshop/verify-otp",
     method: POST,
     invalidateKey: ["workshop-verify-otp"],
-    isToast: false,
+    // isToast: false,
   });
 
-  console.log("verifyOtpData", verifyOtpData);
+  // console.log("verifyOtpData", verifyOtpData);
 
   useEffect(() => {
     if (verifyOtpData) {
       setIsOtpModalOpen(false);
+      setIsVerified(true);
     }
   }, [verifyOtpData]);
 
-  const {
-    mutateAsync: submitForm,
-    isPending: isSubmitFormLoading,
-    data: result,
-  } = useApiMutation({
-    url: "/student/workshop/register",
-    method: POST,
-    invalidateKey: ["workshop-register"],
-    isToast: false,
-  });
-
-  // console.log("isSubmitFormLoading :", isSubmitFormLoading);
-
   const onSubmit = async (data) => {
-    console.log("data :", data);
+    // console.log("data :", data);
+
+    if (!verifyOtpData) {
+      toast.error(
+        "Please verify your mobile number before submitting the form."
+      );
+      return;
+    }
+
     const apiData = {
       fullName: data.fullName,
       dateOfBirth: data.dateOfBirth,
@@ -115,24 +186,47 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
     await submitForm(apiData);
   };
 
-  console.log("result", result);
+  // console.log("result", result);
   useEffect(() => {
     if (result) {
-      const { registration } = result || {};
       reset();
+      setIsVerified(false);
 
-      window.open(
-        `https://razorpay.com/payment-link/plink_RH5FyZVNafOWN4?notes[refId]=${registration._id}`,
-        "_blank",
-        "noopener,noreferrer"
-      );
-
-      // setOpen(true);
+      // 1️⃣ Create order
+      (async () => {
+        await createOrder({
+          amount: 189,
+          currency: "INR",
+          id: result?.registration?._id,
+        });
+      })();
     }
   }, [result]);
 
+  useEffect(() => {
+    if (orderData) {
+      console.log("orderData", orderData);
+
+      handlePayment();
+    }
+  }, [orderData]);
+
+  useEffect(() => {
+    if (verifyPaymentData) {
+      console.log("verifyPaymentData", verifyPaymentData);
+
+      if (verifyPaymentData.success) {
+        router.push("/payment/success");
+      } else {
+        router.push("/payment/failure");
+      }
+    }
+  }, [verifyPaymentData]);
+
   return (
     <section className="px-5 py-10 md:py-20">
+      {(createOrderLoading || verifyPaymentLoading) && <Loading />}
+      
       {open && (
         <SuccessModal
           open={open}
@@ -269,8 +363,11 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                     </FormItem>
                   )}
                 />
-                {verifyOtpData ? (
-                  <Button variant="success" className="h-10 mt-6 ml-4 rounded w-24 cursor-default">
+                {isVerified ? (
+                  <Button
+                    variant="success"
+                    className="h-10 mt-6 ml-4 rounded w-24 cursor-default"
+                  >
                     Verified
                   </Button>
                 ) : (

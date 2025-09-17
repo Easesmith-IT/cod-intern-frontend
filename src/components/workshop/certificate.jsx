@@ -65,7 +65,7 @@ export const Certification = () => {
             <div className="w-[280px] h-[200px] md:w-[300px] md:h-[214px] lg:w-[420px] lg:h-[300px] xl:w-[500px] xl:h-[375px]">
               <Image
                 // src="/workshop/certificate.png"
-                src="/workshop/certificate hd.jpg"
+                src="/workshop/Certificate.webp"
                 alt="Certificate"
                 width={500}
                 height={375}
