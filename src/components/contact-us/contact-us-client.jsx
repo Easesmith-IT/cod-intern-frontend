@@ -5,6 +5,7 @@ import { GetMoreInformation } from "./get-more-information/get-more-information"
 import { HeroSection } from "./hero";
 import { Map } from "./map";
 import { SendUsMessage } from "./send-us-message/send-us-message";
+import { useMemo } from "react";
 
 
 export const ContactUsClient = () => {
