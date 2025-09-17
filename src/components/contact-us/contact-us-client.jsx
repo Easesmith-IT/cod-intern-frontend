@@ -1,5 +1,6 @@
 "use client";
 
+import { useApiQuery } from "@/hooks/useApiQuery";
 import { GetMoreInformation } from "./get-more-information/get-more-information";
 import { HeroSection } from "./hero";
 import { Map } from "./map";
