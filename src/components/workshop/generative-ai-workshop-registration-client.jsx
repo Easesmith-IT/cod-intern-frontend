@@ -21,7 +21,10 @@ import {
 } from "@/components/ui/select";
 import { POST } from "@/constants/apiMethods";
 import { useApiMutation } from "@/hooks/useApiMutation";
-import { WorkshopRegistrationFormSchema } from "@/schemas/FeedbackFormSchema";
+import {
+  WorkshopRegistrationFormSchema,
+  WorkshopRegistrationFormSchema1,
+} from "@/schemas/FeedbackFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -39,7 +42,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
   const [isVerified, setIsVerified] = useState(false);
 
   const form = useForm({
-    resolver: zodResolver(WorkshopRegistrationFormSchema),
+    resolver: zodResolver(WorkshopRegistrationFormSchema1),
     defaultValues: {
       fullName: "",
       dateOfBirth: "",
@@ -171,7 +174,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
 
     const apiData = {
       fullName: data.fullName,
-      dateOfBirth: data.dateOfBirth,
+      // dateOfBirth: data.dateOfBirth,
       gender: data.gender,
       email: data.emailAddress,
       mobileNumber: data.mobileNumber,
@@ -272,7 +275,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                 )}
               />
 
-              <FormField
+              {/* <FormField
                 control={control}
                 name="dateOfBirth"
                 render={({ field }) => (
@@ -289,9 +292,9 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
 
-              <FormField
+              {/* <FormField
                 control={control}
                 name="gender"
                 render={({ field }) => (
@@ -317,7 +320,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
 
               <FormField
                 control={control}
@@ -340,52 +343,96 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                 )}
               />
 
-              <div className="grid grid-cols-[1fr_auto]">
-                <FormField
-                  control={control}
-                  name="mobileNumber"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        Mobile Number{" "}
-                        <span className="text-destructive">*</span>
-                      </FormLabel>
-                      <FormControl>
+              <FormField
+                control={control}
+                name="mobileNumber"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      Mobile Number <span className="text-destructive">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <div className="grid grid-cols-[1fr_auto]">
                         <Input
                           type="number"
                           placeholder="Mobile Number  "
                           className={`placeholder:text-[#00000066] border-[#9237E347] font-stolzl rounded py-5`}
                           {...field}
                         />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                {isVerified ? (
-                  <Button
-                    variant="success"
-                    className="h-10 mt-6 ml-4 rounded w-24 cursor-default"
-                  >
-                    Verified
-                  </Button>
-                ) : (
-                  <Button
-                    type="button"
-                    disabled={isPending || watch("mobileNumber")?.length !== 10}
-                    onClick={() =>
-                      mutateAsync({
-                        mobileNumber: getValues("mobileNumber"),
-                      })
-                    }
-                    className="h-10 mt-6 ml-4 rounded w-24"
-                  >
-                    {isPending ? <Spinner /> : "Send OTP"}
-                  </Button>
+                        {isVerified ? (
+                          <Button
+                            variant="success"
+                            className="h-10 ml-4 rounded w-24 cursor-default"
+                          >
+                            Verified
+                          </Button>
+                        ) : (
+                          <Button
+                            type="button"
+                            disabled={
+                              isPending || watch("mobileNumber")?.length !== 10
+                            }
+                            onClick={() =>
+                              mutateAsync({
+                                mobileNumber: getValues("mobileNumber"),
+                              })
+                            }
+                            className="h-10 ml-4 rounded w-24"
+                          >
+                            {isPending ? <Spinner /> : "Send OTP"}
+                          </Button>
+                        )}
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
                 )}
-              </div>
+              />
 
               <FormField
+                control={control}
+                name="grade"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      Grade <span className="text-destructive">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Select
+                        value={field.value}
+                        onValueChange={field.onChange}
+                      >
+                        <SelectTrigger className="w-full py-5 border-[#9237E347] font-stolzl rounded">
+                          <SelectValue placeholder="Select Grade" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="IT">Work: IT</SelectItem>
+                          <SelectItem value="non-IT">Work: Non IT</SelectItem>
+                          <SelectItem value="business-owner">
+                            Business Owner
+                          </SelectItem>
+                          <SelectItem value="digital-marketer">
+                            Digital Marketer
+                          </SelectItem>
+                          <SelectItem value="freelancer">Freelancer</SelectItem>
+                          <SelectItem value="content-creator">
+                            Content Creator
+                          </SelectItem>
+                          <SelectItem value="graduate">
+                            Graduate - Seeking for Job
+                          </SelectItem>
+                          <SelectItem value="college-student">
+                            College Student
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* <FormField
                 control={control}
                 name="collegeInstitutionName"
                 render={({ field }) => (
@@ -404,9 +451,9 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
 
-              <FormField
+              {/* <FormField
                 control={control}
                 name="branch"
                 render={({ field }) => (
@@ -424,9 +471,9 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
 
-              <FormField
+              {/* <FormField
                 control={control}
                 name="year"
                 render={({ field }) => (
@@ -453,9 +500,9 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
 
-              <FormField
+              {/* <FormField
                 control={control}
                 name="universityRollNo"
                 render={({ field }) => (
@@ -474,7 +521,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
             </div>
 
             <div className="flex justify-end mt-10">

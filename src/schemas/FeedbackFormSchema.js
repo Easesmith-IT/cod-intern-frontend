@@ -94,3 +94,32 @@ export const WorkshopRegistrationFormSchema = z.object({
     .max(30, "Roll No. is too long")
     .regex(/^[A-Za-z0-9\-\/]+$/, "Only letters, numbers, - and / allowed"),
 });
+
+export const WorkshopRegistrationFormSchema1 = z.object({
+  fullName: z.string().trim().min(1, "Full Name required"),
+  // dateOfBirth: z.coerce.date().optional(),
+  gender: z.string().optional(),
+
+  emailAddress: z
+    .string()
+    .trim()
+    .toLowerCase()
+    .email("Enter a valid email address")
+    .optional(),
+
+  mobileNumber: z
+    .string()
+    .trim()
+    .regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit Indian mobile number"),
+
+  collegeInstitutionName: z.string().trim().optional(),
+
+  // Since the prompt had "Branch & Year" as one field, keep a single string.
+  // If you prefer separate fields, split into { branch: z.string(), year: z.number().int().min(1).max(6) }.
+  branch: z.string().trim().optional(),
+
+  year: z.string().optional(),
+
+  universityRollNo: z.string().trim().optional(),
+  grade: z.string().min(1, "Grade required"),
+});

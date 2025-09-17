@@ -33,7 +33,7 @@ export const SendUsMessage = () => {
               alt="Location"
               width={15}
               height={21}
-              title="In the bay area?"
+              title="Location"
               desc="2nd Floor, Raj Ghar, Kanti Factory Road, Mahatma Gandhi Nagar,
               Kankarbagh, Patna, India 800020"
             />

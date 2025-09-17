@@ -1,8 +1,4 @@
-import { GetMoreInformation } from "@/components/contact-us/get-more-information/get-more-information";
-import { HeroSection } from "@/components/contact-us/hero";
-import { Map } from "@/components/contact-us/map";
-import { SendUsMessage } from "@/components/contact-us/send-us-message/send-us-message";
-import React from "react";
+import { ContactUsClient } from "@/components/contact-us/contact-us-client";
 
 export const metadata = {
   title: "Contact Us - Codintern",
@@ -13,10 +9,7 @@ export const metadata = {
 const ContactUs = () => {
   return (
     <section>
-      <HeroSection />
-      <SendUsMessage />
-      <Map />
-      <GetMoreInformation />
+      <ContactUsClient />
     </section>
   );
 };

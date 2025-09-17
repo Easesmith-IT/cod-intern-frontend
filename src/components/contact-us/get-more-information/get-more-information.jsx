@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import { Info } from "./info";
 
 export const GetMoreInformation = () => {
@@ -60,6 +59,8 @@ export const GetMoreInformation = () => {
           desc="Learn at your own pace, on your own timeline, with CodIntern's powerful and flexible platform. Our steadfast support and flexible learning flexibility mean you can work toward your goals with confidence, integrating education into your life."
         />
       </div>
+
+     
     </section>
   );
 };
