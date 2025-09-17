@@ -37,7 +37,7 @@ export const CTASection = () => {
           className="h-12 mt-6"
           // className="bg-emerald-700 h-12 rounded-[10px] w-full px-6 py-3 mt-6 lg:mt-12 flex justify-center"
         >
-          <Link href="/workshop/generative-ai/registration">
+          <Link href="/workshop/prompt-engineering/registration">
             <span className="!font-normal text-base">
               {/* Book Your Spot Now */}
               Secure Your Seat Now

@@ -76,7 +76,7 @@ export const StickyCTA = () => {
                 className="md:h-12 w-full md:mt-6"
                 // className="bg-emerald-700 h-12 rounded-[10px] w-full px-6 py-3 mt-6 lg:mt-12 flex justify-center"
               >
-                <Link href="/workshop/generative-ai/registration">
+                <Link href="/workshop/prompt-engineering/registration">
                   <div className="flex items-center gap-1 text-sm md:text-base !font-normal leading-6 text-white">
                     <span>Register Now for</span>
                     {/* <span className="line-through">₹99</span> */}

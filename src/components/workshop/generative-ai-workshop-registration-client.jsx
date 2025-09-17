@@ -238,7 +238,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
 
       <div className="max-w-5xl mx-auto p-5">
         <Link
-          href="/workshop/generative-ai"
+          href="/workshop/prompt-engineering"
           className="size-10 border flex justify-center items-center rounded-full"
         >
           <ArrowLeft className="text-3xl cursor-pointer" />
@@ -247,7 +247,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
       </div>
       <div className="max-w-5xl mx-auto p-5 rounded-md border">
         <h1 className="text-2xl font-medium font-stolzl text-center">
-          Generative AI Workshop Registration Form
+          Prompt Engineering Workshop Registration Form
         </h1>
         <Form {...form}>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-8">
