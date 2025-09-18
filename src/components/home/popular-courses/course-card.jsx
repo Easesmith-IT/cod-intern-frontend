@@ -16,6 +16,7 @@ export const CourseCard = ({
   students = 0,
   id,
   duration,
+  link = true,
 }) => {
   return (
     <Card className="rounded-sm py-0">
@@ -72,16 +73,26 @@ export const CourseCard = ({
               </p>
             </div>
           </div>
-          <Button
-            variant="ghost"
-            className="text-main py-0 has-[>svg]:px-0 gap-1 mt-5 text-xs sm:text-sm"
-            asChild
-          >
-            <Link href={`/courses/${id}`}>
+          {link ? (
+            <Button
+              variant="ghost"
+              className="text-main py-0 has-[>svg]:px-0 gap-1 mt-5 text-xs sm:text-sm"
+              asChild
+            >
+              <Link href={`/courses/${id}`}>
+                <span>Know More</span>
+                <ChevronRight className="size-5" />
+              </Link>
+            </Button>
+          ) : (
+            <Button
+              variant="ghost"
+              className="text-main py-0 has-[>svg]:px-0 gap-1 mt-5 text-xs sm:text-sm"
+            >
               <span>Know More</span>
               <ChevronRight className="size-5" />
-            </Link>
-          </Button>
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>

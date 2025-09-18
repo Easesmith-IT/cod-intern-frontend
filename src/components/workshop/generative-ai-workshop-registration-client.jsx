@@ -53,6 +53,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
       branch: "",
       year: "",
       universityRollNo: "",
+      grade:""
     },
   });
 
@@ -181,6 +182,7 @@ export const GenerativeAIWorkShopRegistrationClient = () => {
       collegeName: data.collegeInstitutionName,
       branch: data.branch,
       year: data.year,
+      grade: data.grade,
       universityRollNo: data.universityRollNo,
       type: "generative-ai",
     };

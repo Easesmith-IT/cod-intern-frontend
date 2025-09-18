@@ -15,12 +15,12 @@ export const Lesson = ({ lesson }) => {
         {lesson.title}
       </h3>
       <div className="flex gap-4 items-center">
-        <div className="flex gap-2 items-center">
+        {/* <div className="flex gap-2 items-center">
           <Clock4 className="size-4" />
           <p className="text-xs sm:text-sm text-muted-foreground">
             {lesson.duration ? formatMinutes(lesson.duration) : "0 min"}
           </p>
-        </div>
+        </div> */}
         {lessonType && (
           <div className="flex items-center gap-1">
             {lessonType.icon && <lessonType.icon className="size-4" />}

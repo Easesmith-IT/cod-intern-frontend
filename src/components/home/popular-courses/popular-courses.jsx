@@ -90,9 +90,41 @@ export const PopularCourses = ({ contentData }) => {
             <CourseCard.Skeleton key={index} />
           ))}
       </div>
-      {data?.courses?.length === 0 && !isLoading && (
-        <DataNotFound name="Courses" />
+      {data?.courses?.length === 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
+          <CourseCard
+            src="/course/Data Analysis using Python.png"
+            name="Data Analysis using Python"
+            link={false}
+            rating={4.5}
+            duration="6 months"
+          />
+          <CourseCard
+            src="/course/Data Visualization using Power BI.png"
+            name="Data Visualization using Power BI"
+            link={false}
+            rating={3.5}
+            duration="6 months"
+          />
+          <CourseCard
+            src="/course/Data Visualization using Tableau.png"
+            name="Data Visualization using Tableau"
+            link={false}
+            rating={4.8}
+            duration="6 months"
+          />
+          <CourseCard
+            src="/course/Machine Learning and Artificial Intelligence with Python.png"
+            name="Machine Learning and Artificial Intelligence with Python"
+            link={false}
+            rating={4.3}
+            duration="6 months"
+          />
+        </div>
       )}
+      {/* {data?.courses?.length === 0 && !isLoading && (
+        <DataNotFound name="Courses" />
+      )} */}
 
       <div className="flex justify-center mt-8">
         <Button
