@@ -1,8 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Copy, CopyCheckIcon, CopyIcon, Instagram } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Copy,
+  CopyCheckIcon,
+  CopyIcon,
+  Instagram,
+  Mail,
+  Phone,
+} from "lucide-react";
 import {
   FacebookMessengerIcon,
   FacebookMessengerShareButton,
@@ -32,15 +39,15 @@ const SuccessPage = () => {
     }, 2000);
   };
 
+  const onCopy = (value) => {
+    navigator.clipboard.writeText(value);
+    toast.success("Copied to clipboard");
+  };
+
   const shareToWhatsapp = () => {
     const shareUrl = `https://wa.me/?text=${encodeURIComponent(
       "Prompt Engineering Workshop:" + " " + link
     )}`;
-    window.open(shareUrl, "_blank");
-  };
-
-  const shareToMessenger = () => {
-    const shareUrl = `fb-messenger://share/?link=${encodeURIComponent(link)}`;
     window.open(shareUrl, "_blank");
   };
 
@@ -98,8 +105,8 @@ const SuccessPage = () => {
               <div className="text-muted-foreground text-lg leading-relaxed">
                 <span className="inline-block">🎉</span>
                 You have successfully reserved your seats for our{" "}
-                <strong>Prompt Engineering Workshop</strong>. We have sent you
-                all the details to your Registered WhatsApp number.
+                <strong>Prompt Engineering Workshop</strong>. <br /> We have
+                sent you all the details to your Registered WhatsApp number.
                 <span className="inline-block ml-2">🎉</span>
               </div>
             </div>
@@ -117,7 +124,7 @@ const SuccessPage = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* User Profile Card */}
 
           {/* Share Section */}
@@ -188,18 +195,72 @@ const SuccessPage = () => {
             </div>
           </Card>
 
-          {/* Support Section */}
-          {/* <Card className="p-6">
-            <h3 className="font-semibold text-muted-foreground mb-2">
-              Uptor Support Page
-            </h3>
-            <p className="text-gray-400 text-sm mb-4">
-              24/7 Support Available (Except Government Holidays)
-            </p>
-            <Button className="w-full bg-gray-800 hover:bg-gray-700 text-muted-foreground border border-gray-700">
-              Visit Page
-            </Button>
-          </Card> */}
+          <Card className="border bg-white/90">
+            <CardContent className="p-6 py-0">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">
+                CodIntern Support
+              </h3>
+              <div className="space-y-2">
+                {/* Phone */}
+                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                      <Phone className="w-5 h-5 text-green-600" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-gray-900">Phone</p>
+                    <a
+                      href="tel:+917311155738"
+                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                    >
+                      +91 7311155738
+                    </a>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => onCopy("+917311155738")}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <CopyIcon className="w-4 h-4" />
+                  </Button>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                      <Mail className="w-5 h-5 text-blue-600" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-gray-900">Email</p>
+                    <a
+                      href="mailto:info@codintern.com"
+                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                    >
+                      info@codintern.com
+                    </a>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => onCopy("info@codintern.com")}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <CopyIcon className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* <div className="">
+            <p>CodIntern Support</p>
+            <p className="text-muted-foreground">+91 7311155738</p>
+            <p className="text-muted-foreground">info@codintern.com</p>
+          </div> */}
         </div>
       </div>
     </div>
