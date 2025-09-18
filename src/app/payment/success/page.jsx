@@ -98,7 +98,7 @@ const SuccessPage = () => {
         <div className="lg:col-span-2 space-y-6">
           <div className="flex items-start gap-4">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold text-gray-950 flex gap-2 items-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-950 flex gap-2 items-center">
                 <MdVerified className="text-green-500 size-8 fill-current" />
                 Registration Successful
               </h2>
