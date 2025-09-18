@@ -132,7 +132,7 @@ const SuccessPage = () => {
             <h3 className="font-semibold text-muted-foreground mb-4">
               Share with friends & family
             </h3>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-4 gap-4">
               <div className="flex flex-col items-center gap-2">
                 <Button
                   onClick={handleCopy}
@@ -166,12 +166,22 @@ const SuccessPage = () => {
                 </WhatsappShareButton> */}
                 <span className="text-xs text-gray-400">WhatsApp</span>
               </div>
-              {/* <div className="flex flex-col items-center gap-2">
-                <Button variant="secondary" size="icon" className="h-12 w-12">
-                  <Instagram className="size-5 text-pink-500" />
+              <div className="flex flex-col items-center gap-2">
+                <Button
+                  asChild
+                  variant="secondary"
+                  size="icon"
+                  className="h-12 w-12"
+                >
+                  <Link
+                    target="_blank"
+                    href="https://www.instagram.com/codintern_official?igsh=MWd5a3J3amtkOXVqbg=="
+                  >
+                    <Instagram className="size-5 text-pink-500" />
+                  </Link>
                 </Button>
                 <span className="text-xs text-gray-400">Instagram</span>
-              </div> */}
+              </div>
               <div className="flex flex-col items-center gap-2">
                 {/* <div className="h-12 w-12 bg-secondary rounded-md flex justify-center items-center"> */}
                 <FacebookMessengerShareButton
