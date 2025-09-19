@@ -1,6 +1,9 @@
 import React from "react";
+import { Skeleton } from "../ui/skeleton";
 
-export const HeroSection = () => {
+export const HeroSection = ({ data, isLoading }) => {
+  const { content } = data || {};
+
   return (
     <div
       style={{
@@ -13,9 +16,17 @@ export const HeroSection = () => {
           Connect With <span className="text-main">Us</span>
         </h1>
         <div className="text-center text-para max-w-[970px] mx-auto font-stolzl text-xs sm:text-sm md:text-base lg:text-lg mt-2">
-          Need assistance or more details about our AI-accelerated programs?
+          {/* Need assistance or more details about our AI-accelerated programs?
           Contact CodIntern. Our team is dedicated to helping you achieve your
-          learning and career goals.
+          learning and career goals. */}
+          {isLoading ? (
+            <div className="space-y-2 mt-2">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-[70%] mx-auto" />
+            </div>
+          ) : (
+            content?.desc
+          )}
         </div>
       </div>
     </div>

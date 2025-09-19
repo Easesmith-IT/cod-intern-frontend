@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Mentor } from "./mentor";
 
-export const Mentors = ({ data }) => {
+export const Mentors = ({ data, isLoading }) => {
   const { content, images } = data || {};
   console.log("Mentors data", data);
 
@@ -29,6 +29,11 @@ export const Mentors = ({ data }) => {
             proficiency={mentor.arr}
           />
         ))}
+
+        {isLoading &&
+          Array.from({ length: 3 }).map((_, index) => (
+            <Mentor.Skeleton key={index} />
+          ))}
         {/* <Mentor
           img="/our-mentors/Anjali-img.jpg"
           name="Anjali Sharma"

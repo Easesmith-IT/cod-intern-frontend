@@ -2,7 +2,7 @@ import Image from "next/image";
 import { LearningStep } from "./learning-step";
 import { cn } from "@/lib/utils";
 
-export const LearningToCareer = ({ className, data }) => {
+export const LearningToCareer = ({ className, data, isLoading }) => {
   const { content } = data || {};
 
   return (
@@ -39,6 +39,11 @@ export const LearningToCareer = ({ className, data }) => {
             points={step.points || []}
           />
         ))}
+
+        {isLoading &&
+          Array.from({ length: 6 }).map((_, index) => (
+            <LearningStep.Skeleton key={index} />
+          ))}
         {/* <LearningStep
           index={1}
           title="Sign Up & Get Assessed"

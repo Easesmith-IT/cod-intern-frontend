@@ -2,8 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Step } from "./step";
 
-export const ThreeStepApproach = ({ data }) => {
-
+export const ThreeStepApproach = ({ data, isLoading = false }) => {
   return (
     <section className="py-12 md:py-24 section-container">
       <div className="flex justify-center text-center section-container px-0 max-w-[900px]">
@@ -28,6 +27,12 @@ export const ThreeStepApproach = ({ data }) => {
             arr={step.arr}
           />
         ))}
+
+        {isLoading &&
+          Array.from({ length: 3 }).map((_, index) => (
+            <Step.Skeleton key={index} />
+          ))}
+
         {/* <Step
           title="AI-Powered Profile Optimization"
           className="text-main"

@@ -43,7 +43,7 @@ export const ContactUsClient = () => {
       <HeroSection data={heroData} isLoading={isLoading} />
       <SendUsMessage data={sendUsMessageData} isLoading={isLoading} />
       <Map />
-      <GetMoreInformation />
+      <GetMoreInformation data={getMoreInformationData} isLoading={isLoading} />
     </section>
   );
 };

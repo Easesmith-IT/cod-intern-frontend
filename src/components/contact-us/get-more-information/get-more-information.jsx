@@ -1,7 +1,16 @@
 import Image from "next/image";
 import { Info } from "./info";
 
-export const GetMoreInformation = () => {
+export const GetMoreInformation = ({ data, isLoading }) => {
+  const { content, images } = data || {};
+
+  const getCardInfo = ({ label, index }) => {
+    return content?.cards?.[index][label];
+  };
+  const getImage = ({ index }) => {
+    return images?.[index]?.image;
+  };
+
   return (
     <section className="section-container py-12 md:py-24">
       <h2 className="text-2xl font-stolzl leading-9 lg:leading-14 md:text-4xl  font-medium text-center">
@@ -22,11 +31,16 @@ export const GetMoreInformation = () => {
       <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 mt-10 md:mt-0 md:flex gap-7 sm:gap-5 lg:gap-[30px] justify-center items-start">
         <Info
           index={1}
-          icon="/contact-us/time-saving.svg"
+          icon={getImage({ index: 0 }) || "/contact-us/time-saving.svg"}
           width={44}
           height={47}
-          title="Effective Learning"
-          desc="CodIntern's AI-powered learning and streamlined coursework maximize your study time so you learn the fundamentals effectively and get career-ready at the fastest pace without any wastage of time."
+          title={
+            getCardInfo({ label: "title", index: 0 }) || "Effective Learning"
+          }
+          desc={
+            getCardInfo({ label: "desc", index: 0 }) ||
+            "CodIntern's AI-powered learning and streamlined coursework maximize your study time so you learn the fundamentals effectively and get career-ready at the fastest pace without any wastage of time."
+          }
         />
         <Image
           className="-translate-y-2 hidden md:block"
@@ -37,11 +51,16 @@ export const GetMoreInformation = () => {
         />
         <Info
           index={2}
-          icon="/contact-us/cost-effective.svg"
+          icon={getImage({ index: 1 }) || "/contact-us/cost-effective.svg"}
           width={44}
           height={44}
-          title="Affordable Excellence"
-          desc="Access high-quality tech training, thorough resources, and professional mentorship at a reasonable investment. CodIntern provides superior value, putting high-quality skilling within reach and returning high value on education."
+          title={
+            getCardInfo({ label: "title", index: 1 }) || "Affordable Excellence"
+          }
+          desc={
+            getCardInfo({ label: "desc", index: 1 }) ||
+            "Access high-quality tech training, thorough resources, and professional mentorship at a reasonable investment. CodIntern provides superior value, putting high-quality skilling within reach and returning high value on education."
+          }
         />
         <Image
           className="-translate-y-2 hidden md:block"
@@ -52,15 +71,21 @@ export const GetMoreInformation = () => {
         />
         <Info
           index={3}
-          icon="/contact-us/reliable-and-flexible.svg"
+          icon={
+            getImage({ index: 2 }) || "/contact-us/reliable-and-flexible.svg"
+          }
           width={44}
           height={41}
-          title="Unwavering & Responsive"
-          desc="Learn at your own pace, on your own timeline, with CodIntern's powerful and flexible platform. Our steadfast support and flexible learning flexibility mean you can work toward your goals with confidence, integrating education into your life."
+          title={
+            getCardInfo({ label: "title", index: 2 }) ||
+            "Unwavering & Responsive"
+          }
+          desc={
+            getCardInfo({ label: "desc", index: 2 }) ||
+            "Learn at your own pace, on your own timeline, with CodIntern's powerful and flexible platform. Our steadfast support and flexible learning flexibility mean you can work toward your goals with confidence, integrating education into your life."
+          }
         />
       </div>
-
-     
     </section>
   );
 };

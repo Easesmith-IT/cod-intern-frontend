@@ -15,6 +15,7 @@ import { Mentors } from "@/components/home/mentors/mentors";
 import { PopularCourses } from "@/components/home/popular-courses/popular-courses";
 import { ThreeStepApproach } from "@/components/home/three-step-approach/three-step-approach";
 import { useApiQuery } from "@/hooks/useApiQuery";
+import { useMemo } from "react";
 
 export const CourseDetailClient = (params) => {
   const { data, isLoading, error } = useApiQuery({
@@ -22,9 +23,40 @@ export const CourseDetailClient = (params) => {
     queryKeys: ["courses", params.courseId],
   });
 
+  const {
+    data: contentData,
+    isLoading: isContentLoading,
+    isError,
+  } = useApiQuery({
+    url: "/student/content/home", // pageName = "home"
+    queryKeys: ["content", "home"],
+  });
+
   const course = data?.course || "";
 
   console.log("course", data?.course);
+
+  const getDataBySection = (sectionName, pageName = "home") => {
+    return contentData?.data?.find(
+      (section) =>
+        section.pageName === pageName && section.sectionName === sectionName
+    );
+  };
+
+  const threeStepData = useMemo(
+    () => getDataBySection("three-step-approach"),
+    [contentData]
+  );
+
+  const learningToCareerData = useMemo(
+    () => getDataBySection("learning-to-career"),
+    [contentData] // only recompute when contentData changes
+  );
+
+  const mentorsData = useMemo(
+    () => getDataBySection("mentors"),
+    [contentData] // only recompute when contentData changes
+  );
 
   return (
     <main>
@@ -40,14 +72,17 @@ export const CourseDetailClient = (params) => {
           <IndustryProjects projects={course.projects} />
           <KeyHighlights title={course.title} features={course.features} />
           <GloballyRecognized certificate={course.certificate} />
-          <LearningToCareer />
+          <LearningToCareer
+            data={learningToCareerData}
+            isLoading={isContentLoading}
+          />
           <UpcomingBatch batches={course.batches} title={course.title} />
           <PopularCourses />
           <BecomeProjectManager />
-          <ThreeStepApproach />
+          <ThreeStepApproach data={threeStepData} isLoading={isLoading} />
           <BenifitsOfCourse />
           <LearnersStories />
-          <Mentors />
+          <Mentors data={mentorsData} isLoading={isLoading} />
           <FAQs category="Courses" courseId={course._id} />
         </>
       )}

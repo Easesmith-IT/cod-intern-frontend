@@ -84,18 +84,18 @@ export default function Home() {
   return (
     <section>
       <HeroSection />
-      <ThreeStepApproach data={threeStepData} />
+      <ThreeStepApproach data={threeStepData} isLoading={isLoading} />
       <FreshJobs />
       <AccelerateYourCareer />
       <PopularCourses contentData={popularCoursesData} />
       <SharpenYourSkill data={sharpenYourSkillData} />
       <Universities data={universitiesData} />
       <WhyCodInterns data={whyCodInternsData} />
-      <LearningToCareer data={learningToCareerData} />
+      <LearningToCareer data={learningToCareerData} isLoading={isLoading} />
       <ConnectWithUs data={connectWithUsData} />
       <WeJustKeepGrowing data={weJustKeepGrowingData} />
       <LearnersStories />
-      <Mentors data={mentorsData} />
+      <Mentors data={mentorsData} isLoading={isLoading} />
       <FAQs />
     </section>
   );

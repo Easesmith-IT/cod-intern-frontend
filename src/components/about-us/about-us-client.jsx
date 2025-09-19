@@ -76,6 +76,7 @@ export const AboutUsClient = () => {
       <Mentors data={mentorsData} isLoading={isLoading} />
       <LearningToCareer
         data={learningToCareerData}
+        isLoading={isLoading}
         className="py-12 sm:py-24"
       />
       <LearnersStories className="!pt-0" />
