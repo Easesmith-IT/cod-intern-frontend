@@ -247,16 +247,16 @@ const SuccessPage = () => {
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-900">Email</p>
                     <a
-                      href="mailto:info@codintern.com"
+                      href="mailto:Gaurav@codintern.in"
                       className="text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                     >
-                      info@codintern.com
+                      Gaurav@codintern.in
                     </a>
                   </div>
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => onCopy("info@codintern.com")}
+                    onClick={() => onCopy("Gaurav@codintern.in")}
                     className="opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     <CopyIcon className="w-4 h-4" />
@@ -269,7 +269,7 @@ const SuccessPage = () => {
           {/* <div className="">
             <p>CodIntern Support</p>
             <p className="text-muted-foreground">+91 7311155738</p>
-            <p className="text-muted-foreground">info@codintern.com</p>
+            <p className="text-muted-foreground">Gaurav@codintern.in</p>
           </div> */}
         </div>
       </div>
