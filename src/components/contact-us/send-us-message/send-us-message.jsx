@@ -2,7 +2,10 @@ import Image from "next/image";
 import { Info } from "./info";
 import { SendUsMessageForm } from "./send-us-message-form";
 
-export const SendUsMessage = () => {
+export const SendUsMessage = ({ data, isLoading }) => {
+  console.log("SendUsMessage data", data);
+  const { content } = data || {};
+
   return (
     <section className="section-container flex flex-col md:flex-row py-12 md:py-0 justify-between gap-10 items-center">
       <SendUsMessageForm />
@@ -18,7 +21,7 @@ export const SendUsMessage = () => {
               width={14}
               height={24}
               title="Feel Free to Contact US"
-              desc="+91 7311155738"
+              desc={content?.phone ? `+91 ${content?.phone}` : "+91 7311155738"}
             />
             <Info
               icon="/contact-us/mail.svg"
@@ -26,7 +29,7 @@ export const SendUsMessage = () => {
               width={18}
               height={10}
               title="Get Email"
-              desc="info@codintern.com"
+              desc={content?.email || "info@codintern.com"}
             />
             <Info
               icon="/contact-us/map-pin-2.svg"
@@ -34,8 +37,10 @@ export const SendUsMessage = () => {
               width={15}
               height={21}
               title="Location"
-              desc="2nd Floor, Raj Ghar, Kanti Factory Road, Mahatma Gandhi Nagar,
-              Kankarbagh, Patna, India 800020"
+              desc={
+                content?.location ||
+                "2nd Floor, Raj Ghar, Kanti Factory Road, Mahatma Gandhi Nagar, Kankarbagh, Patna, India 800020"
+              }
             />
           </div>
         </div>

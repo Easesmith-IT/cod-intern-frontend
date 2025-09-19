@@ -28,11 +28,20 @@ export const ContactUsClient = () => {
   };
 
   const heroData = useMemo(() => getDataBySection("hero"), [contentData]);
+   const sendUsMessageData = useMemo(
+     () => getDataBySection("send-us-message"),
+     [contentData]
+   );
+   const mapData = useMemo(() => getDataBySection("map"), [contentData]);
+   const getMoreInformationData = useMemo(
+     () => getDataBySection("get-more-information"),
+     [contentData]
+   );
 
   return (
     <section>
       <HeroSection data={heroData} isLoading={isLoading} />
-      <SendUsMessage />
+      <SendUsMessage data={sendUsMessageData} isLoading={isLoading} />
       <Map />
       <GetMoreInformation />
     </section>
