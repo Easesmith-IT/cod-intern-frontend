@@ -11,7 +11,7 @@ export const wpAxiosInstance = axios.create({
 });
 
 export async function getSeoByPage(pageName) {
-  const res = await axiosInstance.get("/admin/content/get-seo", {
+  const res = await axiosInstance.get("/student/content/get-seo", {
     params: { pageName },
   });
 
