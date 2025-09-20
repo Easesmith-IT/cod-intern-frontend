@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { BlogsClient } from "@/components/blogs/blogs-client";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 import { getSeoByPage } from "@/lib/axiosInstance";

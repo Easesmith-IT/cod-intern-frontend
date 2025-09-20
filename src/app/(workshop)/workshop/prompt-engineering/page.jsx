@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { BeforeAfter } from "@/components/workshop/before-after";
 import { BookYourSpot } from "@/components/workshop/book-your-spot";
 import { Certification } from "@/components/workshop/certificate";

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { ContactUsClient } from "@/components/contact-us/contact-us-client";
 import { getSeoByPage } from "@/lib/axiosInstance";
 

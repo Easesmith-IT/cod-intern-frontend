@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { WorkShopRegistrationClient } from "@/components/workshop/workshop-registration-client";
 import { getSeoByPage } from "@/lib/axiosInstance";
 

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getSeoByPage } from "@/lib/axiosInstance";
 import { CoursesClient } from "./courses-client";
 
