@@ -10,3 +10,12 @@ export const wpAxiosInstance = axios.create({
   withCredentials: true,
 });
 
+export async function getSeoByPage(pageName) {
+  const res = await axiosInstance.get("/admin/content/get-seo", {
+    params: { pageName },
+  });
+
+  console.log("res", res.data);
+
+  return res.data?.seo || {};
+}

@@ -1,12 +1,37 @@
 import { BlogsClient } from "@/components/blogs/blogs-client";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
+import { getSeoByPage } from "@/lib/axiosInstance";
 import { Suspense } from "react";
 
-export const metadata = {
-  title: "Blogs - Codintern",
-  description:
-    "Read the latest blogs from Codintern on career tips, internships, fresher jobs, and skill development.",
-};
+export async function generateMetadata() {
+  const seo = await getSeoByPage("blogs");
+
+  const defaultTitle = "Blogs - Codintern";
+  const defaultDescription =
+    "Read the latest blogs from Codintern on career tips, internships, fresher jobs, and skill development.";
+  const keywords = [
+    "Codintern blogs",
+    "career tips for freshers",
+    "internship guidance",
+    "fresher jobs 2025",
+    "skill development tips",
+    "career growth blogs",
+    "interview preparation",
+    "resume building",
+    "internship opportunities",
+    "student career advice",
+  ];
+
+  return {
+    title: seo?.title || defaultTitle,
+    description: seo?.description || defaultDescription,
+    keywords: seo?.keywords || keywords,
+    openGraph: {
+      title: seo?.title || defaultTitle,
+      description: seo?.description || defaultDescription,
+    },
+  };
+}
 
 async function getCategories() {
   const res = await fetch(

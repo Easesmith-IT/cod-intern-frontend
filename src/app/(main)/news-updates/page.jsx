@@ -1,19 +1,36 @@
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
 import { NewsUpdatesClient } from "@/components/new-and-updates/news-updates-client";
+import { getSeoByPage } from "@/lib/axiosInstance";
 
-export const metadata = {
-  title: "News & Updates - Codintern",
-  description:
-    "Stay updated with the latest news, announcements, and updates from Codintern on internships, fresher jobs, and career tips.",
-  openGraph: {
-    title: "News & Updates - Codintern",
-    description:
-      "Stay updated with the latest news, announcements, and updates from Codintern on internships, fresher jobs, and career tips.",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/new-and-updates`,
-    siteName: "Codintern",
-    type: "website",
-  },
-};
+export async function generateMetadata() {
+  const seo = await getSeoByPage("news-updates");
+
+  const defaultTitle = "News & Updates - Codintern";
+  const defaultDescription =
+    "Stay updated with the latest news, announcements, and updates from Codintern on internships, fresher jobs, and career tips.";
+  const keywords = [
+    "Codintern News",
+    "Codintern Updates",
+    "Career Announcements",
+    "Fresher Job News",
+    "Internship Updates",
+    "Career Tips",
+    "Student Opportunities",
+    "Latest Job Updates",
+    "Skill Development News",
+    "Codintern Announcements",
+  ];
+
+  return {
+    title: seo?.title || defaultTitle,
+    description: seo?.description || defaultDescription,
+    keywords: seo?.keywords || keywords,
+    openGraph: {
+      title: seo?.title || defaultTitle,
+      description: seo?.description || defaultDescription,
+    },
+  };
+}
 
 const NewsAndUpdates = () => {
   return (

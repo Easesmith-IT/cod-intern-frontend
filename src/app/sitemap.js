@@ -8,10 +8,12 @@ export default async function sitemap() {
     { url: `${baseUrl}/`, priority: 1.0 },
     { url: `${baseUrl}/about-us`, priority: 0.8 },
     { url: `${baseUrl}/blogs`, priority: 0.7 },
+    { url: `${baseUrl}/news-updates`, priority: 0.7 },
     { url: `${baseUrl}/contact-us`, priority: 0.8 },
     { url: `${baseUrl}/courses`, priority: 0.8 },
     { url: `${baseUrl}/feedback`, priority: 0.6 },
     { url: `${baseUrl}/jobs`, priority: 0.7 },
+    { url: `${baseUrl}/privacy-policy`, priority: 0.7 },
     // { url: `${baseUrl}/user/my-courses`, priority: 0.5 },
     // { url: `${baseUrl}/user/profile`, priority: 0.5 },
     // { url: `${baseUrl}/user/settings`, priority: 0.5 },
@@ -20,6 +22,11 @@ export default async function sitemap() {
     // { url: `${baseUrl}/user/settings/notification-settings`, priority: 0.5 },
     // { url: `${baseUrl}/user/settings/security-privacy`, priority: 0.5 },
     { url: `${baseUrl}/workshop/registration`, priority: 0.6 },
+    { url: `${baseUrl}/workshop/prompt-engineering`, priority: 0.6 },
+    {
+      url: `${baseUrl}/workshop/prompt-engineering/registration`,
+      priority: 0.6,
+    },
   ].map((page) => ({ ...page, lastModified: today }));
 
   // Dynamic: Courses

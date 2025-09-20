@@ -1,3 +1,35 @@
+import { getSeoByPage } from "@/lib/axiosInstance";
+
+export async function generateMetadata() {
+  const seo = await getSeoByPage("privacy-policy");
+
+  const defaultTitle = "Privacy Policy - Codintern";
+  const defaultDescription =
+    "Read Codintern's Privacy Policy to understand how we collect, use, and protect your personal data. Learn about your privacy rights and data security practices.";
+  const keywords = [
+    "Codintern Privacy Policy",
+    "Data Protection",
+    "User Privacy",
+    "Personal Data Security",
+    "Cookies Policy",
+    "Information Collection",
+    "Data Usage",
+    "Privacy Rights",
+    "Legal Compliance",
+    "Secure Services",
+  ];
+
+  return {
+    title: seo?.title || defaultTitle,
+    description: seo?.description || defaultDescription,
+    keywords: seo?.keywords || keywords,
+    openGraph: {
+      title: seo?.title || defaultTitle,
+      description: seo?.description || defaultDescription,
+    },
+  };
+}
+
 const PrivacyPolicy = () => {
   return (
     <section className="section-container pt-8 md:pt-12 pb-12 md:pb-24">

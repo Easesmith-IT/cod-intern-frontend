@@ -2,9 +2,9 @@ import { GenerativeAIWorkShopRegistrationClient } from "@/components/workshop/ge
 import Script from "next/script";
 
 export const metadata = {
-  title: "Workshop Registration - Codintern",
+  title: "Prompt Engineering Workshop Registration - Codintern",
   description:
-    "Register for Codintern's upcoming workshops and enhance your skills with industry experts.",
+    "Join Codintern's Prompt Engineering Workshop to master AI tools, learn practical techniques, and enhance your career skills. Register now to secure your spot.",
 };
 
 const WorkShopRegistration = () => {
