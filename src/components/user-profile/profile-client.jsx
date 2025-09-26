@@ -5,20 +5,20 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
@@ -68,10 +68,20 @@ export const ProfileClient = () => {
     updatePreview(profileImgWatch, "profileImgPreview", setValue);
   }, [profileImgWatch, setValue]);
 
-  const { data, isLoading, error } = useApiQuery({
+  const { data, isLoading, error, refetch } = useApiQuery({
     url: `/student/main/get-profile?studentId=${userInfo?.id}`,
     queryKeys: ["profile", userInfo?.id],
+    options: { enabled: false },
   });
+
+  useEffect(() => {
+    if (userInfo) {
+      refetch();
+    }
+  }, [userInfo]);
+
+  console.log("data",data);
+  
 
   useEffect(() => {
     if (data?.student) {
