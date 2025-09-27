@@ -18,11 +18,14 @@ export async function generateMetadata({ params }) {
       };
     }
 
-    const jobUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/job/${jobId}`;
+    const jobUrl = `${process.env.NEXT_PUBLIC_FRONTEND_URL}/jobs/${jobId}`;
 
     return {
       title: job.title,
       description: job.description?.slice(0, 150) || "Job details at CodIntern",
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/jobs/${jobId}`,
+      },
       openGraph: {
         title: job.title,
         description: job.description?.slice(0, 150) || "",

@@ -5,6 +5,9 @@ export const metadata = {
   title: "Prompt Engineering Workshop Registration - Codintern",
   description:
     "Join Codintern's Prompt Engineering Workshop to master AI tools, learn practical techniques, and enhance your career skills. Register now to secure your spot.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/workshop/prompt-engineeering/registration`,
+  },
 };
 
 const WorkShopRegistration = () => {

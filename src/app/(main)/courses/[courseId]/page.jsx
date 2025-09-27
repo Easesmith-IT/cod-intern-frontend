@@ -8,12 +8,15 @@ export async function generateMetadata({ params }) {
   const { data } = await axiosInstance.get(`/student/courses/${courseId}`);
   const course = data.course;
 
-  const courseUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/courses/${courseId}`;
+  const courseUrl = `${process.env.NEXT_PUBLIC_FRONTEND_URL}/courses/${courseId}`;
 
   return {
     title: course.title,
     description:
       course.description?.slice(0, 160) || "Explore this course on Codintern.",
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/courses/${courseId}`,
+    },
     openGraph: {
       title: course.title,
       description: course.description?.slice(0, 160) || "",

@@ -20,6 +20,9 @@ export const metadata = {
     "course materials",
     "track learning",
   ],
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/user/my-courses`,
+  },
 };
 
 const MyCourses = () => {

@@ -11,6 +11,9 @@ export const metadata = {
     "account settings",
     "learning progress",
   ],
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/user/profile`,
+  },
 };
 
 

@@ -30,13 +30,21 @@ export async function generateMetadata({ params }) {
 
   const media = await getMedia(post.featured_media);
   const imageUrl = media?.guid?.rendered || "/blog/1.png";
+  const plainExcerpt =
+    typeof post.excerpt?.rendered === "string"
+      ? post.excerpt.rendered.replace(/<[^>]+>/g, "")
+      : "";
+
 
   return {
     title: post.title?.rendered,
-    description: post.excerpt?.rendered?.replace(/<[^>]+>/g, ""), // strip HTML
+    description: plainExcerpt, // strip HTML
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/blogs/${params.blogId}`,
+    },
     openGraph: {
       title: post.title?.rendered,
-      description: post.excerpt?.rendered?.replace(/<[^>]+>/g, ""),
+      description: plainExcerpt,
       url: `https://codintern.com/blogs/${params.blogId}`,
       type: "article",
       images: [

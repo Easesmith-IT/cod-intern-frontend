@@ -31,21 +31,24 @@ export async function generateMetadata({ params }) {
   const media = await getMedia(post.featured_media);
   const imageUrl =
     media?.guid?.rendered ||
-    `${process.env.NEXT_PUBLIC_SITE_URL}/default-news.png`;
+    `${process.env.NEXT_PUBLIC_FRONTEND_URL}/default-news.png`;
 
   const plainExcerpt = post.excerpt?.rendered
     ?.replace(/<[^>]+>/g, "")
     .slice(0, 160);
 
   return {
-    title: `${post.title?.rendered} | Codintern`,
+    title: `${post.title?.rendered} | CodIntern`,
     description:
       plainExcerpt || "Stay updated with the latest news from Codintern.",
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/news-updates/${params.slug}`,
+    },
     openGraph: {
       title: post.title?.rendered,
       description: plainExcerpt,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/new-and-updates/${params.slug}`,
-      siteName: "Codintern",
+      url: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/news-updates/${params.slug}`,
+      siteName: "CodIntern",
       type: "article",
       images: [
         {

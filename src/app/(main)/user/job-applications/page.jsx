@@ -16,6 +16,9 @@ export const metadata = {
     "application tracking",
     "job management",
   ],
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/user/job-applications`,
+  },
 };
 
 const JobApplications = () => {

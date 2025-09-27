@@ -28,6 +28,9 @@ export async function generateMetadata() {
     title: seo?.title || defaultTitle,
     description: seo?.description || defaultDescription,
     keywords: seo?.keywords || keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/blogs`,
+    },
     openGraph: {
       title: seo?.title || defaultTitle,
       description: seo?.description || defaultDescription,
