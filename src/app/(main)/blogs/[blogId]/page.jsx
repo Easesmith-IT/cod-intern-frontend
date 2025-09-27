@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
 
   if (!post) {
     return {
-      title: "Blog not found - Codintern",
+      title: "Blog not found - CodIntern",
       description: "This blog post does not exist.",
     };
   }

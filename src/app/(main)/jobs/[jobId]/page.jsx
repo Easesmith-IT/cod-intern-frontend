@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
 
     if (!job) {
       return {
-        title: "Job not found | Codintern",
+        title: "Job not found | CodIntern",
         description: "This job listing does not exist or has expired.",
       };
     }
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
         title: job.title,
         description: job.description?.slice(0, 150) || "",
         url: jobUrl,
-        siteName: "Codintern",
+        siteName: "CodIntern",
         images: [
           {
             url: job.image,

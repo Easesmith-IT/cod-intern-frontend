@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
 
   if (!post) {
     return {
-      title: "News & Updates not found - Codintern",
+      title: "News & Updates not found - CodIntern",
       description: "This News & Updates article does not exist.",
     };
   }
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
   return {
     title: `${post.title?.rendered} | CodIntern`,
     description:
-      plainExcerpt || "Stay updated with the latest news from Codintern.",
+      plainExcerpt || "Stay updated with the latest news from CodIntern.",
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/news-updates/${params.slug}`,
     },

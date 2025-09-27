@@ -8,11 +8,11 @@ import { Suspense } from "react";
 export async function generateMetadata() {
   const seo = await getSeoByPage("blogs");
 
-  const defaultTitle = "Blogs - Codintern";
+  const defaultTitle = "Blogs - CodIntern";
   const defaultDescription =
-    "Read the latest blogs from Codintern on career tips, internships, fresher jobs, and skill development.";
+    "Read the latest blogs from CodIntern on career tips, internships, fresher jobs, and skill development.";
   const keywords = [
-    "Codintern blogs",
+    "CodIntern blogs",
     "career tips for freshers",
     "internship guidance",
     "fresher jobs 2025",

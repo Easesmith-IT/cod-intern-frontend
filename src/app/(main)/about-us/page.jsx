@@ -6,20 +6,20 @@ import { getSeoByPage } from "@/lib/axiosInstance";
 export async function generateMetadata() {
   const seo = await getSeoByPage("about-us");
 
-  const defaultTitle = "About Us - Codintern";
+  const defaultTitle = "About Us - CodIntern";
   const defaultDescription =
-    "Learn more about Codintern, our mission, and the team behind it.";
+    "Learn more about CodIntern, our mission, and the team behind it.";
   const keywords = [
-    "About Codintern",
-    "Codintern Team",
+    "About CodIntern",
+    "CodIntern Team",
     "Our Mission",
     "Company Values",
-    "Codintern Story",
+    "CodIntern Story",
     "Career Platform",
     "Internship Platform",
     "Job Portal for Freshers",
     "Skill Development",
-    "Codintern Vision",
+    "CodIntern Vision",
   ];
 
   return {

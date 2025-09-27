@@ -5,17 +5,17 @@ import { MyActiveCourses } from "@/components/user-profile/my-active-courses/my-
 import { WelcomeBack } from "@/components/user-profile/welcome-back/welcome-back";
 
 export const metadata = {
-  title: "My Courses - Codintern",
+  title: "My Courses - CodIntern",
   description:
-    "View and manage your enrolled courses on Codintern. Track your learning progress, access course materials, and continue your skill development.",
+    "View and manage your enrolled courses on CodIntern. Track your learning progress, access course materials, and continue your skill development.",
   keywords: [
-    "Codintern my courses",
+    "CodIntern my courses",
     "enrolled courses",
     "learning dashboard",
     "course progress",
     "online learning",
     "student courses",
-    "Codintern dashboard",
+    "CodIntern dashboard",
     "skill development",
     "course materials",
     "track learning",

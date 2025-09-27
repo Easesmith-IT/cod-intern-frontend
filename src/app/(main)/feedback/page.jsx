@@ -6,18 +6,18 @@ import { FeedbackClient } from "./feedback-client";
 export async function generateMetadata() {
   const seo = await getSeoByPage("feedback");
 
-  const defaultTitle = "Workshop Feedback Form - Codintern";
+  const defaultTitle = "Workshop Feedback Form - CodIntern";
   const defaultDescription =
-    "Share your feedback on Codintern's workshops to help us improve future sessions and provide better learning experiences.";
+    "Share your feedback on CodIntern's workshops to help us improve future sessions and provide better learning experiences.";
   const keywords = [
-    "Codintern workshop feedback",
+    "CodIntern workshop feedback",
     "workshop review",
     "training feedback form",
     "online workshop survey",
     "workshop evaluation",
     "learning experience feedback",
     "workshop participant feedback",
-    "Codintern courses feedback",
+    "CodIntern courses feedback",
     "training session review",
     "workshop improvement survey",
   ];

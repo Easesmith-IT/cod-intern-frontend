@@ -7,12 +7,12 @@ import { getSeoByPage } from "@/lib/axiosInstance";
 export async function generateMetadata() {
   const seo = await getSeoByPage("news-updates");
 
-  const defaultTitle = "News & Updates - Codintern";
+  const defaultTitle = "News & Updates - CodIntern";
   const defaultDescription =
-    "Stay updated with the latest news, announcements, and updates from Codintern on internships, fresher jobs, and career tips.";
+    "Stay updated with the latest news, announcements, and updates from CodIntern on internships, fresher jobs, and career tips.";
   const keywords = [
-    "Codintern News",
-    "Codintern Updates",
+    "CodIntern News",
+    "CodIntern Updates",
     "Career Announcements",
     "Fresher Job News",
     "Internship Updates",
@@ -20,7 +20,7 @@ export async function generateMetadata() {
     "Student Opportunities",
     "Latest Job Updates",
     "Skill Development News",
-    "Codintern Announcements",
+    "CodIntern Announcements",
   ];
 
   return {

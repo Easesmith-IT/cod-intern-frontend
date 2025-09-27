@@ -6,11 +6,11 @@ import { CoursesClient } from "./courses-client";
 export async function generateMetadata() {
   const seo = await getSeoByPage("courses");
 
-  const defaultTitle = "Courses & Skill Development - Codintern";
+  const defaultTitle = "Courses & Skill Development - CodIntern";
   const defaultDescription =
-    "Browse Codintern's curated courses to enhance your skills, learn from experts, and boost your career prospects.";
+    "Browse CodIntern's curated courses to enhance your skills, learn from experts, and boost your career prospects.";
   const keywords = [
-    "Codintern Courses",
+    "CodIntern Courses",
     "Skill Development",
     "Online Learning",
     "Career Growth",

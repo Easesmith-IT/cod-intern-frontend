@@ -1,11 +1,11 @@
 import { ProfileClient } from "@/components/user-profile/profile-client";
 
 export const metadata = {
-  title: "My Profile - Codintern",
+  title: "My Profile - CodIntern",
   description:
-    "Manage your Codintern account, view your activity, courses, and settings.",
+    "Manage your CodIntern account, view your activity, courses, and settings.",
   keywords: [
-    "Codintern profile",
+    "CodIntern profile",
     "user account",
     "dashboard",
     "account settings",

@@ -6,15 +6,15 @@ import { JobsClient } from "./jobs-client";
 export async function generateMetadata() {
   const seo = await getSeoByPage("jobs");
 
-  const defaultTitle = "Jobs for Freshers & Internships - Codintern";
+  const defaultTitle = "Jobs for Freshers & Internships - CodIntern";
   const defaultDescription =
-    "Explore the latest fresher jobs, internships, and career opportunities. Start your professional journey with Codintern today.";
+    "Explore the latest fresher jobs, internships, and career opportunities. Start your professional journey with CodIntern today.";
   const keywords = [
     "fresher jobs 2025",
     "internships for students",
     "entry level jobs",
     "graduate jobs",
-    "Codintern careers",
+    "CodIntern careers",
     "student internships",
     "jobs for freshers",
     "career opportunities for graduates",

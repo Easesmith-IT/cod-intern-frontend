@@ -5,11 +5,11 @@ import { getSeoByPage } from "@/lib/axiosInstance";
 export async function generateMetadata() {
   const seo = await getSeoByPage("privacy-policy");
 
-  const defaultTitle = "Privacy Policy - Codintern";
+  const defaultTitle = "Privacy Policy - CodIntern";
   const defaultDescription =
-    "Read Codintern's Privacy Policy to understand how we collect, use, and protect your personal data. Learn about your privacy rights and data security practices.";
+    "Read CodIntern's Privacy Policy to understand how we collect, use, and protect your personal data. Learn about your privacy rights and data security practices.";
   const keywords = [
-    "Codintern Privacy Policy",
+    "CodIntern Privacy Policy",
     "Data Protection",
     "User Privacy",
     "Personal Data Security",

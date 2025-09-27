@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   return {
     title: course.title,
     description:
-      course.description?.slice(0, 160) || "Explore this course on Codintern.",
+      course.description?.slice(0, 160) || "Explore this course on CodIntern.",
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/courses/${courseId}`,
     },
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
       title: course.title,
       description: course.description?.slice(0, 160) || "",
       url: courseUrl,
-      siteName: "Codintern",
+      siteName: "CodIntern",
       images: [
         {
           url: course.image,
