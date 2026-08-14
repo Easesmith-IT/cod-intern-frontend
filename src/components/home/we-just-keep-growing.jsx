@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { previewImage } from "@/lib/utils";
 
 export const WeJustKeepGrowing = ({ data }) => {
   const { content, images } = data || {};
@@ -21,7 +22,7 @@ export const WeJustKeepGrowing = ({ data }) => {
       </p>
 
       <Image
-        src={images?.[0]?.image || "/we-just-keep-growing.jpg"}
+        src={previewImage(images?.[0]?.image, "/we-just-keep-growing.jpg")}
         className="mt-12"
         width={1000}
         height={340}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { previewImage } from "@/lib/utils";
 
 export const ConnectWithUs = ({ data }) => {
   const { content, images } = data || {};
@@ -22,7 +23,7 @@ export const ConnectWithUs = ({ data }) => {
         </div>
         <div className="hidden md:block">
           <Image
-            src={images?.[0]?.image || "/connect-with-us-img.svg"}
+            src={previewImage(images?.[0]?.image, "/connect-with-us-img.svg")}
             className="mt-14"
             width={156}
             height={312}

@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
+import { previewImage } from "@/lib/utils";
 import { formatDistanceToNowStrict } from "date-fns";
 import { ChevronRight, GraduationCap, Lock } from "lucide-react";
 import Image from "next/image";
@@ -100,7 +101,12 @@ export const Job = ({ job }) => {
                   {jobId}
                 </p>
               </div>
-              <Image src={jobImage} width={60} height={60} alt="job" />
+              <Image
+                src={previewImage(jobImage, "/job-logo.svg")}
+                width={60}
+                height={60}
+                alt="job"
+              />
             </div>
 
             <div className="flex gap-3 items-center mt-2">

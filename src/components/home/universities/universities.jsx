@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
+import { previewImage } from "@/lib/utils";
 
 export const Universities = ({ data }) => {
   const { content, images } = data || {};
@@ -19,14 +20,14 @@ export const Universities = ({ data }) => {
           alt="seperator"
         />
 
-        <Marquee autoFill gradient gradientColor="#2C1D43" gradientWidth={200}>
-          {images?.map((item, index) => (
-            <Image
-              key={index}
-              src={item.image}
-              className="px-5"
-              width={100}
-              height={30}
+          <Marquee autoFill gradient gradientColor="#2C1D43" gradientWidth={200}>
+            {images?.map((item, index) => (
+              <Image
+                key={index}
+                src={previewImage(item?.image, "/logo.svg")}
+                className="px-5"
+                width={100}
+                height={30}
               alt="entity"
             />
           ))}

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Benifit } from "./benifit";
+import { previewImage } from "@/lib/utils";
 
 export const SharpenYourSkill = ({ data }) => {
   const { content, images } = data || {};
@@ -34,8 +35,7 @@ export const SharpenYourSkill = ({ data }) => {
       </div>
       <div className="flex flex-col sm:flex-row gap-5">
         <Image
-          // src="/sharpen-your-skill-img.jpg"
-          src={images?.[0]?.image || "/sharpen-your-skill-img.jpg"}
+          src={previewImage(images?.[0]?.image, "/sharpen-your-skill-img.jpg")}
           width={353}
           height={404}
           alt="sharpen-your-skill-img"

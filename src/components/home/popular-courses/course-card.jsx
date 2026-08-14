@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
+import { previewImage } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,7 @@ export const CourseCard = ({
     <Card className="rounded-sm py-0">
       <CardContent className="px-0">
         <Image
-          src={src || "/course-img.jpg"}
+          src={previewImage(src, "/course-img.jpg")}
           className="w-full"
           width={300}
           height={200}

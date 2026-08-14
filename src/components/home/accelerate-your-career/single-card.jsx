@@ -7,7 +7,7 @@ import { CarouselItem } from "@/components/ui/carousel";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePersistentCountdown } from "@/hooks/usePersistentCountdown";
 import { readCookie } from "@/lib/readCookie";
-import { secondsBetween } from "@/lib/utils";
+import { previewImage, secondsBetween } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { toast } from "sonner";
@@ -66,7 +66,7 @@ export const SingleCard = ({
         <Card className="border-border-1 rounded-lg pt-0 h-[600px] sm:h-[650px] lg:h-[550px]">
           <CardContent className="px-0 relative">
             <Image
-              src={thumbnail || `/course/${index + 1}.png`}
+              src={previewImage(thumbnail, `/course/${index + 1}.png`)}
               width={360}
               height={400}
               className="w-full rounded-tl-[6px] rounded-tr-[6px]"
