@@ -1,19 +1,32 @@
+"use client";
+
+import { previewImage } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const Mentor = ({ img, name, position, about, experience }) => {
+  const fallbackImage = "/our-mentors/user-placeholder.png";
+  const [imageSrc, setImageSrc] = useState(() => previewImage(img, fallbackImage));
+
+  useEffect(() => {
+    setImageSrc(previewImage(img, fallbackImage));
+  }, [img]);
+
   return (
     <Card className="border-border-1 rounded-md py-2">
       <CardContent className="p-4">
-        <Image
-          src={img}
-          width={458}
-          height={396}
-          className="object-cover aspect-square"
-          alt="mentor"
-        />
+        <div className="relative aspect-square w-full overflow-hidden rounded-md bg-[#F7F1FF]">
+          <Image
+            src={imageSrc}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+            alt={name || "mentor"}
+            onError={() => setImageSrc(fallbackImage)}
+          />
+        </div>
 
         <div className="flex flex-col justify-between h-52 mt-5">
           <div>

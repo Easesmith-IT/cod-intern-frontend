@@ -10,7 +10,23 @@ export function previewImage(
   image,
   placeholder = "/our-mentors/user-placeholder.png"
 ) {
-  return image ? `${process.env.NEXT_PUBLIC_IMAGE_URL}/${image}` : placeholder;
+  if (typeof image !== "string") return placeholder;
+
+  const trimmedImage = image.trim();
+  if (!trimmedImage) return placeholder;
+
+  if (
+    trimmedImage.startsWith("http://") ||
+    trimmedImage.startsWith("https://") ||
+    trimmedImage.startsWith("/")
+  ) {
+    return trimmedImage;
+  }
+
+  const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGE_URL?.replace(/\/$/, "");
+  if (!imageBaseUrl) return placeholder;
+
+  return `${imageBaseUrl}/${trimmedImage.replace(/^\/+/, "")}`;
 }
 
 // function formatDuration(minutes) {

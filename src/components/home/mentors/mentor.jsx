@@ -1,19 +1,32 @@
+"use client";
+
+import { previewImage } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const Mentor = ({ img, name, position, proficiency = [] }) => {
+  const fallbackImage = "/our-mentors/user-placeholder.png";
+  const [imageSrc, setImageSrc] = useState(() => previewImage(img, fallbackImage));
+
+  useEffect(() => {
+    setImageSrc(previewImage(img, fallbackImage));
+  }, [img]);
+
   return (
-    <Card className="border-border-1 rounded-md h-[650px] xl:h-auto">
-      <CardContent>
-        <Image
-          src={img}
-          width={458}
-          height={396}
-          className="object-cover max-w-[358px] sm:max-w-[458px] w-full max-h-[396px] h-full"
-          alt="mentor"
-        />
+    <Card className="border-border-1 rounded-md h-full">
+      <CardContent className="p-4">
+        <div className="relative aspect-[458/396] w-full overflow-hidden rounded-md bg-[#F7F1FF]">
+          <Image
+            src={imageSrc}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+            alt={name || "mentor"}
+            onError={() => setImageSrc(fallbackImage)}
+          />
+        </div>
 
         <div className="mt-5">
           <h3 className="font-stolzl font-medium md:text-2xl">{name}</h3>
@@ -50,10 +63,10 @@ export const Mentor = ({ img, name, position, proficiency = [] }) => {
 
 Mentor.Skeleton = function MentorSkeleton() {
   return (
-    <Card className="border-border-1 rounded-md h-[650px] xl:h-auto">
-      <CardContent>
+    <Card className="border-border-1 rounded-md h-full">
+      <CardContent className="p-4">
         {/* Image Skeleton */}
-        <Skeleton className="object-cover max-w-[358px] sm:max-w-[458px] w-full max-h-[396px] h-[396px] rounded-md" />
+        <Skeleton className="aspect-[458/396] w-full rounded-md" />
 
         <div className="mt-5 space-y-3">
           {/* Name */}
